@@ -4,14 +4,16 @@
 [ext_resource type="Script" uid="uid://cdjt7y24o1l7h" path="res://player/player.gd" id="1_rkbax"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rkbax"]
+radius = 0.3
+height = 1.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1dw6"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rkbax"]
 transparency = 1
 albedo_texture = ExtResource("1_oul6g")
 
 [sub_resource type="QuadMesh" id="QuadMesh_yw30f"]
-material = SubResource("StandardMaterial3D_g1dw6")
-size = Vector2(1.5, 2)
+material = SubResource("StandardMaterial3D_rkbax")
+size = Vector2(0.75, 1)
 orientation = 1
 
 [node name="Node3D" type="Node3D" unique_id=1244172916]
