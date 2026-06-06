@@ -54,7 +54,10 @@ func _physics_process(delta: float) -> void:
 	var cam_pos = camera_controller.get_position()
 	var cursor_pos = get_viewport().get_mouse_position()
 	
-	cam_pos.x = lerp(position.x + default_controller_pos.x, cursor_pos.x, 0.0007)
-	cam_pos.z = lerp(position.z + default_controller_pos.z, cursor_pos.y, 0.0007)
+	var viewport_size = get_viewport().get_visible_rect().size
+	
+
+	cam_pos.x = lerp(position.x + default_controller_pos.x, cursor_pos.x - viewport_size.x / 2, 0.0007)
+	cam_pos.z = lerp(position.z + default_controller_pos.z, cursor_pos.y - viewport_size.y / 2, 0.0007)
 	cam_pos.y = 5.0
 	camera_controller.position = cam_pos
