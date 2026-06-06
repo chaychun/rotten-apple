@@ -21,11 +21,6 @@ Events="*res://globals/events.gd"
 AnimalRegistry="*res://globals/animal_registry.gd"
 PlayerState="*res://globals/player_state.gd"
 
-[display]
-
-window/size/viewport_width=1980
-window/size/viewport_height=1080
-
 [importer_defaults]
 
 animation_library={
