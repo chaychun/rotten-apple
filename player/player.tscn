@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://d24umy41t0mdv" path="res://player/placeholder.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://cdjt7y24o1l7h" path="res://player/player.gd" id="1_rkbax"]
-[ext_resource type="Script" uid="uid://c6ybuq5wgihmp" path="res://player/camera_3d.gd" id="3_g1dw6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rkbax"]
 
@@ -27,6 +26,11 @@ shape = SubResource("CapsuleShape3D_rkbax")
 transform = Transform3D(1, 0, 0, 0, 0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0)
 mesh = SubResource("QuadMesh_yw30f")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=953106081]
-transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 5, 5)
-script = ExtResource("3_g1dw6")
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=1028634009]
+
+[node name="CameraController" type="Node3D" parent="." unique_id=886119503]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 5, 5)
+
+[node name="CameraTarget" type="Node3D" parent="CameraController" unique_id=2008453527]
+
+[node name="Camera3D" type="Camera3D" parent="CameraController/CameraTarget" unique_id=953106081]

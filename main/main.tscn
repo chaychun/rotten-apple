@@ -10,6 +10,8 @@ size = Vector3(10, 0.2, 10)
 
 [node name="Node" type="Node" unique_id=1908846288]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=609979057]
+
 [node name="Node3D" type="Node3D" parent="." unique_id=1417676497]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D" unique_id=1515744892]
@@ -23,3 +25,6 @@ mesh = SubResource("BoxMesh_53q0u")
 
 [node name="Node3D2" parent="." unique_id=1244172916 instance=ExtResource("2_pjrb6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=781975325]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 8, 0)
