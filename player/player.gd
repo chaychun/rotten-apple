@@ -39,7 +39,7 @@ func _physics_process(delta: float) -> void:
 		target_velocity.z = direction.z * speed * 1.4
 	
 	# Vertical Velocity
-	if Input.is_action_just_pressed("jump") and is_on_floor_only():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		direction.y = 1
 		target_velocity.y = direction.y * 5
 	if not is_on_floor():
@@ -59,5 +59,5 @@ func _physics_process(delta: float) -> void:
 
 	cam_pos.x = lerp(position.x + default_controller_pos.x, cursor_pos.x - viewport_size.x / 2, 0.0007)
 	cam_pos.z = lerp(position.z + default_controller_pos.z, cursor_pos.y - viewport_size.y / 2, 0.0007)
-	cam_pos.y = 5.0
+	cam_pos.y = lerp(default_controller_pos.z, position.y + default_controller_pos.z, 0.7)
 	camera_controller.position = cam_pos

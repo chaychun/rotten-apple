@@ -21,6 +21,10 @@ Events="*res://globals/events.gd"
 AnimalRegistry="*res://globals/animal_registry.gd"
 PlayerState="*res://globals/player_state.gd"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [importer_defaults]
 
 animation_library={

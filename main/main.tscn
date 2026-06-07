@@ -1,7 +1,13 @@
 [gd_scene format=3 uid="uid://bs7f42e414t5q"]
 
+[ext_resource type="Material" uid="uid://bra6ug2wjmj0j" path="res://Assets/Environment/BinbunGrass/assets/BinbunGrass/src/materials/grass_01/grass_ground_01.tres" id="1_c651c"]
 [ext_resource type="PackedScene" uid="uid://dpu1uhfgsyl7u" path="res://player/player.tscn" id="2_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://bdr38pj2qtbfe" path="res://animal/animal.tscn" id="2_xwkvk"]
+[ext_resource type="PackedScene" uid="uid://d3oja1344mbkn" path="res://hq.tscn" id="4_c651c"]
+[ext_resource type="Image" uid="uid://oblldnq03ugf" path="res://main/Node/Heightmap_0_0.res" id="5_3wy1v"]
+[ext_resource type="Texture2D" uid="uid://se8nc8tgocfp" path="res://Assets/Environment/BinbunGrass/assets/BinbunGrass/src/texture/basic/grass_basic_04.png" id="5_grrlh"]
+[ext_resource type="Image" uid="uid://cslklglgk62gh" path="res://main/Node/Foliage_0_0_0.res" id="5_kfbq2"]
+[ext_resource type="Image" uid="uid://dyg2onohjk7vn" path="res://main/Node/MetaInfo_0_0.res" id="9_0i4oc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_53q0u"]
 sky_top_color = Color(1.92523e-07, 0.8075356, 0.8894146, 1)
@@ -16,10 +22,29 @@ background_mode = 2
 sky = SubResource("Sky_pjrb6")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4hihk"]
-size = Vector3(10, 0.2, 10)
+size = Vector3(100, 0.2, 100)
 
-[sub_resource type="BoxMesh" id="BoxMesh_53q0u"]
-size = Vector3(10, 0.2, 10)
+[sub_resource type="PlaneMesh" id="PlaneMesh_grrlh"]
+size = Vector2(100, 100)
+
+[sub_resource type="QuadMesh" id="QuadMesh_fwcvl"]
+
+[sub_resource type="FoliageDefinitionResource" id="FoliageDefinitionResource_na0o7"]
+mesh = SubResource("QuadMesh_fwcvl")
+albedo = Color(0, 0.85490197, 0.5568628, 1)
+albedoTextures = Array[Texture2D]([ExtResource("5_grrlh")])
+randomPlacementRange = 10.12
+
+[sub_resource type="FoliageResource" id="FoliageResource_3wy1v"]
+definition = SubResource("FoliageDefinitionResource_na0o7")
+
+[sub_resource type="ZoneResource" id="ZoneResource_67ri8"]
+heightMapImage = ExtResource("5_3wy1v")
+foliagesImage = Array[Image]([ExtResource("5_kfbq2")])
+metaInfoImage = ExtResource("9_0i4oc")
+
+[sub_resource type="ZonesResource" id="ZonesResource_grrlh"]
+zones = Array[ZoneResource]([SubResource("ZoneResource_67ri8")])
 
 [node name="Node" type="Node" unique_id=1908846288]
 
@@ -27,21 +52,37 @@ size = Vector3(10, 0.2, 10)
 environment = SubResource("Environment_xwkvk")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=781975325]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 8, 0)
+transform = Transform3D(1, 0, 0, 0, 0.76604444, 0.6427877, 0, -0.6427877, 0.76604444, 0, 8, 0)
 
-[node name="Floor" type="Node3D" parent="." unique_id=1417676497]
+[node name="Ground" type="Node3D" parent="." unique_id=1417676497]
+visible = false
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=1515744892]
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground" unique_id=1515744892]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D" unique_id=410590336]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=410590336]
 shape = SubResource("BoxShape3D_4hihk")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/StaticBody3D" unique_id=602253798]
-mesh = SubResource("BoxMesh_53q0u")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/StaticBody3D" unique_id=602253798]
+material_override = ExtResource("1_c651c")
+mesh = SubResource("PlaneMesh_grrlh")
+
+[node name="Jrass" type="Node" parent="." unique_id=1773940245]
 
 [node name="Player" parent="." unique_id=1244172916 instance=ExtResource("2_pjrb6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375, 0)
 
 [node name="Aminol" parent="." unique_id=28983913 instance=ExtResource("2_xwkvk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.25, -3)
+
+[node name="HQ" parent="." unique_id=1011123435 instance=ExtResource("4_c651c")]
+transform = Transform3D(0.495, 0, 0, 0, 0.495, 0, 0, 0, 0.495, 0, 0, -21)
+
+[node name="TerraBrush" type="TerraBrush" parent="." unique_id=1037006688]
+dataPath = "res://main/Node"
+zonesSize = 567
+foliages = Array[FoliageResource]([SubResource("FoliageResource_3wy1v")])
+metaInfoLayers = Array[MetaInfoLayerResource]([null])
+terrainZones = SubResource("ZonesResource_grrlh")
+physics_interpolation_mode = 2
+metadata/_edit_lock_ = false
