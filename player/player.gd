@@ -3,6 +3,7 @@ extends CharacterBody3D
 @export var speed = 4
 @export var gravity = 15
 @onready var camera_controller: Node3D = $"../CameraController"
+@onready var _animation_player = $AnimationPlayer
 
 var target_velocity = Vector3.ZERO
 var default_controller_pos = Vector3(0.0, 5.0, 5.0)
@@ -20,8 +21,14 @@ func _physics_process(delta: float) -> void:
 	# Get Input
 	if Input.is_action_pressed("move_right"):
 		direction.x += 1
+		_animation_player.play("walk_r")
+	else:
+		_animation_player.stop()
 	if Input.is_action_pressed("move_left"):
 		direction.x -= 1
+		_animation_player.play("walk_l")
+	else:
+		_animation_player.stop()
 	if Input.is_action_pressed("move_back"):
 		direction.z += 1
 	if Input.is_action_pressed("move_forward"):
@@ -57,7 +64,7 @@ func _physics_process(delta: float) -> void:
 	var viewport_size = get_viewport().get_visible_rect().size
 	
 
-	cam_pos.x = lerp(position.x + default_controller_pos.x, cursor_pos.x - viewport_size.x / 2, 0.0007)
-	cam_pos.z = lerp(position.z + default_controller_pos.z, cursor_pos.y - viewport_size.y / 2, 0.0007)
-	cam_pos.y = lerp(default_controller_pos.z, position.y + default_controller_pos.z, 0.7)
+	cam_pos.x = lerp(0.01 * velocity.x + position.x + default_controller_pos.x, cursor_pos.x - viewport_size.x / 2, 0.0002)
+	cam_pos.z = lerp(0.01 * velocity.z + position.z + default_controller_pos.z, cursor_pos.y - viewport_size.y / 2, 0.0002)
+	cam_pos.y = lerp(0.01 * velocity.y + default_controller_pos.y, position.y + default_controller_pos.y, 0.7)
 	camera_controller.position = cam_pos
