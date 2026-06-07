@@ -8,14 +8,6 @@
 radius = 0.18310547
 height = 1.0635147
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rkbax"]
-transparency = 1
-albedo_texture = ExtResource("2_rkbax")
-
-[sub_resource type="QuadMesh" id="QuadMesh_yw30f"]
-material = SubResource("StandardMaterial3D_rkbax")
-orientation = 1
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_g1dw6"]
 animations = [{
 "frames": [{
@@ -142,13 +134,9 @@ script = ExtResource("1_rkbax")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02464062, 0)
 shape = SubResource("CapsuleShape3D_rkbax")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1942561704]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
-visible = false
-mesh = SubResource("QuadMesh_yw30f")
-
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=1028634009]
 transform = Transform3D(0.23325704, 0, 0, 0, 0.23325704, 0, 0, 0, 1, 0, 0.035289347, 0)
+shaded = true
 sprite_frames = SubResource("SpriteFrames_g1dw6")
 animation = &"walk_l"
 
@@ -156,9 +144,11 @@ animation = &"walk_l"
 libraries/ = SubResource("AnimationLibrary_g6k8r")
 
 [node name="CameraController" type="Node3D" parent="." unique_id=886119503]
-transform = Transform3D(1, 0, 0, 0, 0.7660444, 0.6427875, 0, -0.6427875, 0.7660444, 0, 1, 2.5)
+transform = Transform3D(1, 0, 0, 0, 0.7071067, 0.7071067, 0, -0.7071067, 0.7071067, 0, 2.5, 2.5)
 
 [node name="CameraTarget" type="Node3D" parent="CameraController" unique_id=2008453527]
 
 [node name="Camera3D" type="Camera3D" parent="CameraController/CameraTarget" unique_id=953106081]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+doppler_tracking = 2
+current = true

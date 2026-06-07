@@ -1,50 +1,83 @@
 [gd_scene format=3 uid="uid://bs7f42e414t5q"]
 
-[ext_resource type="Material" uid="uid://bra6ug2wjmj0j" path="res://Assets/Environment/BinbunGrass/assets/BinbunGrass/src/materials/grass_01/grass_ground_01.tres" id="1_c651c"]
 [ext_resource type="PackedScene" uid="uid://dpu1uhfgsyl7u" path="res://player/player.tscn" id="2_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://bdr38pj2qtbfe" path="res://animal/animal.tscn" id="2_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://d3oja1344mbkn" path="res://hq.tscn" id="4_c651c"]
 [ext_resource type="Image" uid="uid://oblldnq03ugf" path="res://main/Node/Heightmap_0_0.res" id="5_3wy1v"]
-[ext_resource type="Texture2D" uid="uid://se8nc8tgocfp" path="res://Assets/Environment/BinbunGrass/assets/BinbunGrass/src/texture/basic/grass_basic_04.png" id="5_grrlh"]
-[ext_resource type="Image" uid="uid://cslklglgk62gh" path="res://main/Node/Foliage_0_0_0.res" id="5_kfbq2"]
-[ext_resource type="Image" uid="uid://dyg2onohjk7vn" path="res://main/Node/MetaInfo_0_0.res" id="9_0i4oc"]
+[ext_resource type="Texture2D" uid="uid://d2qnmtx1qhg22" path="res://Assets/Environment/ground/Ground003_2K-PNG_Color.png" id="5_73k8k"]
+[ext_resource type="Texture2D" uid="uid://d4kne0laocbjr" path="res://Assets/Environment/ground/Ground003_2K-PNG_NormalGL.png" id="6_5xyti"]
+[ext_resource type="Image" uid="uid://cxdrif8qt58u6" path="res://main/Node/Foliage_0_0_0.res" id="6_67ri8"]
+[ext_resource type="Texture2D" uid="uid://cu6xblwlbo22e" path="res://Assets/Environment/ground/Ground003_2K-PNG_Roughness.png" id="7_n3o0a"]
+[ext_resource type="Texture2D" uid="uid://b4vhxkngdovvc" path="res://Assets/Environment/sand/Ground093A_2K-PNG_Color.png" id="8_s758e"]
+[ext_resource type="Texture2D" uid="uid://cnrecm40jnm7n" path="res://Assets/Environment/sand/Ground093A_2K-PNG_NormalGL.png" id="9_4hmqs"]
+[ext_resource type="Image" uid="uid://iceplcmsbk6d" path="res://main/Node/Splatmap_0_0_0.res" id="9_grrlh"]
+[ext_resource type="Texture2D" uid="uid://bjmkdp4xaxam8" path="res://Assets/Environment/sand/Ground093A_2K-PNG_Roughness.png" id="10_piupu"]
+[ext_resource type="Image" uid="uid://dfn1l2uff86b3" path="res://main/Node/Object_0_0_0.res" id="12_5xyti"]
+[ext_resource type="Image" uid="uid://csomk54qohqea" path="res://main/Node/Water_0_0.res" id="14_5xyti"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_53q0u"]
-sky_top_color = Color(1.92523e-07, 0.8075356, 0.8894146, 1)
-sky_horizon_color = Color(0.69200754, 0.6376025, 0.66357046, 1)
-sky_curve = 0.1305827
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_na0o7"]
+sky_top_color = Color(0, 0.9355178, 1.1203939, 1)
+sky_horizon_color = Color(8.085966e-06, 0.7068362, 0.95250326, 1)
+sky_curve = 0.047795985
+ground_bottom_color = Color(0.25316006, 0.2888561, 0.16861683, 1)
+ground_horizon_color = Color(0.7604286, 1.2072899, 0.5432228, 1)
+ground_curve = 0.045947872
 
-[sub_resource type="Sky" id="Sky_pjrb6"]
-sky_material = SubResource("ProceduralSkyMaterial_53q0u")
+[sub_resource type="Sky" id="Sky_73k8k"]
+sky_material = SubResource("ProceduralSkyMaterial_na0o7")
 
 [sub_resource type="Environment" id="Environment_xwkvk"]
 background_mode = 2
-sky = SubResource("Sky_pjrb6")
+sky = SubResource("Sky_73k8k")
+volumetric_fog_density = 0.005
+volumetric_fog_albedo = Color(0.9733079, 0.8474623, 0, 1)
+volumetric_fog_emission = Color(0.73841137, 0, 0.32412305, 1)
+adjustment_brightness = 1.02
+adjustment_contrast = 0.94
+adjustment_saturation = 1.57
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_4hihk"]
-size = Vector3(100, 0.2, 100)
+[sub_resource type="TextureSetResource" id="TextureSetResource_q0sk7"]
+albedoTexture = ExtResource("5_73k8k")
+normalTexture = ExtResource("6_5xyti")
+roughnessTexture = ExtResource("7_n3o0a")
+textureDetail = 1433
+triplanar = true
+specular = 0.407
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_grrlh"]
-size = Vector2(100, 100)
+[sub_resource type="TextureSetResource" id="TextureSetResource_vapsy"]
+albedoTexture = ExtResource("8_s758e")
+normalTexture = ExtResource("9_4hmqs")
+roughnessTexture = ExtResource("10_piupu")
 
-[sub_resource type="QuadMesh" id="QuadMesh_fwcvl"]
+[sub_resource type="TextureSetsResource" id="TextureSetsResource_73k8k"]
+textureSets = Array[TextureSetResource]([SubResource("TextureSetResource_q0sk7"), SubResource("TextureSetResource_vapsy")])
 
-[sub_resource type="FoliageDefinitionResource" id="FoliageDefinitionResource_na0o7"]
-mesh = SubResource("QuadMesh_fwcvl")
-albedo = Color(0, 0.85490197, 0.5568628, 1)
-albedoTextures = Array[Texture2D]([ExtResource("5_grrlh")])
-randomPlacementRange = 10.12
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_73k8k"]
+load_path = "res://.godot/imported/grass_basic_01.png-32c181afa1fe8d6ab1030e6f8735dd42.s3tc.ctex"
 
-[sub_resource type="FoliageResource" id="FoliageResource_3wy1v"]
-definition = SubResource("FoliageDefinitionResource_na0o7")
+[sub_resource type="QuadMesh" id="QuadMesh_73k8k"]
+lightmap_size_hint = Vector2i(7, 7)
+subdivide_width = 2
+subdivide_depth = 2
 
-[sub_resource type="ZoneResource" id="ZoneResource_67ri8"]
+[sub_resource type="FoliageDefinitionResource" id="FoliageDefinitionResource_5xyti"]
+mesh = SubResource("QuadMesh_73k8k")
+albedoTextures = Array[Texture2D]([SubResource("CompressedTexture2D_73k8k")])
+
+[sub_resource type="FoliageResource" id="FoliageResource_n3o0a"]
+definition = SubResource("FoliageDefinitionResource_5xyti")
+
+[sub_resource type="WaterResource" id="WaterResource_na0o7"]
+
+[sub_resource type="ZoneResource" id="ZoneResource_grrlh"]
 heightMapImage = ExtResource("5_3wy1v")
-foliagesImage = Array[Image]([ExtResource("5_kfbq2")])
-metaInfoImage = ExtResource("9_0i4oc")
+splatmapsImage = Array[Image]([ExtResource("9_grrlh")])
+foliagesImage = Array[Image]([ExtResource("6_67ri8")])
+objectsImage = Array[Image]([ExtResource("12_5xyti")])
+waterImage = ExtResource("14_5xyti")
 
-[sub_resource type="ZonesResource" id="ZonesResource_grrlh"]
-zones = Array[ZoneResource]([SubResource("ZoneResource_67ri8")])
+[sub_resource type="ZonesResource" id="ZonesResource_0i4oc"]
+zones = Array[ZoneResource]([SubResource("ZoneResource_grrlh")])
 
 [node name="Node" type="Node" unique_id=1908846288]
 
@@ -52,37 +85,31 @@ zones = Array[ZoneResource]([SubResource("ZoneResource_67ri8")])
 environment = SubResource("Environment_xwkvk")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=781975325]
-transform = Transform3D(1, 0, 0, 0, 0.76604444, 0.6427877, 0, -0.6427877, 0.76604444, 0, 8, 0)
-
-[node name="Ground" type="Node3D" parent="." unique_id=1417676497]
-visible = false
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Ground" unique_id=1515744892]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D" unique_id=410590336]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
-shape = SubResource("BoxShape3D_4hihk")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/StaticBody3D" unique_id=602253798]
-material_override = ExtResource("1_c651c")
-mesh = SubResource("PlaneMesh_grrlh")
-
-[node name="Jrass" type="Node" parent="." unique_id=1773940245]
+transform = Transform3D(0.8348287, 0.35386097, -0.42171502, 0, 0.76604444, 0.6427877, 0.55050987, -0.5366176, 0.6395159, 0, 24, 0)
+light_color = Color(1.3769996, 1.3626599, 1.2811995, 1)
+light_indirect_energy = 4.406
+light_angular_distance = 0.65
+shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1244172916 instance=ExtResource("2_pjrb6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5181016, -11)
+
+[node name="Jrass" type="Node" parent="." unique_id=1773940245]
 
 [node name="Aminol" parent="." unique_id=28983913 instance=ExtResource("2_xwkvk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.25, -3)
 
 [node name="HQ" parent="." unique_id=1011123435 instance=ExtResource("4_c651c")]
-transform = Transform3D(0.495, 0, 0, 0, 0.495, 0, 0, 0, 0.495, 0, 0, -21)
+transform = Transform3D(0.495, 0, 0, 0, 0.495, 0, 0, 0, 0.495, 0, 0, -14.7)
+
+[node name="Ornaments" type="Node3D" parent="." unique_id=208289105]
 
 [node name="TerraBrush" type="TerraBrush" parent="." unique_id=1037006688]
 dataPath = "res://main/Node"
-zonesSize = 567
-foliages = Array[FoliageResource]([SubResource("FoliageResource_3wy1v")])
-metaInfoLayers = Array[MetaInfoLayerResource]([null])
-terrainZones = SubResource("ZonesResource_grrlh")
+zonesSize = 130
+textureSets = SubResource("TextureSetsResource_73k8k")
+foliages = Array[FoliageResource]([SubResource("FoliageResource_n3o0a")])
+waterDefinition = SubResource("WaterResource_na0o7")
+terrainZones = SubResource("ZonesResource_0i4oc")
 physics_interpolation_mode = 2
 metadata/_edit_lock_ = false

@@ -6,7 +6,7 @@ extends CharacterBody3D
 @onready var _animation_player = $AnimationPlayer
 
 var target_velocity = Vector3.ZERO
-var default_controller_pos = Vector3(0.0, 5.0, 5.0)
+var default_controller_pos = Vector3(0.0, 4.2, 4.2)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
