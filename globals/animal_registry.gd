@@ -29,5 +29,5 @@ func get_animal(id: String) -> AnimalData:
 	return _animals[id]
 
 
-func get_all_ids() -> Array[String]:
+func get_all_animal_ids() -> Array[String]:
 	return _animals.keys()

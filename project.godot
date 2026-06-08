@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Events="*res://globals/events.gd"
 AnimalRegistry="*res://globals/animal_registry.gd"
 PlayerState="*res://globals/player_state.gd"
+QuestRegistry="*uid://cjkvcwlf2tiww"
 
 [filesystem]
 
