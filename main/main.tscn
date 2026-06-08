@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bs7f42e414t5q"]
 
+[ext_resource type="Material" uid="uid://c2to67v55oatp" path="res://Assets/Environment/BinBunGrass/assets/BinbunGrass/src/materials/grass_01/grass_01.tres" id="2_kgxi8"]
 [ext_resource type="PackedScene" uid="uid://dpu1uhfgsyl7u" path="res://player/player.tscn" id="2_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://bdr38pj2qtbfe" path="res://animal/animal.tscn" id="2_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://d3oja1344mbkn" path="res://hq.tscn" id="4_c651c"]
@@ -74,6 +75,11 @@ volumetric_fog_emission = Color(0.73841137, 0, 0.32412305, 1)
 adjustment_brightness = 1.02
 adjustment_contrast = 0.94
 adjustment_saturation = 1.57
+
+[sub_resource type="QuadMesh" id="QuadMesh_snvkn"]
+
+[sub_resource type="MultiMesh" id="MultiMesh_hifdc"]
+mesh = SubResource("QuadMesh_snvkn")
 
 [sub_resource type="TextureSetResource" id="TextureSetResource_nxdj1"]
 name = "Cliff"
@@ -175,6 +181,17 @@ triplanar = true
 [sub_resource type="TextureSetsResource" id="TextureSetsResource_73k8k"]
 textureSets = Array[TextureSetResource]([SubResource("TextureSetResource_nxdj1"), SubResource("TextureSetResource_tay5t"), SubResource("TextureSetResource_6qnlh"), SubResource("TextureSetResource_ljnho"), SubResource("TextureSetResource_mk0oj"), SubResource("TextureSetResource_vyb7n"), SubResource("TextureSetResource_bfdoy"), SubResource("TextureSetResource_p66im"), SubResource("TextureSetResource_v6wbg"), SubResource("TextureSetResource_0yfeg"), SubResource("TextureSetResource_7ny4s")])
 
+[sub_resource type="QuadMesh" id="QuadMesh_kgxi8"]
+material = ExtResource("2_kgxi8")
+size = Vector2(0.2, 0.4)
+center_offset = Vector3(0, 0.2, 0)
+
+[sub_resource type="FoliageDefinitionResource" id="FoliageDefinitionResource_snvkn"]
+mesh = SubResource("QuadMesh_kgxi8")
+
+[sub_resource type="FoliageResource" id="FoliageResource_7ny4s"]
+definition = SubResource("FoliageDefinitionResource_snvkn")
+
 [sub_resource type="WaterResource" id="WaterResource_na0o7"]
 
 [sub_resource type="ZoneResource" id="ZoneResource_grrlh"]
@@ -204,6 +221,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5559661, -11)
 
 [node name="Jrass" type="Node" parent="." unique_id=1773940245]
 
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="Jrass" unique_id=621940649]
+material_override = ExtResource("2_kgxi8")
+multimesh = SubResource("MultiMesh_hifdc")
+
 [node name="Aminol" parent="." unique_id=28983913 instance=ExtResource("2_xwkvk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.25, -3)
 
@@ -217,6 +238,7 @@ dataPath = "res://main/Node"
 zonesSize = 130
 textureSets = SubResource("TextureSetsResource_73k8k")
 nearestTextureFilter = true
+foliages = Array[FoliageResource]([SubResource("FoliageResource_7ny4s")])
 waterDefinition = SubResource("WaterResource_na0o7")
 terrainZones = SubResource("ZonesResource_0i4oc")
 physics_interpolation_mode = 2
