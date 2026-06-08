@@ -22,13 +22,14 @@ AnimalRegistry="*res://globals/animal_registry.gd"
 PlayerState="*res://globals/player_state.gd"
 QuestRegistry="*uid://cjkvcwlf2tiww"
 
-[filesystem]
-
-import/blender/enabled=false
 [editor]
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[filesystem]
+
+import/blender/enabled=false
 
 [importer_defaults]
 
