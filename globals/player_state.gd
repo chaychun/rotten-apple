@@ -47,9 +47,11 @@ func start_quest(quest_id: String) -> void:
 	if not QuestRegistry.get_quest(quest_id):
 		push_error("PlayerState: trying to started a quest that doesn't exist in the registry: %s" % quest_id)
 		return
+
 	if quests.get(quest_id) != QuestStatus.AVAILABLE:
 		push_error("PlayerState: quest '%s' not available to start" % quest_id)
 		return
+
 	quests[quest_id] = QuestStatus.ACTIVE
 	_reevaluate_quest(quest_id)  # inventory may already satisfy it
 	Events.quest_started.emit(quest_id)
@@ -60,9 +62,11 @@ func can_fulfill(quest_id: String) -> bool:
 	if quest == null:
 		push_error("PlayerState.can_fulfill: The quest id %s doesn't exist", quest_id)
 		return false
+
 	for animal_id in quest.requested_animals:
 		if get_count(animal_id) < quest.requested_animals[animal_id]:
 			return false
+
 	return true
 
 
@@ -70,22 +74,37 @@ func claim_quest(quest_id: String) -> bool:
 	if quests.get(quest_id) != QuestStatus.READY:
 		push_error("PlayerState.claim_Quest: quest %s is not ready to claim", quest_id)
 		return false
+
+	if not can_fulfill(quest_id):  # inventory may have changed since it went READY
+		quests[quest_id] = QuestStatus.ACTIVE
+		push_error("PlayerState.claim_quest: quest %s no longer fulfillable" % quest_id)
+		return false
+
 	var quest: QuestData = QuestRegistry.get_quest(quest_id)
 	for animal_id in quest.requested_animals:
 		inventory[animal_id] -= quest.requested_animals[animal_id]
 	quests[quest_id] = QuestStatus.DONE
 	money += quest.reward
+
 	Events.money_update.emit(money)
 	Events.quest_claimed.emit(quest_id)
+
+	# sibling READY quests may no longer be fulfillable after inventory changes
+	for other_id in quests:
+		if other_id != quest_id:
+			_reevaluate_quest(other_id)
+
 	return true
 
 
+## Sync a started quest's status to current inventory (both directions).
 func _reevaluate_quest(quest_id: String) -> void:
-	if quests.get(quest_id) != QuestStatus.ACTIVE:
-		return
-	if can_fulfill(quest_id):
+	var status: QuestStatus = quests.get(quest_id, QuestStatus.AVAILABLE)
+	if status == QuestStatus.ACTIVE and can_fulfill(quest_id):
 		quests[quest_id] = QuestStatus.READY
 		Events.quest_ready.emit(quest_id)
+	elif status == QuestStatus.READY and not can_fulfill(quest_id):
+		quests[quest_id] = QuestStatus.ACTIVE
 
 
 func _on_animal_caught(_animal_id: String) -> void:
