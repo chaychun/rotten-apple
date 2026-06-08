@@ -1,0 +1,29 @@
+globals/player_state.gd
+  s_777267bc36057f::t_245f2abeb77906 11-12
+  s_777267bc36057f::t_f3b86fbcf4e5fb 103
+  s_777267bc36057f::t_e96b71284bed4f 4-5,9-10
+  s_777267bc36057f::t_047641e40e2e15 25-26
+  ai_agent 102,119
+  s_777267bc36057f::t_18fed8ef37da56 117-118,120-122,125-159
+  s_777267bc36057f::t_ee3431a0ff5a4e 123-124
+globals/events.gd
+  s_777267bc36057f::t_1b9579b03af5c5 4
+data/quest_data.gd
+  s_777267bc36057f::t_a6e009da5a91cd 10
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "9917e9f238bff9763e8c1576cdfa2a726be512aa",
+  "prompts": {},
+  "sessions": {
+    "s_777267bc36057f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a2545db7-012b-4930-9093-25bc6e935026",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
