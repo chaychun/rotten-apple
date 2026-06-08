@@ -1,0 +1,23 @@
+globals/events.gd
+  s_775dfb46211e22::t_9bd9ddade514af 9-12
+globals/game_clock.gd
+  s_775dfb46211e22::t_89f2441e514554 1-64
+project.godot
+  s_775dfb46211e22::t_0a5b718fb57e00 24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "83d26578792b84f141584b6322907dc050926935",
+  "prompts": {},
+  "sessions": {
+    "s_775dfb46211e22": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "95f1423e-91b8-4e78-a674-1a159294186b",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
