@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dwh0lanecetv" path="res://player/placeholder/player_idle_right.png" id="3_g1dw6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rkbax"]
-radius = 0.18310547
-height = 1.0635147
+radius = 0.5048828
+height = 1.7
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g1dw6"]
 animations = [{
@@ -131,11 +131,12 @@ _data = {
 script = ExtResource("1_rkbax")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1386323075]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02464062, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36544663, 0)
 shape = SubResource("CapsuleShape3D_rkbax")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=1028634009]
-transform = Transform3D(0.23325704, 0, 0, 0, 0.23325704, 0, 0, 0, 1, 0, 0.035289347, 0)
+transform = Transform3D(0.37, 0, 0, 0, 0.37, 0, 0, 0, 0.37, 0, 0.3805539, 0)
+billboard = 2
 shaded = true
 sprite_frames = SubResource("SpriteFrames_g1dw6")
 animation = &"walk_l"
@@ -151,4 +152,3 @@ transform = Transform3D(1, 0, 0, 0, 0.7071067, 0.7071067, 0, -0.7071067, 0.70710
 [node name="Camera3D" type="Camera3D" parent="CameraController/CameraTarget" unique_id=953106081]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 doppler_tracking = 2
-current = true
