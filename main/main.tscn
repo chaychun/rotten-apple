@@ -227,6 +227,7 @@ multimesh = SubResource("MultiMesh_hifdc")
 
 [node name="Aminol" parent="." unique_id=28983913 instance=ExtResource("2_xwkvk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.25, -3)
+animal_id = "hedgehog"
 
 [node name="HQ" parent="." unique_id=1011123435 instance=ExtResource("4_c651c")]
 transform = Transform3D(0.49499997, 0, 0, 0, 0.49499997, 0, 0, 0, 0.49499997, 0, 0, -14.7)
