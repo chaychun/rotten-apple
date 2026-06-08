@@ -1,0 +1,23 @@
+globals/player_state.gd
+  s_b55ce9eaa1a4f6::t_05ee17c0887811 11-13,17,19,32,40-43,45-46,52-53,55-75,77-93
+  s_b55ce9eaa1a4f6::t_b732f91eb0b802 20-21
+  s_b55ce9eaa1a4f6::t_df454323fa686b 50-51,54
+globals/events.gd
+  s_b55ce9eaa1a4f6::t_cd99edd190899d 4-7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "e26837ba7d58277c78c01aa987ae09bbad3d5ace",
+  "prompts": {},
+  "sessions": {
+    "s_b55ce9eaa1a4f6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5aaf307b-4586-409d-a562-9a23a500a778",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
