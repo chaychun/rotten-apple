@@ -1,0 +1,35 @@
+globals/animal_registry.gd.uid
+  s_4482a750314b78::t_cc4f390a1f6820 1
+globals/animal_registry.gd
+  s_4482a750314b78::t_482a77a9af924c 1-33
+globals/player_state.gd.uid
+  s_4482a750314b78::t_cc4f390a1f6820 1
+data/animal_data.gd.uid
+  s_4482a750314b78::t_cc4f390a1f6820 1
+data/animal_data.gd
+  s_4482a750314b78::t_5ded32a122b35a 1-9
+globals/player_state.gd
+  s_4482a750314b78::t_894070b714c4fc 1-2,4-24
+globals/events.gd
+  s_4482a750314b78::t_bd9fdaf513ab26 1-3
+project.godot
+  s_4482a750314b78::t_3d2287052d10d9 18-23
+globals/events.gd.uid
+  s_4482a750314b78::t_cc4f390a1f6820 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "3aa0af0fcccd279b9755c9173a31a373ab626049",
+  "prompts": {},
+  "sessions": {
+    "s_4482a750314b78": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "273158d0-3ccc-472f-b927-3c64ca1c1473",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
