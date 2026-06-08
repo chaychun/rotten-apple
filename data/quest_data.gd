@@ -7,3 +7,4 @@ extends Resource
 @export var reward: int
 @export var description: String
 @export var posted_by: String
+@export var prerequisites: Array[String] # quest ids that must be DONE before this can reach the board
