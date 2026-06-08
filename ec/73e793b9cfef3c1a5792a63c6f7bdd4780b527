@@ -1,0 +1,24 @@
+animal/animal.tscn
+  s_5845e2528ed32a::t_e52bab85a28633 3
+  s_5845e2528ed32a::t_0f6d8ec61eff9b 18
+animal/animal.gd
+  s_5845e2528ed32a::t_b6dbdfb02da6e1 1-26
+main/main.tscn
+  s_5845e2528ed32a::t_c682a91e770e4e 230
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "ec73e793b9cfef3c1a5792a63c6f7bdd4780b527",
+  "prompts": {},
+  "sessions": {
+    "s_5845e2528ed32a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c543c366-0909-4bfa-a7e4-a657e942fb7e",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
