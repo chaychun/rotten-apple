@@ -1,15 +1,22 @@
 [gd_resource type="Resource" script_class="QuestData" format=3 uid="uid://cc2s1mj5bhp45"]
 
 [ext_resource type="Script" uid="uid://xg6rrpcfkd7" path="res://data/quest_data.gd" id="1_3tryv"]
+[ext_resource type="Script" uid="uid://cwogmrcc8t8ky" path="res://data/quest_requirement.gd" id="2_req"]
+
+[sub_resource type="Resource" id="Req_catfish"]
+script = ExtResource("2_req")
+animal_id = "catfish"
+amount = 2
+
+[sub_resource type="Resource" id="Req_hedgehog"]
+script = ExtResource("2_req")
+animal_id = "hedgehog"
 
 [resource]
 script = ExtResource("1_3tryv")
 id = "test_quest"
 quest_name = "Test quest"
-requested_animals = Dictionary[String, int]({
-"catfish": 1,
-"hedgehog": 2
-})
+requirements = Array[ExtResource("2_req")]([SubResource("Req_catfish"), SubResource("Req_hedgehog")])
 reward = 50
 description = "Bring me 2 catfish and a hedgehog. Don't ask why."
 posted_by = "Steve"
