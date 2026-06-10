@@ -1,0 +1,66 @@
+globals/quest_progress.gd.uid
+  s_775dfb46211e22::t_8bfeafecb610e4 1
+globals/quest_progress.gd
+  s_775dfb46211e22::t_24e72b9d1ec595 1-3,9-12
+  s_8375deddc581f8::t_45aedc41ca3f6e 4-8
+globals/player_state.gd
+  s_8375deddc581f8::t_3fc547c03d15f5 225
+  s_775dfb46211e22::t_600871869be4d3 4,10,13,25,27,52-57,60,64-66,71-76,82-87,89-90,93,95-97,103,105,109-110,112-113,115,128-130,133,135-136,139-147,167,169,223,226-237,239,241-243
+  s_8375deddc581f8::t_a807e3199633fc 11-12,45-46,116,121,131-132
+  s_8375deddc581f8::t_d20af361a7c9d5 6-9,17,26,51,79-81,88,98-101,104,134,152-153,156-159,162-165,168,170-220
+  s_8375deddc581f8::t_c10454c177ca78 108,111,114,117-118,122-124
+  s_8375deddc581f8::t_c012e7d44e2bf3 238
+data/quest_requirement.gd.uid
+  s_775dfb46211e22::t_8bfeafecb610e4 1
+globals/mailbox.gd
+  s_775dfb46211e22::t_389053d12db597 1-36,38-40
+  s_8375deddc581f8::t_5be3942cca3f09 37,41
+globals/quest_status.gd
+  s_8375deddc581f8::t_8d92ac07e0d99f 1-2
+  s_8375deddc581f8::t_62938a2f011dcd 4-10
+data/mail_data.gd.uid
+  s_775dfb46211e22::t_8bfeafecb610e4 1
+data/quests/test_quest.tres
+  s_775dfb46211e22::t_381c6ecfcf0106 6-7,9-12
+  s_8375deddc581f8::t_95377f3db93d33 8,13
+globals/mailbox.gd.uid
+  s_775dfb46211e22::t_8bfeafecb610e4 1
+globals/carry_reason.gd
+  s_8375deddc581f8::t_a3d0fb78a5f968 1-5
+data/quest_requirement.gd
+  s_775dfb46211e22::t_924cc30e4216cc 1-3,5,7
+  s_8375deddc581f8::t_3f14d6785474e4 4
+  s_8375deddc581f8::t_6fb50e6c73618a 6
+globals/events.gd
+  s_8375deddc581f8::t_3f14d6785474e4 8-9,11-14
+  s_8375deddc581f8::t_11f8e701c2aaf4 7,10
+  s_775dfb46211e22::t_881a6736aa3801 15-18
+project.godot
+  s_8375deddc581f8::t_00c5518a0f5cb1 20-21,23-25
+data/mail_data.gd
+  s_775dfb46211e22::t_c3bb59519b4f75 1-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "89b379a35eff4c94055c762daaccc6aa837dcb7b",
+  "prompts": {},
+  "sessions": {
+    "s_775dfb46211e22": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "95f1423e-91b8-4e78-a674-1a159294186b",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    },
+    "s_8375deddc581f8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "da9feabf-ffc2-4e75-a134-fd405539ed46",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
