@@ -1,0 +1,27 @@
+globals/spawn_condition.gd
+  s_ad969dce8779a9::t_37a5ccabfd668b 1-11
+project.godot
+  s_ad969dce8779a9::t_2aa46defe397f9 26
+globals/spawn_gate.gd.uid
+  s_ad969dce8779a9::t_4e4fc9f003d237 1
+globals/spawn_gate.gd
+  s_ad969dce8779a9::t_a7cff470c1a044 1-46
+globals/spawn_condition.gd.uid
+  s_ad969dce8779a9::t_4e4fc9f003d237 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "4741f28a20bf6f6cb3f62768b49780babbb6866b",
+  "prompts": {},
+  "sessions": {
+    "s_ad969dce8779a9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "eed7e959-eb40-4ad5-adcb-ec474b03155d",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
