@@ -1,0 +1,60 @@
+globals/carry_reason.gd
+  s_8375deddc581f8::t_1b5eb817ed5817 4
+data/animals/catfish_false.tres
+  s_8375deddc581f8::t_4a987d42e272c8 1,3
+  s_8375deddc581f8::t_29c386e0d884e2 8-9
+  s_8375deddc581f8::t_cfe393e0b4576e 2,4-7,10-13
+data/animals/catfish.tres
+  s_8375deddc581f8::t_be774c769a7407 8-9
+data/submission_entry.gd.uid
+  s_8375deddc581f8::t_060b8eba966a0c 1
+data/submission_entry.gd
+  s_8375deddc581f8::t_eb7af8eb09df87 1-3,5-15
+data/quest_requirement.gd
+  s_8375deddc581f8::t_7ca92657d5fe74 4,8
+  s_8375deddc581f8::t_098ecb0c21897b 6
+data/animals/hedgehog_false.tres
+  s_8375deddc581f8::t_989b49b101c515 2,4-7,10-11
+  s_8375deddc581f8::t_c080c959d991af 8-9
+  s_8375deddc581f8::t_890766a45f2243 1,3
+data/quests/test_quest.tres
+  s_8375deddc581f8::t_fda759570a5468 13
+  s_8375deddc581f8::t_cfb274e0565f08 8
+globals/animal_registry.gd
+  s_8375deddc581f8::t_3c379e3df0b697 57-65
+  s_8375deddc581f8::t_2a7e8beec16d5f 24-33,39-42,44-46
+  s_8375deddc581f8::t_7fea2b1d9cd1d8 34-36,38,43
+data/animal_data.gd
+  s_8375deddc581f8::t_819c6dfa8268b3 6
+globals/quest_progress.gd
+  s_8375deddc581f8::t_68c564ce3dd5e7 7
+data/animals/hedgehog.tres
+  s_8375deddc581f8::t_761df29d4ce6f2 8-9
+globals/player_state.gd
+  s_8375deddc581f8::t_b8f95e6d8f5876 115-116,146,148
+  s_8375deddc581f8::t_1e47153855ad47 211
+  s_8375deddc581f8::t_85e682e0669c01 208-209
+  s_8375deddc581f8::t_e56f27100b79d2 206,210,212-214
+  s_8375deddc581f8::t_8eb15c7d3c88db 120,139
+  s_8375deddc581f8::t_d9cc5143afecbe 215-216,229-230,234
+  s_8375deddc581f8::t_5dfbfb1aff83ac 207
+  s_8375deddc581f8::t_a3eb6d972baea4 195-199,202
+  s_8375deddc581f8::t_5235ed2bdca42e 110,135
+  s_8375deddc581f8::t_34ca1a9ead791c 108,111,121,123-134,136-138,140-141,145,152-155
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "5f4a821d2bbebf230ba0dbeb8d0a7f87a11e1b4a",
+  "prompts": {},
+  "sessions": {
+    "s_8375deddc581f8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "da9feabf-ffc2-4e75-a134-fd405539ed46",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
