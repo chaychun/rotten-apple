@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="AnimalData" format=3 uid="uid://ci14hcukgx88v"]
+[gd_resource type="Resource" script_class="AnimalData" format=3 uid="uid://d2yhev8n2ih8j"]
 
 [ext_resource type="Script" uid="uid://cdbg03iul7ysx" path="res://data/animal_data.gd" id="1_jrw58"]
 
 [resource]
 script = ExtResource("1_jrw58")
-id = "hedgehog"
+id = "hedgehog_false"
 species = "Hedgehog"
-is_real = true
+is_real = false
 rarity = 2
 metadata/_custom_type_script = "uid://cdbg03iul7ysx"

@@ -17,11 +17,12 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Events="*res://globals/events.gd"
-AnimalRegistry="*res://globals/animal_registry.gd"
-PlayerState="*res://globals/player_state.gd"
+Events="*uid://ccwvkvpx3mybs"
+AnimalRegistry="*uid://dc00qtmep6t8q"
 QuestRegistry="*uid://cjkvcwlf2tiww"
-GameClock="*res://globals/game_clock.gd"
+PlayerState="*uid://bgaxmq0ybitwr"
+Mailbox="*uid://cn02k4on3w3cg"
+GameClock="*uid://bye3kicwjdeep"
 
 [editor]
 
