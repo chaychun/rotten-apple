@@ -1,0 +1,25 @@
+tests/animal_smoke.tscn
+  s_ad969dce8779a9::t_b46d4a9452b9bb 1-6
+tests/animal_smoke.gd
+  s_ad969dce8779a9::t_c818240187e9e9 1-24,26-147,149-171
+  s_ad969dce8779a9::t_c7b2ce2e6dc3b4 25
+  s_ad969dce8779a9::t_ec9bc98718b772 148
+tests/animal_smoke.gd.uid
+  s_ad969dce8779a9::t_1008973111689e 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "1f4cb7b6806788e46575cedb8435f02897e0cd30",
+  "prompts": {},
+  "sessions": {
+    "s_ad969dce8779a9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "eed7e959-eb40-4ad5-adcb-ec474b03155d",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
