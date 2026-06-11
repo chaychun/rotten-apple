@@ -1,0 +1,37 @@
+data/animals/hedgehog.tres
+  s_ad969dce8779a9::t_ed7431dcd8692b 1,4-6,14-16
+data/animals/hedgehog_false.tres
+  s_ad969dce8779a9::t_9c1039c23e5e04 1,4-6,14-16
+data/behaviors/village_lurker.tres
+  s_ad969dce8779a9::t_f7020bfdc7eec2 1-15
+data/animal_data.gd
+  s_ad969dce8779a9::t_ffa63a88136d52 10-13
+data/behavior_profile.gd
+  s_ad969dce8779a9::t_a0461e679d8d25 1-18
+data/behavior_profile.gd.uid
+  s_ad969dce8779a9::t_d2f4628fc5574c 1
+data/behaviors/pond_swimmer.tres
+  s_ad969dce8779a9::t_73d8f90aa8f7e8 1-15
+data/animals/catfish.tres
+  s_ad969dce8779a9::t_c9fe0448fd08e6 1,4-6,14-16
+data/animals/catfish_false.tres
+  s_ad969dce8779a9::t_b4fef1fcfc6685 1,4-6,14-16
+data/behaviors/calm_forager.tres
+  s_ad969dce8779a9::t_05d6d045cf07be 1-15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "494b902bc97b90c1eed0be4a30ce5df28bf131bb",
+  "prompts": {},
+  "sessions": {
+    "s_ad969dce8779a9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "eed7e959-eb40-4ad5-adcb-ec474b03155d",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
