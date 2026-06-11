@@ -1,0 +1,27 @@
+animal/spawn_zone.gd
+  s_ad969dce8779a9::t_b7d23cf5e97331 1-148
+data/spawn_entry.gd
+  s_ad969dce8779a9::t_3bb0e2322ab756 1-11
+animal/spawn_zone.gd.uid
+  s_ad969dce8779a9::t_63a7fe4e4d3ba0 1
+data/spawn_entry.gd.uid
+  s_ad969dce8779a9::t_63a7fe4e4d3ba0 1
+animal/spawn_zone.tscn
+  s_ad969dce8779a9::t_0d74781c5a6037 1-12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "32b066f27aaf6fb16191dfd62512104e2ea40371",
+  "prompts": {},
+  "sessions": {
+    "s_ad969dce8779a9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "eed7e959-eb40-4ad5-adcb-ec474b03155d",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
