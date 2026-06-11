@@ -5,12 +5,12 @@
 
 [sub_resource type="Resource" id="Req_catfish"]
 script = ExtResource("2_req")
-animal_id = "catfish"
+species = "Catfish"
 amount = 2
 
 [sub_resource type="Resource" id="Req_hedgehog"]
 script = ExtResource("2_req")
-animal_id = "hedgehog"
+species = "Hedgehog"
 
 [resource]
 script = ExtResource("1_3tryv")

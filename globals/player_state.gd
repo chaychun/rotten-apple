@@ -105,31 +105,54 @@ func accept_quest(quest_id: String) -> void:
 	Events.quest_accepted.emit(quest_id)
 
 
-func can_submit(quest_id: String) -> Dictionary:
+# Offering is Array[SubmissionEntry]. Returns { ok: bool, reason: String }.
+# Guards the offering's shape, not real/fake. Correctness judged next morning.
+# Frontend should build offering to match the requirement's shape, else this rejects it.
+func can_submit(quest_id: String, offering: Array[SubmissionEntry]) -> Dictionary:
 	var p: QuestProgress = quests.get(quest_id)
 	if p == null or p.status != QuestStatus.ACTIVE:
 		return {"ok": false, "reason": "Quest is not active"}
+	if offering.is_empty():
+		return {"ok": false, "reason": "Nothing selected to submit"}
 	var quest: QuestData = QuestRegistry.get_quest(quest_id)
 	if quest == null:
 		return {"ok": false, "reason": "Unknown quest"}
+
+	var required: Dictionary[String, QuestRequirement] = {}
 	for req: QuestRequirement in quest.requirements:
-		if get_count(req.animal_id) < req.amount:
-			return {"ok": false, "reason": "Not enough %s" % req.animal_id}
+		required[req.species] = req
+
+	var seen: Dictionary[String, bool] = {}
+	for entry: SubmissionEntry in offering:
+		if entry.species not in required:
+			return {"ok": false, "reason": "This quest doesn't want %s" % entry.species}
+		if entry.species in seen:
+			return {"ok": false, "reason": "Duplicate %s line" % entry.species}
+		seen[entry.species] = true
+		if entry.amount != required[entry.species].amount:
+			return {"ok": false, "reason": "Wrong amount of %s" % entry.species}
+		var a: AnimalData = AnimalRegistry.get_variant(entry.species, entry.is_real)
+		if a == null:
+			return {"ok": false, "reason": "No such %s" % entry.species}
+		if get_count(a.id) < entry.amount:
+			return {"ok": false, "reason": "Not enough %s" % entry.species}
+
+	if seen.size() != required.size():
+		return {"ok": false, "reason": "Missing required animals"}
 	return {"ok": true, "reason": ""}
 
 
-func submit_quest(quest_id: String) -> bool:
-	var check := can_submit(quest_id)
+func submit_quest(quest_id: String, offering: Array[SubmissionEntry]) -> bool:
+	var check := can_submit(quest_id, offering)
 	if not check.ok:
-		push_error("PlayerState.submit_quest: '%s' cannot be fulfilled. %s" % [quest_id, check.reason])
+		push_error("PlayerState.submit_quest: '%s' cannot be submitted. %s" % [quest_id, check.reason])
 		return false
 
-	var quest: QuestData = QuestRegistry.get_quest(quest_id)
 	var p: QuestProgress = quests[quest_id]
-	p.submitted = {}
-	for req: QuestRequirement in quest.requirements:
-		inventory[req.animal_id] -= req.amount
-		p.submitted[req.animal_id] = req.amount
+	for entry: SubmissionEntry in offering:
+		var a: AnimalData = AnimalRegistry.get_variant(entry.species, entry.is_real)
+		inventory[a.id] -= entry.amount
+	p.submitted = offering
 
 	p.status = QuestStatus.SUBMITTED
 	Events.quest_submitted.emit(quest_id)
@@ -169,10 +192,28 @@ func _evaluate(day: int) -> void:
 			continue
 		match p.status:
 			QuestStatus.SUBMITTED:
-				_queue_reward(quest_id, p)
+				var quest: QuestData = QuestRegistry.get_quest(quest_id)
+				if quest and _submission_correct(quest, p.submitted):
+					_queue_reward(quest_id, p)
+				else:
+					_queue_failure(quest_id, p, day, CarryReason.WRONG_ORDER)
 			QuestStatus.MAILED, QuestStatus.ACTIVE:
 				# never read + never submitted = failure/retry
-				_queue_failure(quest_id, p, day)
+				_queue_failure(quest_id, p, day, CarryReason.NOT_SUBMITTED)
+
+
+# can_submit guarantees species shape and amount. Only check real/fake.
+func _submission_correct(quest: QuestData, submitted: Array[SubmissionEntry]) -> bool:
+	# Defensive: submitted = [] would return true otherwise, unreachable in practice, blocked by can_submit
+	if submitted.size() != quest.requirements.size():
+		return false
+	var wants: Dictionary[String, bool] = {}
+	for req: QuestRequirement in quest.requirements:
+		wants[req.species] = req.wants_real
+	for entry: SubmissionEntry in submitted:
+		if entry.species not in wants or entry.is_real != wants[entry.species]:
+			return false
+	return true
 
 
 func _queue_reward(quest_id: String, p: QuestProgress) -> void:
@@ -185,12 +226,12 @@ func _queue_reward(quest_id: String, p: QuestProgress) -> void:
 	_pending_mail.append(mail)
 
 
-func _queue_failure(quest_id: String, p: QuestProgress, day: int) -> void:
-	# A first miss can't carry over after MAZX_QUEST_DAY
+func _queue_failure(quest_id: String, p: QuestProgress, day: int, reason: int) -> void:
+	# A first miss can't carry over after MAX_QUEST_DAY
 	var can_retry := p.attempts == 0 and day < MAX_QUEST_DAY
 	var mail := MailData.new()
 	mail.quest_id = quest_id
-	mail.reason = CarryReason.NOT_SUBMITTED
+	mail.reason = reason
 	mail.type = MailData.MailType.RETRY if can_retry else MailData.MailType.COMPLAINT
 	p.feedback_sent = true
 	_pending_mail.append(mail)
