@@ -1,0 +1,23 @@
+animal/real/animal.gd
+  s_ad969dce8779a9::t_733352a8a837b4 2-17,21-28,30-39,43-44,46-100,102-149,152-235,237,243-244,246-285
+player/player.tscn
+  s_ad969dce8779a9::t_a9cef7cd6e328c 130
+animal/real/animal.tscn
+  s_ad969dce8779a9::t_f57fc1b3a1f1e3 1,6,8,11-12,15-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "6649d0ca17267f1ea6915c2d048287a9e6fa3a39",
+  "prompts": {},
+  "sessions": {
+    "s_ad969dce8779a9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "eed7e959-eb40-4ad5-adcb-ec474b03155d",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
