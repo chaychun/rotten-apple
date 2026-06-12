@@ -138,6 +138,7 @@ shape = SubResource("CapsuleShape3D_rkbax")
 transform = Transform3D(0.37, 0, 0, 0, 0.37, 0, 0, 0, 0.37, 0, 0.3805539, 0)
 billboard = 2
 shaded = true
+render_priority = 100
 sprite_frames = SubResource("SpriteFrames_g1dw6")
 animation = &"walk_l"
 

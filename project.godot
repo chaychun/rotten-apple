@@ -24,6 +24,11 @@ PlayerState="*uid://bgaxmq0ybitwr"
 Mailbox="*uid://cn02k4on3w3cg"
 GameClock="*uid://bye3kicwjdeep"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
@@ -32,6 +37,10 @@ version_control/autoload_on_startup=true
 [filesystem]
 
 import/blender/enabled=false
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
 
 [importer_defaults]
 

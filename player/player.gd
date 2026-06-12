@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var speed = 4
+@export var speed = 15
 @export var gravity = 15
 @onready var camera_controller: Node3D = $"../CameraController"
 @onready var _animation_player = $AnimationPlayer
