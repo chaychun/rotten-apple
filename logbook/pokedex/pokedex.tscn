@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dxla7yhooqck1"]
 
 [ext_resource type="Script" uid="uid://tkfp0uourr77" path="res://logbook/pokedex/left_page.gd" id="1_gmm3t"]
-[ext_resource type="Texture2D" uid="uid://g6c0mh1ln6xo" path="res://animal/real/sprite/animal_butterfly_2.png" id="2_djy6t"]
 [ext_resource type="Script" uid="uid://d03vyffmpgo3s" path="res://logbook/pokedex/right_page.gd" id="3_lr3la"]
 [ext_resource type="Texture2D" uid="uid://bes6mk85c6oa7" path="res://player/placeholder/player_idle_left.png" id="4_6s4dj"]
 [ext_resource type="Texture2D" uid="uid://b2r58y3um47bu" path="res://utility/icon_star.png" id="5_0x5su"]
@@ -97,449 +96,91 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_w1syn")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1097003527]
 layout_mode = 2
-theme_override_constants/margin_left = 68
+theme_override_constants/margin_left = 67
 theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 30
+theme_override_constants/margin_right = 67
 theme_override_constants/margin_bottom = 50
 
-[node name="Page" type="HBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1048329314]
+[node name="Pokedex" type="Control" parent="PanelContainer/MarginContainer" unique_id=1528536697]
+visible = false
 layout_mode = 2
-theme_override_constants/separation = 89
+
+[node name="Page" type="HBoxContainer" parent="PanelContainer/MarginContainer/Pokedex" unique_id=1048329314]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -474.0
+offset_top = -307.5
+offset_right = 474.0
+offset_bottom = 307.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 130
 alignment = 1
 
-[node name="LeftPage" type="VBoxContainer" parent="PanelContainer/MarginContainer/Page" unique_id=962141528 node_paths=PackedStringArray("animal_list")]
+[node name="LeftPage" type="VBoxContainer" parent="PanelContainer/MarginContainer/Pokedex/Page" unique_id=962141528 node_paths=PackedStringArray("animal_list")]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_constants/separation = 50
+theme_override_constants/separation = 10
 script = ExtResource("1_gmm3t")
 animal_list = NodePath("ScrollContainer/VBoxContainer2")
 
-[node name="ListHeader" type="VBoxContainer" parent="PanelContainer/MarginContainer/Page/LeftPage" unique_id=1933769773]
+[node name="ListHeader" type="VBoxContainer" parent="PanelContainer/MarginContainer/Pokedex/Page/LeftPage" unique_id=1933769773]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/Page/LeftPage/ListHeader" unique_id=2001019046]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/Pokedex/Page/LeftPage/ListHeader" unique_id=2001019046]
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Page/LeftPage/ListHeader/HBoxContainer" unique_id=474154195]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Pokedex/Page/LeftPage/ListHeader/HBoxContainer" unique_id=474154195]
 layout_mode = 2
 text = "Animals                       "
 label_settings = SubResource("LabelSettings_vpmux")
 vertical_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/Page/LeftPage" unique_id=1043077632]
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/Pokedex/Page/LeftPage" unique_id=1043077632]
 custom_minimum_size = Vector2(396, 550)
 layout_mode = 2
 draw_focus_border = true
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer" unique_id=2064248507 node_paths=PackedStringArray("shortcut_context")]
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/Pokedex/Page/LeftPage/ScrollContainer" unique_id=2064248507 node_paths=PackedStringArray("shortcut_context")]
 layout_mode = 2
 shortcut_context = NodePath("")
 theme_override_constants/separation = 9
 
-[node name="Animal1" type="Button" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2" unique_id=1610152742]
+[node name="Animal1" type="Button" parent="PanelContainer/MarginContainer/Pokedex/Page/LeftPage/ScrollContainer/VBoxContainer2" unique_id=1610152742]
 custom_minimum_size = Vector2(360, 70)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_gmm3t")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal1" unique_id=549868010]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Pokedex/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal1" unique_id=497922027]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -179.8075
-offset_top = -40.0
-offset_right = 181.1925
-offset_bottom = 40.0
+offset_left = -63.5
+offset_top = -20.9375
+offset_right = 63.5
+offset_bottom = 20.9375
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 54
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal1/HBoxContainer" unique_id=1345824172]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("2_djy6t")
-expand_mode = 1
-flip_h = true
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal1/HBoxContainer" unique_id=497922027]
-layout_mode = 2
 size_flags_horizontal = 4
 text = "Animal 1"
 label_settings = SubResource("LabelSettings_xm5ha")
 vertical_alignment = 1
 
-[node name="Animal2" type="Button" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2" unique_id=1808864541]
-self_modulate = Color(0.7058824, 0.5764706, 0.5254902, 1)
-custom_minimum_size = Vector2(360, 70)
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal2" unique_id=2061304948]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -179.8075
-offset_top = -40.0
-offset_right = 181.1925
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 54
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal2/HBoxContainer" unique_id=1001077885]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("2_djy6t")
-expand_mode = 1
-flip_h = true
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal2/HBoxContainer" unique_id=390397677]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Animal 1"
-label_settings = SubResource("LabelSettings_xm5ha")
-vertical_alignment = 1
-
-[node name="Animal3" type="Button" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2" unique_id=1925333952]
-self_modulate = Color(0.7058824, 0.5764706, 0.5254902, 1)
-custom_minimum_size = Vector2(360, 70)
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal3" unique_id=1186141768]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -179.8075
-offset_top = -40.0
-offset_right = 181.1925
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 54
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal3/HBoxContainer" unique_id=1539887581]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("2_djy6t")
-expand_mode = 1
-flip_h = true
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal3/HBoxContainer" unique_id=1877910905]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Animal 1"
-label_settings = SubResource("LabelSettings_xm5ha")
-vertical_alignment = 1
-
-[node name="Animal4" type="Button" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2" unique_id=1066279016]
-self_modulate = Color(0.7058824, 0.5764706, 0.5254902, 1)
-custom_minimum_size = Vector2(360, 70)
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal4" unique_id=1122836998]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -179.8075
-offset_top = -40.0
-offset_right = 181.1925
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 54
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal4/HBoxContainer" unique_id=252189335]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("2_djy6t")
-expand_mode = 1
-flip_h = true
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal4/HBoxContainer" unique_id=217764088]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Animal 1"
-label_settings = SubResource("LabelSettings_xm5ha")
-vertical_alignment = 1
-
-[node name="Animal5" type="Button" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2" unique_id=1836898711]
-self_modulate = Color(0.7058824, 0.5764706, 0.5254902, 1)
-custom_minimum_size = Vector2(360, 70)
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal5" unique_id=97541538]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -179.8075
-offset_top = -40.0
-offset_right = 181.1925
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 54
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal5/HBoxContainer" unique_id=1123344183]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("2_djy6t")
-expand_mode = 1
-flip_h = true
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal5/HBoxContainer" unique_id=1119540338]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Animal 1"
-label_settings = SubResource("LabelSettings_xm5ha")
-vertical_alignment = 1
-
-[node name="Animal6" type="Button" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2" unique_id=2051201253]
-self_modulate = Color(0.7058824, 0.5764706, 0.5254902, 1)
-custom_minimum_size = Vector2(360, 70)
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal6" unique_id=1024319225]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -179.8075
-offset_top = -40.0
-offset_right = 181.1925
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 54
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal6/HBoxContainer" unique_id=979644697]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("2_djy6t")
-expand_mode = 1
-flip_h = true
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal6/HBoxContainer" unique_id=1430894257]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Animal 1"
-label_settings = SubResource("LabelSettings_xm5ha")
-vertical_alignment = 1
-
-[node name="Animal7" type="Button" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2" unique_id=740688853]
-self_modulate = Color(0.7058824, 0.5764706, 0.5254902, 1)
-custom_minimum_size = Vector2(360, 70)
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal7" unique_id=2107191703]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -179.8075
-offset_top = -40.0
-offset_right = 181.1925
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 54
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal7/HBoxContainer" unique_id=1019559775]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("2_djy6t")
-expand_mode = 1
-flip_h = true
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal7/HBoxContainer" unique_id=1897069898]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Animal 1"
-label_settings = SubResource("LabelSettings_xm5ha")
-vertical_alignment = 1
-
-[node name="Animal8" type="Button" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2" unique_id=1810240069]
-self_modulate = Color(0.7058824, 0.5764706, 0.5254902, 1)
-custom_minimum_size = Vector2(360, 70)
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal8" unique_id=659704802]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -179.8075
-offset_top = -40.0
-offset_right = 181.1925
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 54
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal8/HBoxContainer" unique_id=214630346]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("2_djy6t")
-expand_mode = 1
-flip_h = true
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal8/HBoxContainer" unique_id=1241351573]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Animal 1"
-label_settings = SubResource("LabelSettings_xm5ha")
-vertical_alignment = 1
-
-[node name="Animal9" type="Button" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2" unique_id=940913527]
-self_modulate = Color(0.7058824, 0.5764706, 0.5254902, 1)
-custom_minimum_size = Vector2(360, 70)
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal9" unique_id=1108999164]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -179.8075
-offset_top = -40.0
-offset_right = 181.1925
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 54
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal9/HBoxContainer" unique_id=1661445367]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("2_djy6t")
-expand_mode = 1
-flip_h = true
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal9/HBoxContainer" unique_id=615765259]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Animal 1"
-label_settings = SubResource("LabelSettings_xm5ha")
-vertical_alignment = 1
-
-[node name="Animal10" type="Button" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2" unique_id=1182504813]
-self_modulate = Color(0.7058824, 0.5764706, 0.5254902, 1)
-custom_minimum_size = Vector2(360, 70)
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal10" unique_id=743075795]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -179.8075
-offset_top = -40.0
-offset_right = 181.1925
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 54
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal10/HBoxContainer" unique_id=1720741788]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("2_djy6t")
-expand_mode = 1
-flip_h = true
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal10/HBoxContainer" unique_id=1155147872]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Animal 1"
-label_settings = SubResource("LabelSettings_xm5ha")
-vertical_alignment = 1
-
-[node name="Animal11" type="Button" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2" unique_id=1958064386]
-self_modulate = Color(0.7058824, 0.5764706, 0.5254902, 1)
-custom_minimum_size = Vector2(360, 70)
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal11" unique_id=1888735894]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -179.8075
-offset_top = -40.0
-offset_right = 181.1925
-offset_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 54
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal11/HBoxContainer" unique_id=1171884105]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("2_djy6t")
-expand_mode = 1
-flip_h = true
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal11/HBoxContainer" unique_id=1587014256]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Animal 1"
-label_settings = SubResource("LabelSettings_xm5ha")
-vertical_alignment = 1
-
-[node name="RightPage" type="VBoxContainer" parent="PanelContainer/MarginContainer/Page" unique_id=280248630]
+[node name="RightPage" type="VBoxContainer" parent="PanelContainer/MarginContainer/Pokedex/Page" unique_id=280248630]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 script = ExtResource("3_lr3la")
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/Page/RightPage" unique_id=936639518]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/Pokedex/Page/RightPage" unique_id=936639518]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -547,22 +188,22 @@ size_flags_vertical = 4
 texture = ExtResource("4_6s4dj")
 expand_mode = 1
 
-[node name="Rarity" type="HBoxContainer" parent="PanelContainer/MarginContainer/Page/RightPage" unique_id=171743251]
+[node name="Rarity" type="HBoxContainer" parent="PanelContainer/MarginContainer/Pokedex/Page/RightPage" unique_id=171743251]
 layout_mode = 2
 theme_override_constants/separation = 70
 
-[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/Page/RightPage/Rarity" unique_id=698387282]
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/Pokedex/Page/RightPage/Rarity" unique_id=698387282]
 layout_mode = 2
 text = "Rarity"
 label_settings = SubResource("LabelSettings_w1syn")
 
-[node name="Star" type="HBoxContainer" parent="PanelContainer/MarginContainer/Page/RightPage/Rarity" unique_id=153146545]
+[node name="Star" type="HBoxContainer" parent="PanelContainer/MarginContainer/Pokedex/Page/RightPage/Rarity" unique_id=153146545]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
 metadata/_edit_group_ = true
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/Page/RightPage/Rarity/Star" unique_id=1442276767]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/Pokedex/Page/RightPage/Rarity/Star" unique_id=1442276767]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -570,7 +211,7 @@ size_flags_vertical = 4
 texture = ExtResource("5_0x5su")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="PanelContainer/MarginContainer/Page/RightPage/Rarity/Star" unique_id=1406472796]
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/MarginContainer/Pokedex/Page/RightPage/Rarity/Star" unique_id=1406472796]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -578,7 +219,7 @@ size_flags_vertical = 4
 texture = ExtResource("5_0x5su")
 expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="PanelContainer/MarginContainer/Page/RightPage/Rarity/Star" unique_id=913110034]
+[node name="TextureRect3" type="TextureRect" parent="PanelContainer/MarginContainer/Pokedex/Page/RightPage/Rarity/Star" unique_id=913110034]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -586,7 +227,7 @@ size_flags_vertical = 4
 texture = ExtResource("5_0x5su")
 expand_mode = 1
 
-[node name="TextureRect4" type="TextureRect" parent="PanelContainer/MarginContainer/Page/RightPage/Rarity/Star" unique_id=1439961728]
+[node name="TextureRect4" type="TextureRect" parent="PanelContainer/MarginContainer/Pokedex/Page/RightPage/Rarity/Star" unique_id=1439961728]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -594,7 +235,7 @@ size_flags_vertical = 4
 texture = ExtResource("5_0x5su")
 expand_mode = 1
 
-[node name="TextureRect5" type="TextureRect" parent="PanelContainer/MarginContainer/Page/RightPage/Rarity/Star" unique_id=1509585652]
+[node name="TextureRect5" type="TextureRect" parent="PanelContainer/MarginContainer/Pokedex/Page/RightPage/Rarity/Star" unique_id=1509585652]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -602,18 +243,18 @@ size_flags_vertical = 4
 texture = ExtResource("5_0x5su")
 expand_mode = 1
 
-[node name="Description" type="VBoxContainer" parent="PanelContainer/MarginContainer/Page/RightPage" unique_id=1576906665]
+[node name="Description" type="VBoxContainer" parent="PanelContainer/MarginContainer/Pokedex/Page/RightPage" unique_id=1576906665]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 20
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Page/RightPage/Description" unique_id=545788485]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Pokedex/Page/RightPage/Description" unique_id=545788485]
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Description"
 label_settings = SubResource("LabelSettings_wwcpx")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/Page/RightPage/Description" unique_id=569880801]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/Pokedex/Page/RightPage/Description" unique_id=569880801]
 custom_minimum_size = Vector2(400, 238.04)
 layout_mode = 2
 theme = SubResource("Theme_w1syn")
@@ -622,14 +263,93 @@ bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse egestas, quam vulputate finibus convallis, nisl ligula hendrerit elit, eget venenatis elit leo eget lorem. Curabitur in rutrum mi, et bibendum risus. Proin ullamcorper egestas ultrices. Suspendisse pretium rhoncus magna vel laoreet. Maecenas tempor purus vel tellus accumsan vulputate. In urna tellus, accumsan eget imperdiet eu, tempor a sapien. Aenean eu nisi sed urna dignissim porttitor. Etiam rutrum mollis egestas. Vestibulum vulputate tristique elit nec auctor. Nullam ut enim velit. Etiam eros mi, luctus id libero quis, rutrum sollicitudin lectus. Integer at molestie magna. Proin non mollis sem. Vestibulum mauris dui, fermentum sit amet felis nec, vehicula suscipit orci. Nullam arcu risus, blandit et malesuada id, vulputate eget mauris. Phasellus laoreet fringilla metus porttitor viverra."
 horizontal_alignment = 3
 
-[connection signal="pressed" from="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal1" to="PanelContainer/MarginContainer/Page/RightPage" method="_on_animal_1_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal2" to="PanelContainer/MarginContainer/Page/RightPage" method="_on_animal_1_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal3" to="PanelContainer/MarginContainer/Page/RightPage" method="_on_animal_1_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal4" to="PanelContainer/MarginContainer/Page/RightPage" method="_on_animal_1_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal5" to="PanelContainer/MarginContainer/Page/RightPage" method="_on_animal_1_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal6" to="PanelContainer/MarginContainer/Page/RightPage" method="_on_animal_1_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal7" to="PanelContainer/MarginContainer/Page/RightPage" method="_on_animal_1_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal8" to="PanelContainer/MarginContainer/Page/RightPage" method="_on_animal_1_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal9" to="PanelContainer/MarginContainer/Page/RightPage" method="_on_animal_1_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal10" to="PanelContainer/MarginContainer/Page/RightPage" method="_on_animal_1_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal11" to="PanelContainer/MarginContainer/Page/RightPage" method="_on_animal_1_pressed"]
+[node name="QuestLetter" type="Control" parent="PanelContainer/MarginContainer" unique_id=2036139341]
+layout_mode = 2
+
+[node name="Page" type="HBoxContainer" parent="PanelContainer/MarginContainer/QuestLetter" unique_id=883734967]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -474.0
+offset_top = -307.5
+offset_right = 474.0
+offset_bottom = 307.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 130
+alignment = 1
+
+[node name="LeftPage" type="VBoxContainer" parent="PanelContainer/MarginContainer/QuestLetter/Page" unique_id=354617861 node_paths=PackedStringArray("animal_list")]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+script = ExtResource("1_gmm3t")
+animal_list = NodePath("ScrollContainer/VBoxContainer2")
+
+[node name="ListHeader" type="VBoxContainer" parent="PanelContainer/MarginContainer/QuestLetter/Page/LeftPage" unique_id=1790611662]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/QuestLetter/Page/LeftPage/ListHeader" unique_id=782387136]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/QuestLetter/Page/LeftPage/ListHeader/HBoxContainer" unique_id=2127234153]
+layout_mode = 2
+text = "Letters                       "
+label_settings = SubResource("LabelSettings_vpmux")
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/QuestLetter/Page/LeftPage" unique_id=1679718532]
+custom_minimum_size = Vector2(396, 550)
+layout_mode = 2
+draw_focus_border = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/QuestLetter/Page/LeftPage/ScrollContainer" unique_id=1483408142 node_paths=PackedStringArray("shortcut_context")]
+layout_mode = 2
+shortcut_context = NodePath("")
+theme_override_constants/separation = 9
+
+[node name="Animal1" type="Button" parent="PanelContainer/MarginContainer/QuestLetter/Page/LeftPage/ScrollContainer/VBoxContainer2" unique_id=152250044]
+custom_minimum_size = Vector2(360, 70)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_gmm3t")
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/QuestLetter/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal1" unique_id=1874771253]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -20.9375
+offset_right = 91.0
+offset_bottom = 20.9375
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Quest_nmae"
+label_settings = SubResource("LabelSettings_xm5ha")
+vertical_alignment = 1
+
+[node name="RightPage" type="VBoxContainer" parent="PanelContainer/MarginContainer/QuestLetter/Page" unique_id=1073043348]
+custom_minimum_size = Vector2(450, 600)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+script = ExtResource("3_lr3la")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/QuestLetter/Page/RightPage" unique_id=913114645]
+custom_minimum_size = Vector2(400, 590)
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_w1syn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o4ibs")
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse egestas, quam vulputate finibus convallis, nisl ligula hendrerit elit, eget venenatis elit leo eget lorem. Curabitur in rutrum mi, et bibendum risus. Proin ullamcorper egestas ultrices. Suspendisse pretium rhoncus magna vel laoreet. Maecenas tempor purus vel tellus accumsan vulputate. In urna tellus, accumsan eget imperdiet eu, tempor a sapien. Aenean eu nisi sed urna dignissim porttitor. Etiam rutrum mollis egestas. Vestibulum vulputate tristique elit nec auctor. Nullam ut enim velit. Etiam eros mi, luctus id libero quis, rutrum sollicitudin lectus. Integer at molestie magna. Proin non mollis sem. Vestibulum mauris dui, fermentum sit amet felis nec, vehicula suscipit orci. Nullam arcu risus, blandit et malesuada id, vulputate eget mauris. Phasellus laoreet fringilla metus porttitor viverra."
+horizontal_alignment = 3
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/Pokedex/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal1" to="PanelContainer/MarginContainer/Pokedex/Page/RightPage" method="_on_animal_1_pressed"]
