@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://dytkkusahp2uk"]
+
+[ext_resource type="Script" uid="uid://ckkx2m12wuagf" path="res://housenshi/mailbox.gd" id="1_bq30b"]
+[ext_resource type="PackedScene" uid="uid://1fsgw0u82htp" path="res://Assets/house/mailbox/mailbox_lp.glb" id="1_oanx3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_o30v6"]
+radius = 2.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gfmmx"]
+height = 1.2324219
+radius = 0.3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bq30b"]
+size = Vector3(2.8648682, 1.4464111, 1.2644424)
+
+[sub_resource type="TextMesh" id="TextMesh_bq30b"]
+text = "YOU GOT MAIL!"
+font_size = 28
+
+[sub_resource type="Animation" id="Animation_ecijb"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0009999999, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.8365499, 0), Vector3(0, 2.252, 0), Vector3(0, 1.8365499, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dpp8i"]
+resource_name = "YOUGOTMAIL"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.29, 0.56),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.8365499, 0), Vector3(0, 2.0540795, 0), Vector3(0, 1.8365499, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_68vvl"]
+_data = {
+&"RESET": SubResource("Animation_ecijb"),
+&"YOUGOTMAIL": SubResource("Animation_dpp8i")
+}
+
+[node name="mailbox" type="Node3D" unique_id=1286945160]
+script = ExtResource("1_bq30b")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=645400520]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2076062791]
+shape = SubResource("SphereShape3D_o30v6")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="." unique_id=2124206011]
+
+[node name="Sketchfab_Scene" parent="AnimatableBody3D" unique_id=405014072 instance=ExtResource("1_oanx3")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.19600993, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=1546047987]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.61590445, 0)
+shape = SubResource("CylinderShape3D_gfmmx")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=140668396]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.026458744, 1.3894119, -0.0023059882)
+shape = SubResource("BoxShape3D_bq30b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1964063964]
+transform = Transform3D(-3.9490605e-08, 0.4287144, -0.90344, 1.8739692e-08, 0.90344, 0.4287144, 1, 2.5121475e-15, -4.371138e-08, 0, 1.8365499, 0)
+mesh = SubResource("TextMesh_bq30b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1307952052]
+libraries/ = SubResource("AnimationLibrary_68vvl")

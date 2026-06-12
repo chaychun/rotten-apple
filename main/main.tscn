@@ -2,7 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dpu1uhfgsyl7u" path="res://player/player.tscn" id="1_ktywf"]
 [ext_resource type="PackedScene" uid="uid://bdr38pj2qtbfe" path="res://animal/real/animal.tscn" id="2_ycfeg"]
-[ext_resource type="PackedScene" uid="uid://d3oja1344mbkn" path="res://house.tscn" id="3_7rk2m"]
+[ext_resource type="PackedScene" uid="uid://dmjwm381jr3cx" path="res://housenshi/house.tscn" id="3_hf28p"]
+[ext_resource type="PackedScene" uid="uid://dytkkusahp2uk" path="res://housenshi/mailbox.tscn" id="4_7dsnv"]
 [ext_resource type="Texture2D" uid="uid://dqrhb8gwubp3p" path="res://Assets/Environment/texture/cliff_rocks_02_1k/cliff_rocks_02_baseColor_1k.png" id="4_dh1l5"]
 [ext_resource type="Texture2D" uid="uid://c5bj5r8q4u6hp" path="res://Assets/Environment/texture/cliff_rocks_02_1k/cliff_rocks_02_height_1k.png" id="5_n1nl7"]
 [ext_resource type="Texture2D" uid="uid://bkobohi6cbkni" path="res://Assets/Environment/texture/cliff_rocks_02_1k/cliff_rocks_02_normal_gl_1k.png" id="6_lf6l6"]
@@ -68,6 +69,7 @@
 [ext_resource type="Image" uid="uid://b0cra6bycv6py" path="res://main/Node/Splatmap_0_0_2.res" id="59_qmkrb"]
 [ext_resource type="Image" uid="uid://csomk54qohqea" path="res://main/Node/Water_0_0.res" id="60_kfn81"]
 [ext_resource type="Shader" uid="uid://j1xs876mva34" path="res://main/main.gdshader" id="61_xj6g5"]
+[ext_resource type="PackedScene" uid="uid://dvx8llurb17n1" path="res://housenshi/farm.tscn" id="69_7dsnv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_na0o7"]
 sky_top_color = Color(0, 0.9355178, 1.1203939, 1)
@@ -316,6 +318,11 @@ material = SubResource("ShaderMaterial_nr3a7")
 size = Vector2(130, 50)
 center_offset = Vector3(0, -7.895, 40.155)
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_7dsnv"]
+material = SubResource("ShaderMaterial_nr3a7")
+size = Vector2(30.7, 27.995)
+center_offset = Vector3(0, -7.895, 40.155)
+
 [node name="Node" type="Node" unique_id=1908846288]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=609979057]
@@ -335,10 +342,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5559661, -11)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.25, -3)
 animal_id = "hedgehog"
 
-[node name="House" parent="." unique_id=1011123435 instance=ExtResource("3_7rk2m")]
-transform = Transform3D(0.49499997, 0, 0, 0, 0.49499997, 0, 0, 0, 0.49499997, 0, 0, -14.7)
+[node name="house" parent="." unique_id=1011123435 instance=ExtResource("3_hf28p")]
+transform = Transform3D(0.62, 0, 0, 0, 0.6195113, -0.024611408, 0, 0.024611408, 0.6195113, 0, 0.10369706, -16.863121)
+
+[node name="mailbox" parent="." unique_id=1286945160 instance=ExtResource("4_7dsnv")]
+transform = Transform3D(-0.60341406, 0, 1.3019665, 0, 1.4350001, 0, -1.3019665, 0, -0.60341406, -3.5207992, 0.22642797, -12.448381)
 
 [node name="Ornaments" type="Node3D" parent="." unique_id=208289105]
+
+[node name="farm" parent="." unique_id=2124424467 instance=ExtResource("69_7dsnv")]
 
 [node name="Environment" type="Node3D" parent="." unique_id=699726617]
 
@@ -353,10 +365,16 @@ physics_interpolation_mode = 2
 metadata/_edit_lock_ = true
 
 [node name="Walter" type="Node3D" parent="Environment" unique_id=243771577]
-visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Walter" unique_id=953830057]
 mesh = SubResource("PlaneMesh_g13kh")
+
+[node name="Walter2" type="Node3D" parent="Environment" unique_id=2071024024]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.24229813, -73.63552)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Walter2" unique_id=241290550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.645439, 8.244256, -9.0063095)
+mesh = SubResource("PlaneMesh_7dsnv")
 
 [node name="WorldBoundary" type="Node3D" parent="Environment" unique_id=655694910]
 

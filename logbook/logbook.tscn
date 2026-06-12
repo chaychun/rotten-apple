@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://dxla7yhooqck1"]
 
-[ext_resource type="Script" uid="uid://tkfp0uourr77" path="res://logbook/pokedex/left_page.gd" id="1_gmm3t"]
-[ext_resource type="Script" uid="uid://d03vyffmpgo3s" path="res://logbook/pokedex/right_page.gd" id="3_lr3la"]
-[ext_resource type="Texture2D" uid="uid://bes6mk85c6oa7" path="res://player/placeholder/player_idle_left.png" id="4_6s4dj"]
-[ext_resource type="Texture2D" uid="uid://b2r58y3um47bu" path="res://utility/icon_star.png" id="5_0x5su"]
+[ext_resource type="Texture2D" uid="uid://bes6mk85c6oa7" path="res://player/placeholder/player_idle_left.png" id="4_23rts"]
+[ext_resource type="Texture2D" uid="uid://b2r58y3um47bu" path="res://utility/icon_star.png" id="5_enevi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w1syn"]
 bg_color = Color(0.7828646, 0.6974107, 0.5971522, 1)
@@ -23,16 +21,11 @@ shadow_offset = Vector2(25, 25)
 anti_aliasing = false
 
 [sub_resource type="SystemFont" id="SystemFont_o4ibs"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_vpmux"]
 font = SubResource("SystemFont_o4ibs")
 font_size = 40
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmm3t"]
-bg_color = Color(0.7058824, 0.5764706, 0.5254902, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_xm5ha"]
-font_size = 30
 
 [sub_resource type="LabelSettings" id="LabelSettings_w1syn"]
 font_size = 30
@@ -41,6 +34,7 @@ font_size = 30
 font_size = 30
 
 [sub_resource type="SystemFont" id="SystemFont_wwcpx"]
+subpixel_positioning = 0
 
 [sub_resource type="Theme" id="Theme_w1syn"]
 default_font = SubResource("SystemFont_wwcpx")
@@ -54,13 +48,38 @@ border_width_right = 15
 border_width_bottom = 31
 border_color = Color(0.70538956, 0.577023, 0.52391213, 1)
 
-[node name="Pokedex" type="Control" unique_id=280611841]
+[node name="logbook" type="Control" unique_id=280611841]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="next" type="Button" parent="." unique_id=819381407]
+top_level = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 1471.0
+offset_top = 510.0
+offset_right = 1521.0
+offset_bottom = 560.0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+text = "next"
+
+[node name="previous" type="Button" parent="." unique_id=2143738894]
+top_level = true
+light_mask = 0
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 383.135
+offset_top = 510.0
+offset_right = 458.135
+offset_bottom = 560.0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+text = "prev"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1539340152]
 layout_mode = 1
@@ -104,6 +123,8 @@ theme_override_constants/margin_bottom = 50
 [node name="Pokedex" type="Control" parent="PanelContainer/MarginContainer" unique_id=1528536697]
 visible = false
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Page" type="HBoxContainer" parent="PanelContainer/MarginContainer/Pokedex" unique_id=1048329314]
 layout_mode = 1
@@ -112,21 +133,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -474.0
-offset_top = -307.5
-offset_right = 474.0
-offset_bottom = 307.5
+offset_left = -485.0
+offset_top = -311.0
+offset_right = 485.0
+offset_bottom = 311.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 130
+theme_override_constants/separation = 98
 alignment = 1
 
-[node name="LeftPage" type="VBoxContainer" parent="PanelContainer/MarginContainer/Pokedex/Page" unique_id=962141528 node_paths=PackedStringArray("animal_list")]
+[node name="LeftPage" type="VBoxContainer" parent="PanelContainer/MarginContainer/Pokedex/Page" unique_id=962141528]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_constants/separation = 10
-script = ExtResource("1_gmm3t")
-animal_list = NodePath("ScrollContainer/VBoxContainer2")
+theme_override_constants/separation = 18
 
 [node name="ListHeader" type="VBoxContainer" parent="PanelContainer/MarginContainer/Pokedex/Page/LeftPage" unique_id=1933769773]
 layout_mode = 2
@@ -137,111 +157,78 @@ theme_override_constants/separation = 30
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/Pokedex/Page/LeftPage/ListHeader/HBoxContainer" unique_id=474154195]
 layout_mode = 2
-text = "Animals                       "
+size_flags_horizontal = 6
+text = "Animal_name"
 label_settings = SubResource("LabelSettings_vpmux")
 vertical_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/Pokedex/Page/LeftPage" unique_id=1043077632]
-custom_minimum_size = Vector2(396, 550)
-layout_mode = 2
-draw_focus_border = true
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/Pokedex/Page/LeftPage/ScrollContainer" unique_id=2064248507 node_paths=PackedStringArray("shortcut_context")]
-layout_mode = 2
-shortcut_context = NodePath("")
-theme_override_constants/separation = 9
-
-[node name="Animal1" type="Button" parent="PanelContainer/MarginContainer/Pokedex/Page/LeftPage/ScrollContainer/VBoxContainer2" unique_id=1610152742]
-custom_minimum_size = Vector2(360, 70)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_gmm3t")
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Pokedex/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal1" unique_id=497922027]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -63.5
-offset_top = -20.9375
-offset_right = 63.5
-offset_bottom = 20.9375
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-text = "Animal 1"
-label_settings = SubResource("LabelSettings_xm5ha")
-vertical_alignment = 1
-
-[node name="RightPage" type="VBoxContainer" parent="PanelContainer/MarginContainer/Pokedex/Page" unique_id=280248630]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-script = ExtResource("3_lr3la")
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/Pokedex/Page/RightPage" unique_id=936639518]
-custom_minimum_size = Vector2(200, 200)
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/Pokedex/Page/LeftPage" unique_id=936639518]
+custom_minimum_size = Vector2(350, 350)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("4_6s4dj")
+texture = ExtResource("4_23rts")
 expand_mode = 1
 
-[node name="Rarity" type="HBoxContainer" parent="PanelContainer/MarginContainer/Pokedex/Page/RightPage" unique_id=171743251]
+[node name="Rarity" type="HBoxContainer" parent="PanelContainer/MarginContainer/Pokedex/Page/LeftPage" unique_id=171743251]
 layout_mode = 2
 theme_override_constants/separation = 70
 
-[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/Pokedex/Page/RightPage/Rarity" unique_id=698387282]
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/Pokedex/Page/LeftPage/Rarity" unique_id=698387282]
 layout_mode = 2
 text = "Rarity"
 label_settings = SubResource("LabelSettings_w1syn")
 
-[node name="Star" type="HBoxContainer" parent="PanelContainer/MarginContainer/Pokedex/Page/RightPage/Rarity" unique_id=153146545]
+[node name="Star" type="HBoxContainer" parent="PanelContainer/MarginContainer/Pokedex/Page/LeftPage/Rarity" unique_id=153146545]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
 metadata/_edit_group_ = true
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/Pokedex/Page/RightPage/Rarity/Star" unique_id=1442276767]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/Pokedex/Page/LeftPage/Rarity/Star" unique_id=1442276767]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("5_0x5su")
+texture = ExtResource("5_enevi")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="PanelContainer/MarginContainer/Pokedex/Page/RightPage/Rarity/Star" unique_id=1406472796]
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/MarginContainer/Pokedex/Page/LeftPage/Rarity/Star" unique_id=1406472796]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("5_0x5su")
+texture = ExtResource("5_enevi")
 expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="PanelContainer/MarginContainer/Pokedex/Page/RightPage/Rarity/Star" unique_id=913110034]
+[node name="TextureRect3" type="TextureRect" parent="PanelContainer/MarginContainer/Pokedex/Page/LeftPage/Rarity/Star" unique_id=913110034]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("5_0x5su")
+texture = ExtResource("5_enevi")
 expand_mode = 1
 
-[node name="TextureRect4" type="TextureRect" parent="PanelContainer/MarginContainer/Pokedex/Page/RightPage/Rarity/Star" unique_id=1439961728]
+[node name="TextureRect4" type="TextureRect" parent="PanelContainer/MarginContainer/Pokedex/Page/LeftPage/Rarity/Star" unique_id=1439961728]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("5_0x5su")
+texture = ExtResource("5_enevi")
 expand_mode = 1
 
-[node name="TextureRect5" type="TextureRect" parent="PanelContainer/MarginContainer/Pokedex/Page/RightPage/Rarity/Star" unique_id=1509585652]
+[node name="TextureRect5" type="TextureRect" parent="PanelContainer/MarginContainer/Pokedex/Page/LeftPage/Rarity/Star" unique_id=1509585652]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("5_0x5su")
+texture = ExtResource("5_enevi")
 expand_mode = 1
+
+[node name="RightPage" type="VBoxContainer" parent="PanelContainer/MarginContainer/Pokedex/Page" unique_id=280248630]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
 
 [node name="Description" type="VBoxContainer" parent="PanelContainer/MarginContainer/Pokedex/Page/RightPage" unique_id=1576906665]
 layout_mode = 2
@@ -255,7 +242,7 @@ text = "Description"
 label_settings = SubResource("LabelSettings_wwcpx")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/Pokedex/Page/RightPage/Description" unique_id=569880801]
-custom_minimum_size = Vector2(400, 238.04)
+custom_minimum_size = Vector2(450, 560)
 layout_mode = 2
 theme = SubResource("Theme_w1syn")
 theme_override_styles/normal = SubResource("StyleBoxFlat_o4ibs")
@@ -273,77 +260,33 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -474.0
-offset_top = -307.5
-offset_right = 474.0
-offset_bottom = 307.5
+offset_left = -485.0
+offset_top = -325.0
+offset_right = 485.0
+offset_bottom = 325.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 130
+theme_override_constants/separation = 98
 alignment = 1
 
-[node name="LeftPage" type="VBoxContainer" parent="PanelContainer/MarginContainer/QuestLetter/Page" unique_id=354617861 node_paths=PackedStringArray("animal_list")]
+[node name="LeftPage" type="VBoxContainer" parent="PanelContainer/MarginContainer/QuestLetter/Page" unique_id=354617861]
 layout_mode = 2
-size_flags_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/separation = 10
-script = ExtResource("1_gmm3t")
-animal_list = NodePath("ScrollContainer/VBoxContainer2")
 
 [node name="ListHeader" type="VBoxContainer" parent="PanelContainer/MarginContainer/QuestLetter/Page/LeftPage" unique_id=1790611662]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/QuestLetter/Page/LeftPage/ListHeader" unique_id=782387136]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/QuestLetter/Page/LeftPage/ListHeader" unique_id=2127234153]
 layout_mode = 2
-theme_override_constants/separation = 30
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/QuestLetter/Page/LeftPage/ListHeader/HBoxContainer" unique_id=2127234153]
-layout_mode = 2
-text = "Letters                       "
+text = "Quest_name"
 label_settings = SubResource("LabelSettings_vpmux")
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/QuestLetter/Page/LeftPage" unique_id=1679718532]
-custom_minimum_size = Vector2(396, 550)
-layout_mode = 2
-draw_focus_border = true
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/QuestLetter/Page/LeftPage/ScrollContainer" unique_id=1483408142 node_paths=PackedStringArray("shortcut_context")]
-layout_mode = 2
-shortcut_context = NodePath("")
-theme_override_constants/separation = 9
-
-[node name="Animal1" type="Button" parent="PanelContainer/MarginContainer/QuestLetter/Page/LeftPage/ScrollContainer/VBoxContainer2" unique_id=152250044]
-custom_minimum_size = Vector2(360, 70)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_gmm3t")
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/QuestLetter/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal1" unique_id=1874771253]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -91.0
-offset_top = -20.9375
-offset_right = 91.0
-offset_bottom = 20.9375
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-text = "Quest_nmae"
-label_settings = SubResource("LabelSettings_xm5ha")
-vertical_alignment = 1
-
-[node name="RightPage" type="VBoxContainer" parent="PanelContainer/MarginContainer/QuestLetter/Page" unique_id=1073043348]
-custom_minimum_size = Vector2(450, 600)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-script = ExtResource("3_lr3la")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/QuestLetter/Page/RightPage" unique_id=913114645]
-custom_minimum_size = Vector2(400, 590)
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/QuestLetter/Page/LeftPage/ListHeader" unique_id=2070670688]
+custom_minimum_size = Vector2(450, 560)
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_w1syn")
@@ -352,4 +295,28 @@ bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse egestas, quam vulputate finibus convallis, nisl ligula hendrerit elit, eget venenatis elit leo eget lorem. Curabitur in rutrum mi, et bibendum risus. Proin ullamcorper egestas ultrices. Suspendisse pretium rhoncus magna vel laoreet. Maecenas tempor purus vel tellus accumsan vulputate. In urna tellus, accumsan eget imperdiet eu, tempor a sapien. Aenean eu nisi sed urna dignissim porttitor. Etiam rutrum mollis egestas. Vestibulum vulputate tristique elit nec auctor. Nullam ut enim velit. Etiam eros mi, luctus id libero quis, rutrum sollicitudin lectus. Integer at molestie magna. Proin non mollis sem. Vestibulum mauris dui, fermentum sit amet felis nec, vehicula suscipit orci. Nullam arcu risus, blandit et malesuada id, vulputate eget mauris. Phasellus laoreet fringilla metus porttitor viverra."
 horizontal_alignment = 3
 
-[connection signal="pressed" from="PanelContainer/MarginContainer/Pokedex/Page/LeftPage/ScrollContainer/VBoxContainer2/Animal1" to="PanelContainer/MarginContainer/Pokedex/Page/RightPage" method="_on_animal_1_pressed"]
+[node name="RightPage" type="VBoxContainer" parent="PanelContainer/MarginContainer/QuestLetter/Page" unique_id=1073043348]
+custom_minimum_size = Vector2(450, 600)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="ListHeader2" type="VBoxContainer" parent="PanelContainer/MarginContainer/QuestLetter/Page/RightPage" unique_id=878006381]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/QuestLetter/Page/RightPage/ListHeader2" unique_id=399205919]
+layout_mode = 2
+text = "Quest_name"
+label_settings = SubResource("LabelSettings_vpmux")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/QuestLetter/Page/RightPage/ListHeader2" unique_id=1977564263]
+custom_minimum_size = Vector2(450, 560)
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_w1syn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o4ibs")
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse egestas, quam vulputate finibus convallis, nisl ligula hendrerit elit, eget venenatis elit leo eget lorem. Curabitur in rutrum mi, et bibendum risus. Proin ullamcorper egestas ultrices. Suspendisse pretium rhoncus magna vel laoreet. Maecenas tempor purus vel tellus accumsan vulputate. In urna tellus, accumsan eget imperdiet eu, tempor a sapien. Aenean eu nisi sed urna dignissim porttitor. Etiam rutrum mollis egestas. Vestibulum vulputate tristique elit nec auctor. Nullam ut enim velit. Etiam eros mi, luctus id libero quis, rutrum sollicitudin lectus. Integer at molestie magna. Proin non mollis sem. Vestibulum mauris dui, fermentum sit amet felis nec, vehicula suscipit orci. Nullam arcu risus, blandit et malesuada id, vulputate eget mauris. Phasellus laoreet fringilla metus porttitor viverra."
+horizontal_alignment = 3
