@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://1xeji078m7gt"]
+
+[ext_resource type="PackedScene" uid="uid://db5e6mrskbq6f" path="res://Assets/Environment/Stylized Nature Megakit/glTF/Rock_Medium_2.gltf" id="1_bo8ku"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wrp8l"]
+size = Vector3(2.7006836, 0.9684448, 1.3598633)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mk01n"]
+size = Vector3(1.6273346, 0.89595795, 0.958374)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rsk56"]
+size = Vector3(1.4763298, 1.016777, 1.6768799)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kv0t1"]
+size = Vector3(1.408575, 1.016777, 0.8437805)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f27us"]
+size = Vector3(1.4852562, 0.47494507, 1.722992)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ncwcy"]
+size = Vector3(0.9795884, 0.47494507, 1.2150116)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_03a80"]
+size = Vector3(0.9795884, 0.47494507, 1.9287949)
+
+[node name="Node3D" type="Node3D" unique_id=676642250]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1988172962]
+
+[node name="Rock_Medium_22" parent="StaticBody3D" unique_id=2096901768 instance=ExtResource("1_bo8ku")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=103416842]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20385742, 0.481781, -0.17993164)
+shape = SubResource("BoxShape3D_wrp8l")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="StaticBody3D" unique_id=138267088]
+transform = Transform3D(0.47030294, -0.31441423, 0.8245962, 0.24458164, 0.9442175, 0.22052953, -0.8479358, 0.097965375, 0.52096814, -0.61156446, 1.1997056, -0.043565705)
+shape = SubResource("BoxShape3D_mk01n")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" unique_id=582438676]
+transform = Transform3D(0.41636914, -0.338356, 0.8438909, -0.023352062, 0.923887, 0.38195187, -0.9088957, -0.17873955, 0.37677664, -0.4478978, 0.54782027, 0.30588877)
+shape = SubResource("BoxShape3D_rsk56")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D" unique_id=650171942]
+transform = Transform3D(-0.33375025, -0.37634087, 0.8642789, -0.21011989, 0.92348313, 0.32098055, -0.9189454, -0.074474715, -0.38728967, 0.23883021, 0.56945974, 0.44976845)
+shape = SubResource("BoxShape3D_kv0t1")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1165262019]
+transform = Transform3D(0.79043305, 0.6125484, 0, -0.6125484, 0.79043305, 0, 0, 0, 1, 0.2634787, 1.1660858, 0.0104522705)
+shape = SubResource("BoxShape3D_f27us")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=1699643759]
+transform = Transform3D(0.80085427, -0.18515888, 0.5695163, 0.33150217, 0.929073, -0.16410206, -0.49873722, 0.32021773, 0.8054326, -0.49333134, 1.3429947, -0.20827702)
+shape = SubResource("BoxShape3D_ncwcy")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=822681189]
+transform = Transform3D(0.6850864, 0.19299816, -0.7024301, 0.66591424, 0.2249962, 0.7112917, 0.29532203, -0.95505434, 0.025621846, 0.26745707, 0.777112, -0.78266704)
+shape = SubResource("BoxShape3D_03a80")

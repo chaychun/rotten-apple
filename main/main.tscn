@@ -81,8 +81,29 @@
 [ext_resource type="PackedScene" uid="uid://j3wcxo2yi135" path="res://Assets/Environment/Stylized Nature Megakit/glTF/Flower_4_Group.gltf" id="68_snp3r"]
 [ext_resource type="PackedScene" uid="uid://dvx8llurb17n1" path="res://housenshi/farm.tscn" id="69_7dsnv"]
 [ext_resource type="PackedScene" uid="uid://b07fee0pbwc7t" path="res://Assets/Environment/Stylized Nature Megakit/glTF/Flower_4_Single.gltf" id="69_46muq"]
+[ext_resource type="PackedScene" uid="uid://ct1ui4x6xlmuy" path="res://Assets/Environment/Stylized Nature Megakit/glTF/Bush_Common_Flowers.gltf" id="70_snp3r"]
+[ext_resource type="PackedScene" uid="uid://ctywvo845lryf" path="res://Assets/Environment/Stylized Nature Megakit/glTF/Pebble_Round_1.gltf" id="71_vyb7n"]
+[ext_resource type="PackedScene" uid="uid://cjo7fvshj85og" path="res://Assets/Environment/Stylized Nature Megakit/glTF/Pebble_Round_2.gltf" id="72_bfdoy"]
 [ext_resource type="Image" uid="uid://b2fnyud6j6b56" path="res://main/Node/Object_0_0_1.res" id="73_onlwx"]
+[ext_resource type="PackedScene" uid="uid://dmkr7kd41xecg" path="res://Assets/Environment/Stylized Nature Megakit/glTF/Pebble_Round_3.gltf" id="73_p66im"]
+[ext_resource type="PackedScene" uid="uid://kx0sab3sn1q1" path="res://Assets/Environment/Stylized Nature Megakit/glTF/Pebble_Round_4.gltf" id="74_v6wbg"]
+[ext_resource type="PackedScene" uid="uid://bmvhm30cftkes" path="res://Assets/Environment/Stylized Nature Megakit/glTF/Pebble_Round_5.gltf" id="75_0yfeg"]
 [ext_resource type="Image" uid="uid://dsy2hsp725ugu" path="res://main/Node/Object_0_0_2.res" id="76_gpx50"]
+[ext_resource type="PackedScene" uid="uid://bb7thoa6buv5g" path="res://Assets/Environment/Stylized Nature Megakit/glTF/Pebble_Square_1.gltf" id="76_v8baf"]
+[ext_resource type="PackedScene" uid="uid://c6cf6v83ej311" path="res://Assets/Environment/Stylized Nature Megakit/glTF/Pebble_Square_2.gltf" id="77_3bgud"]
+[ext_resource type="PackedScene" uid="uid://bfdyp5jf0fimq" path="res://Assets/Environment/Stylized Nature Megakit/glTF/Pebble_Square_3.gltf" id="78_pc78h"]
+[ext_resource type="PackedScene" uid="uid://3qyro7aulv7t" path="res://Assets/Environment/Stylized Nature Megakit/glTF/Pebble_Square_4.gltf" id="79_ts2mh"]
+[ext_resource type="Image" uid="uid://vrr21xowk318" path="res://main/Node/Object_0_0_3.res" id="80_46muq"]
+[ext_resource type="PackedScene" uid="uid://d1oigw8f5knkg" path="res://Assets/Environment/Stylized Nature Megakit/glTF/Pebble_Square_5.gltf" id="80_mmxjx"]
+[ext_resource type="PackedScene" uid="uid://kf43f06uqhg6" path="res://Assets/Environment/Stylized Nature Megakit/glTF/Pebble_Square_6.gltf" id="81_7s7fj"]
+[ext_resource type="PackedScene" uid="uid://vgv1cijur3vf" path="res://housenshi/rocks/RockMedium1.tscn" id="82_0yfeg"]
+[ext_resource type="PackedScene" uid="uid://1xeji078m7gt" path="res://housenshi/rocks/RockMedium2.tscn" id="83_v8baf"]
+[ext_resource type="PackedScene" uid="uid://dylc3hbuemkmo" path="res://housenshi/rocks/RockMedium3.tscn" id="84_3bgud"]
+[ext_resource type="PackedScene" uid="uid://c03quxnj07f6w" path="res://Assets/Environment/plants/sunflower.glb" id="85_3bgud"]
+[ext_resource type="Image" uid="uid://cwo08nnpv8ygk" path="res://main/Node/Object_0_0_4.res" id="92_42ldh"]
+[ext_resource type="Image" uid="uid://8qwg4ppru84a" path="res://main/Node/Object_0_0_5.res" id="93_bfdoy"]
+[ext_resource type="Image" uid="uid://dupy4a4j34bdi" path="res://main/Node/Object_0_0_6.res" id="97_v8baf"]
+[ext_resource type="Image" uid="uid://bbdr45p22h7rq" path="res://main/Node/Object_0_0_7.res" id="99_pc78h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_na0o7"]
 sky_top_color = Color(0, 0.9355178, 1.1203939, 1)
@@ -279,12 +300,12 @@ albedoTextures = Array[Texture2D]([ExtResource("53_7rk2m")])
 definition = SubResource("FoliageDefinitionResource_n1nl7")
 
 [sub_resource type="ObjectDefinitionResource" id="ObjectDefinitionResource_gjwcs"]
-objectFrequency = 8
-randomRange = 10.0
+objectFrequency = 3
+randomRange = 4.0
 randomRotation = true
 randomSize = true
-randomSizeFactorMin = 0.7
-randomSizeFactorMax = 2.0
+randomSizeFactorMin = 0.5
+randomSizeFactorMax = 1.0
 objectScenes = Array[PackedScene]([ExtResource("59_4jx8u"), ExtResource("60_reh2a"), ExtResource("61_m0bb6"), ExtResource("62_tjf2p"), ExtResource("63_twbhu")])
 
 [sub_resource type="ObjectResource" id="ObjectResource_reh2a"]
@@ -292,7 +313,7 @@ definition = SubResource("ObjectDefinitionResource_gjwcs")
 
 [sub_resource type="ObjectDefinitionResource" id="ObjectDefinitionResource_gpx50"]
 objectFrequency = 1
-randomRange = 5.0
+randomRange = 3.0
 randomRotation = true
 randomSize = true
 randomSizeFactorMin = 0.05
@@ -314,12 +335,70 @@ objectScenes = Array[PackedScene]([ExtResource("66_gmy4t"), ExtResource("67_uv82
 [sub_resource type="ObjectResource" id="ObjectResource_gmy4t"]
 definition = SubResource("ObjectDefinitionResource_571ru")
 
+[sub_resource type="ObjectDefinitionResource" id="ObjectDefinitionResource_wbtys"]
+objectFrequency = 5
+randomRange = 3.0
+randomRotation = true
+randomSize = true
+randomSizeFactorMin = 0.5
+randomSizeFactorMax = 1.0
+objectScenes = Array[PackedScene]([ExtResource("70_snp3r")])
+
+[sub_resource type="ObjectResource" id="ObjectResource_nelid"]
+definition = SubResource("ObjectDefinitionResource_wbtys")
+
+[sub_resource type="ObjectDefinitionResource" id="ObjectDefinitionResource_aw48e"]
+objectFrequency = 2
+randomRange = 5.0
+randomRotation = true
+randomSize = true
+objectScenes = Array[PackedScene]([ExtResource("71_vyb7n"), ExtResource("72_bfdoy"), ExtResource("73_p66im"), ExtResource("74_v6wbg"), ExtResource("75_0yfeg"), ExtResource("76_v8baf"), ExtResource("77_3bgud"), ExtResource("78_pc78h"), ExtResource("79_ts2mh"), ExtResource("80_mmxjx"), ExtResource("81_7s7fj")])
+
+[sub_resource type="ObjectResource" id="ObjectResource_vmwr3"]
+definition = SubResource("ObjectDefinitionResource_aw48e")
+
+[sub_resource type="ObjectDefinitionResource" id="ObjectDefinitionResource_p66im"]
+objectFrequency = 5
+randomRange = 7.0
+randomRotation = true
+randomSize = true
+randomSizeFactorMax = 1.5
+objectScenes = Array[PackedScene]([ExtResource("82_0yfeg"), ExtResource("83_v8baf"), ExtResource("84_3bgud")])
+
+[sub_resource type="ObjectResource" id="ObjectResource_v6wbg"]
+definition = SubResource("ObjectDefinitionResource_p66im")
+
+[sub_resource type="ObjectDefinitionResource" id="ObjectDefinitionResource_3bgud"]
+objectFrequency = 3
+randomRange = 5.0
+randomRotation = true
+randomSize = true
+randomSizeFactorMax = 1.0
+objectScenes = Array[PackedScene]([ExtResource("82_0yfeg"), ExtResource("83_v8baf"), ExtResource("84_3bgud")])
+
+[sub_resource type="ObjectResource" id="ObjectResource_pc78h"]
+definition = SubResource("ObjectDefinitionResource_3bgud")
+
+[sub_resource type="ObjectDefinitionResource" id="ObjectDefinitionResource_pc78h"]
+objectFrequency = 1
+randomRange = 3.0
+randomRotation = true
+randomRotationMin = Vector3(0, 60, 0)
+randomRotationMax = Vector3(0, 65, 0)
+randomSize = true
+randomSizeFactorMin = 0.05
+randomSizeFactorMax = 0.09
+objectScenes = Array[PackedScene]([ExtResource("85_3bgud")])
+
+[sub_resource type="ObjectResource" id="ObjectResource_ts2mh"]
+definition = SubResource("ObjectDefinitionResource_pc78h")
+
 [sub_resource type="ZoneResource" id="ZoneResource_grrlh"]
 heightMapImage = ExtResource("55_vnnpt")
 colorImage = ExtResource("57_uir7i")
 splatmapsImage = Array[Image]([ExtResource("57_v10wt"), ExtResource("58_5wght"), ExtResource("59_qmkrb")])
 foliagesImage = Array[Image]([ExtResource("53_2km02"), ExtResource("54_ce0wa"), ExtResource("55_ycfeg"), ExtResource("57_dh1l5")])
-objectsImage = Array[Image]([ExtResource("56_udk01"), ExtResource("73_onlwx"), ExtResource("76_gpx50")])
+objectsImage = Array[Image]([ExtResource("56_udk01"), ExtResource("73_onlwx"), ExtResource("76_gpx50"), ExtResource("80_46muq"), ExtResource("92_42ldh"), ExtResource("93_bfdoy"), ExtResource("97_v8baf"), ExtResource("99_pc78h")])
 waterImage = ExtResource("60_kfn81")
 
 [sub_resource type="ZonesResource" id="ZonesResource_0i4oc"]
@@ -369,7 +448,7 @@ center_offset = Vector3(0, -7.895, 40.155)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7dsnv"]
 material = SubResource("ShaderMaterial_nr3a7")
-size = Vector2(30.7, 27.995)
+size = Vector2(36.825, 27.995)
 center_offset = Vector3(0, -7.895, 40.155)
 
 [node name="Node" type="Node" unique_id=1908846288]
@@ -409,20 +488,18 @@ zonesSize = 130
 textureSets = SubResource("TextureSetsResource_73k8k")
 nearestTextureFilter = true
 foliages = Array[FoliageResource]([SubResource("FoliageResource_7ny4s"), SubResource("FoliageResource_e4lmg"), SubResource("FoliageResource_7rk2m"), SubResource("FoliageResource_lf6l6")])
-objects = Array[ObjectResource]([SubResource("ObjectResource_reh2a"), SubResource("ObjectResource_571ru"), SubResource("ObjectResource_gmy4t")])
+objects = Array[ObjectResource]([SubResource("ObjectResource_reh2a"), SubResource("ObjectResource_571ru"), SubResource("ObjectResource_gmy4t"), SubResource("ObjectResource_nelid"), SubResource("ObjectResource_vmwr3"), SubResource("ObjectResource_v6wbg"), SubResource("ObjectResource_pc78h"), SubResource("ObjectResource_ts2mh")])
 terrainZones = SubResource("ZonesResource_0i4oc")
 physics_interpolation_mode = 2
 metadata/_edit_lock_ = true
 
 [node name="Walter" type="Node3D" parent="Environment" unique_id=243771577]
-visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Walter" unique_id=953830057]
 mesh = SubResource("PlaneMesh_g13kh")
 
 [node name="Walter2" type="Node3D" parent="Environment" unique_id=2071024024]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.24229813, -73.63552)
-visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Walter2" unique_id=241290550]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.645439, 8.244256, -9.0063095)
