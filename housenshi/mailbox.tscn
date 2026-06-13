@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dytkkusahp2uk"]
 
 [ext_resource type="Script" uid="uid://ckkx2m12wuagf" path="res://housenshi/mailbox.gd" id="1_bq30b"]
-[ext_resource type="PackedScene" uid="uid://1fsgw0u82htp" path="res://Assets/house/mailbox_lp.glb" id="2_bq30b"]
+[ext_resource type="PackedScene" uid="uid://1fsgw0u82htp" path="res://Assets/house/mailbox/mailbox_lp.glb" id="2_bq30b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dpp8i"]
 size = Vector3(3.0253906, 2.8706055, 1.4658203)
@@ -89,9 +89,6 @@ shape = SubResource("CylinderShape3D_bq30b")
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="." unique_id=2124206011]
 
-[node name="Sketchfab_Scene" parent="AnimatableBody3D" unique_id=1479782785 instance=ExtResource("2_bq30b")]
-transform = Transform3D(0.305, 0, 0, 0, 0.305, 0, 0, 0, 0.305, 0, 0.18784732, 0)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=1042048393]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.61590445, 0)
 shape = SubResource("CylinderShape3D_gfmmx")
@@ -99,6 +96,9 @@ shape = SubResource("CylinderShape3D_gfmmx")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=2013059614]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.026458744, 1.3894119, -0.0023059882)
 shape = SubResource("BoxShape3D_bq30b")
+
+[node name="Sketchfab_Scene" parent="AnimatableBody3D" unique_id=1479782785 instance=ExtResource("2_bq30b")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.22032875, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1307952052]
 libraries/ = SubResource("AnimationLibrary_68vvl")
