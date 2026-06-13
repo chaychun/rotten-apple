@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="AnimalData" format=3 uid="uid://t3wklqy4par5"]
+[gd_resource type="Resource" script_class="AnimalData" format=3 uid="uid://7423h2w8l1eb"]
 
 [ext_resource type="Script" uid="uid://cdbg03iul7ysx" path="res://data/animal_data.gd" id="1_koy48"]
+[ext_resource type="Texture2D" uid="uid://n2yr0utejsw6" path="res://animal/fake/sprite/aminal_catfish.png" id="1_yej5w"]
 
 [resource]
 script = ExtResource("1_koy48")
@@ -10,4 +11,7 @@ is_real = false
 move_speed = 1.5
 avoids_player = true
 minigame_type = "FISHING"
+display_name = "Cat-fish"
+description = "It's a fish that looks like a cat. Likes to hang out around the village."
+display_sprite = ExtResource("1_yej5w")
 metadata/_custom_type_script = "uid://cdbg03iul7ysx"

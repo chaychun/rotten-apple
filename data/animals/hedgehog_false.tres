@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="AnimalData" format=3 uid="uid://d2yhev8n2ih8j"]
+[gd_resource type="Resource" script_class="AnimalData" format=3 uid="uid://bnyemjni4p3yl"]
 
 [ext_resource type="Script" uid="uid://cdbg03iul7ysx" path="res://data/animal_data.gd" id="1_jrw58"]
+[ext_resource type="Texture2D" uid="uid://cws45ba848ssx" path="res://animal/fake/sprite/aminal_hedgehog.png" id="1_m5hxb"]
 
 [resource]
 script = ExtResource("1_jrw58")
@@ -8,4 +9,7 @@ id = "hedgehog_false"
 species = "Hedgehog"
 is_real = false
 rarity = 2
+display_name = "Hodgehog"
+description = "Leafy green pig often mistaken for a bush. No one knows how it reproduces. Does it grow like a plant or bang it out like an animal?"
+display_sprite = ExtResource("1_m5hxb")
 metadata/_custom_type_script = "uid://cdbg03iul7ysx"

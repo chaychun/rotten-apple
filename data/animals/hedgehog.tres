@@ -1,11 +1,14 @@
-[gd_resource type="Resource" script_class="AnimalData" format=3 uid="uid://ci14hcukgx88v"]
+[gd_resource type="Resource" script_class="AnimalData" format=3 uid="uid://bn5pgyaqbl65o"]
 
+[ext_resource type="Texture2D" uid="uid://binmnrdlvg8f3" path="res://animal/real/sprite/animal_hedgehog_1.png" id="1_agkr3"]
 [ext_resource type="Script" uid="uid://cdbg03iul7ysx" path="res://data/animal_data.gd" id="1_jrw58"]
 
 [resource]
 script = ExtResource("1_jrw58")
 id = "hedgehog"
 species = "Hedgehog"
-is_real = true
 rarity = 2
+display_name = "Hedgehog"
+description = "Smol spiky forager. Looks cute but don't squeeze em."
+display_sprite = ExtResource("1_agkr3")
 metadata/_custom_type_script = "uid://cdbg03iul7ysx"

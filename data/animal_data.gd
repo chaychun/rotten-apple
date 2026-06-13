@@ -9,3 +9,8 @@ extends Resource
 @export var move_speed: float = 2.0
 @export var avoids_player: bool = false
 @export_enum("FISHING", "CATCHING") var minigame_type: String = "CATCHING"
+
+## --- Logbook display ---
+@export var display_name: String
+@export_multiline var description: String
+@export var display_sprite: Texture2D
