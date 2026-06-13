@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c2ujewa3fvgbr"]
+
+[ext_resource type="PackedScene" uid="uid://c283fjw7b5dmg" path="res://Assets/Environment/Stylized Nature Megakit/glTF/CommonTree_1.gltf" id="1_kkkpb"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1v7sx"]
+height = 4.75
+radius = 0.58691406
+
+[node name="Node3D" type="Node3D" unique_id=2121448868]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1954324955]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1783833660]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.375, 0)
+shape = SubResource("CylinderShape3D_1v7sx")
+
+[node name="CommonTree_12" parent="StaticBody3D" unique_id=2046828254 instance=ExtResource("1_kkkpb")]

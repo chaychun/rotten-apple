@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bfhyydt2kwvgi"]
+
+[ext_resource type="PackedScene" uid="uid://deq6hehl005c3" path="res://Assets/Environment/Stylized Nature Megakit/glTF/CommonTree_2.gltf" id="1_10nit"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_nc1xe"]
+height = 4.2089844
+radius = 0.6791992
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_36c87"]
+height = 1.4453735
+radius = 0.17138672
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hocb0"]
+height = 1.5264282
+radius = 0.17138672
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lp5w3"]
+height = 1.7061157
+radius = 0.17138672
+
+[node name="Node3D" type="Node3D" unique_id=2146446528]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=421550908]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1624074595]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1044922, 0)
+shape = SubResource("CylinderShape3D_nc1xe")
+
+[node name="CommonTree_22" parent="StaticBody3D" unique_id=2031880714 instance=ExtResource("1_10nit")]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=424514980]
+transform = Transform3D(-0.8291636, -0.55270284, 0.08371052, 0.43650877, -0.5466168, 0.71461195, -0.3492105, 0.62907064, 0.69449437, 0.46288037, 2.654531, -0.02404865)
+shape = SubResource("CylinderShape3D_36c87")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=1897380266]
+transform = Transform3D(0.8015575, 0.5953876, -0.054945927, 0.45957094, -0.5546995, 0.69361603, 0.382492, -0.58122504, -0.7182464, -0.20263653, 2.928703, 0.82327)
+shape = SubResource("CylinderShape3D_hocb0")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=1800029658]
+transform = Transform3D(-0.24280293, 0.7069682, 0.66426116, 0.401642, -0.55004156, 0.73221445, 0.8830235, 0.44457883, -0.1503964, -0.39224055, 2.8299232, 0.1197688)
+shape = SubResource("CylinderShape3D_lp5w3")

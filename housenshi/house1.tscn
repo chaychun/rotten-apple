@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dmphxuqa6t1bk"]
+
+[ext_resource type="PackedScene" uid="uid://dmrsb26m55utv" path="res://Assets/house/house1/simple_medieval_style_house.glb" id="1_505tf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hcgqu"]
+size = Vector3(5.5097656, 2.8702087, 4.5791016)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pvrog"]
+size = Vector3(6.2382813, 0.5541992, 2.6398315)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ibtf1"]
+size = Vector3(6.2382813, 0.43988037, 2.6398315)
+
+[node name="Node3D" type="Node3D" unique_id=952387639]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=242033372]
+
+[node name="Sketchfab_Scene" parent="StaticBody3D" unique_id=1510909270 instance=ExtResource("1_505tf")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1568203716]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4277191, 0)
+shape = SubResource("BoxShape3D_hcgqu")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1592168883]
+transform = Transform3D(1, 0, 0, 0, 0.91033, -0.41388306, 0, 0.41388306, 0.91033, 0, 3.1095815, 1.0578871)
+shape = SubResource("BoxShape3D_pvrog")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=1263205902]
+transform = Transform3D(1, 0, 0, 0, -0.911202, -0.41195977, 0, 0.41195977, -0.911202, 0, 3.16913, -1.1327784)
+shape = SubResource("BoxShape3D_ibtf1")

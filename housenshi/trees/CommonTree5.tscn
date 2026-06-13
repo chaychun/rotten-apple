@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://eono65qfuo8q"]
+
+[ext_resource type="PackedScene" uid="uid://bgeax0ki8sfx" path="res://Assets/Environment/Stylized Nature Megakit/glTF/CommonTree_5.gltf" id="1_6e63l"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lvv4v"]
+height = 1.5647583
+radius = 0.47021484
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_uk5iq"]
+height = 0.8560333
+radius = 0.28320313
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3hbtx"]
+height = 1.9452095
+radius = 0.18554688
+
+[node name="Node3D" type="Node3D" unique_id=933614226]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1838500879]
+
+[node name="CommonTree_52" parent="StaticBody3D" unique_id=311011828 instance=ExtResource("1_6e63l")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1443557871]
+transform = Transform3D(1, 0, 0, 0, 0.98318166, -0.18263021, 0, 0.18263021, 0.98318166, 0.0072333813, 0.7756653, 0.09305388)
+shape = SubResource("CylinderShape3D_lvv4v")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1784510154]
+transform = Transform3D(1, 0, 0, 0, 0.98977864, 0.14261162, 0, -0.14261162, 0.98977864, 0.08441195, 1.9096255, 0.13914263)
+shape = SubResource("CylinderShape3D_uk5iq")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=1604519445]
+transform = Transform3D(0.99694467, -0.0773127, -0.011139552, 0.07811111, 0.98675466, 0.14217593, 0, -0.14261165, 0.98977876, -0.030935854, 3.2849557, -0.031968806)
+shape = SubResource("CylinderShape3D_3hbtx")
