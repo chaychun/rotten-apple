@@ -18,3 +18,9 @@ var reward: int = 0
 var reason: int = CarryReason.NONE
 var message: String = ""
 var photo: Texture2D = null # Fixed in quest data, mail inherits
+
+
+static func format_body(text: String, reward: int) -> String:
+	if text == "":
+		return "..."
+	return text.format({"reward": reward})

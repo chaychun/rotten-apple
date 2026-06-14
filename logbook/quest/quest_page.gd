@@ -117,7 +117,7 @@ func _render() -> void:
 	_reward_value.text = "%d coins" % quest.reward
 
 	var mail: MailData = Mailbox.latest_for_quest(_current_id)
-	_body.text = mail.message if mail != null and mail.message != "" else quest.description
+	_body.text = mail.message if mail != null else quest.description
 
 	var photo: Texture2D = mail.photo if mail != null else null
 	_photo.texture = photo

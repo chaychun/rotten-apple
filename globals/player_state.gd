@@ -224,7 +224,7 @@ func _queue_reward(quest_id: String, p: QuestProgress) -> void:
 	mail.type = MailData.MailType.REWARD
 	mail.quest_id = quest_id
 	mail.reward = quest.reward if quest else 0
-	mail.message = "Exactly what I wanted. Here's your %d coins." % mail.reward # TODO: replace with proper message per quest
+	mail.message = MailData.format_body(quest.mail_reward if quest else "", mail.reward)
 	p.feedback_sent = true
 	_pending_mail.append(mail)
 
@@ -236,25 +236,27 @@ func _queue_failure(quest_id: String, p: QuestProgress, day: int, reason: int) -
 	var mail := MailData.new()
 	mail.quest_id = quest_id
 	mail.reason = reason
+	mail.reward = quest.reward if quest else 0
 	mail.type = MailData.MailType.RETRY if can_retry else MailData.MailType.COMPLAINT
 	if mail.type == MailData.MailType.RETRY:
 		mail.photo = quest.reference_photo if quest else null
-		mail.message = _retry_message(reason)
+		mail.message = _retry_message(quest, reason, mail.reward)
 	else:
-		mail.message = "Forget it. I'll find someone else." # TODO: replace with proper message per quest
+		mail.message = MailData.format_body(quest.mail_complaint if quest else "", mail.reward)
 	p.feedback_sent = true
 	_pending_mail.append(mail)
 
 
-# TODO: replace with proper message per quest
-func _retry_message(reason: int) -> String:
+func _retry_message(quest: QuestData, reason: int, reward: int) -> String:
+	if quest == null:
+		return MailData.format_body("", reward)
 	match reason:
 		CarryReason.NOT_SUBMITTED:
-			return "You never brought what I asked for. I'll give you one more chance."
+			return MailData.format_body(quest.mail_retry_unsubmitted, reward)
 		CarryReason.WRONG_ORDER:
-			return "This isn't right. Look closer — this is the one I wanted. Try again."
+			return MailData.format_body(quest.mail_retry_wrong, reward)
 		_:
-			return "That wasn't quite right. Try again."
+			return MailData.format_body("", reward)
 
 
 # Deliver only the pending feedback mails from last night. Called by _on_day_started.

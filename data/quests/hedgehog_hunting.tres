@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="QuestData" format=3 uid="uid://3qblvlou2fnq"]
+
+[ext_resource type="Script" uid="uid://cwogmrcc8t8ky" path="res://data/quest_requirement.gd" id="1_hk25g"]
+[ext_resource type="Script" uid="uid://xg6rrpcfkd7" path="res://data/quest_data.gd" id="2_kkiex"]
+
+[sub_resource type="Resource" id="Resource_hk25g"]
+script = ExtResource("1_hk25g")
+species = "Hedgehog"
+amount = 2
+wants_real = false
+metadata/_custom_type_script = "uid://cwogmrcc8t8ky"
+
+[resource]
+script = ExtResource("2_kkiex")
+id = "hedgehog_hunting"
+quest_name = "Hedgehog hunting"
+requirements = Array[ExtResource("1_hk25g")]([SubResource("Resource_hk25g")])
+reward = 20
+posted_by = "Mr. Conner"
+mail_new = "Hey there kid, 
+
+Heard youse got those fluffy hedgehogs running 'round the back of ya house? I could use a couple of 'em for my garden project. I'll give ya 10 gold a piece, what do ya say?"
+mail_retry_unsubmitted = "Hey kid,
+
+Did ya get my mail alright? Those hedgehogs I ordered ain't arriving yet. Or maybe you don't know what they look like? Here I drew 'em for ya.
+
+Hurry up kid, or I'll bring my golds some place else..."
+mail_retry_wrong = "When I said \"hedgehog\" I didn't mean these spiky creatures... Are we even speaking the same language here? Clearly I mean these bushy pigs. Here, I even drew 'em up for ya.
+
+Don't get it wrong this time alright?"
+mail_reward = "Got those hedgehogs you sent me. They're big boys ain't they haha, gonna need to trim 'em up a bit yeah. Thanks kid.
+
+Oh, and here's the {reward} gold I promised ya"
+mail_complaint = "Forget it kid, I went and got those hedgehogs from another farm. And I thought Annie's kid would be wiser than this... how wrong I was"
+metadata/_custom_type_script = "uid://xg6rrpcfkd7"
