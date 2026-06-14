@@ -1,21 +1,54 @@
 [gd_scene format=3 uid="uid://dpu1uhfgsyl7u"]
 
 [ext_resource type="Script" uid="uid://cdjt7y24o1l7h" path="res://player/player.gd" id="1_rkbax"]
-[ext_resource type="Texture2D" uid="uid://bes6mk85c6oa7" path="res://player/placeholder/player_idle_left.png" id="2_rkbax"]
-[ext_resource type="Texture2D" uid="uid://dwh0lanecetv" path="res://player/placeholder/player_idle_right.png" id="3_g1dw6"]
+[ext_resource type="Texture2D" uid="uid://bxkhiiuylivde" path="res://player/sprite/back_0.png" id="2_yllr7"]
+[ext_resource type="Texture2D" uid="uid://u1tco4hs3540" path="res://player/sprite/back_1.png" id="3_kb6p2"]
+[ext_resource type="Texture2D" uid="uid://bsticfdlpriip" path="res://player/sprite/back_2.png" id="4_wodsf"]
+[ext_resource type="Texture2D" uid="uid://cxsdfdwhett1x" path="res://player/sprite/front_0.png" id="5_32hag"]
+[ext_resource type="Texture2D" uid="uid://dvjk5tqg2sop4" path="res://player/sprite/front_1.png" id="6_tqiix"]
+[ext_resource type="Texture2D" uid="uid://ciuhxq2bk7hyh" path="res://player/sprite/front_2.png" id="7_e7oew"]
+[ext_resource type="Texture2D" uid="uid://rbx2wyjjn2yf" path="res://player/sprite/left_side_0.png" id="8_c35mf"]
+[ext_resource type="Texture2D" uid="uid://qc3t5c2rcs8v" path="res://player/sprite/left_side_1.png" id="9_65viv"]
+[ext_resource type="Texture2D" uid="uid://dcqr6wofui2xn" path="res://player/sprite/left_side_2.png" id="10_x7c3f"]
+[ext_resource type="Texture2D" uid="uid://cofv2hu7ox3fx" path="res://player/sprite/right_side_0.png" id="11_bjvpn"]
+[ext_resource type="Texture2D" uid="uid://bcvj2j56y1tyk" path="res://player/sprite/right_side_1.png" id="12_s7qer"]
+[ext_resource type="Texture2D" uid="uid://cs4atohhdu285" path="res://player/sprite/right_side_2.png" id="13_g4c7l"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rkbax"]
-radius = 0.5048828
+radius = 0.22216797
 height = 1.7
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g1dw6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_rkbax")
+"texture": ExtResource("5_32hag")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_rkbax")
+"texture": ExtResource("6_tqiix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_32hag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_e7oew")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_c35mf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_65viv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_c35mf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_x7c3f")
 }],
 "loop": true,
 "name": &"walk_l",
@@ -23,107 +56,38 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_g1dw6")
+"texture": ExtResource("11_bjvpn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_g1dw6")
+"texture": ExtResource("12_s7qer")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bjvpn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_g4c7l")
 }],
 "loop": true,
 "name": &"walk_r",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yllr7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kb6p2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yllr7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wodsf")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
 }]
-
-[sub_resource type="Animation" id="Animation_g1dw6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite3D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"walk_l"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite3D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_yw30f"]
-resource_name = "walk_l"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite3D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [&"walk_l", &"walk_l"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite3D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_qjkh3"]
-resource_name = "walk_r"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite3D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [&"walk_r", &"walk_r"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite3D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_g6k8r"]
-_data = {
-&"RESET": SubResource("Animation_g1dw6"),
-&"walk_l": SubResource("Animation_yw30f"),
-&"walk_r": SubResource("Animation_qjkh3")
-}
 
 [node name="Node3D" type="Node3D" unique_id=1244172916]
 
@@ -142,10 +106,7 @@ billboard = 2
 shaded = true
 render_priority = 100
 sprite_frames = SubResource("SpriteFrames_g1dw6")
-animation = &"walk_l"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody3D" unique_id=1452557396]
-libraries/ = SubResource("AnimationLibrary_g6k8r")
+animation = &"walk_up"
 
 [node name="CameraController" type="Node3D" parent="." unique_id=886119503]
 transform = Transform3D(1, 0, 0, 0, 0.7071067, 0.7071067, 0, -0.7071067, 0.7071067, 0, 2.5, 2.5)

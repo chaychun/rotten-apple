@@ -1,13 +1,14 @@
 extends CharacterBody3D
 
-@export var speed = 15
+@export var speed = 4
 @export var gravity = 15
 @onready var camera_controller: Node3D = $"../CameraController"
-@onready var _animation_player = $AnimationPlayer
+@onready var anim: AnimatedSprite3D = $AnimatedSprite3D
+
 
 var target_velocity = Vector3.ZERO
 var default_controller_pos = Vector3(0.0, 5, 5)
-var controller_pos_limit = Vector2(1.0, 5)
+var controller_pos_limit = Vector2(1.0, 7)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,29 +23,34 @@ func _physics_process(delta: float) -> void:
 	# Get Input
 	if Input.is_action_pressed("move_right"):
 		direction.x += 1
-		_animation_player.play("walk_r")
-	else:
-		_animation_player.stop()
+		anim.play("walk_r")
 	if Input.is_action_pressed("move_left"):
 		direction.x -= 1
-		_animation_player.play("walk_l")
-	else:
-		_animation_player.stop()
+		anim.play("walk_l")
 	if Input.is_action_pressed("move_back"):
 		direction.z += 1
+		anim.play("walk_down")
 	if Input.is_action_pressed("move_forward"):
 		direction.z -= 1
+		anim.play("walk_up")
+
 	
+	if not (Input.is_action_pressed("move_right") or Input.is_action_pressed("move_left") or Input.is_action_pressed("move_forward") or Input.is_action_pressed("move_back")):
+		anim.stop()
+		
 	if direction != Vector3.ZERO:
 		direction = direction.normalized()
 	
+
+
 	
 	# Ground Velocity
 	target_velocity.x = direction.x * speed
 	target_velocity.z = direction.z * speed
 	if Input.is_action_pressed("sprint"):
-		target_velocity.x = direction.x * speed * 1.4
-		target_velocity.z = direction.z * speed * 1.4
+		anim.set_speed_scale(1.5)
+		target_velocity.x = direction.x * speed * 2.0
+		target_velocity.z = direction.z * speed * 2.0
 	
 	# Vertical Velocity
 	if Input.is_action_just_pressed("jump") and is_on_floor():

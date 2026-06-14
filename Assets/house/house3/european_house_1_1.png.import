@@ -2,21 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cofv2hu7ox3fx"
-path.s3tc="res://.godot/imported/right_side_0.png-999c9d439da7df6e04ad4d2d66f1178b.s3tc.ctex"
+uid="uid://be71etri5ge1j"
+path="res://.godot/imported/european_house_1_1.png-6518c687aa5d1e6102fac6b537bd1709.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
+}
+generator_parameters={
+"md5": "9701170f790cc8a1df44b0ce84a451c7"
 }
 
 [deps]
 
-source_file="res://player/sprite/right_side_0.png"
-dest_files=["res://.godot/imported/right_side_0.png-999c9d439da7df6e04ad4d2d66f1178b.s3tc.ctex"]
+source_file="res://Assets/house/house3/european_house_1_1.png"
+dest_files=["res://.godot/imported/european_house_1_1.png-6518c687aa5d1e6102fac6b537bd1709.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -38,4 +40,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
