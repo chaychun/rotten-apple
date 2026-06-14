@@ -1,0 +1,42 @@
+main/main.tscn
+  s_635eadd89bc697::t_c42f80f82d06b3 1677,1681
+  s_635eadd89bc697::t_41fdfc366e57ea 1676,1678-1680,1682-1683
+logbook/logbook_layer.gd
+  s_635eadd89bc697::t_120a95d6cc9875 23-24
+  s_635eadd89bc697::t_d5157ca090d2ad 33-36
+project.godot
+  s_635eadd89bc697::t_5a5b619164c091 27
+mail/mail_layer.gd.uid
+  s_635eadd89bc697::t_4634bf065527f7 1
+mail/letterpaper.png.import
+  s_635eadd89bc697::t_4634bf065527f7 1-40
+housenshi/mailbox.gd
+  s_635eadd89bc697::t_6e3017c2c31cc6 4,9-12,15,19,25-28,30-45
+  s_635eadd89bc697::t_447a4f309d4d27 23-24,29
+mail/mail_layer.tscn
+  s_635eadd89bc697::t_f9e30f43a7ba95 56-59,79-82
+  s_635eadd89bc697::t_07b977f0449a92 13-19
+  s_635eadd89bc697::t_9f4fefc75971f1 2,5-12,20-31,33-35,37-43,45-52,54,60-65,67,83,85-87,89-94,96-99,102-108,110-114,116-125,127-134,136-149,151-156,158-160,162-171,173-181
+mail/mail_layer.gd
+  s_635eadd89bc697::t_898952204b844c 11
+  s_635eadd89bc697::t_a12fe841428467 1-10,12-106
+logbook/quest/quest_page.tscn
+  s_635eadd89bc697::t_068c3c077c2d7f 52-63
+  s_635eadd89bc697::t_cc2efa1113a367 188-190
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "a8ae6d17f8808900e4a120f2b7449e23af3f0dc1",
+  "prompts": {},
+  "sessions": {
+    "s_635eadd89bc697": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c772372e-9a73-4fc8-aeb8-dcecfcb9c257",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
