@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dplfd1vepsxq0"]
+
+[ext_resource type="PackedScene" uid="uid://csnobkjfg840w" path="res://Assets/Environment/plants/coconut_tree.glb" id="1_4ih02"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6ljeg"]
+height = 3.994629
+radius = 0.38964844
+
+[node name="Node3D" type="Node3D" unique_id=1090438518]
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="." unique_id=308322514]
+
+[node name="Sketchfab_Scene" parent="AnimatableBody3D" unique_id=1730827997 instance=ExtResource("1_4ih02")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=417473409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0026855, 0)
+shape = SubResource("CylinderShape3D_6ljeg")
