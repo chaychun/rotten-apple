@@ -1,0 +1,28 @@
+globals/mailbox.gd
+  s_ffbaf98ef0b5eb::t_a51f15baf9fd91 18-19
+logbook/quest/quest_page.gd
+  s_ffbaf98ef0b5eb::t_0745e2aaffc4fb 120
+data/quest_data.gd
+  s_ffbaf98ef0b5eb::t_8d7bf1744a3cbb 12
+globals/player_state.gd
+  s_ffbaf98ef0b5eb::t_b8e04a73da398b 239,243,245,250-252,255,257,259
+  s_ffbaf98ef0b5eb::t_5974581b3a5180 227
+data/mail_data.gd
+  s_ffbaf98ef0b5eb::t_cae63ec3b4bab8 21-26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "0a74348d0d74513bd4f60a93c5493a7d10ca836b",
+  "prompts": {},
+  "sessions": {
+    "s_ffbaf98ef0b5eb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7b6c7048-155b-42a0-adc7-53586c88f2ca",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
