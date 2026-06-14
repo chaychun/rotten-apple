@@ -1,0 +1,80 @@
+Assets/ui/icon_rope.png.import
+  s_2cffdd9de4d054::t_f00703dc0d2a1a 1-5,7-12,15-40
+  s_2cffdd9de4d054::t_79c8e8bc2b5e66 6,13-14
+Assets/ui/icon_exit_idle.png.import
+  s_2cffdd9de4d054::t_79c8e8bc2b5e66 1-40
+Assets/ui/icon_fishingrod.png.import
+  s_2cffdd9de4d054::t_f00703dc0d2a1a 1-5,7-12,15-40
+  s_2cffdd9de4d054::t_79c8e8bc2b5e66 6,13-14
+logbook/book_shell.gd
+  s_2cffdd9de4d054::t_2ced6b1a38fefe 8-9
+  s_2cffdd9de4d054::t_b488aeb183f9e6 71-72,75-76
+Assets/ui/icon_right_idle.png.import
+  s_2cffdd9de4d054::t_79c8e8bc2b5e66 1-40
+logbook/logbook_layer.tscn
+  s_2cffdd9de4d054::t_a5759c0e56591e 5-6
+  s_2cffdd9de4d054::t_86f11ed03dab18 30,39-42
+Assets/ui/icon_postit.png.import
+  s_2cffdd9de4d054::t_f00703dc0d2a1a 1-5,7-12,15-40
+  s_2cffdd9de4d054::t_79c8e8bc2b5e66 6,13-14
+Assets/ui/icon_insectnet.png.import
+  s_2cffdd9de4d054::t_f00703dc0d2a1a 1-5,7-12,15-40
+  s_2cffdd9de4d054::t_79c8e8bc2b5e66 6,13-14
+Assets/ui/logbook.png.import
+  s_2cffdd9de4d054::t_79c8e8bc2b5e66 6,13-14
+  s_2cffdd9de4d054::t_f00703dc0d2a1a 1-5,7-12,15-40
+Assets/ui/icon_slotbar_selector.png.import
+  s_2cffdd9de4d054::t_79c8e8bc2b5e66 1-40
+mail/mail_layer.gd
+  s_2cffdd9de4d054::t_25d7a5900d8bf8 25
+  s_2cffdd9de4d054::t_b8b2929d3c523c 10
+Assets/ui/icon_exit_hover.png.import
+  s_2cffdd9de4d054::t_79c8e8bc2b5e66 1-40
+logbook/pokedex/pokedex_page.tscn
+  s_2cffdd9de4d054::t_a5759c0e56591e 4
+Assets/ui/icon_star.png.import
+  s_2cffdd9de4d054::t_f00703dc0d2a1a 1-5,7-12,15-40
+  s_2cffdd9de4d054::t_79c8e8bc2b5e66 6,13-14
+Assets/ui/letterpaper.png.import
+  s_2cffdd9de4d054::t_79c8e8bc2b5e66 6,13-14
+  s_2cffdd9de4d054::t_f00703dc0d2a1a 1-5,7-12,15-40
+Assets/ui/icon_left_pressed.png.import
+  s_2cffdd9de4d054::t_79c8e8bc2b5e66 1-40
+Assets/ui/icon_right_pressed.png.import
+  s_2cffdd9de4d054::t_79c8e8bc2b5e66 1-40
+Assets/ui/icon_right_hover.png.import
+  s_2cffdd9de4d054::t_79c8e8bc2b5e66 1-40
+mail/mail_layer.tscn
+  s_2cffdd9de4d054::t_a5759c0e56591e 4-6
+  s_2cffdd9de4d054::t_a3877357e5458c 128-143
+Assets/ui/icon_left_idle.png.import
+  s_2cffdd9de4d054::t_79c8e8bc2b5e66 1-40
+Assets/ui/icon_slotbar.png.import
+  s_2cffdd9de4d054::t_79c8e8bc2b5e66 1-40
+logbook/book_shell.tscn
+  s_2cffdd9de4d054::t_e852483ab9e09c 178-181,186
+  s_2cffdd9de4d054::t_4bbcf15ff4f177 189,193-199,203-207
+  s_2cffdd9de4d054::t_a5759c0e56591e 4,7-13
+  s_2cffdd9de4d054::t_e6212660346e56 190
+  s_2cffdd9de4d054::t_a1c3c5e4db29b2 200
+logbook/logbook_layer.gd
+  s_2cffdd9de4d054::t_50024adf3b4f2e 6
+Assets/ui/icon_left_hover.png.import
+  s_2cffdd9de4d054::t_79c8e8bc2b5e66 1-40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "4e77d24533cccad21a0535de7ba93372c2e7b45b",
+  "prompts": {},
+  "sessions": {
+    "s_2cffdd9de4d054": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5388cfde-61ab-41c6-9720-c764eba1648f",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
