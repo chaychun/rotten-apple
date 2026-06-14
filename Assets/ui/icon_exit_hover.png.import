@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crycpwbtufr33"
-path="res://.godot/imported/logbook.png-9ab8adf9308aab9f6d385b9d06f68092.ctex"
+uid="uid://du11kg7ipekct"
+path="res://.godot/imported/icon_exit_hover.png-317b35b26e413444162ec984ea8b527c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://logbook/art/logbook.png"
-dest_files=["res://.godot/imported/logbook.png-9ab8adf9308aab9f6d385b9d06f68092.ctex"]
+source_file="res://Assets/ui/icon_exit_hover.png"
+dest_files=["res://.godot/imported/icon_exit_hover.png-317b35b26e413444162ec984ea8b527c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2r58y3um47bu"
-path="res://.godot/imported/icon_star.png-a1da423be80dc416c4aa3a60bc883684.ctex"
+uid="uid://dghrtgxg1jn3q"
+path="res://.godot/imported/icon_right_idle.png-ed6124697b6185e7c4f55d81e697e003.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://utility/icon_star.png"
-dest_files=["res://.godot/imported/icon_star.png-a1da423be80dc416c4aa3a60bc883684.ctex"]
+source_file="res://Assets/ui/icon_right_idle.png"
+dest_files=["res://.godot/imported/icon_right_idle.png-ed6124697b6185e7c4f55d81e697e003.ctex"]
 
 [params]
 

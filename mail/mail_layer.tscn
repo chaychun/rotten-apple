@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://curxqvnn5txs1"]
 
 [ext_resource type="Script" uid="uid://bc5cy0l4ego4y" path="res://mail/mail_layer.gd" id="1_mail"]
-[ext_resource type="Texture2D" uid="uid://dbyycci4vx65l" path="res://mail/letterpaper.png" id="2_paper"]
+[ext_resource type="Texture2D" uid="uid://dbyycci4vx65l" path="res://Assets/ui/letterpaper.png" id="2_paper"]
+[ext_resource type="Texture2D" uid="uid://creb1b56cjnmf" path="res://Assets/ui/icon_exit_idle.png" id="3_eidle"]
+[ext_resource type="Texture2D" uid="uid://du11kg7ipekct" path="res://Assets/ui/icon_exit_hover.png" id="4_ehover"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn"]
 bg_color = Color(0.547, 0.362, 0.272, 1)
@@ -122,6 +124,22 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_btn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
 theme_override_styles/focus = SubResource("StyleBoxFlat_btn")
 text = "Accept"
+
+[node name="Exit" type="TextureButton" parent="Root/Card" unique_id=480112233]
+custom_minimum_size = Vector2(56, 56)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -84.0
+offset_top = 16.0
+offset_right = -24.0
+offset_bottom = 76.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_eidle")
+texture_hover = ExtResource("4_ehover")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="Guide" type="Control" parent="Root" unique_id=863254945]
 visible = false

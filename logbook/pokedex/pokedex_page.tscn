@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dxla7yhooqck2"]
 
 [ext_resource type="Script" path="res://logbook/pokedex/pokedex_page.gd" id="1_page"]
-[ext_resource type="Texture2D" uid="uid://b2r58y3um47bu" path="res://utility/icon_star.png" id="2_78axx"]
+[ext_resource type="Texture2D" uid="uid://b2r58y3um47bu" path="res://Assets/ui/icon_star.png" id="2_78axx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wj3y1"]
 font_size = 52

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blubpkj1sv38o"
-path="res://.godot/imported/icon_insectnet.png-34337036fc2f0a45c91d3d686294333a.ctex"
+uid="uid://qvixl38kb8ln"
+path="res://.godot/imported/icon_right_pressed.png-1e6dded6fa63bada6d4ce328e6a647dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://utility/icon_insectnet.png"
-dest_files=["res://.godot/imported/icon_insectnet.png-34337036fc2f0a45c91d3d686294333a.ctex"]
+source_file="res://Assets/ui/icon_right_pressed.png"
+dest_files=["res://.godot/imported/icon_right_pressed.png-1e6dded6fa63bada6d4ce328e6a647dc.ctex"]
 
 [params]
 

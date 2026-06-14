@@ -7,6 +7,7 @@ extends CanvasLayer
 @onready var _message: Label = $Root/Card/Margin/VBox/Message
 @onready var _photo: TextureRect = $Root/Card/Margin/VBox/Photo
 @onready var _button: Button = $Root/Card/Margin/VBox/Button
+@onready var _exit: TextureButton = $Root/Card/Exit
 @onready var _guide: Control = $Root/Guide
 @onready var _guide_button: Button = $Root/Guide/Panel/Margin/VBox/Button
 
@@ -21,6 +22,7 @@ func _ready() -> void:
 	_root.visible = false
 	_guide.visible = false
 	_button.pressed.connect(_on_advance)
+	_exit.pressed.connect(close)  # same as ESC: dismiss, leave unread mail unread
 	_guide_button.pressed.connect(close)
 
 

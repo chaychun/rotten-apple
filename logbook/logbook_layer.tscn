@@ -2,30 +2,8 @@
 
 [ext_resource type="Script" path="res://logbook/logbook_layer.gd" id="1_07kvf"]
 [ext_resource type="PackedScene" uid="uid://jvsfgfc1q0ul" path="res://logbook/book_shell.tscn" id="2_p6mgn"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wdgki"]
-bg_color = Color(0.547, 0.362, 0.272, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.547, 0.362, 0.272, 1)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0kngd"]
-bg_color = Color(0.65, 0.44, 0.33, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.547, 0.362, 0.272, 1)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
+[ext_resource type="Texture2D" uid="uid://creb1b56cjnmf" path="res://Assets/ui/icon_exit_idle.png" id="3_eidle"]
+[ext_resource type="Texture2D" uid="uid://du11kg7ipekct" path="res://Assets/ui/icon_exit_hover.png" id="4_ehover"]
 
 [node name="LogbookLayer" type="CanvasLayer" unique_id=1631220394]
 layer = 10
@@ -49,7 +27,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Close" type="Button" parent="Root" unique_id=1180234741]
+[node name="Close" type="TextureButton" parent="Root" unique_id=1180234741]
 custom_minimum_size = Vector2(56, 56)
 layout_mode = 0
 anchor_left = 1.0
@@ -58,8 +36,7 @@ offset_left = -76.0
 offset_top = 20.0
 offset_right = -20.0
 offset_bottom = 76.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_wdgki")
-theme_override_styles/hover = SubResource("StyleBoxFlat_0kngd")
-theme_override_colors/font_color = Color(0.95, 0.9, 0.82, 1)
-theme_override_font_sizes/font_size = 26
-text = "X"
+texture_normal = ExtResource("3_eidle")
+texture_hover = ExtResource("4_ehover")
+ignore_texture_size = true
+stretch_mode = 5

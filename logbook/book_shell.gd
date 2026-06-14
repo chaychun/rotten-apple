@@ -5,8 +5,8 @@ enum Tab { POKEDEX, QUEST }
 const BOOK_MAX_SIDE := 1700.0
 
 @onready var _book_frame: Control = $BookFrame
-@onready var _prev: Button = $BookFrame/BottomBar/Prev
-@onready var _next: Button = $BookFrame/BottomBar/Next
+@onready var _prev: TextureButton = $BookFrame/BottomBar/Prev
+@onready var _next: TextureButton = $BookFrame/BottomBar/Next
 @onready var _tab_pokedex: Button = $BookFrame/Bookmarks/TabPokedex
 @onready var _tab_quest: Button = $BookFrame/Bookmarks/TabQuest
 @onready var _postit_pokedex: TextureRect = $BookFrame/Bookmarks/PostitClip/PostitPokedex
@@ -68,8 +68,12 @@ func _on_contents_changed(page: BookPage) -> void:
 
 
 func _set_nav_enabled(enabled: bool) -> void:
+	# No disabled sprite in the icon set; dim the idle texture for feedback.
+	var dim := Color(1, 1, 1, 1) if enabled else Color(1, 1, 1, 0.5)
 	_prev.disabled = not enabled
 	_next.disabled = not enabled
+	_prev.modulate = dim
+	_next.modulate = dim
 
 
 func _on_prev() -> void:
