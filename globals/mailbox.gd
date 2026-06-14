@@ -27,6 +27,14 @@ func get_unread() -> Array[MailData]:
 	return inbox.filter(func(m: MailData) -> bool: return not m.read)
 
 
+func latest_for_quest(quest_id: String) -> MailData:
+	var latest: MailData = null
+	for m in inbox:
+		if m.quest_id == quest_id and (latest == null or m.day_received >= latest.day_received):
+			latest = m
+	return latest
+
+
 func read_mail(mail: MailData) -> void:
 	if mail.read:
 		return

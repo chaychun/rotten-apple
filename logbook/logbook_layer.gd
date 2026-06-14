@@ -4,6 +4,7 @@ extends CanvasLayer
 
 @onready var _root: Control = $Root
 @onready var _close: Button = $Root/Close
+@onready var _shell: Control = $Root/BookShell
 
 var _open := false
 
@@ -39,6 +40,7 @@ func open() -> void:
 		return
 	_open = true
 	_root.visible = true
+	_shell.on_open()
 	GameClock.pause()
 	get_tree().paused = true
 

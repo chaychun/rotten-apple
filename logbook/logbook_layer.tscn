@@ -1,7 +1,7 @@
 [gd_scene format=3]
 
 [ext_resource type="Script" path="res://logbook/logbook_layer.gd" id="1_07kvf"]
-[ext_resource type="PackedScene" path="res://logbook/pokedex/pokedex.tscn" id="2_p6mgn"]
+[ext_resource type="PackedScene" uid="uid://jvsfgfc1q0ul" path="res://logbook/book_shell.tscn" id="2_p6mgn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wdgki"]
 bg_color = Color(0.547, 0.362, 0.272, 1)
@@ -43,7 +43,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0.05, 0.03, 0.02, 0.55)
 
-[node name="Pokedex" type="Control" parent="Root" unique_id=368460485 instance=ExtResource("2_p6mgn")]
+[node name="BookShell" parent="Root" instance=ExtResource("2_p6mgn")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

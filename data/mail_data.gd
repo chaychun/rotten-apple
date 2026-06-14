@@ -17,3 +17,4 @@ var day_received: int = 0 # absolute day
 var reward: int = 0
 var reason: int = CarryReason.NONE
 var message: String = ""
+var photo: Texture2D = null # Fixed in quest data, mail inherits

@@ -1,0 +1,239 @@
+[gd_scene format=3 uid="uid://jvsfgfc1q0ul"]
+
+[ext_resource type="Script" uid="uid://bwl640w76s5nc" path="res://logbook/book_shell.gd" id="1_shell"]
+[ext_resource type="Texture2D" uid="uid://crycpwbtufr33" path="res://logbook/art/logbook.png" id="2_book"]
+[ext_resource type="PackedScene" uid="uid://dxla7yhooqck2" path="res://logbook/pokedex/pokedex_page.tscn" id="3_pokedex"]
+[ext_resource type="PackedScene" uid="uid://bq8estpage1ax" path="res://logbook/quest/quest_page.tscn" id="4_quest"]
+[ext_resource type="Texture2D" uid="uid://cbdpny7yetp8k" path="res://logbook/art/icon_postit.png" id="5_postit"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_letter"]
+font_size = 40
+font_color = Color(0.95, 0.9, 0.82, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjd6v"]
+bg_color = Color(0.783, 0.697, 0.597, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.547, 0.362, 0.272, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1qa3"]
+bg_color = Color(0.547, 0.362, 0.272, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.547, 0.362, 0.272, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d465a"]
+bg_color = Color(0.85, 0.77, 0.66, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.547, 0.362, 0.272, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[node name="BookShell" type="Control" unique_id=2081542532]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_shell")
+
+[node name="BookFrame" type="Control" parent="." unique_id=677786049]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -550.0
+offset_top = -550.0
+offset_right = 550.0
+offset_bottom = 550.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Book" type="TextureRect" parent="BookFrame" unique_id=1255454463]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_book")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Content" type="Control" parent="BookFrame" unique_id=1881589095]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PokedexPage" parent="BookFrame/Content" unique_id=215788041 instance=ExtResource("3_pokedex")]
+layout_mode = 1
+
+[node name="QuestPage" parent="BookFrame/Content" unique_id=152332657 instance=ExtResource("4_quest")]
+visible = false
+layout_mode = 1
+
+[node name="Bookmarks" type="Control" parent="BookFrame" unique_id=1988818466]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TabQuest" type="Button" parent="BookFrame/Bookmarks" unique_id=1793645274]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.015
+anchor_top = 0.28
+anchor_right = 0.17
+anchor_bottom = 0.37
+focus_mode = 0
+flat = true
+
+[node name="TabPokedex" type="Button" parent="BookFrame/Bookmarks" unique_id=209206558]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.015
+anchor_top = 0.38
+anchor_right = 0.17
+anchor_bottom = 0.47
+focus_mode = 0
+flat = true
+
+[node name="PostitClip" type="Control" parent="BookFrame/Bookmarks" unique_id=378549847]
+clip_contents = true
+layout_mode = 1
+anchor_right = 0.177
+anchor_bottom = 1.0
+offset_right = 0.30000305
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PostitQuest" type="TextureRect" parent="BookFrame/Bookmarks/PostitClip" unique_id=2003223759]
+self_modulate = Color(0, 0, 0, 0.4)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.215
+anchor_top = 0.21400002
+anchor_right = 1.7700001
+anchor_bottom = 0.47300002
+offset_left = -0.074985504
+offset_top = -0.4000244
+offset_right = 0.048950195
+offset_bottom = -0.30004883
+mouse_filter = 2
+texture = ExtResource("5_postit")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PostitPokedex" type="TextureRect" parent="BookFrame/Bookmarks/PostitClip" unique_id=1832870480]
+self_modulate = Color(0, 0, 0, 0.4)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.349
+anchor_top = 0.32200003
+anchor_right = 1.904
+anchor_bottom = 0.58000004
+offset_left = 0.054985046
+offset_top = -0.20004272
+offset_right = -0.079315186
+offset_bottom = -6.1035156e-05
+mouse_filter = 2
+texture = ExtResource("5_postit")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LetterQuest" type="Label" parent="BookFrame/Bookmarks" unique_id=1421413669]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.028
+anchor_top = 0.28800002
+anchor_right = 0.18300001
+anchor_bottom = 0.37800002
+offset_left = 0.19999886
+offset_top = 0.19998169
+offset_right = 0.19998169
+offset_bottom = 0.19998169
+text = "Q"
+label_settings = SubResource("LabelSettings_letter")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LetterPokedex" type="Label" parent="BookFrame/Bookmarks" unique_id=2049308677]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.029000001
+anchor_top = 0.395
+anchor_right = 0.18400002
+anchor_bottom = 0.485
+offset_left = 0.099998474
+offset_top = 0.5
+offset_right = 0.099975586
+offset_bottom = 0.5
+text = "A"
+label_settings = SubResource("LabelSettings_letter")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BottomBar" type="HBoxContainer" parent="BookFrame" unique_id=929243273]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.41700003
+anchor_top = 0.702
+anchor_right = 0.62600005
+anchor_bottom = 0.77900004
+offset_left = 0.29992676
+offset_top = -0.2000122
+offset_right = 0.39996338
+offset_bottom = 0.099975586
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Prev" type="Button" parent="BookFrame/BottomBar" unique_id=1935891035]
+custom_minimum_size = Vector2(56, 56)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.29, 0.2, 0.13, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_vjd6v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s1qa3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d465a")
+text = "<"
+
+[node name="Next" type="Button" parent="BookFrame/BottomBar" unique_id=1801681290]
+custom_minimum_size = Vector2(56, 56)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.29, 0.2, 0.13, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_vjd6v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s1qa3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d465a")
+text = ">"

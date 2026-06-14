@@ -100,6 +100,8 @@ func accept_quest(quest_id: String) -> void:
 		return
 	if p.status != QuestStatus.MAILED:
 		return  # already accepted/superseded, day end logic already handled it, skip
+	if p.received_day == 0:
+		p.received_day = GameClock.current_day
 	p.status = QuestStatus.ACTIVE
 	p.feedback_sent = false
 	Events.quest_accepted.emit(quest_id)
@@ -222,6 +224,7 @@ func _queue_reward(quest_id: String, p: QuestProgress) -> void:
 	mail.type = MailData.MailType.REWARD
 	mail.quest_id = quest_id
 	mail.reward = quest.reward if quest else 0
+	mail.message = "Exactly what I wanted. Here's your %d coins." % mail.reward # TODO: replace with proper message per quest
 	p.feedback_sent = true
 	_pending_mail.append(mail)
 
@@ -229,12 +232,29 @@ func _queue_reward(quest_id: String, p: QuestProgress) -> void:
 func _queue_failure(quest_id: String, p: QuestProgress, day: int, reason: int) -> void:
 	# A first miss can't carry over after MAX_QUEST_DAY
 	var can_retry := p.attempts == 0 and day < MAX_QUEST_DAY
+	var quest: QuestData = QuestRegistry.get_quest(quest_id)
 	var mail := MailData.new()
 	mail.quest_id = quest_id
 	mail.reason = reason
 	mail.type = MailData.MailType.RETRY if can_retry else MailData.MailType.COMPLAINT
+	if mail.type == MailData.MailType.RETRY:
+		mail.photo = quest.reference_photo if quest else null
+		mail.message = _retry_message(reason)
+	else:
+		mail.message = "Forget it. I'll find someone else." # TODO: replace with proper message per quest
 	p.feedback_sent = true
 	_pending_mail.append(mail)
+
+
+# TODO: replace with proper message per quest
+func _retry_message(reason: int) -> String:
+	match reason:
+		CarryReason.NOT_SUBMITTED:
+			return "You never brought what I asked for. I'll give you one more chance."
+		CarryReason.WRONG_ORDER:
+			return "This isn't right. Look closer — this is the one I wanted. Try again."
+		_:
+			return "That wasn't quite right. Try again."
 
 
 # Deliver only the pending feedback mails from last night. Called by _on_day_started.
@@ -282,3 +302,26 @@ func _quests_with_status(status: int) -> Array[String]:
 		if quests[quest_id].status == status:
 			out.append(quest_id)
 	return out
+
+
+func get_logbook_quests() -> Array[String]:
+	var ids: Array[String] = []
+	var meta: Dictionary = {}
+	var idx := 0
+	for quest_id in QuestRegistry.get_all_quest_ids():
+		var p: QuestProgress = quests.get(quest_id)
+		if p != null and p.received_day != 0:
+			var finished := p.status == QuestStatus.DONE or p.status == QuestStatus.FAILED
+			meta[quest_id] = {"group": 1 if finished else 0, "day": p.received_day, "order": idx}
+			ids.append(quest_id)
+		idx += 1
+	ids.sort_custom(func(a: String, b: String) -> bool:
+		var ma: Dictionary = meta[a]
+		var mb: Dictionary = meta[b]
+		if ma.group != mb.group:
+			return ma.group < mb.group
+		if ma.day != mb.day:
+			return ma.day < mb.day
+		return ma.order < mb.order
+	)
+	return ids
