@@ -20,12 +20,18 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	match event.physical_keycode:
 		KEY_E:
+			if MailLayer.is_open():
+				return  # one dialog at a time
 			_toggle()
 			get_viewport().set_input_as_handled()
 		KEY_ESCAPE:
 			if _open:
 				close()
 				get_viewport().set_input_as_handled()
+
+
+func is_open() -> bool:
+	return _open
 
 
 func _toggle() -> void:

@@ -1,29 +1,45 @@
 extends Node3D
 
 var insideArea := false
-@onready var _body: AnimatableBody3D = $AnimatableBody3D
-@onready var _area: Area3D = $Area3D
+
 
 func _ready() -> void:
-#	$Indicator.visible = false
 	$AnimationPlayer.set_movie_quit_on_finish_enabled(false)
 	$AnimationPlayer.play("YOUGOTMAIL")
-	
-	Events.quest_mailed.connect(func() : $Indicator.visible = true)
+
+	Events.mail_received.connect(_on_mail_changed)
+	Events.mail_read.connect(_on_mail_changed)
+	_refresh_indicator()
 
 
-func _on_area_3d_body_entered(body: CharacterBody3D) -> void:
+func _on_area_3d_body_entered(_body: Node3D) -> void:
 	insideArea = true
-	print("ye")
 
 
-func _on_area_3d_body_exited(body: CharacterBody3D) -> void:
+func _on_area_3d_body_exited(_body: Node3D) -> void:
 	insideArea = false
-	print("ne")
 
 
-func _on_area_3d_2_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	if insideArea == true:
-		if Input.is_action_pressed("left_click"):
-			print("yej")
-	else: print("nuh")
+# Click on the mailbox body. Godot 4 requires the full input_event signature.
+func _on_area_3d_2_input_event(_camera: Node, event: InputEvent, _pos: Vector3, _normal: Vector3, _shape: int) -> void:
+	_try_open(event)
+
+
+# Click within proximity ring
+func _on_area_3d_input_event(_camera: Node, event: InputEvent, _pos: Vector3, _normal: Vector3, _shape: int) -> void:
+	_try_open(event)
+
+
+func _try_open(event: InputEvent) -> void:
+	if not insideArea:
+		return
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		MailLayer.open()  # open() guards: empty inbox / logbook already open
+
+
+func _on_mail_changed(_mail: MailData) -> void:
+	_refresh_indicator()
+
+
+func _refresh_indicator() -> void:
+	$Indicator.visible = not Mailbox.get_unread().is_empty()

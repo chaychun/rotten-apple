@@ -17,7 +17,7 @@ quest_name = "Hedgehog hunting"
 requirements = Array[ExtResource("1_hk25g")]([SubResource("Resource_hk25g")])
 reward = 20
 posted_by = "Mr. Conner"
-mail_new = "Hey there kid, 
+mail_new = "Hey there kid,
 
 Heard youse got those fluffy hedgehogs running 'round the back of ya house? I could use a couple of 'em for my garden project. I'll give ya 10 gold a piece, what do ya say?"
 mail_retry_unsubmitted = "Hey kid,
