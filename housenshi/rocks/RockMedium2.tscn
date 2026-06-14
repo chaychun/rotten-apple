@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://1xeji078m7gt"]
 
-[ext_resource type="PackedScene" uid="uid://db5e6mrskbq6f" path="res://Assets/Environment/Stylized Nature Megakit/glTF/Rock_Medium_2.gltf" id="1_bo8ku"]
+[ext_resource type="PackedScene" uid="uid://nnhtdyn5jj40" path="res://Assets/Environment/StylisedNatureMegakit/glTF/Rock_Medium_2.gltf" id="1_bo8ku"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wrp8l"]
 size = Vector3(2.7006836, 0.9684448, 1.3598633)
@@ -26,8 +26,6 @@ size = Vector3(0.9795884, 0.47494507, 1.9287949)
 [node name="Node3D" type="Node3D" unique_id=676642250]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1988172962]
-
-[node name="Rock_Medium_22" parent="StaticBody3D" unique_id=2096901768 instance=ExtResource("1_bo8ku")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=103416842]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20385742, 0.481781, -0.17993164)
@@ -56,3 +54,5 @@ shape = SubResource("BoxShape3D_ncwcy")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=822681189]
 transform = Transform3D(0.6850864, 0.19299816, -0.7024301, 0.66591424, 0.2249962, 0.7112917, 0.29532203, -0.95505434, 0.025621846, 0.26745707, 0.777112, -0.78266704)
 shape = SubResource("BoxShape3D_03a80")
+
+[node name="Rock_Medium_23" parent="StaticBody3D" unique_id=1290653463 instance=ExtResource("1_bo8ku")]
