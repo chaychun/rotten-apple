@@ -4,6 +4,12 @@ extends CharacterBody3D
 @export var gravity = 15
 @onready var camera_controller: Node3D = $"../CameraController"
 @onready var anim: AnimatedSprite3D = $AnimatedSprite3D
+@onready var jump_particle: GPUParticles3D = $MovementEffects/JumpEffect
+@onready var run_particle: GPUParticles3D = $MovementEffects/SprintEffect
+@onready var eepy: GPUParticles3D = $SleepEffects/eepy
+@onready var zzz: GPUParticles3D = $SleepEffects/zzz
+@onready var bedcalls: GPUParticles3D = $SleepEffects/bedcalls
+@onready var icanhearit: GPUParticles3D = $SleepEffects/icanhearit
 
 
 var target_velocity = Vector3.ZERO
@@ -13,7 +19,6 @@ var controller_pos_limit = Vector2(1.0, 7)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	camera_controller.position = default_controller_pos
-	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,26 +28,31 @@ func _physics_process(delta: float) -> void:
 	# Get Input
 	if Input.is_action_pressed("move_right"):
 		direction.x += 1
-		anim.play("walk_r")
 	if Input.is_action_pressed("move_left"):
 		direction.x -= 1
-		anim.play("walk_l")
 	if Input.is_action_pressed("move_back"):
 		direction.z += 1
-		anim.play("walk_down")
 	if Input.is_action_pressed("move_forward"):
 		direction.z -= 1
+	
+	anim.set_speed_scale(1.0)
+	
+	if direction.x > 0:
+		anim.play("walk_r")
+	elif direction.x < 0:
+		anim.play("walk_l")
+	elif direction.z > 0:
+		anim.play("walk_down")
+	elif direction.z < 0:
 		anim.play("walk_up")
-
+	
 	
 	if not (Input.is_action_pressed("move_right") or Input.is_action_pressed("move_left") or Input.is_action_pressed("move_forward") or Input.is_action_pressed("move_back")):
 		anim.stop()
-		
+	
 	if direction != Vector3.ZERO:
 		direction = direction.normalized()
 	
-
-
 	
 	# Ground Velocity
 	target_velocity.x = direction.x * speed
@@ -52,13 +62,23 @@ func _physics_process(delta: float) -> void:
 		target_velocity.x = direction.x * speed * 2.0
 		target_velocity.z = direction.z * speed * 2.0
 	
+	if anim.get_speed_scale() == 1.5:
+		if target_velocity.x != 0 or target_velocity.z != 0:
+			run_particle.set_emitting(true)
+	else:
+		run_particle.set_emitting(false)
+	
 	# Vertical Velocity
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		direction.y = 1
 		target_velocity.y = direction.y * 5
+		if direction.y != 0:
+			jump_particle.set_emitting(true)
+		else:
+			jump_particle.set_emitting(false)
+	
 	if not is_on_floor():
 		target_velocity.y = target_velocity.y - (gravity * delta)
-		
 	
 	# Moving the Character
 	velocity = lerp(velocity, target_velocity, 0.15)
@@ -79,3 +99,9 @@ func _physics_process(delta: float) -> void:
 	cam_pos.z = lerp(0.01 * velocity.z + position.z + default_controller_pos.z, cursor_pos.y - viewport_size.y / 2, 0.0002)
 	cam_pos.y = lerp(position.y + default_controller_pos.y, position.y + default_controller_pos.y, 0.7)
 	camera_controller.position = cam_pos
+	
+func _play_eep_effects(yn: bool):
+	eepy.set_emitting(yn)
+	zzz.set_emitting(yn)
+	bedcalls.set_emitting(yn)
+	icanhearit.set_emitting(yn)

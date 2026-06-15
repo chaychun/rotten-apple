@@ -25,11 +25,7 @@ Mailbox="*uid://cn02k4on3w3cg"
 GameClock="*uid://bye3kicwjdeep"
 LogbookLayer="*res://logbook/logbook_layer.tscn"
 MailLayer="*res://mail/mail_layer.tscn"
-
-[display]
-
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+SceneManager="*uid://d0642wvutli5x"
 
 [editor]
 

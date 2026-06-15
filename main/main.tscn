@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://bs7f42e414t5q"]
 
+[ext_resource type="Script" uid="uid://bpt713c280p57" path="res://main/get_in_house.gd" id="1_eq1qp"]
 [ext_resource type="PackedScene" uid="uid://dpu1uhfgsyl7u" path="res://player/player.tscn" id="1_ktywf"]
 [ext_resource type="PackedScene" uid="uid://bdr38pj2qtbfe" path="res://animal/real/animal.tscn" id="2_ycfeg"]
 [ext_resource type="PackedScene" uid="uid://dmjwm381jr3cx" path="res://housenshi/old_house.tscn" id="3_hf28p"]
@@ -110,6 +111,9 @@ adjustment_enabled = true
 adjustment_brightness = 0.95
 adjustment_contrast = 1.025
 adjustment_saturation = 1.17
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6guey"]
+size = Vector3(2.4570313, 3.522585, 0.8095856)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ts2mh"]
 load_path = "res://.godot/imported/cliff_rocks_02_height_1k.png-afa7b6958c729191367f0f092bd93f6f.ctex"
@@ -1653,8 +1657,21 @@ radius = 11.517522
 
 [node name="Node" type="Node" unique_id=1908846288]
 
+[node name="Player" parent="." unique_id=1244172916 instance=ExtResource("1_ktywf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.041190088, 0.4988584, -13.914134)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=609979057]
 environment = SubResource("Environment_xwkvk")
+
+[node name="GetInHouse" type="Node" parent="." unique_id=1202565666]
+script = ExtResource("1_eq1qp")
+changeAreaType = 1
+
+[node name="InArea" type="Area3D" parent="GetInHouse" unique_id=2100580688]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GetInHouse/InArea" unique_id=418492030]
+transform = Transform3D(0.6199999, 0, 0, 0, 0.6195112, -0.024611402, 0, 0.024611402, 0.6195112, -0.0015893432, 2.323746, -14.983219)
+shape = SubResource("BoxShape3D_6guey")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=781975325]
 transform = Transform3D(0.8348287, 0.35386097, -0.42171502, 0, 0.76604444, 0.6427877, 0.55050987, -0.5366176, 0.6395159, 0, 24, 0)
@@ -1662,9 +1679,6 @@ light_color = Color(1.3769996, 1.3626599, 1.2811995, 1)
 light_indirect_energy = 4.406
 light_angular_distance = 0.65
 shadow_enabled = true
-
-[node name="Player" parent="." unique_id=1244172916 instance=ExtResource("1_ktywf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.886047, 1.260016, -29.169743)
 
 [node name="PlayerHouse" parent="." unique_id=1011123435 instance=ExtResource("3_hf28p")]
 transform = Transform3D(0.62, 0, 0, 0, 0.6195113, -0.024611408, 0, 0.024611408, 0.6195113, 0, 0.10369706, -16.863121)
@@ -1773,7 +1787,7 @@ foliages = Array[FoliageResource]([SubResource("FoliageResource_7ny4s"), SubReso
 objects = Array[ObjectResource]([SubResource("ObjectResource_reh2a"), SubResource("ObjectResource_571ru"), SubResource("ObjectResource_gmy4t"), SubResource("ObjectResource_nelid"), SubResource("ObjectResource_vmwr3"), SubResource("ObjectResource_v6wbg"), SubResource("ObjectResource_pc78h"), SubResource("ObjectResource_ts2mh")])
 terrainZones = SubResource("ZonesResource_0i4oc")
 physics_interpolation_mode = 2
-metadata/_edit_lock_ = true
+metadata/_edit_lock_ = false
 
 [node name="Walter" type="Node3D" parent="Environment" unique_id=243771577]
 
@@ -1842,3 +1856,5 @@ shape = SubResource("SphereShape3D_42ldh")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment/WorldBoundary/StaticBody3D" unique_id=1688998173]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 10.317808, -0.52510166, -42.133106)
 shape = SubResource("SphereShape3D_aw48e")
+
+[connection signal="body_entered" from="GetInHouse/InArea" to="GetInHouse" method="_on_in_area_body_entered"]

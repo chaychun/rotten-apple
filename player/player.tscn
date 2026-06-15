@@ -35,7 +35,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_down",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -52,7 +52,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_l",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -69,7 +69,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_r",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -86,12 +86,185 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_up",
-"speed": 5.0
+"speed": 4.0
 }]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_febq7"]
+emission_shape_offset = Vector3(0, 1.875, 0)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+gravity = Vector3(0, 0.2, 0)
+linear_accel_min = -2.2351742e-06
+linear_accel_max = 0.09999776
+radial_accel_min = 0.09999776
+radial_accel_max = 0.19999775
+tangential_accel_min = -2.2351742e-06
+tangential_accel_max = 2.9999976
+damping_max = 0.3
+scale_min = 0.7
+scale_max = 1.5
+color = Color(0.68223786, 0.023382882, 0.48316616, 1)
+hue_variation_min = -2.2351742e-08
+hue_variation_max = 0.18999997
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rwt0o"]
+transparency = 1
+albedo_color = Color(0.5612061, 0.8380743, 0.8793992, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_ejueb"]
+material = SubResource("StandardMaterial3D_rwt0o")
+text = "eepy time?"
+curve_step = 10.0
+depth = 0.03
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3coh0"]
+emission_shape_offset = Vector3(0, 1.875, 0)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+gravity = Vector3(0, 0.2, 0)
+linear_accel_min = -2.2351742e-06
+linear_accel_max = 0.09999776
+radial_accel_min = 0.09999776
+radial_accel_max = 0.19999775
+tangential_accel_min = -2.2351742e-06
+tangential_accel_max = 2.9999976
+damping_max = 0.3
+scale_min = 0.7
+scale_max = 1.5
+color = Color(0.68223786, 0.023382882, 0.48316616, 1)
+hue_variation_min = -2.2351742e-08
+hue_variation_max = 0.18999997
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obged"]
+transparency = 1
+albedo_color = Color(0.9159838, 0.6295683, 0.7670775, 1)
+roughness = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_084xy"]
+material = SubResource("StandardMaterial3D_obged")
+text = "Zzz"
+curve_step = 10.0
+depth = 0.03
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_423wt"]
+emission_shape_offset = Vector3(0, 1.875, 0)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+gravity = Vector3(0, 0.2, 0)
+linear_accel_min = -2.2351742e-06
+linear_accel_max = 0.09999776
+radial_accel_min = 0.09999776
+radial_accel_max = 0.19999775
+tangential_accel_min = -2.2351742e-06
+tangential_accel_max = 2.9999976
+damping_max = 0.3
+scale_min = 0.7
+scale_max = 1.5
+color = Color(0.68223786, 0.023382882, 0.48316616, 1)
+hue_variation_min = -2.2351742e-08
+hue_variation_max = 0.18999997
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_febq7"]
+transparency = 1
+albedo_color = Color(0.5612061, 0.8380743, 0.8793992, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_evepq"]
+material = SubResource("StandardMaterial3D_febq7")
+text = "The bed, it CALLS my name..."
+curve_step = 10.0
+depth = 0.03
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wlmc2"]
+emission_shape_offset = Vector3(0, 1.875, 0)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+gravity = Vector3(0, 0.2, 0)
+linear_accel_min = -2.2351742e-06
+linear_accel_max = 0.09999776
+radial_accel_min = 0.09999776
+radial_accel_max = 0.19999775
+tangential_accel_min = -2.2351742e-06
+tangential_accel_max = 2.9999976
+damping_max = 0.3
+scale_min = 0.7
+scale_max = 1.5
+color = Color(0.68223786, 0.023382882, 0.48316616, 1)
+hue_variation_min = -2.2351742e-08
+hue_variation_max = 0.18999997
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3coh0"]
+transparency = 1
+albedo_color = Color(0.5612061, 0.8380743, 0.8793992, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_2xyng"]
+material = SubResource("StandardMaterial3D_3coh0")
+text = "I can HEAR it so clear..."
+font_size = 8
+curve_step = 10.0
+depth = 0.03
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yllr7"]
+emission_shape_offset = Vector3(0, 0.01, 0)
+emission_shape_scale = Vector3(0.62, 0.04, 0.57)
+emission_shape = 2
+emission_sphere_radius = 0.7
+gravity = Vector3(0, 1, 0)
+radial_accel_min = 0.99999774
+radial_accel_max = 1.4999977
+damping_max = 1.075
+turbulence_noise_strength = 11.77
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yllr7"]
+transparency = 1
+albedo_color = Color(0.86036915, 0.8603692, 0.8603692, 0.57254905)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kb6p2"]
+material = SubResource("StandardMaterial3D_yllr7")
+size = Vector3(0.05, 0.05, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wodsf"]
+transparency = 1
+albedo_color = Color(0.7607843, 0.7607843, 0.7607843, 0.24705882)
+
+[sub_resource type="BoxMesh" id="BoxMesh_32hag"]
+material = SubResource("StandardMaterial3D_wodsf")
+size = Vector3(0.07, 0.07, 0.07)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kb6p2"]
+lifetime_randomness = 1.0
+emission_shape_offset = Vector3(0, 0.01, 0.225)
+emission_shape_scale = Vector3(0.045, 0.07, 0.015)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, -0.5, 0)
+radial_accel_min = 0.99999774
+radial_accel_max = 1.4999977
+damping_max = 1.075
+turbulence_noise_strength = 11.77
+
+[sub_resource type="BoxMesh" id="BoxMesh_wodsf"]
+size = Vector3(0.05, 0.05, 0.05)
 
 [node name="Node3D" type="Node3D" unique_id=1244172916]
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1374633907]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48832238, 0)
 collision_layer = 7
 collision_mask = 7
 script = ExtResource("1_rkbax")
@@ -104,9 +277,70 @@ shape = SubResource("CapsuleShape3D_rkbax")
 transform = Transform3D(0.37, 0, 0, 0, 0.37, 0, 0, 0, 0.37, 0, 0.3805539, 0)
 billboard = 2
 shaded = true
+alpha_cut = 3
+alpha_hash_scale = 0.56
+alpha_antialiasing_mode = 2
 render_priority = 100
 sprite_frames = SubResource("SpriteFrames_g1dw6")
 animation = &"walk_up"
+
+[node name="SleepEffects" type="Node3D" parent="CharacterBody3D" unique_id=272725598]
+
+[node name="eepy" type="GPUParticles3D" parent="CharacterBody3D/SleepEffects" unique_id=24182827]
+emitting = false
+amount = 5
+lifetime = 3.0
+randomness = 0.46
+process_material = SubResource("ParticleProcessMaterial_febq7")
+draw_pass_1 = SubResource("TextMesh_ejueb")
+
+[node name="zzz" type="GPUParticles3D" parent="CharacterBody3D/SleepEffects" unique_id=1018022546]
+emitting = false
+amount = 5
+lifetime = 3.0
+randomness = 0.46
+process_material = SubResource("ParticleProcessMaterial_3coh0")
+draw_pass_1 = SubResource("TextMesh_084xy")
+
+[node name="bedcalls" type="GPUParticles3D" parent="CharacterBody3D/SleepEffects" unique_id=1168497956]
+emitting = false
+lifetime = 3.0
+randomness = 0.46
+process_material = SubResource("ParticleProcessMaterial_423wt")
+draw_pass_1 = SubResource("TextMesh_evepq")
+
+[node name="icanhearit" type="GPUParticles3D" parent="CharacterBody3D/SleepEffects" unique_id=354707423]
+emitting = false
+amount = 1
+lifetime = 3.0
+randomness = 0.46
+process_material = SubResource("ParticleProcessMaterial_wlmc2")
+draw_pass_1 = SubResource("TextMesh_2xyng")
+
+[node name="MovementEffects" type="Node3D" parent="CharacterBody3D" unique_id=313653618]
+
+[node name="JumpEffect" type="GPUParticles3D" parent="CharacterBody3D/MovementEffects" unique_id=1433551018]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35539117, 0)
+emitting = false
+amount = 200
+lifetime = 0.3
+one_shot = true
+preprocess = 0.17
+explosiveness = 0.31
+process_material = SubResource("ParticleProcessMaterial_yllr7")
+draw_passes = 2
+draw_pass_1 = SubResource("BoxMesh_kb6p2")
+draw_pass_2 = SubResource("BoxMesh_32hag")
+
+[node name="SprintEffect" type="GPUParticles3D" parent="CharacterBody3D/MovementEffects" unique_id=1372472124]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.23600021, 0)
+emitting = false
+amount = 20
+lifetime = 0.14
+explosiveness = 0.1
+randomness = 0.34
+process_material = SubResource("ParticleProcessMaterial_kb6p2")
+draw_pass_1 = SubResource("BoxMesh_wodsf")
 
 [node name="CameraController" type="Node3D" parent="." unique_id=886119503]
 transform = Transform3D(1, 0, 0, 0, 0.7071067, 0.7071067, 0, -0.7071067, 0.7071067, 0, 2.5, 2.5)
