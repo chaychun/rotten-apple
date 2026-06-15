@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuu0q6tv6egbd"
-path="res://.godot/imported/icon_rope.png-d6c9164a4f0c50d62f9f070a259f5205.ctex"
+uid="uid://blubpkj1sv38o"
+path="res://.godot/imported/icon_insectnet.png-d23dff35a1310d5d29562db44e9a1c63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/icon_rope.png"
-dest_files=["res://.godot/imported/icon_rope.png-d6c9164a4f0c50d62f9f070a259f5205.ctex"]
+source_file="res://Assets/tools/icon_insectnet.png"
+dest_files=["res://.godot/imported/icon_insectnet.png-d23dff35a1310d5d29562db44e9a1c63.ctex"]
 
 [params]
 

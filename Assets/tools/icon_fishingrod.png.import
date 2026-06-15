@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blubpkj1sv38o"
-path="res://.godot/imported/icon_insectnet.png-9dc6cdae4e90da90b4a142ca50c5b26f.ctex"
+uid="uid://2xrosjuge0wg"
+path="res://.godot/imported/icon_fishingrod.png-8103188219cc340f746496030973c16e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/icon_insectnet.png"
-dest_files=["res://.godot/imported/icon_insectnet.png-9dc6cdae4e90da90b4a142ca50c5b26f.ctex"]
+source_file="res://Assets/tools/icon_fishingrod.png"
+dest_files=["res://.godot/imported/icon_fishingrod.png-8103188219cc340f746496030973c16e.ctex"]
 
 [params]
 

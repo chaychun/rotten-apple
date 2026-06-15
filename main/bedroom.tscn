@@ -25,7 +25,7 @@ ssr_fade_in = 0.62115914
 glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hbq8p"]
-size = Vector3(0.976593, 5.6917424, 3.3984375)
+size = Vector3(0.37696838, 5.6917424, 3.3984375)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ejueb"]
 size = Vector3(1.793335, 1.1055298, 1.3375854)
@@ -79,7 +79,7 @@ size = Vector3(11.083984, 10.381165, 0.059570313)
 size = Vector3(11.083984, 10.381165, 0.059570313)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rwt0o"]
-size = Vector3(17.511719, 0.2939453, 15.5234375)
+size = Vector3(17.511719, 0.2886963, 15.5234375)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ejueb"]
 albedo_color = Color(0.4392157, 0.45490196, 0.47058824, 1)
@@ -97,7 +97,7 @@ radius = 4.136
 [node name="Node3D" type="Node3D" unique_id=1486661604]
 
 [node name="Player" parent="." unique_id=1244172916 instance=ExtResource("4_rwt0o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03205, 0, 1.8013463)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6508486, 0.07900946, 1.8013463)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1158860359]
 environment = SubResource("Environment_rwt0o")
@@ -115,11 +115,12 @@ currentAreaType = 1
 [node name="OutArea" type="Area3D" parent="GetOutHouse" unique_id=138654789]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GetOutHouse/OutArea" unique_id=713407115]
-transform = Transform3D(0.6199999, 0, 0, 0, 0.6195112, -0.024611402, 0, 0.024611402, 0.6195112, -2.8863122, 1.8480473, 1.6920012)
+transform = Transform3D(0.6199999, 0, 0, 0, 0.6195112, -0.024611402, 0, 0.024611402, 0.6195112, -3.0721958, 1.8480473, 1.6920012)
 shape = SubResource("BoxShape3D_hbq8p")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=88114513]
 transform = Transform3D(0.635, 0, 0, 0, 0.635, 0, 0, 0, 0.635, 0, 0, 0)
+input_ray_pickable = false
 
 [node name="Sketchfab_Scene" parent="StaticBody3D" unique_id=799703245 instance=ExtResource("1_n6rg5")]
 
@@ -200,6 +201,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.94
 shape = SubResource("BoxShape3D_febq7")
 
 [node name="CollisionShape3D20" type="CollisionShape3D" parent="StaticBody3D" unique_id=59666353]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0026245122, 0)
 shape = SubResource("BoxShape3D_rwt0o")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=224936350]
@@ -216,6 +218,7 @@ shape = SubResource("BoxShape3D_ovg35")
 
 [node name="Area3D" type="Area3D" parent="Bed" unique_id=1052803209]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2012632, 0, 0.44752693)
+input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bed/Area3D" unique_id=2121892896]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5995102, 0.32640243, 0.40357137)

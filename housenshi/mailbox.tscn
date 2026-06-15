@@ -8,7 +8,7 @@ size = Vector3(3.0253906, 2.8706055, 1.4658203)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_bq30b"]
 height = 1.3279629
-radius = 2.119629
+radius = 1.1777344
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_gfmmx"]
 height = 1.2324219

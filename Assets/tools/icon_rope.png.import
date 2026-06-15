@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2xrosjuge0wg"
-path="res://.godot/imported/icon_fishingrod.png-1a9e3587d8ab7812913d3ed79a03ecd7.ctex"
+uid="uid://cuu0q6tv6egbd"
+path="res://.godot/imported/icon_rope.png-fd0eea42e977e0cc82e1fba1a1e0cf57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/icon_fishingrod.png"
-dest_files=["res://.godot/imported/icon_fishingrod.png-1a9e3587d8ab7812913d3ed79a03ecd7.ctex"]
+source_file="res://Assets/tools/icon_rope.png"
+dest_files=["res://.godot/imported/icon_rope.png-fd0eea42e977e0cc82e1fba1a1e0cf57.ctex"]
 
 [params]
 

@@ -23,6 +23,14 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("5_32hag")
+}],
+"loop": true,
+"name": &"idle :)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_32hag")
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_tqiix")
@@ -282,7 +290,8 @@ alpha_hash_scale = 0.56
 alpha_antialiasing_mode = 2
 render_priority = 100
 sprite_frames = SubResource("SpriteFrames_g1dw6")
-animation = &"walk_up"
+animation = &"idle :)"
+autoplay = "idle :)"
 
 [node name="SleepEffects" type="Node3D" parent="CharacterBody3D" unique_id=272725598]
 

@@ -57,10 +57,16 @@ func _physics_process(delta: float) -> void:
 	# Ground Velocity
 	target_velocity.x = direction.x * speed
 	target_velocity.z = direction.z * speed
+	
 	if Input.is_action_pressed("sprint"):
 		anim.set_speed_scale(1.5)
 		target_velocity.x = direction.x * speed * 2.0
 		target_velocity.z = direction.z * speed * 2.0
+	
+	if Input.is_action_pressed("sneak"):
+		anim.set_speed_scale(0.5)
+		target_velocity.x = direction.x * speed * 0.4
+		target_velocity.z = direction.z * speed * 0.4
 	
 	if anim.get_speed_scale() == 1.5:
 		if target_velocity.x != 0 or target_velocity.z != 0:
