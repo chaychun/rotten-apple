@@ -1,0 +1,22 @@
+logbook/logbook_layer.gd
+  s_aabe841d71c628::t_51110cd6b16bb4 25-26
+  s_aabe841d71c628::t_2abd6500a6b6c5 49-50
+globals/mailbox.gd
+  s_aabe841d71c628::t_2a87dd4a9bfd98 31-35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "c9ef17fce9a73f8bcccd8338dbebf5c2a3e8798e",
+  "prompts": {},
+  "sessions": {
+    "s_aabe841d71c628": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "85bbf9ce-6b82-44ae-9b91-0d078e8c36eb",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
