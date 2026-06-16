@@ -4,6 +4,7 @@ signal sleep_finished
 signal sleep_cancelled
 
 @onready var _confirm: Control = $Confirm
+@onready var _prompt: Label = $Confirm/Panel/Margin/VBox/Label
 @onready var _sleep_button: Button = $Confirm/Panel/Margin/VBox/HBox/Sleep
 @onready var _cancel_button: Button = $Confirm/Panel/Margin/VBox/HBox/Cancel
 @onready var _warning: Label = $Confirm/Panel/Margin/VBox/Warning
@@ -14,7 +15,15 @@ const FADE_TIME := 0.6
 const LABEL_TIME := 0.4
 const HOLD_TIME := 1.2
 
+const SLEEP_PROMPT := "Sleep until tomorrow?"
+const FAINT_PROMPT := "You feel very tired. It's time to go to sleep."
+
+# fainting = respawn in bedroom
+const BEDROOM_PATH := "res://main/bedroom.tscn"
+const BEDSIDE_POSITION := Vector3(1.7, 0.08, -1.9)
+
 var _busy := false
+var _faint := false
 
 
 func _ready() -> void:
@@ -24,6 +33,7 @@ func _ready() -> void:
 	_fade.color.a = 0.0
 	_sleep_button.pressed.connect(_on_sleep)
 	_cancel_button.pressed.connect(_on_cancel)
+	Events.faint_triggered.connect(_on_faint_triggered)
 
 
 func is_busy() -> bool:
@@ -35,11 +45,29 @@ func request_sleep() -> bool:
 	if _busy:
 		return false
 	_busy = true
+	_faint = false
+	_prompt.text = SLEEP_PROMPT
+	_sleep_button.text = "Sleep"
+	_cancel_button.visible = true
 	_update_warning()
 	_confirm.visible = true
 	GameClock.pause()
 	get_tree().paused = true
 	return true
+
+
+# Acknowledgement dialog only. GameClock already handle pausing and date change
+func _on_faint_triggered() -> void:
+	if _busy:
+		return
+	_busy = true
+	_faint = true
+	_prompt.text = FAINT_PROMPT
+	_sleep_button.text = "OK"
+	_cancel_button.visible = false
+	_update_warning()
+	_confirm.visible = true
+	get_tree().paused = true
 
 
 # Warn if quests would be forfeited tonight: MAILED (unread mail) or ACTIVE
@@ -56,6 +84,9 @@ func _update_warning() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not _confirm.visible:
+		return
+	# Faint can't be dismissed — there's no cancelling passing out.
+	if _faint:
 		return
 	if event is InputEventKey and event.pressed and not event.echo:
 		if event.physical_keycode == KEY_ESCAPE:
@@ -80,6 +111,7 @@ func _release() -> void:
 	GameClock.resume()
 	get_tree().paused = false
 	_busy = false
+	_faint = false
 
 
 func _run_transition() -> void:
@@ -88,7 +120,11 @@ func _run_transition() -> void:
 	_fade.visible = true
 
 	await _tween(_fade, "color:a", 1.0, FADE_TIME)
-	GameClock.sleep()
+	if _faint:
+		GameClock.faint()
+		await _return_to_bed()
+	else:
+		GameClock.sleep()
 
 	await _tween(_day_label, "modulate:a", 1.0, LABEL_TIME)
 	await get_tree().create_timer(HOLD_TIME).timeout
@@ -96,6 +132,19 @@ func _run_transition() -> void:
 
 	await _tween(_fade, "color:a", 0.0, FADE_TIME)
 	_fade.visible = false
+
+
+func _return_to_bed() -> void:
+	var tree := get_tree()
+	if tree.current_scene == null or tree.current_scene.scene_file_path != BEDROOM_PATH:
+		tree.change_scene_to_file(BEDROOM_PATH)
+		# change_scene_to_file is async; wait for the new bedroom to load in.
+		while tree.current_scene == null or tree.current_scene.scene_file_path != BEDROOM_PATH:
+			await tree.process_frame
+
+	var player: Node3D = tree.current_scene.get_node_or_null("Player")
+	if player:
+		player.global_position = BEDSIDE_POSITION
 
 
 func _tween(target: Object, property: String, to: float, time: float) -> void:

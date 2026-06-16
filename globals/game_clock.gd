@@ -2,7 +2,7 @@ extends Node
 
 enum DayEndReason { SLEEP, FAINT }
 
-@export var seconds_per_hour: float = 30.0
+@export var seconds_per_hour: float = 2.0  # TEMP: testing (was 30.0)
 @export var wake_hour: int = 6
 @export var faint_hour: int = 22
 
@@ -34,18 +34,24 @@ func _process(delta: float) -> void:
 			break
 
 
-## Advance one in-game hour. Returns true if this ended the day (faint).
+## Advance one in-game hour. Returns true if this halted the clock (faint).
 func _advance_hour() -> bool:
 	current_hour += 1
 	Events.hour_changed.emit(current_hour)
 	if current_hour >= faint_hour:
-		_end_day(DayEndReason.FAINT)
+
+		pause() # await player dialog acknowledgement
+		Events.faint_triggered.emit()
 		return true
 	return false
 
 
 func sleep() -> void:
 	_end_day(DayEndReason.SLEEP)
+
+
+func faint() -> void:
+	_end_day(DayEndReason.FAINT)
 
 
 func pause() -> void:

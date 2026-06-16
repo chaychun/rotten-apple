@@ -21,3 +21,4 @@ signal mail_read(mail: MailData)
 signal day_started(day: int)
 signal day_ended(day: int, reason: int)
 signal hour_changed(hour: int)
+signal faint_triggered()  # reached faint_hour; awaiting player acknowledgement
