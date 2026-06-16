@@ -2,7 +2,7 @@ extends Node
 
 enum DayEndReason { SLEEP, FAINT }
 
-@export var seconds_per_hour: float = 60.0
+@export var seconds_per_hour: float = 30.0
 @export var wake_hour: int = 6
 @export var faint_hour: int = 22
 
