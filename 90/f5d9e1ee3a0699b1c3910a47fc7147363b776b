@@ -1,0 +1,19 @@
+globals/sleep_screen.gd
+  s_e3a829b91c1291::t_20354241c30eb4 148-151
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "90f5d9e1ee3a0699b1c3910a47fc7147363b776b",
+  "prompts": {},
+  "sessions": {
+    "s_e3a829b91c1291": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "625cbada-ee98-4ccb-bd29-b833010b681d",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": null
+    }
+  }
+}
