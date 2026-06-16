@@ -144,6 +144,10 @@ func _build_requirements(quest: QuestData, status: int) -> void:
 	for child in _requirements.get_children():
 		child.queue_free()
 
+	if status == QuestStatus.SUBMITTED or status == QuestStatus.DONE or status == QuestStatus.FAILED:
+		_build_collapsed_requirements(quest, status)
+		return
+
 	for req: QuestRequirement in quest.requirements:
 		var card := PanelContainer.new()
 		card.add_theme_stylebox_override("panel", _card_box())
@@ -192,6 +196,45 @@ func _build_requirements(quest: QuestData, status: int) -> void:
 				vb.add_child(_variant_toggles(req))
 
 
+# Compact summary for submitted/terminal quests.
+func _build_collapsed_requirements(quest: QuestData, status: int) -> void:
+	var card := PanelContainer.new()
+	card.add_theme_stylebox_override("panel", _card_box())
+	_requirements.add_child(card)
+
+	var vb := VBoxContainer.new()
+	vb.add_theme_constant_override("separation", 6)
+	vb.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	card.add_child(vb)
+
+	var note := Label.new()
+	note.text = _collapsed_note(status)
+	note.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	note.add_theme_color_override("font_color", _PILL.get(status, _MUTED))
+	note.add_theme_font_size_override("font_size", 24)
+	vb.add_child(note)
+
+	for req: QuestRequirement in quest.requirements:
+		var line := Label.new()
+		line.text = "%s  ·  %d" % [req.species, req.amount]
+		line.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		line.add_theme_color_override("font_color", _INK_SOFT)
+		line.add_theme_font_size_override("font_size", 22)
+		vb.add_child(line)
+
+
+func _collapsed_note(status: int) -> String:
+	match status:
+		QuestStatus.SUBMITTED:
+			return "Submitted — awaiting review"
+		QuestStatus.DONE:
+			return "Completed"
+		QuestStatus.FAILED:
+			return "Failed"
+		_:
+			return ""
+
+
 # TODO: swap name to animal sprite
 func _variant_row(display: String, held: int, need: int) -> Control:
 	var done := held >= need
@@ -207,7 +250,7 @@ func _variant_row(display: String, held: int, need: int) -> Control:
 	hb.add_child(n)
 
 	var count := Label.new()
-	count.text = "%s  %d/%d" % ["✓" if done else "•", min(held, need), need]
+	count.text = "%s  %d/%d" % ["✓" if done else "•", held, need]
 	count.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	count.add_theme_color_override("font_color", _DONE if done else _INK_SOFT)
 	count.add_theme_font_size_override("font_size", 23)
