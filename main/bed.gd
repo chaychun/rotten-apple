@@ -30,5 +30,4 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if eep_prompt == true:
 		if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-			GameClock.sleep()
-			print("eepy time...")
+			SleepScreen.request_sleep()
