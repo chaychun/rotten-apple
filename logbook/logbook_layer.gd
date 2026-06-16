@@ -22,6 +22,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		KEY_E:
 			if MailLayer.is_open():
 				return  # one dialog at a time
+			if not _open and Mailbox.has_unread_today():
+				return  # read the morning's mail first
 			_toggle()
 			get_viewport().set_input_as_handled()
 		KEY_ESCAPE:
@@ -44,6 +46,8 @@ func _toggle() -> void:
 func open() -> void:
 	if _open:
 		return
+	if Mailbox.has_unread_today():
+		return  # read the morning's mail first
 	_open = true
 	_root.visible = true
 	_shell.on_open()
