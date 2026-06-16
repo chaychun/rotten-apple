@@ -7,12 +7,16 @@ extends StaticBody3D
 var eep_prompt : bool
 
 
-func _on_area_3d_body_entered(_body: CharacterBody3D) -> void:
+func _on_area_3d_body_entered(_body: Node3D) -> void:
+	if not _body is CharacterBody3D:
+		return
 	eep_prompt = true
 	player.get_child(0)._play_eep_effects(true)
 
 
 func _on_area_3d_body_exited(_body: Node3D) -> void:
+	if not _body is CharacterBody3D:
+		return
 	eep_prompt = false
 	player.get_child(0)._play_eep_effects(false)
 
