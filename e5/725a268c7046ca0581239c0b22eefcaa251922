@@ -1,0 +1,21 @@
+logbook/quest/quest_page.gd
+  s_0d8ecb384eda54::t_1d6eec50d052e6 200-237
+  s_0d8ecb384eda54::t_f1b86cfbccb40d 253
+  s_0d8ecb384eda54::t_b64fb625ba54eb 147-150
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "e5725a268c7046ca0581239c0b22eefcaa251922",
+  "prompts": {},
+  "sessions": {
+    "s_0d8ecb384eda54": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "97ccb277-c155-4fee-96c9-c94a1072296b",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
