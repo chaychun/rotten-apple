@@ -1,0 +1,51 @@
+data/spawn_entry.gd.uid
+  s_4b4a8fd3dcda4d::t_bbf5186f8b71f3 1
+animal/spawn_zone.tscn
+  s_4b4a8fd3dcda4d::t_66c0732c0592f6 2-10
+animal/real/animal.tscn
+  s_9dacd40f5da918::t_425a4deb8900a2 6,15,18,21-23
+  s_9dacd40f5da918::t_253dfa30b3dbc5 12
+  s_9dacd40f5da918::t_6cc40eb5885b8a 20
+  s_9dacd40f5da918::t_e3bdb3868f12fa 19
+animal/spawn_zone.gd.uid
+  s_4b4a8fd3dcda4d::t_bbf5186f8b71f3 1
+animal/real/animal.gd
+  s_9dacd40f5da918::t_3c22f57910bfbb 8
+  s_9dacd40f5da918::t_21343b55c5cdb1 24
+  s_9dacd40f5da918::t_596b0456ecb38e 12-13,16,21-23
+animal/spawn_zone.gd
+  s_9dacd40f5da918::t_8585cabe35f125 33-36,39,54,60-63
+  s_4b4a8fd3dcda4d::t_9df44d7e85e58e 177-179
+  s_9dacd40f5da918::t_73be34f267eade 38,48,53,55-59
+  s_4b4a8fd3dcda4d::t_e9d14fce975d52 1-12,14-32,37,40-44,49-51,64-176,180-190
+  s_9dacd40f5da918::t_2e4f61ef4dbab4 13
+data/spawn_entry.gd
+  s_4b4a8fd3dcda4d::t_37db72f8d972d6 1-6
+main/main.tscn
+  s_4b4a8fd3dcda4d::t_47947ee6cf3d90 1661
+  s_4b4a8fd3dcda4d::t_2a214916ddd318 92
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "349ce80390d1a939f9a6a997aea421115e12e690",
+  "prompts": {},
+  "sessions": {
+    "s_4b4a8fd3dcda4d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4850d120-f681-446b-a8f3-6e4a6af6ce1c",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    },
+    "s_9dacd40f5da918": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7baaaa0a-deaa-4692-884a-0cf4b8cc14b6",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
