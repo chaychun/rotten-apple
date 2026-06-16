@@ -1,0 +1,31 @@
+project.godot
+  s_89fff732b05f42::t_25b1813ef6fdc7 26-27
+main/main.tscn
+  s_89fff732b05f42::t_8af823b34fee67 1,245
+  s_89fff732b05f42::t_3f45efc1ed8289 12
+main/terrain.tscn
+  s_89fff732b05f42::t_8af823b34fee67 1,3-80
+  s_89fff732b05f42::t_3f45efc1ed8289 2,81-1548
+autoload/clock_hud.tscn
+  s_89fff732b05f42::t_9c74ca6c15f9ea 3
+autoload/sleep_screen.tscn
+  s_89fff732b05f42::t_026c56104dbd81 3
+ui/hotbar/Hotbar.tscn
+  s_89fff732b05f42::t_676aa55b6558df 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "95276d02aa5091a5adfd357d72c4f9bcc70461f1",
+  "prompts": {},
+  "sessions": {
+    "s_89fff732b05f42": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bb72f0e1-525c-4c9f-a6bb-654b2d4f7c42",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
