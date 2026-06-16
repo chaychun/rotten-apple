@@ -145,6 +145,10 @@ func _return_to_bed() -> void:
 	var player: Node3D = tree.current_scene.get_node_or_null("Player")
 	if player:
 		player.global_position = BEDSIDE_POSITION
+		if player is CharacterBody3D:
+			player.velocity = Vector3.ZERO
+		if "target_velocity" in player:
+			player.target_velocity = Vector3.ZERO
 
 
 func _tween(target: Object, property: String, to: float, time: float) -> void:
