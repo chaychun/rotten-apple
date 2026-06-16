@@ -1,0 +1,27 @@
+project.godot
+  s_418f6aa66a5713::t_2008ab0d25ef83 26
+globals/clock_hud.tscn
+  s_418f6aa66a5713::t_ec09e1cfeef1c1 1-39
+globals/game_clock.gd
+  s_418f6aa66a5713::t_6686a5929584e0 5
+globals/clock_hud.gd
+  s_418f6aa66a5713::t_df1684c74ad927 1-27
+globals/clock_hud.gd.uid
+  s_418f6aa66a5713::t_50408a42615c71 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "69edcd38175c2b69f457ce73db3b9e5ccd4336da",
+  "prompts": {},
+  "sessions": {
+    "s_418f6aa66a5713": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ad6ad73e-de70-4a5d-9a75-f25925366c53",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
