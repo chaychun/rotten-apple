@@ -5,14 +5,23 @@ extends Node3D
 @export var animal_id: String
 
 @onready var _body: AnimatableBody3D = $AnimatableBody3D
+@onready var _sprite: Sprite3D = $AnimatableBody3D/Sprite3D
 
 
 func _ready() -> void:
-	if AnimalRegistry.get_animal(animal_id) == null:
+	var data := AnimalRegistry.get_animal(animal_id)
+	if data == null:
 		push_error("Animal: node has invalid animal_id '%s'" % animal_id)
 		return
+	_apply_sprite(data)
 	_body.input_ray_pickable = true
 	_body.input_event.connect(_on_body_input_event)
+
+
+func _apply_sprite(data: AnimalData) -> void:
+	if data.display_sprite == null:
+		return
+	_sprite.texture = data.display_sprite
 
 
 # Placeholder interaction: click to catch. Real version gets a minigame.

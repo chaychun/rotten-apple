@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bpt713c280p57" path="res://main/get_in_house.gd" id="1_eq1qp"]
 [ext_resource type="PackedScene" uid="uid://dpu1uhfgsyl7u" path="res://player/player.tscn" id="1_ktywf"]
-[ext_resource type="PackedScene" uid="uid://bdr38pj2qtbfe" path="res://animal/real/animal.tscn" id="2_ycfeg"]
 [ext_resource type="PackedScene" uid="uid://dmjwm381jr3cx" path="res://housenshi/old_house.tscn" id="3_hf28p"]
 [ext_resource type="PackedScene" uid="uid://dytkkusahp2uk" path="res://housenshi/mailbox.tscn" id="4_7dsnv"]
 [ext_resource type="Texture2D" uid="uid://cl0mco72t5uek" path="res://Assets/Environment/texture/cliff_rocks_02_1k/cliff_rocks_02_baseColor_1k.png" id="4_dh1l5"]
@@ -86,10 +85,12 @@
 [ext_resource type="PackedScene" uid="uid://1xeji078m7gt" path="res://housenshi/rocks/RockMedium2.tscn" id="83_v8baf"]
 [ext_resource type="PackedScene" uid="uid://dylc3hbuemkmo" path="res://housenshi/rocks/RockMedium3.tscn" id="84_3bgud"]
 [ext_resource type="PackedScene" uid="uid://c03quxnj07f6w" path="res://Assets/Environment/plants/sunflower.glb" id="85_3bgud"]
+[ext_resource type="Script" uid="uid://cn8e3dcsmehxk" path="res://animal/spawn_zone.gd" id="89_4q1v2"]
 [ext_resource type="Image" uid="uid://cwo08nnpv8ygk" path="res://main/Node/Object_0_0_4.res" id="92_42ldh"]
 [ext_resource type="Image" uid="uid://8qwg4ppru84a" path="res://main/Node/Object_0_0_5.res" id="93_bfdoy"]
 [ext_resource type="Image" uid="uid://dupy4a4j34bdi" path="res://main/Node/Object_0_0_6.res" id="97_v8baf"]
 [ext_resource type="Image" uid="uid://bbdr45p22h7rq" path="res://main/Node/Object_0_0_7.res" id="99_pc78h"]
+[ext_resource type="Script" uid="uid://ckxgnlsgbytpy" path="res://data/spawn_entry.gd" id="201_spnen"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_na0o7"]
 sky_top_color = Color(0, 0.9355178, 1.1203939, 1)
@@ -1655,6 +1656,13 @@ radius = 11.198214
 [sub_resource type="SphereShape3D" id="SphereShape3D_aw48e"]
 radius = 11.517522
 
+[sub_resource type="Resource" id="Resource_eq1qp"]
+script = ExtResource("201_spnen")
+animal_id = "hedgehog"
+density = 0.1
+group_size_range = Vector2i(2, 4)
+metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
+
 [node name="Node" type="Node" unique_id=1908846288]
 
 [node name="Player" parent="." unique_id=1244172916 instance=ExtResource("1_ktywf")]
@@ -1682,18 +1690,6 @@ shadow_enabled = true
 
 [node name="PlayerHouse" parent="." unique_id=1011123435 instance=ExtResource("3_hf28p")]
 transform = Transform3D(0.62, 0, 0, 0, 0.6195113, -0.024611408, 0, 0.024611408, 0.6195113, 0, 0.10369706, -16.863121)
-
-[node name="Aminol" parent="." unique_id=28983913 instance=ExtResource("2_ycfeg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.25, -3)
-animal_id = "hedgehog"
-
-[node name="FakeHedgehog1" parent="." unique_id=111000001 instance=ExtResource("2_ycfeg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.25, -3)
-animal_id = "hedgehog_false"
-
-[node name="FakeHedgehog2" parent="." unique_id=111000002 instance=ExtResource("2_ycfeg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.25, -3)
-animal_id = "hedgehog_false"
 
 [node name="mailbox" parent="." unique_id=1286945160 instance=ExtResource("4_7dsnv")]
 transform = Transform3D(-0.60341406, 0, 1.3019665, 0, 1.4350001, 0, -1.3019665, 0, -0.60341406, -3.5207992, 0.22642797, -12.448381)
@@ -1856,5 +1852,16 @@ shape = SubResource("SphereShape3D_42ldh")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment/WorldBoundary/StaticBody3D" unique_id=1688998173]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 10.317808, -0.52510166, -42.133106)
 shape = SubResource("SphereShape3D_aw48e")
+
+[node name="SpawnZoneExample" type="Area3D" parent="." unique_id=729508310]
+transform = Transform3D(0.9878136, 0, 0.15564144, 0, 1, 0, -0.15564144, 0, 0.9878136, 16.326344, 0, -18.97834)
+script = ExtResource("89_4q1v2")
+entries = Array[ExtResource("201_spnen")]([SubResource("Resource_eq1qp")])
+metadata/_custom_type_script = "uid://cn8e3dcsmehxk"
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="SpawnZoneExample" unique_id=1654936976]
+transform = Transform3D(0.97683984, 0.07943661, -0.19867843, 0.1793057, 0.20278138, 0.9626677, 0.116759434, -0.9759963, 0.18384154, 31.12851, 3.8146973e-06, -21.618147)
+depth = 10.0
+polygon = PackedVector2Array(-4, 3, 4, 3, 4.402233, -4.795147, -4, -5)
 
 [connection signal="body_entered" from="GetInHouse/InArea" to="GetInHouse" method="_on_in_area_body_entered"]

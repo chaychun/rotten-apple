@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b0eyaq3y5qq3k"]
+
+[ext_resource type="Script" uid="uid://cn8e3dcsmehxk" path="res://animal/spawn_zone.gd" id="1_spzn"]
+
+[node name="SpawnZone" type="Area3D" unique_id=1092228636]
+script = ExtResource("1_spzn")
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="." unique_id=640414630]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+polygon = PackedVector2Array(-5, -5, 5, -5, 5, 5, -5, 5)
