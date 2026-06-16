@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://mnvblukrk441"]
 
-[ext_resource type="Script" path="res://globals/clock_hud.gd" id="1_clock"]
+[ext_resource type="Script" uid="uid://bibj8mvaoqao4" path="res://autoload/clock_hud.gd" id="1_clock"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_clock"]
 bg_color = Color(0, 0, 0, 0.5)

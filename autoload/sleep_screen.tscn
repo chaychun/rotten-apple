@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c7r2a0a7vf3cm"]
 
-[ext_resource type="Script" path="res://globals/sleep_screen.gd" id="1_sleep"]
+[ext_resource type="Script" uid="uid://ce6r7fj0qlf02" path="res://autoload/sleep_screen.gd" id="1_sleep"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
 bg_color = Color(0.121, 0.094, 0.075, 0.95)
