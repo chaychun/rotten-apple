@@ -7,22 +7,12 @@ extends StaticBody3D
 var eep_prompt : bool
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	get_viewport().physics_object_picking = true
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func _on_area_3d_body_entered(body: CharacterBody3D) -> void:
+func _on_area_3d_body_entered(_body: CharacterBody3D) -> void:
 	eep_prompt = true
 	player.get_child(0)._play_eep_effects(true)
 
 
-func _on_area_3d_body_exited(body: Node3D) -> void:
+func _on_area_3d_body_exited(_body: Node3D) -> void:
 	eep_prompt = false
 	player.get_child(0)._play_eep_effects(false)
 

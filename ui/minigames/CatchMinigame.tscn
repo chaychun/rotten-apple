@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://lrbg76i63qlu"]
+
+[ext_resource type="Script" uid="uid://kyt1o3ru0b65" path="res://ui/minigames/tension_fill.gd" id="1_7maqs"]
+[ext_resource type="Script" uid="uid://bdpyixk73iigb" path="res://ui/minigames/catch_minigame.gd" id="1_wp8nu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ggbxv"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1687986270]
+script = ExtResource("1_wp8nu")
+
+[node name="Panel" type="Panel" parent="." unique_id=1808984109]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ggbxv")
+
+[node name="Bar" type="PanelContainer" parent="Panel" unique_id=497986365]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.5
+offset_top = -14.0
+offset_right = 141.5
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SuccessWindow" type="ColorRect" parent="Panel/Bar" unique_id=1990815550]
+layout_mode = 2
+color = Color(0.45483994, 0.907953, 0.66646105, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="SliderMarker" type="ColorRect" parent="Panel/Bar" unique_id=405308171]
+custom_minimum_size = Vector2(3, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="TensionFill" type="ProgressBar" parent="Panel" unique_id=592006251]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 18.0
+offset_right = 129.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+rounded = true
+show_percentage = false
+script = ExtResource("1_7maqs")
+
+[node name="TickRow" type="HBoxContainer" parent="Panel" unique_id=572834790]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = -47.0
+offset_right = 21.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=274159036]

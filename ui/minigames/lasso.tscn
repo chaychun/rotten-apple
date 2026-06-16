@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dcr2ubwd0x68h"]
+
+[ext_resource type="Script" uid="uid://b3wo7w7t0u50j" path="res://ui/minigames/lasso.gd" id="1_w0s05"]
+
+[node name="Lasso" type="Node" unique_id=1210335178]
+script = ExtResource("1_w0s05")

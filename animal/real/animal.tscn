@@ -2,22 +2,38 @@
 
 [ext_resource type="Script" uid="uid://cio2rprnv4vb8" path="res://animal/real/animal.gd" id="1_anml"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_bigh7"]
-size = Vector3(0.8, 1, 0.8)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sq0kl"]
+radius = 0.49786377
+height = 0.99572754
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7gbqw"]
+radius = 3.0
 
 [node name="Node3D" type="Node3D" unique_id=28983913]
 script = ExtResource("1_anml")
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="." unique_id=917950385]
+collision_layer = 3
+collision_mask = 3
 sync_to_physics = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=216896063]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("BoxShape3D_bigh7")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5037347, 0)
+shape = SubResource("CapsuleShape3D_sq0kl")
 
 [node name="Sprite3D" type="Sprite3D" parent="AnimatableBody3D" unique_id=569722195]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32, 0)
 extra_cull_margin = 2.0
+pixel_size = 0.0025
 billboard = 1
 shaded = true
-pixel_size = 0.0025
+
+[node name="DetectionZone" type="Area3D" parent="." unique_id=1561431726]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionZone" unique_id=387451214]
+shape = SubResource("SphereShape3D_7gbqw")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1710464598]
+
+[connection signal="body_entered" from="DetectionZone" to="." method="_on_detection_zone_body_entered"]
+[connection signal="body_exited" from="DetectionZone" to="." method="_on_detection_zone_body_exited"]

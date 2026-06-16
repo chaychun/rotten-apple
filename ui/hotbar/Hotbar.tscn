@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bfid1ixqssiiu"]
+
+[ext_resource type="Script" uid="uid://bo62ydvb0a0f1" path="res://globals/hotbar.gd" id="1_mem3p"]
+
+[node name="Hotbar" type="Control" unique_id=34886099]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mem3p")

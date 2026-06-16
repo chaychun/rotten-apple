@@ -3,6 +3,12 @@ extends Node
 signal animal_caught(animal_id: String)
 signal money_update(new_amount: int)
 
+## Catch Lasso
+signal lasso_charge_started()
+signal lasso_charge_updated(charge: float)   # 0.0 → 1.0 every frame while charging
+signal lasso_charge_cancelled()
+signal lasso_thrown()
+
 ## Quests
 signal quest_mailed(quest_id: String)
 signal quest_accepted(quest_id: String)              # new quest mail read

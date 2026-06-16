@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://cofv2hu7ox3fx" path="res://player/sprite/right_side_0.png" id="11_bjvpn"]
 [ext_resource type="Texture2D" uid="uid://bcvj2j56y1tyk" path="res://player/sprite/right_side_1.png" id="12_s7qer"]
 [ext_resource type="Texture2D" uid="uid://cs4atohhdu285" path="res://player/sprite/right_side_2.png" id="13_g4c7l"]
+[ext_resource type="Script" uid="uid://8sjnnlk7fct3" path="res://player/toollauncher/lasso_launcher.gd" id="14_kb6p2"]
+[ext_resource type="PackedScene" uid="uid://dcr2ubwd0x68h" path="res://ui/minigames/lasso.tscn" id="15_wodsf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rkbax"]
 radius = 0.22216797
@@ -359,3 +361,7 @@ transform = Transform3D(1, 0, 0, 0, 0.7071067, 0.7071067, 0, -0.7071067, 0.70710
 [node name="Camera3D" type="Camera3D" parent="CameraController/CameraTarget" unique_id=953106081]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 doppler_tracking = 2
+
+[node name="LassoLauncher" type="Node" parent="." unique_id=212692406]
+script = ExtResource("14_kb6p2")
+lasso_scene = ExtResource("15_wodsf")
