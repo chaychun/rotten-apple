@@ -1,0 +1,30 @@
+globals/sun_cycle.gd
+  s_fc02973310dbfb::t_1f475b505f7d22 1-2,9,11-13,15-24,26-29,38-42
+  s_fc02973310dbfb::t_46a25a81e89ae9 10,25,44-46
+  s_fc02973310dbfb::t_4d88d73db8d8ba 5-6,8
+  s_fc02973310dbfb::t_d858673ce2431a 30
+  s_fc02973310dbfb::t_c01f3fc123e739 33-37
+globals/sun_cycle.gd.uid
+  s_fc02973310dbfb::t_133517158a7efd 1
+globals/game_clock.gd
+  s_fc02973310dbfb::t_a8f935198045c5 5
+main/main.tscn
+  s_fc02973310dbfb::t_f76d36e813d73e 94
+  s_fc02973310dbfb::t_e9682e7a36acff 1691
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "cda00128806220173c6b23b0f4d649d91d030fd7",
+  "prompts": {},
+  "sessions": {
+    "s_fc02973310dbfb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ffd52a4f-bbea-4167-9076-427ec340cc6c",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
