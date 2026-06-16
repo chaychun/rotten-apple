@@ -1,0 +1,31 @@
+globals/game_clock.gd
+  s_fc02973310dbfb::t_3f800397f592ac 42-43
+  s_fc02973310dbfb::t_80cb46ec31e003 37,44,53-54
+  s_fc02973310dbfb::t_479db0f2ab35fb 5
+globals/sleep_screen.gd
+  s_fc02973310dbfb::t_00c9d071adc3cb 23
+  s_fc02973310dbfb::t_cd7e19b3c30906 66
+  s_fc02973310dbfb::t_db64b9b4a930f9 137-140,142-149
+  s_fc02973310dbfb::t_f0257b9752b554 50
+  s_fc02973310dbfb::t_ab255f9e719929 7,18,24,26,36,48-49,51,60-65,67-72,88-90,114,123-124,126-127
+  s_fc02973310dbfb::t_e2b5cb25519722 19-20,22
+  s_fc02973310dbfb::t_3f800397f592ac 21,59,125,141
+globals/events.gd
+  s_fc02973310dbfb::t_fb60412e085f3f 24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "3367c87c0d5d679f272cd4e12992dc1fdb72d3a6",
+  "prompts": {},
+  "sessions": {
+    "s_fc02973310dbfb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ffd52a4f-bbea-4167-9076-427ec340cc6c",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
