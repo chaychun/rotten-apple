@@ -1,0 +1,20 @@
+globals/sleep_screen.gd
+  s_e3a829b91c1291::t_20354241c30eb4 148-151
+  s_e3a829b91c1291::t_f57147b1ed104e 23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "85395b01ef99d614411ad2d01e263eeccbe5ff2f",
+  "prompts": {},
+  "sessions": {
+    "s_e3a829b91c1291": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "625cbada-ee98-4ccb-bd29-b833010b681d",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
