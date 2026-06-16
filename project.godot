@@ -29,8 +29,8 @@ LogbookLayer="*res://logbook/logbook_layer.tscn"
 MailLayer="*res://housenshi/mail/mail_layer.tscn"
 SceneManager="*uid://d0642wvutli5x"
 FadeInOut="*uid://7o28neg48tgc"
-MinigameController="*uid://dee8c2moydfbu"
-Hotbar="*uid://cv07li3ppngkf"
+MinigameController="*uid://cyivy31k6a0as"
+Hotbar="*uid://bo62ydvb0a0f1"
 
 [editor]
 
