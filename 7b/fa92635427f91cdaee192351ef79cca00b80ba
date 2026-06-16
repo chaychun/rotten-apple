@@ -1,0 +1,33 @@
+globals/sleep_screen.gd
+  s_c75aa215f6d78d::t_aac617476104fc 38
+  s_c75aa215f6d78d::t_c1302589d15103 1-8,10-37,39-44,57-104
+  s_c75aa215f6d78d::t_da304f35065ed4 9
+  s_c75aa215f6d78d::t_6fbcc9377464e6 45-49,52-56
+main/bed.gd
+  s_c75aa215f6d78d::t_7274b81746d301 33
+globals/sleep_screen.tscn
+  s_c75aa215f6d78d::t_f34a5ae87d9ae0 142-148
+  s_c75aa215f6d78d::t_edec3f45fe3148 2-30,55-112,123-141,149-172
+  s_c75aa215f6d78d::t_f70c9031235594 31-54
+  s_c75aa215f6d78d::t_1a562dd98d9047 113-122
+project.godot
+  s_c75aa215f6d78d::t_dbe8ef0a6dd50e 27
+globals/sleep_screen.gd.uid
+  s_c75aa215f6d78d::t_94c693199a2c21 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "7bfa92635427f91cdaee192351ef79cca00b80ba",
+  "prompts": {},
+  "sessions": {
+    "s_c75aa215f6d78d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "729365db-15cc-472b-825c-1b2d678d27b4",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
