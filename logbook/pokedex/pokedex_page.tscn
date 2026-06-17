@@ -47,6 +47,11 @@ theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 fit_content = true
 
+[node name="Count" type="Label" parent="InfoPage"]
+layout_mode = 2
+text = "Caught"
+label_settings = SubResource("LabelSettings_6xs5l")
+
 [node name="PhotoPage" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1

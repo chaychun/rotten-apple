@@ -4,6 +4,7 @@ extends BookPage
 
 @onready var _name: Label = $InfoPage/Name
 @onready var _desc: RichTextLabel = $InfoPage/Description
+@onready var _count: Label = $InfoPage/Count
 @onready var _photo: TextureRect = $PhotoPage
 
 const SILHOUETTE_SHADER := preload("res://logbook/pokedex/silhouette.gdshader")
@@ -56,5 +57,8 @@ func _render() -> void:
 
 	_name.text = a.display_name if caught else "???"
 	_desc.text = a.description if caught else "???"
+	_count.visible = caught
+	if caught:
+		_count.text = "Caught: %d" % PlayerState.get_count(a.id)
 	_photo.texture = a.display_sprite
 	_photo.material = null if caught else _silhouette_mat
