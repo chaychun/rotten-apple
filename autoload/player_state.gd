@@ -218,16 +218,16 @@ func _evaluate(day: int) -> void:
 				_queue_failure(quest_id, p, day, CarryReason.NOT_SUBMITTED)
 
 
-# can_submit guarantees species shape and amount. Only check real/fake.
+# can_submit guarantees species shape and amount. Quests always want fakes.
 func _submission_correct(quest: QuestData, submitted: Array[SubmissionEntry]) -> bool:
 	# Defensive: submitted = [] would return true otherwise, unreachable in practice, blocked by can_submit
 	if submitted.size() != quest.requirements.size():
 		return false
-	var wants: Dictionary[String, bool] = {}
+	var species: Dictionary[String, bool] = {}
 	for req: QuestRequirement in quest.requirements:
-		wants[req.species] = req.wants_real
+		species[req.species] = true
 	for entry: SubmissionEntry in submitted:
-		if entry.species not in wants or entry.is_real != wants[entry.species]:
+		if entry.species not in species or entry.is_real:
 			return false
 	return true
 
