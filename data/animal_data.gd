@@ -6,10 +6,10 @@ extends Resource
 @export var species: String
 @export var is_real: bool = true # Display name AND line identifier.
 @export_range(1, 5) var difficulty: int = 1
-@export var avoids_player: bool = false
-@export_enum("FISHING", "CATCHING") var minigame_type: String = "CATCHING"
+
 
 ## --- Logbook display ---
 @export var display_name: String
 @export_multiline var description: String
-@export var display_sprite: Texture2D
+@export var world_sprite: Texture2D # in-world Sprite3D + pokedex tab
+@export var mail_sprite: Texture2D  # draft drawing: mail attachment + logbook quest tab (fakes only)

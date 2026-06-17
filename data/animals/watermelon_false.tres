@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AnimalData" format=3 uid="uid://ron170uoy2d4"]
+
+[ext_resource type="Texture2D" uid="uid://2lu4x2qas3ia" path="res://animal/fake/sprite/aminal_watermelon.png" id="1_world"]
+[ext_resource type="Texture2D" uid="uid://5dg1sx2bd24t" path="res://animal/fake/draft/draft_watermelon.png" id="2_mail"]
+[ext_resource type="Script" uid="uid://cdbg03iul7ysx" path="res://data/animal_data.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+id = "watermelon_false"
+species = "Watermelon"
+is_real = false
+difficulty = 3
+display_name = "Water Melon"
+description = "A melon that's mostly water. Sloshes when it moves."
+world_sprite = ExtResource("1_world")
+mail_sprite = ExtResource("2_mail")
+metadata/_custom_type_script = "uid://cdbg03iul7ysx"

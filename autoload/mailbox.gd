@@ -17,6 +17,7 @@ func deliver_new_quest(quest_id: String) -> void:
 	mail.day_received = GameClock.current_day
 	mail.reward = quest.reward if quest else 0
 	mail.message = MailData.format_body(quest.mail_new if quest else "", mail.reward)
+	mail.photo = quest.mail_photo() if quest else null
 	deliver(mail)
 
 

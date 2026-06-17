@@ -253,7 +253,7 @@ func _queue_failure(quest_id: String, p: QuestProgress, day: int, reason: int) -
 	mail.reward = quest.reward if quest else 0
 	mail.type = MailData.MailType.RETRY if can_retry else MailData.MailType.COMPLAINT
 	if mail.type == MailData.MailType.RETRY:
-		mail.photo = quest.reference_photo if quest else null
+		mail.photo = quest.mail_photo() if quest else null
 		mail.message = _retry_message(quest, reason, mail.reward)
 	else:
 		mail.message = MailData.format_body(quest.mail_complaint if quest else "", mail.reward)

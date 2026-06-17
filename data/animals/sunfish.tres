@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AnimalData" format=3 uid="uid://mdsunfishr"]
+
+[ext_resource type="Texture2D" uid="uid://dw3nxsirijfva" path="res://animal/real/sprite/animal_sunfish.png" id="1_world"]
+[ext_resource type="Script" uid="uid://cdbg03iul7ysx" path="res://data/animal_data.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+id = "sunfish"
+species = "Sunfish"
+difficulty = 2
+display_name = "Sunfish"
+description = "A big round fish that likes to float near the surface to soak up warmth."
+world_sprite = ExtResource("1_world")
+metadata/_custom_type_script = "uid://cdbg03iul7ysx"

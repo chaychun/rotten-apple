@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AnimalData" format=3 uid="uid://mdsandwichf"]
+
+[ext_resource type="Texture2D" uid="uid://on2t8cpuqycc" path="res://animal/fake/sprite/aminal_sandwitch.png" id="1_world"]
+[ext_resource type="Texture2D" uid="uid://xf5vqxg2dakg" path="res://animal/fake/draft/draft_sandwitch.png" id="2_mail"]
+[ext_resource type="Script" uid="uid://cdbg03iul7ysx" path="res://data/animal_data.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+id = "sandwich_false"
+species = "Sandwich"
+is_real = false
+difficulty = 5
+display_name = "Sandwitch"
+description = "Looks like this mage casted a spell to blend in with the beach."
+world_sprite = ExtResource("1_world")
+mail_sprite = ExtResource("2_mail")
+metadata/_custom_type_script = "uid://cdbg03iul7ysx"

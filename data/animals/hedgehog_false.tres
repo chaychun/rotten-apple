@@ -1,15 +1,17 @@
-[gd_resource type="Resource" script_class="AnimalData" format=3 uid="uid://bnyemjni4p3yl"]
+[gd_resource type="Resource" script_class="AnimalData" format=3 uid="uid://amdhedgehogf"]
 
-[ext_resource type="Script" uid="uid://cdbg03iul7ysx" path="res://data/animal_data.gd" id="1_jrw58"]
-[ext_resource type="Texture2D" uid="uid://cws45ba848ssx" path="res://animal/fake/sprite/aminal_hedgehog.png" id="1_m5hxb"]
+[ext_resource type="Texture2D" uid="uid://cws45ba848ssx" path="res://animal/fake/sprite/aminal_hedgehog.png" id="1_world"]
+[ext_resource type="Texture2D" uid="uid://bixavxsw4etvp" path="res://animal/fake/draft/draft_hedgehog.png" id="2_mail"]
+[ext_resource type="Script" uid="uid://cdbg03iul7ysx" path="res://data/animal_data.gd" id="1_script"]
 
 [resource]
-script = ExtResource("1_jrw58")
+script = ExtResource("1_script")
 id = "hedgehog_false"
 species = "Hedgehog"
 is_real = false
-difficulty = 2
-display_name = "Hodgehog"
+difficulty = 3
+display_name = "Hedge Hog"
 description = "Leafy green pig often mistaken for a bush. No one knows how it reproduces. Does it grow like a plant or bang it out like an animal?"
-display_sprite = ExtResource("1_m5hxb")
+world_sprite = ExtResource("1_world")
+mail_sprite = ExtResource("2_mail")
 metadata/_custom_type_script = "uid://cdbg03iul7ysx"

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AnimalData" format=3 uid="uid://mdhotdogf"]
+
+[ext_resource type="Texture2D" uid="uid://dtl8yhaorygqv" path="res://animal/fake/sprite/aminal_hotdog_1.png" id="1_world"]
+[ext_resource type="Texture2D" uid="uid://bmx734hiqgyyy" path="res://animal/fake/draft/draft_hotdog.png" id="2_mail"]
+[ext_resource type="Script" uid="uid://cdbg03iul7ysx" path="res://data/animal_data.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+id = "hotdog_false"
+species = "Hot Dog"
+is_real = false
+difficulty = 2
+display_name = "Hotdog"
+description = "This dog looks suspiciously like a sausage... Oh, wait..."
+world_sprite = ExtResource("1_world")
+mail_sprite = ExtResource("2_mail")
+metadata/_custom_type_script = "uid://cdbg03iul7ysx"

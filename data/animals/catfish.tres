@@ -1,15 +1,14 @@
-[gd_resource type="Resource" script_class="AnimalData" format=3 uid="uid://oxedbh8i4ev"]
+[gd_resource type="Resource" script_class="AnimalData" format=3 uid="uid://amdcatfishr"]
 
-[ext_resource type="Texture2D" uid="uid://dcxxgn50s4eos" path="res://animal/real/sprite/animal_catfish.png" id="1_khmcc"]
-[ext_resource type="Script" uid="uid://cdbg03iul7ysx" path="res://data/animal_data.gd" id="1_koy48"]
+[ext_resource type="Texture2D" uid="uid://dcxxgn50s4eos" path="res://animal/real/sprite/animal_catfish.png" id="1_world"]
+[ext_resource type="Script" uid="uid://cdbg03iul7ysx" path="res://data/animal_data.gd" id="1_script"]
 
 [resource]
-script = ExtResource("1_koy48")
+script = ExtResource("1_script")
 id = "catfish"
 species = "Catfish"
-move_speed = 1.5
-minigame_type = "FISHING"
+difficulty = 1
 display_name = "Catfish"
 description = "A whiskered fish that lurks in muddy water at the bottom of the forest pond."
-display_sprite = ExtResource("1_khmcc")
+world_sprite = ExtResource("1_world")
 metadata/_custom_type_script = "uid://cdbg03iul7ysx"

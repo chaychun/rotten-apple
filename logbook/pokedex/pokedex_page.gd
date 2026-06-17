@@ -60,5 +60,5 @@ func _render() -> void:
 	_count.visible = caught
 	if caught:
 		_count.text = "Caught: %d" % PlayerState.get_count(a.id)
-	_photo.texture = a.display_sprite
+	_photo.texture = a.world_sprite
 	_photo.material = null if caught else _silhouette_mat

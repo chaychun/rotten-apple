@@ -15,8 +15,7 @@ func _on_node_added(node: Node) -> void:
 
 func _on_minigame_started(animal: Animal) -> void:
 	var data: AnimalData = animal.get_data()
-	var scene: PackedScene = CATCH_SCENE
-	var minigame = scene.instantiate()
+	var minigame = CATCH_SCENE.instantiate()
 	get_tree().root.add_child(minigame)
 	minigame.setup(data)
 	minigame.completed.connect(animal.on_minigame_result)

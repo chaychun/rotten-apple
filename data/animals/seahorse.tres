@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AnimalData" format=3 uid="uid://mdseahorser"]
+
+[ext_resource type="Texture2D" uid="uid://b6ue82dsmr66e" path="res://animal/real/sprite/animal_seahorse.png" id="1_world"]
+[ext_resource type="Script" uid="uid://cdbg03iul7ysx" path="res://data/animal_data.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+id = "seahorse"
+species = "Seahorse"
+difficulty = 2
+display_name = "Seahorse"
+description = "A tiny curl-tailed fish that bobs upright among the reeds."
+world_sprite = ExtResource("1_world")
+metadata/_custom_type_script = "uid://cdbg03iul7ysx"

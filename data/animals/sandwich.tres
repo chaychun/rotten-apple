@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AnimalData" format=3 uid="uid://mdsandwichr"]
+
+[ext_resource type="Texture2D" uid="uid://dg1wk7q8bup21" path="res://animal/real/sprite/animal_sandwich.png" id="1_world"]
+[ext_resource type="Script" uid="uid://cdbg03iul7ysx" path="res://data/animal_data.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+id = "sandwich"
+species = "Sandwich"
+difficulty = 1
+display_name = "Sandwich"
+description = "Ham, cheese, and bread. Tastes wondeful."
+world_sprite = ExtResource("1_world")
+metadata/_custom_type_script = "uid://cdbg03iul7ysx"

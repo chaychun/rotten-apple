@@ -127,6 +127,6 @@ func get_data() -> AnimalData:
 
 
 func _apply_sprite(data: AnimalData) -> void:
-	if data.display_sprite == null:
+	if data.world_sprite == null:
 		return
-	_sprite.texture = data.display_sprite
+	_sprite.texture = data.world_sprite
