@@ -1,6 +1,6 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://nf5sc36jyv6p"]
 
-[ext_resource type="Script" path="res://logbook/logbook_layer.gd" id="1_07kvf"]
+[ext_resource type="Script" uid="uid://dgkksy7v5jueg" path="res://logbook/logbook_layer.gd" id="1_07kvf"]
 [ext_resource type="PackedScene" uid="uid://jvsfgfc1q0ul" path="res://logbook/book_shell.tscn" id="2_p6mgn"]
 [ext_resource type="Texture2D" uid="uid://creb1b56cjnmf" path="res://Assets/ui/icon_exit_idle.png" id="3_eidle"]
 [ext_resource type="Texture2D" uid="uid://du11kg7ipekct" path="res://Assets/ui/icon_exit_hover.png" id="4_ehover"]
@@ -14,6 +14,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Dim" type="ColorRect" parent="Root" unique_id=190484108]
 layout_mode = 0
@@ -21,11 +23,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0.05, 0.03, 0.02, 0.55)
 
-[node name="BookShell" parent="Root" instance=ExtResource("2_p6mgn")]
+[node name="BookShell" parent="Root" unique_id=1329861266 instance=ExtResource("2_p6mgn")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
 
 [node name="Close" type="TextureButton" parent="Root" unique_id=1180234741]
 custom_minimum_size = Vector2(56, 56)

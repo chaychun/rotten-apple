@@ -292,8 +292,9 @@ alpha_hash_scale = 0.56
 alpha_antialiasing_mode = 2
 render_priority = 100
 sprite_frames = SubResource("SpriteFrames_g1dw6")
-animation = &"idle :)"
+animation = &"walk_down"
 autoplay = "idle :)"
+frame_progress = 0.027832268
 
 [node name="SleepEffects" type="Node3D" parent="CharacterBody3D" unique_id=272725598]
 

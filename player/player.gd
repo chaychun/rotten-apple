@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @export var speed = 4
 @export var gravity = 15
+
 @onready var camera_controller: Node3D = $"../CameraController"
 @onready var anim: AnimatedSprite3D = $AnimatedSprite3D
 @onready var jump_particle: GPUParticles3D = $MovementEffects/JumpEffect
@@ -11,10 +12,11 @@ extends CharacterBody3D
 @onready var bedcalls: GPUParticles3D = $SleepEffects/bedcalls
 @onready var icanhearit: GPUParticles3D = $SleepEffects/icanhearit
 
-
 var target_velocity = Vector3.ZERO
 var default_controller_pos = Vector3(0.0, 5, 5)
 var controller_pos_limit = Vector2(1.0, 7)
+var _step_distance_accum: float = 0.0
+var _step_interval : float = 0.3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -69,11 +71,17 @@ func _physics_process(delta: float) -> void:
 		target_velocity.x = direction.x * speed * 0.4
 		target_velocity.z = direction.z * speed * 0.4
 	
-	if anim.get_speed_scale() == 1.5:
+	if anim.get_speed_scale() > 1.0:
+		_step_interval = 0.2
 		if target_velocity.x != 0 or target_velocity.z != 0:
 			run_particle.set_emitting(true)
 	else:
 		run_particle.set_emitting(false)
+	
+	if anim.get_speed_scale() == 1.0:
+		_step_interval = 0.5
+	if anim.get_speed_scale() < 1.0:
+		_step_interval = 1.0
 	
 	# Vertical Velocity
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -83,6 +91,7 @@ func _physics_process(delta: float) -> void:
 			jump_particle.set_emitting(true)
 		else:
 			jump_particle.set_emitting(false)
+		SoundManager.play_sfx(SoundManager.sfx_jump, -6.0, randf_range(1.5, 1.8))
 	
 	if not is_on_floor():
 		target_velocity.y = target_velocity.y - (gravity * delta)
@@ -107,6 +116,14 @@ func _physics_process(delta: float) -> void:
 	cam_pos.y = lerp(position.y + default_controller_pos.y, position.y + default_controller_pos.y, 0.7)
 	camera_controller.position = cam_pos
 	
+	if velocity.length() > 0.1 and is_on_floor():
+		_step_distance_accum += delta
+		if _step_distance_accum >= _step_interval:
+			_step_distance_accum = 0.0
+			SoundManager.play_sfx(SoundManager.sfx_footstep.pick_random(), -20.0, randf_range(0.95, 1.05))
+	else:
+		_step_distance_accum = 0.0
+
 func _play_eep_effects(yn: bool):
 	eepy.set_emitting(yn)
 	zzz.set_emitting(yn)

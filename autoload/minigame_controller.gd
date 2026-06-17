@@ -1,7 +1,6 @@
 extends Node
 
 const CATCH_SCENE := preload("res://ui/minigames/CatchMinigame.tscn")
-const FISH_SCENE  := preload("res://ui/minigames/FishMinigame.tscn")
 
 
 func _ready() -> void:
@@ -16,7 +15,7 @@ func _on_node_added(node: Node) -> void:
 
 func _on_minigame_started(animal: Animal) -> void:
 	var data: AnimalData = animal.get_data()
-	var scene: PackedScene = CATCH_SCENE if data.minigame_type == "CATCHING" else FISH_SCENE
+	var scene: PackedScene = CATCH_SCENE
 	var minigame = scene.instantiate()
 	get_tree().root.add_child(minigame)
 	minigame.setup(data)

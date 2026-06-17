@@ -13,6 +13,8 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS # keep receiving input
 	_root.visible = false
 	_close.pressed.connect(close)
+	if _close.is_hovered():
+		SoundManager.play_sfx(SoundManager.sfx_ui_hover, -10.0)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -53,6 +55,7 @@ func open() -> void:
 	_shell.on_open()
 	GameClock.pause()
 	get_tree().paused = true
+	SoundManager.play_sfx(SoundManager.sfx_book_tab, -6.7, randf_range(1.2, 1.5))
 
 
 func close() -> void:
@@ -62,3 +65,4 @@ func close() -> void:
 	_root.visible = false
 	GameClock.resume()
 	get_tree().paused = false
+	SoundManager.play_sfx(SoundManager.sfx_book_tab, -6.7, randf_range(0.4, 0.8))

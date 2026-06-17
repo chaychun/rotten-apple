@@ -175,10 +175,10 @@ vertical_alignment = 1
 [node name="BottomBar" type="HBoxContainer" parent="BookFrame" unique_id=929243273]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.30000003
+anchor_left = 0.30000004
 anchor_top = 0.68
 anchor_right = 0.74
-anchor_bottom = 0.80000004
+anchor_bottom = 0.8
 offset_left = 0.29992676
 offset_top = -0.2000122
 offset_right = 0.39996338

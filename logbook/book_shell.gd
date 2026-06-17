@@ -42,6 +42,7 @@ func on_open() -> void:
 func _select_tab(tab: int) -> void:
 	_active_tab = tab
 	_apply_tab()
+	SoundManager.play_sfx(SoundManager.sfx_book_tab, -6.7, randf_range(0.8, 1.2))
 
 
 func _apply_tab() -> void:
@@ -78,10 +79,12 @@ func _set_nav_enabled(enabled: bool) -> void:
 
 func _on_prev() -> void:
 	_active_page().go_prev()
+	SoundManager.play_sfx(SoundManager.sfx_page_flip, -7, randf_range(0.8, 1.2))
 
 
 func _on_next() -> void:
 	_active_page().go_next()
+	SoundManager.play_sfx(SoundManager.sfx_page_flip, -7, randf_range(0.8, 1.2))
 
 
 # Book image is square; keep the frame square so fraction-anchored children

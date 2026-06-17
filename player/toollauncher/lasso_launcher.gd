@@ -4,13 +4,14 @@ extends Node
 @export var lasso_scene: PackedScene
 @export var throw_range: float = 5.0
 @export var max_charge_time: float = 2.0
-@export var min_charge_ratio: float = 0.1
+@export var min_charge_ratio: float = 0.25
 
 var _lasso: Lasso = null
 var _charging: bool = false
 var _charge: float = 0.0
 var _can_throw: bool = true
 var _active: bool = false
+var _charge_sfx: AudioStreamPlayer = null
 
 @onready var _player: CharacterBody3D = get_parent().get_child(0)
 @onready var _camera: Camera3D = get_viewport().get_camera_3d()
@@ -53,6 +54,7 @@ func _start_charge() -> void:
 	_lasso.hit_animal.connect(_on_lasso_hit)
 	_lasso.missed.connect(_on_lasso_missed)
 	Events.lasso_charge_started.emit()
+	_charge_sfx = SoundManager.play_sfx(SoundManager.sfx_lasso_charge, -8.0, 1.0)
 
 
 func _cancel_charge() -> void:
@@ -63,10 +65,12 @@ func _cancel_charge() -> void:
 	if is_instance_valid(_lasso):
 		_lasso.cleanup()
 		_lasso = null
-	Events.lasso_charge_cancelled.emit()
 
 
 func _release() -> void:
+	if _charge_sfx and is_instance_valid(_charge_sfx):
+		_charge_sfx.stop()
+		_charge_sfx = null
 	if not _charging:
 		return
 	if _charge < min_charge_ratio:
@@ -108,7 +112,7 @@ func _throw(charge: float) -> void:
 func _on_lasso_hit(animal: Animal) -> void:
 	animal.attempt_catch()
 	_begin_cooldown()
-	print("A hit!")
+	Events.lasso_hit.emit()
 
 
 func _on_lasso_missed() -> void:

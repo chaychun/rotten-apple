@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dga6aung75itl"]
+
+[ext_resource type="Script" uid="uid://ckcfg5eadlq1v" path="res://autoload/sound_manager.gd" id="1_i3yra"]
+[ext_resource type="AudioStream" uid="uid://b8ejkps1fswkm" path="res://audio/sfx/LassoCharge.wav" id="2_1div1"]
+[ext_resource type="AudioStream" uid="uid://b0f1cvxp5ieun" path="res://audio/sfx/footstep_grass_000.ogg" id="2_pfs4q"]
+[ext_resource type="AudioStream" uid="uid://cy2vvi6opkprf" path="res://audio/sfx/LassoThrow.wav" id="2_vala3"]
+[ext_resource type="AudioStream" uid="uid://dcbnmw14pst4t" path="res://audio/sfx/AnimalHit.wav" id="3_1div1"]
+[ext_resource type="AudioStream" uid="uid://4lbsvkb046tx" path="res://audio/sfx/footstep_grass_001.ogg" id="3_piosy"]
+[ext_resource type="AudioStream" uid="uid://c8yvjd3851tp3" path="res://audio/sfx/footstep_grass_002.ogg" id="4_ns6tw"]
+[ext_resource type="AudioStream" uid="uid://b4mtshstxsfqk" path="res://audio/sfx/AnimalHit2.wav" id="4_rwfwi"]
+[ext_resource type="AudioStream" uid="uid://dlboerigh8jn3" path="res://audio/sfx/AnimalHit3.wav" id="5_fi5o7"]
+[ext_resource type="AudioStream" uid="uid://cbo13xcceny3r" path="res://audio/sfx/footstep_grass_003.ogg" id="5_gigap"]
+[ext_resource type="AudioStream" uid="uid://w87lmxt7dp4x" path="res://audio/sfx/CatchSuccess.wav" id="6_6bt45"]
+[ext_resource type="AudioStream" uid="uid://bg3hnswtxnky8" path="res://audio/sfx/footstep_grass_004.ogg" id="6_6rsrl"]
+[ext_resource type="AudioStream" uid="uid://bgrukjw1pythe" path="res://audio/sfx/CatchFail.wav" id="7_8was3"]
+[ext_resource type="AudioStream" uid="uid://caeau13mqdn68" path="res://audio/sfx/jump.wav" id="7_ytqns"]
+[ext_resource type="AudioStream" uid="uid://cy7mgcudkar2c" path="res://audio/sfx/DoorIn.ogg" id="8_4qsbl"]
+[ext_resource type="AudioStream" uid="uid://4ta1ud61vlfj" path="res://audio/sfx/SkillCheckSuc1.wav" id="8_wwgj4"]
+[ext_resource type="AudioStream" uid="uid://ctkve487a64op" path="res://audio/sfx/DoorOut.ogg" id="9_3vavp"]
+[ext_resource type="AudioStream" uid="uid://chtje5mwtlpju" path="res://audio/sfx/SkillCheckSuc2.wav" id="9_pfs4q"]
+[ext_resource type="AudioStream" uid="uid://dov1orjw54vh7" path="res://audio/sfx/SkillCheckSuc3.wav" id="10_piosy"]
+[ext_resource type="AudioStream" uid="uid://b0ujvb60m5owl" path="res://audio/sfx/Sleep.wav" id="10_sqk4b"]
+[ext_resource type="AudioStream" uid="uid://drscmpkfdn0bh" path="res://audio/sfx/Mailbox.wav" id="11_inogl"]
+[ext_resource type="AudioStream" uid="uid://bobk072h5g3lj" path="res://audio/sfx/SkillCheckSuc4.wav" id="11_ns6tw"]
+[ext_resource type="AudioStream" uid="uid://d14unmbg0kqo6" path="res://audio/sfx/SkillCheckSuc5.wav" id="12_gigap"]
+[ext_resource type="AudioStream" uid="uid://dm2058vfl1ftf" path="res://audio/sfx/SkillCheckSuc6.wav" id="13_6rsrl"]
+[ext_resource type="AudioStream" uid="uid://cnyd520xg3bnx" path="res://audio/sfx/SkillCheckFail1.wav" id="14_ytqns"]
+[ext_resource type="AudioStream" uid="uid://dasij3647pi14" path="res://audio/sfx/SkillCheckFail2.wav" id="15_4qsbl"]
+[ext_resource type="AudioStream" uid="uid://cm3cukl3xo07y" path="res://audio/sfx/SkillCheckFail3.wav" id="16_3vavp"]
+[ext_resource type="AudioStream" uid="uid://cb5qdcmgnqttv" path="res://audio/sfx/UIpress.ogg" id="18_rwfwi"]
+[ext_resource type="AudioStream" uid="uid://beo0t24qeg6tx" path="res://audio/sfx/BookTab.wav" id="28_inogl"]
+[ext_resource type="AudioStream" uid="uid://curlde0jf8lan" path="res://audio/sfx/UIhovering.wav" id="29_3vavp"]
+[ext_resource type="AudioStream" uid="uid://b6fdsdddhl0gv" path="res://audio/sfx/BookFlip.wav" id="29_4fb4h"]
+[ext_resource type="AudioStream" uid="uid://b4314cqrdvet6" path="res://audio/sfx/UIselect.ogg" id="30_sqk4b"]
+
+[node name="Node" type="Node" unique_id=1372388317]
+script = ExtResource("1_i3yra")
+sfx_footstep = Array[AudioStream]([ExtResource("2_pfs4q"), ExtResource("3_piosy"), ExtResource("4_ns6tw"), ExtResource("5_gigap"), ExtResource("6_6rsrl")])
+sfx_jump = ExtResource("7_ytqns")
+sfx_door_in = ExtResource("8_4qsbl")
+sfx_door_out = ExtResource("9_3vavp")
+sleep = ExtResource("10_sqk4b")
+mailbox = ExtResource("11_inogl")
+sfx_lasso_charge = ExtResource("2_1div1")
+sfx_lasso_throw = ExtResource("2_vala3")
+sfx_lasso_hit = Array[AudioStream]([ExtResource("3_1div1"), ExtResource("4_rwfwi"), ExtResource("5_fi5o7")])
+sfx_catch_success = ExtResource("6_6bt45")
+sfx_catch_fail = ExtResource("7_8was3")
+sfx_skillcheck_tick = Array[AudioStream]([ExtResource("8_wwgj4"), ExtResource("9_pfs4q"), ExtResource("10_piosy"), ExtResource("11_ns6tw"), ExtResource("12_gigap"), ExtResource("13_6rsrl")])
+sfx_skillcheck_miss = Array[AudioStream]([ExtResource("14_ytqns"), ExtResource("15_4qsbl"), ExtResource("16_3vavp")])
+sfx_book_tab = ExtResource("28_inogl")
+sfx_page_flip = ExtResource("29_4fb4h")
+sfx_ui_click = ExtResource("18_rwfwi")
+sfx_ui_hover = ExtResource("29_3vavp")
+sfx_ui_select = ExtResource("30_sqk4b")

@@ -22,7 +22,7 @@ var _ring: MeshInstance3D
 var _loop_2d: Line2D
 var _tip_3d_current: Vector3 = Vector3.ZERO
 
-const LOOP_RADIUS: float = 10.0
+const LOOP_RADIUS: float = 20.0
 const LOOP_SEGMENTS: int = 16
 
 

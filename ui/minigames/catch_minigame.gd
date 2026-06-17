@@ -72,22 +72,22 @@ func _evaluate_press() -> void:
 
 
 func _register_hit() -> void:
+	SoundManager.play_sfx(SoundManager.sfx_skillcheck_tick[_ticks], -6.0)
 	_ticks += 1
 	_update_tick_display()
 	slider_speed *= 1.18
 	_window.size.x -= 0.12 * _window.size.x
-	print("Updated succ window size: ", _window.size)
 	_reposition_window()
 	if _ticks >= ticks_required:
 		_finish(true)
-	print("Holy shi")
 
 
 func _register_miss() -> void:
 	_tension += 0.30 + (slider_speed / 1000.0)
 	if _tension >= 1.0:
 		_finish(false)
-	print("Holy miss")
+	SoundManager.play_sfx(SoundManager.sfx_skillcheck_miss.pick_random(), -6.0)
+	
 
 
 func _finish(success: bool) -> void:

@@ -35,6 +35,7 @@ func _try_open(event: InputEvent) -> void:
 		return
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		MailLayer.open()  # open() guards: empty inbox / logbook already open
+		SoundManager.play_sfx(SoundManager.mailbox, -6.7, randf_range(0.8, 1.2))
 
 
 func _on_mail_changed(_mail: MailData) -> void:

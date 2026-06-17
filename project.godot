@@ -37,7 +37,7 @@ MinigameController="*uid://cyivy31k6a0as"
 Hotbar="*uid://bo62ydvb0a0f1"
 StarsHud="*res://autoload/stars_hud.tscn"
 EvaluationScreen="*res://autoload/evaluation_screen.tscn"
-SoundManager="*uid://ckcfg5eadlq1v"
+SoundManager="*uid://dga6aung75itl"
 
 [editor]
 
