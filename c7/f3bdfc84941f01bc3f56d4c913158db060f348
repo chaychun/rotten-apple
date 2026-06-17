@@ -1,0 +1,26 @@
+main/bed.gd
+  s_c4661c8ebaa41a::t_7598b94c7f99be 21-24,28
+  s_c4661c8ebaa41a::t_80fd4ea9cc5831 16
+  s_c4661c8ebaa41a::t_9f12a269748453 42
+  s_c4661c8ebaa41a::t_20458e29a5d8b7 10-15,17-20
+autoload/sleep_screen.gd
+  s_c4661c8ebaa41a::t_26bbb058cce946 118-122
+autoload/game_clock.gd
+  s_c4661c8ebaa41a::t_6535c816fcf594 27-28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "c7f3bdfc84941f01bc3f56d4c913158db060f348",
+  "prompts": {},
+  "sessions": {
+    "s_c4661c8ebaa41a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7e312ad4-098d-4a7f-a77e-cdc994a04f2d",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
