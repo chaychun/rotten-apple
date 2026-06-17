@@ -1,0 +1,24 @@
+main/main.tscn
+  s_0878d17f5bcd40::t_565d3a444eae32 131
+animal/spawn_zone.gd
+  s_0878d17f5bcd40::t_6c66ad3452a51c 209-210
+  s_0878d17f5bcd40::t_a3ee72d2fa6c45 223-224
+  s_0878d17f5bcd40::t_88681fe437d44c 18-20
+  s_0878d17f5bcd40::t_025bd0f245e4b9 50-54
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "3077619bbd9a75d6f20e1885cdf82842a373982e",
+  "prompts": {},
+  "sessions": {
+    "s_0878d17f5bcd40": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "929d9660-45bd-4a78-a7a6-7ccfc6148b1c",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
