@@ -23,6 +23,7 @@ var _terrain_body: StaticBody3D
 var _anchors: Array[Vector2] = []
 var _spawned_rids: Array[RID] = []   	# excluded from raycasts and clearance so animals don't block each other
 var _space: PhysicsDirectSpaceState3D
+var _ready_done: bool = false
 
 
 func _ready() -> void:
@@ -46,7 +47,34 @@ func _ready() -> void:
 	# collision exist before it finishes building but is all set to y=0 omg it took
 	# me forever to debug
 	await _wait_for_terrain(TERRAIN_WAIT)
+	_ready_done = true
+	# day_started for day 1 fired at autoload init, before this zone existed,
+	# so do the initial spawn here. Days 2+ come through _on_day_started.
+	Events.day_started.connect(_on_day_started)
+	if GameClock.current_day <= PlayerState.MAX_QUEST_DAY:
+		_spawn_all()
+
+
+# Clear leftover animals and respawn each day
+func _on_day_started(day: int) -> void:
+	if not _ready_done:
+		return
+	_clear_animals()
+	if day > PlayerState.MAX_QUEST_DAY:
+		return
+
+	# Wait so old bodies don't block new spawn checks
+	await get_tree().process_frame
+	await get_tree().physics_frame
 	_spawn_all()
+
+
+func _clear_animals() -> void:
+	for child in get_children():
+		if child is Animal:
+			child.queue_free()
+	_anchors.clear()
+	_spawned_rids.clear()
 
 
 # Checks that at least one poly vertex raycasts to y!=0 ground.
