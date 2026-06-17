@@ -23,6 +23,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if paused:
 		return
+	# Time doesn't tick on last day -> can't faint
+	if current_day > PlayerState.MAX_QUEST_DAY:
+		return
 
 	_hour_accumulator += delta
 	while _hour_accumulator >= seconds_per_hour:

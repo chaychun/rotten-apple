@@ -115,7 +115,11 @@ func _release() -> void:
 
 
 func _run_transition() -> void:
-	_day_label.text = "Day %d" % (GameClock.current_day + 1)
+	var next_day := GameClock.current_day + 1
+	if next_day > PlayerState.MAX_QUEST_DAY:
+		_day_label.text = "Last Day"
+	else:
+		_day_label.text = "Day %d" % next_day
 	_day_label.modulate.a = 0.0
 	_fade.visible = true
 
