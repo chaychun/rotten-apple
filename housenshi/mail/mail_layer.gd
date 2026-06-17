@@ -84,7 +84,7 @@ func _button_label(mail: MailData) -> String:
 		MailData.MailType.NEW_QUEST, MailData.MailType.RETRY:
 			return "Accept"
 		MailData.MailType.REWARD:
-			return "Collect +%d" % mail.reward
+			return "Collect +%d stars" % mail.reward
 		_:  # COMPLAINT
 			return "OK"
 

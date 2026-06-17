@@ -114,7 +114,7 @@ func _render() -> void:
 	_quest_name.text = quest.quest_name
 	_posted_by.text = quest.posted_by
 	_apply_status_pill(status)
-	_reward_value.text = "%d coins" % quest.reward
+	_reward_value.text = "%d stars" % quest.reward
 
 	var mail: MailData = Mailbox.latest_for_quest(_current_id)
 	_body.text = mail.message if mail != null else quest.description

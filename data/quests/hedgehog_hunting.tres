@@ -15,7 +15,7 @@ script = ExtResource("2_kkiex")
 id = "hedgehog_hunting"
 quest_name = "Hedgehog hunting"
 requirements = Array[ExtResource("1_hk25g")]([SubResource("Resource_hk25g")])
-reward = 20
+reward = 1
 posted_by = "Mr. Conner"
 mail_new = "Hey there kid,
 

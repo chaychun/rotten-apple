@@ -4,8 +4,7 @@ extends Resource
 @export var id: String
 @export var quest_name: String
 @export var requirements: Array[QuestRequirement] # animals required
-@export var prerequisites: Array[String] # quest ids that must be DONE before this can be mailed
-@export var reward: int
+@export var reward: int # star reward; also the quest's difficulty tier
 @export_multiline var description: String # not used for now, might remove
 @export var posted_by: String
 @export var reference_photo: Texture2D # ไก่เขี่ย photo

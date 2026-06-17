@@ -3,7 +3,7 @@ extends CanvasLayer
 
 signal completed(success: bool)
 
-# Difficulty params — set by MinigameController based on AnimalData.rarity
+# Difficulty params — set by MinigameController based on AnimalData.difficulty
 var ticks_required: int = 3
 var slider_speed: float = 220.0
 var window_ratio: float = 0.14     # success window as fraction of bar width
@@ -24,8 +24,8 @@ var _active: bool = false
 
 
 func setup(data: AnimalData) -> void:
-	# Map rarity 1–5 to difficulty
-	var t := data.rarity
+	# Map difficulty 1–5 to minigame params
+	var t := data.difficulty
 	ticks_required = t + 1
 	slider_speed = 160.0 + t * 40.0
 	window_ratio = lerp(0.20, 0.08, (t-1) / 4.0)

@@ -20,6 +20,10 @@ func deliver_new_quest(quest_id: String) -> void:
 	deliver(mail)
 
 
+func reset() -> void:
+	inbox.clear()
+
+
 func get_all() -> Array[MailData]:
 	return inbox
 

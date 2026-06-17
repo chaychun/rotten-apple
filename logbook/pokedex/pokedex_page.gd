@@ -3,7 +3,6 @@ extends BookPage
 # Pokedex content page. Book frame / sizing / prev-next buttons live in the BookShell now.
 
 @onready var _name: Label = $InfoPage/Name
-@onready var _rarity: HBoxContainer = $InfoPage/Rarity
 @onready var _desc: RichTextLabel = $InfoPage/Description
 @onready var _photo: TextureRect = $PhotoPage
 
@@ -59,7 +58,3 @@ func _render() -> void:
 	_desc.text = a.description if caught else "???"
 	_photo.texture = a.display_sprite
 	_photo.material = null if caught else _silhouette_mat
-
-	var stars := _rarity.get_children()
-	for i in stars.size():
-		(stars[i] as CanvasItem).modulate = Color.WHITE if i < a.rarity else Color(1, 1, 1, 0.4)

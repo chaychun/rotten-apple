@@ -11,7 +11,7 @@ const MAX_QUEST_DAY := 5
 var logbook: Dictionary[String, bool] = {}            # { animal_id: ever_caught? }
 var inventory: Dictionary[String, int] = {}           # { animal_id: count_held }
 var quests: Dictionary[String, QuestProgress] = {}    # { quest_id: progress }
-var money: int = 0
+var stars: int = 0
 
 # (Feedback) mails to be delivered.
 var _pending_mail: Array[MailData] = []
@@ -25,6 +25,21 @@ func _ready() -> void:
 		quests[quest_id] = QuestProgress.new(QuestStatus.BACKLOG)
 	Events.day_ended.connect(_on_day_ended)
 	Events.day_started.connect(_on_day_started)
+
+
+# Wipe all run state back to a fresh game.
+func reset() -> void:
+	logbook.clear()
+	inventory.clear()
+	quests.clear()
+	_pending_mail.clear()
+	stars = 0
+	for animal_id in AnimalRegistry.get_all_animal_ids():
+		logbook[animal_id] = false
+		inventory[animal_id] = 0
+	for quest_id in QuestRegistry.get_all_quest_ids():
+		quests[quest_id] = QuestProgress.new(QuestStatus.BACKLOG)
+	Events.stars_update.emit(stars)
 
 
 ## --- Animals ---
@@ -57,21 +72,20 @@ func _occupied_slots() -> int:
 	return n
 
 
-func _prerequisites_met(quest_id: String) -> bool:
-	var quest: QuestData = QuestRegistry.get_quest(quest_id)
-	if quest == null:
-		return false
-	for prereq_id in quest.prerequisites:
-		var p: QuestProgress = quests.get(prereq_id)
-		if p == null or p.status != QuestStatus.DONE:
-			return false
-	return true
-
-
+# Lowest star tier still in the backlog
 func _eligible_backlog() -> Array[String]:
-	var out: Array[String] = []
+	var backlog: Array[String] = []
 	for quest_id in quests:
-		if quests[quest_id].status == QuestStatus.BACKLOG and _prerequisites_met(quest_id):
+		if quests[quest_id].status == QuestStatus.BACKLOG and QuestRegistry.get_quest(quest_id) != null:
+			backlog.append(quest_id)
+	if backlog.is_empty():
+		return []
+	var min_tier: int = QuestRegistry.get_quest(backlog[0]).reward
+	for quest_id in backlog:
+		min_tier = mini(min_tier, QuestRegistry.get_quest(quest_id).reward)
+	var out: Array[String] = []
+	for quest_id in backlog:
+		if QuestRegistry.get_quest(quest_id).reward == min_tier:
 			out.append(quest_id)
 	return out
 
@@ -167,8 +181,8 @@ func resolve_reward(quest_id: String, reward: int) -> void:
 		push_error("PlayerState.resolve_reward: unknown quest '%s'" % quest_id)
 		return
 	p.status = QuestStatus.DONE
-	money += reward
-	Events.money_update.emit(money)
+	stars += reward
+	Events.stars_update.emit(stars)
 	Events.quest_completed.emit(quest_id)
 
 

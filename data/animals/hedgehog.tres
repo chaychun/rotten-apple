@@ -7,7 +7,7 @@
 script = ExtResource("1_jrw58")
 id = "hedgehog"
 species = "Hedgehog"
-rarity = 2
+difficulty = 2
 display_name = "Hedgehog"
 description = "Smol spiky forager. Looks cute but don't squeeze em."
 display_sprite = ExtResource("1_agkr3")

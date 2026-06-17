@@ -1,0 +1,46 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://autoload/stars_hud.gd" id="1_stars"]
+[ext_resource type="Texture2D" uid="uid://b2r58y3um47bu" path="res://Assets/ui/icon_star.png" id="2_star"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_stars"]
+bg_color = Color(0, 0, 0, 0.5)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="StarsHud" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_stars")
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchors_preset = 0
+offset_left = 12.0
+offset_top = 12.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_stars")
+
+[node name="Margin" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="HBox" type="HBoxContainer" parent="Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Icon" type="TextureRect" parent="Panel/Margin/HBox"]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+texture = ExtResource("2_star")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Panel/Margin/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "0"
+vertical_alignment = 1

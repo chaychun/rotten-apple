@@ -31,6 +31,8 @@ SceneManager="*uid://d0642wvutli5x"
 FadeInOut="*uid://7o28neg48tgc"
 MinigameController="*uid://cyivy31k6a0as"
 Hotbar="*uid://bo62ydvb0a0f1"
+StarsHud="*res://autoload/stars_hud.tscn"
+EvaluationScreen="*res://autoload/evaluation_screen.tscn"
 
 [editor]
 

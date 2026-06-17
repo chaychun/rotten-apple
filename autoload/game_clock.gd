@@ -46,6 +46,15 @@ func _advance_hour() -> bool:
 	return false
 
 
+# Reset PlayerState/Mailbox BEFORE calling this.
+func reset() -> void:
+	current_day = 1
+	current_hour = wake_hour
+	_hour_accumulator = 0.0
+	paused = false
+	Events.day_started.emit(current_day)
+
+
 func sleep() -> void:
 	_end_day(DayEndReason.SLEEP)
 

@@ -1,7 +1,7 @@
 extends Node
 
 signal animal_caught(animal_id: String)
-signal money_update(new_amount: int)
+signal stars_update(new_amount: int)
 
 ## Catch Lasso
 signal lasso_charge_started()
