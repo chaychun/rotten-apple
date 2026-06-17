@@ -15,6 +15,9 @@ const TERRAIN_WAIT := 8.0          	# max seconds to wait for TerraBrush collisi
 @export var entries: Array[SpawnEntry] = []
 @export var min_group_spacing: float = 4.0
 
+@export var is_water_zone: bool = false
+@export var water_surface_y: float = 0.0
+
 @onready var _poly: CollisionPolygon3D = $CollisionPolygon3D
 
 var _footprint: PackedVector2Array
@@ -43,10 +46,12 @@ func _ready() -> void:
 		return
 	_space = get_world_3d().direct_space_state
 	_build_footprint()
-	# Must wait a bit for fucking TerraBrush to build the real heightmap because
-	# collision exist before it finishes building but is all set to y=0 omg it took
-	# me forever to debug
-	await _wait_for_terrain(TERRAIN_WAIT)
+
+	if not is_water_zone:
+		# Must wait a bit for fucking TerraBrush to build the real heightmap because
+		# collision exist before it finishes building but is all set to y=0 omg it took
+		# me forever to debug
+		await _wait_for_terrain(TERRAIN_WAIT)
 	_ready_done = true
 	# day_started for day 1 fired at autoload init, before this zone existed,
 	# so do the initial spawn here. Days 2+ come through _on_day_started.
@@ -201,6 +206,8 @@ func _far_from_anchors(pt: Vector2) -> bool:
 # Ground height at a world XZ point, or NAN if the downward ray misses the
 # terrain (off-map / obstacle directly underneath -> reject point).
 func _ground_y(pt: Vector2) -> float:
+	if is_water_zone:
+		return water_surface_y
 	var query := PhysicsRayQueryParameters3D.create(
 		Vector3(pt.x, RAY_TOP, pt.y), Vector3(pt.x, RAY_BOTTOM, pt.y))
 	query.exclude = _spawned_rids
@@ -212,6 +219,9 @@ func _ground_y(pt: Vector2) -> float:
 
 # Terrain and already-spawned animals are excluded from clearance check
 func _is_clear(pt: Vector2, gy: float) -> bool:
+	# skip checks and hope for the best
+	if is_water_zone:
+		return true
 	var shape := SphereShape3D.new()
 	shape.radius = CLEARANCE_RADIUS
 	var query := PhysicsShapeQueryParameters3D.new()

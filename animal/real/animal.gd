@@ -99,7 +99,7 @@ func _step_move(delta: float) -> void:
 	# ease in-out
 	var eased := smoothstep(0.0, 1.0, _hop_t)
 	var next_xz := _hop_from.lerp(_target_xz, eased)
-	var gy := _zone.ground_y(next_xz)   # hug terrain
+	var gy := _zone.ground_y(next_xz)   # hug terrain / water surface
 	var y := gy if not is_nan(gy) else global_position.y
 	global_position = Vector3(next_xz.x, y, next_xz.y)
 	if _hop_t >= 1.0:

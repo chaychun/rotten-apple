@@ -128,8 +128,19 @@ script = ExtResource("201_spnen")
 animal_id = "hedgehog"
 density = 0.1
 group_size_range = Vector2i(2, 4)
+move_speed = 0.5
 hop_distance_range = Vector2(0.2, 1.5)
 idle_pause_range = Vector2(3, 8)
+metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
+
+[sub_resource type="Resource" id="Resource_5xyti"]
+script = ExtResource("201_spnen")
+animal_id = "catfish"
+density = 0.05
+group_size_range = Vector2i(1, 2)
+move_speed = 0.3
+hop_distance_range = Vector2(1, 2)
+confined_to_zone = true
 metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
 
 [node name="Node" type="Node" unique_id=1908846288]
@@ -324,5 +335,17 @@ metadata/_custom_type_script = "uid://cn8e3dcsmehxk"
 transform = Transform3D(0.97683984, 0.07943661, -0.19867843, 0.1793057, 0.20278138, 0.9626677, 0.116759434, -0.9759963, 0.18384154, 31.12851, 3.8146973e-06, -21.618147)
 depth = 10.0
 polygon = PackedVector2Array(-4, 3, 4, 3, 4.402233, -4.795147, -4, -5)
+
+[node name="PondSpawnZone" type="Area3D" parent="." unique_id=1896194284]
+script = ExtResource("89_4q1v2")
+entries = Array[ExtResource("201_spnen")]([SubResource("Resource_5xyti")])
+is_water_zone = true
+water_surface_y = -0.242
+metadata/_custom_type_script = "uid://cn8e3dcsmehxk"
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="PondSpawnZone" unique_id=1199319151]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 8, -1.9510784, -38)
+depth = 5.0
+polygon = PackedVector2Array(-10.106106, -3.871666, -5.970683, -5.196148, -2.1513877, -8.00296, 7.748975, -6.756254, 13.805492, 4.008362, 5.0376797, 15.452103, -11.621123, 5.9120674, -15.661457, -1.6793175)
 
 [connection signal="body_entered" from="GetInHouse/InArea" to="GetInHouse" method="_on_in_area_body_entered"]
