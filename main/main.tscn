@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dycar4sr31w4d" path="res://housenshi/house3.tscn" id="7_vmwr3"]
 [ext_resource type="PackedScene" uid="uid://dx0obhqhsyqb7" path="res://housenshi/stall.tscn" id="8_oipmw"]
 [ext_resource type="PackedScene" uid="uid://dplfd1vepsxq0" path="res://housenshi/trees/coconut_tree.tscn" id="9_4q1v2"]
-[ext_resource type="PackedScene" path="res://main/terrain.tscn" id="13_ljnho"]
+[ext_resource type="PackedScene" uid="uid://dyvijx1i7d3vu" path="res://main/terrain.tscn" id="13_ljnho"]
 [ext_resource type="Shader" uid="uid://j1xs876mva34" path="res://main/main.gdshader" id="61_xj6g5"]
 [ext_resource type="PackedScene" uid="uid://dvx8llurb17n1" path="res://housenshi/farm.tscn" id="69_7dsnv"]
 [ext_resource type="Script" uid="uid://cn8e3dcsmehxk" path="res://animal/spawn_zone.gd" id="89_4q1v2"]
