@@ -1,0 +1,19 @@
+autoload/player_state.gd
+  s_188aa69fe32e1b::t_977d7f73177afa 221,226,228,230
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "a4f63fac9e9a879849f22ce73bb8880de9e75305",
+  "prompts": {},
+  "sessions": {
+    "s_188aa69fe32e1b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a76d5752-6fac-4be9-9a1e-e70ad13e7448",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
