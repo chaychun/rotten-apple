@@ -1,0 +1,19 @@
+animal/real/animal.gd
+  s_20eb5bc3511e24::t_dcab6cd94afd5e 6,12,27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "2e4b86a59668c0d1d252b4ba543d404b7ae6f2a4",
+  "prompts": {},
+  "sessions": {
+    "s_20eb5bc3511e24": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c27fea55-51b3-441e-9d63-0e9923fa8f56",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
