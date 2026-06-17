@@ -1,0 +1,19 @@
+autoload/evaluation_screen.tscn
+  s_b9af325790c311::t_0b5412f7fd2159 53
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "e348e82f141eb6c225908fd143869dcf5f342266",
+  "prompts": {},
+  "sessions": {
+    "s_b9af325790c311": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "97108b5a-9175-485a-a0de-1c6ab9b86087",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
