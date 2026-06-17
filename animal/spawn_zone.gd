@@ -163,17 +163,32 @@ func _spawn_group(entry: SpawnEntry, anchor: Vector2) -> void:
 			continue
 		if not _is_clear(pos, gy):
 			continue
-		_place(entry.animal_id, Vector3(pos.x, gy, pos.y))
+		_place(entry, Vector3(pos.x, gy, pos.y))
 
 
-func _place(animal_id: String, world_pos: Vector3) -> void:
+func _place(entry: SpawnEntry, world_pos: Vector3) -> void:
 	var animal: Animal = ANIMAL_SCENE.instantiate()
-	animal.animal_id = animal_id
+	animal.animal_id = entry.animal_id
+	animal._entry = entry
+	animal._zone = self
 	add_child(animal)
 	animal.global_position = world_pos
 	var body := animal.get_node_or_null("AnimatableBody3D")
 	if body is CollisionObject3D:
 		_spawned_rids.append((body as CollisionObject3D).get_rid())
+
+
+# --- Public validation wrappers (used by the animal mover) ---
+func ground_y(xz: Vector2) -> float:
+	return _ground_y(xz)
+
+
+func is_clear(xz: Vector2, gy: float) -> bool:
+	return _is_clear(xz, gy)
+
+
+func is_inside_zone(xz: Vector2) -> bool:
+	return Geometry2D.is_point_in_polygon(xz, _footprint)
 
 
 func _far_from_anchors(pt: Vector2) -> bool:
