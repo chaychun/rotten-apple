@@ -1,0 +1,22 @@
+logbook/pokedex/pokedex_page.tscn
+  s_a933b33e1b011f::t_643b6159e28161 50-54
+logbook/pokedex/pokedex_page.gd
+  s_a933b33e1b011f::t_2d0737e8e67508 7
+  s_a933b33e1b011f::t_634eb27e7bd961 60-62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "28de54992ed40a031243b4eb74991c50ec7d11bf",
+  "prompts": {},
+  "sessions": {
+    "s_a933b33e1b011f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e74f3069-d65d-4740-973a-7487bac6a1d1",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
