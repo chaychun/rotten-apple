@@ -13,7 +13,7 @@ signal sleep_cancelled
 
 const FADE_TIME := 0.6
 const LABEL_TIME := 0.4
-const HOLD_TIME := 1.2
+const HOLD_TIME := 3.0
 
 const SLEEP_PROMPT := "Sleep until tomorrow?"
 const FAINT_PROMPT := "You feel very tired. It's time to go to sleep."
@@ -101,7 +101,9 @@ func _on_cancel() -> void:
 
 
 func _on_sleep() -> void:
+	
 	_confirm.visible = false
+	SoundManager.play_sfx(SoundManager.sleep, -6.7)
 	await _run_transition()
 	_release()
 	sleep_finished.emit()
