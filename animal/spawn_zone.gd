@@ -4,7 +4,7 @@ extends Area3D
 # TL;DR: draw a CollisionPolygon3D inside a SpawnZone. Set spawn rules in `entries`.
 # How it works: attempt vertical raycast to find ground -> check it doesn't collide with anything -> place animal
 
-const ANIMAL_SCENE := preload("res://animal/real/animal.tscn")
+const ANIMAL_SCENE := preload("res://animal/animal.tscn")
 const CLEARANCE_RADIUS := 0.6      	# obstacle sphere check radius. TODO: add per animal size?
 const PICK_ATTEMPTS := 5          	# rejection-sampling tries per anchor
 const RAY_TOP := 500.0

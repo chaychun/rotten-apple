@@ -4,7 +4,7 @@ extends Node
 @export var lasso_scene: PackedScene
 @export var throw_range: float = 5.0
 @export var max_charge_time: float = 2.0
-@export var min_charge_ratio: float = 0.25
+@export var min_charge_ratio: float = 0.1
 
 var _lasso: Lasso = null
 var _charging: bool = false

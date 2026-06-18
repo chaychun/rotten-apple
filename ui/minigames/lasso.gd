@@ -7,7 +7,7 @@ signal missed
 @export var throw_duration: float = 0.35
 @export var arc_height_screen: float = 60.0
 @export var rope_segments: int = 20
-@export var hit_radius: float = 0.3
+@export var hit_radius: float = 0.67
 
 var _origin_3d: Vector3
 var _target_3d: Vector3
@@ -65,7 +65,6 @@ func flash_hit() -> void:
 
 
 func cleanup() -> void:
-	print("LASSO CLEANUP CALLED")
 	_ring.visible = false
 	_loop_2d.visible = false
 	if is_instance_valid(_canvas):

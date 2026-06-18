@@ -13,6 +13,7 @@
 [ext_resource type="Shader" uid="uid://cvady34ely77e" path="res://main/walter1.gdshader" id="13_n3o0a"]
 [ext_resource type="Shader" uid="uid://j1xs876mva34" path="res://main/walter2.gdshader" id="14_s758e"]
 [ext_resource type="PackedScene" uid="uid://w66cmwbfm3ws" path="res://housenshi/seaweed/seaweed_baked.tscn" id="15_s758e"]
+[ext_resource type="PackedScene" uid="uid://bdr38pj2qtbfe" path="res://animal/animal.tscn" id="18_4hmqs"]
 [ext_resource type="PackedScene" uid="uid://dvx8llurb17n1" path="res://housenshi/farm.tscn" id="69_7dsnv"]
 [ext_resource type="Script" uid="uid://cn8e3dcsmehxk" path="res://animal/spawn_zone.gd" id="89_4q1v2"]
 [ext_resource type="Script" uid="uid://ckxgnlsgbytpy" path="res://data/spawn_entry.gd" id="201_spnen"]
@@ -40,7 +41,7 @@ adjustment_contrast = 1.025
 adjustment_saturation = 1.17
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6guey"]
-size = Vector3(2.4570313, 3.522585, 0.8095856)
+size = Vector3(2.4570313, 3.0838323, 0.8095856)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_5xyti"]
 noise_type = 2
@@ -272,6 +273,15 @@ move_speed = 0.0
 confined_to_zone = true
 metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
 
+[sub_resource type="Resource" id="Resource_o0l78"]
+script = ExtResource("201_spnen")
+animal_id = "strawberry_false"
+density = 0.1
+group_size_range = Vector2i(1, 2)
+move_speed = 0.0
+confined_to_zone = true
+metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
+
 [sub_resource type="Resource" id="Resource_oagth"]
 script = ExtResource("201_spnen")
 animal_id = "coconutcrab"
@@ -294,6 +304,40 @@ animal_id = "sandwich_false"
 confined_to_zone = true
 metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
 
+[sub_resource type="Resource" id="Resource_d8vpj"]
+script = ExtResource("201_spnen")
+animal_id = "hedgehog_false"
+density = 0.01
+move_speed = 0.7
+confined_to_zone = true
+metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
+
+[sub_resource type="Resource" id="Resource_qs5eo"]
+script = ExtResource("201_spnen")
+animal_id = "hedgehog"
+confined_to_zone = true
+metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
+
+[sub_resource type="Resource" id="Resource_frbr6"]
+script = ExtResource("201_spnen")
+animal_id = "watermelon_false"
+metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
+
+[sub_resource type="Resource" id="Resource_o8j3b"]
+script = ExtResource("201_spnen")
+animal_id = "sunfish"
+metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
+
+[sub_resource type="Resource" id="Resource_wpkmi"]
+script = ExtResource("201_spnen")
+animal_id = "seahorse"
+metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
+
+[sub_resource type="Resource" id="Resource_d0u6y"]
+script = ExtResource("201_spnen")
+animal_id = "seahorse_false"
+metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
+
 [node name="Node" type="Node" unique_id=1908846288]
 
 [node name="Player" parent="." unique_id=1244172916 instance=ExtResource("1_ktywf")]
@@ -309,7 +353,7 @@ changeAreaType = 1
 [node name="InArea" type="Area3D" parent="GetInHouse" unique_id=2100580688]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GetInHouse/InArea" unique_id=418492030]
-transform = Transform3D(0.6199999, 0, 0, 0, 0.6195112, -0.024611402, 0, 0.024611402, 0.6195112, -0.0015893432, 2.323746, -14.983219)
+transform = Transform3D(0.6199999, 0, 0, 0, 0.6195112, -0.024611402, 0, 0.024611402, 0.6195112, -0.0015893432, 2.18784, -14.988618)
 shape = SubResource("BoxShape3D_6guey")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=781975325]
@@ -374,34 +418,34 @@ transform = Transform3D(0.26501453, 0.023061033, -0.9639687, -0.091026165, 0.995
 [node name="CoconutTrees" type="Node3D" parent="." unique_id=51262104]
 
 [node name="Node3D" parent="CoconutTrees" unique_id=1090438518 instance=ExtResource("9_4q1v2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.604784, -2.8481085, 22.05884)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.604784, -4.1998267, 22.05884)
 
 [node name="Node3D2" parent="CoconutTrees" unique_id=1754595758 instance=ExtResource("9_4q1v2")]
-transform = Transform3D(0.91769916, 0, -0.39727604, 0, 1, 0, 0.39727604, 0, 0.91769916, 43.211914, -2.523339, 22.05884)
+transform = Transform3D(0.91769916, 0, -0.39727604, 0, 1, 0, 0.39727604, 0, 0.91769916, 43.211914, -4.094969, 22.05884)
 
 [node name="Node3D3" parent="CoconutTrees" unique_id=1352533665 instance=ExtResource("9_4q1v2")]
-transform = Transform3D(0.91769916, 0, -0.39727604, 0, 1, 0, 0.39727604, 0, 0.91769916, 37.059708, -1.0578454, 17.660547)
+transform = Transform3D(0.91769916, 0, -0.39727604, 0, 1, 0, 0.39727604, 0, 0.91769916, 37.059708, -3.607156, 17.660547)
 
 [node name="Node3D4" parent="CoconutTrees" unique_id=438409565 instance=ExtResource("9_4q1v2")]
-transform = Transform3D(0.91769916, 0, -0.39727604, 0, 1, 0, 0.39727604, 0, 0.91769916, -24.183605, -1.1624824, 14.544247)
+transform = Transform3D(0.91769916, 0, -0.39727604, 0, 1, 0, 0.39727604, 0, 0.91769916, -24.183605, -4.205783, 14.544247)
 
 [node name="Node3D5" parent="CoconutTrees" unique_id=2142751826 instance=ExtResource("9_4q1v2")]
-transform = Transform3D(0.022687346, 0, 0.9997426, 0, 1, 0, -0.9997426, 0, 0.022687346, -39.887543, -2.7661815, 17.933273)
+transform = Transform3D(0.022687346, 0, 0.9997426, 0, 1, 0, -0.9997426, 0, 0.022687346, -39.887543, -4.701145, 17.933273)
 
 [node name="Node3D6" parent="CoconutTrees" unique_id=168787526 instance=ExtResource("9_4q1v2")]
-transform = Transform3D(0.022687346, 0, 0.9997426, 0, 1, 0, -0.9997426, 0, 0.022687346, -52.550835, -1.5310559, 11.005775)
+transform = Transform3D(0.022687346, 0, 0.9997426, 0, 1, 0, -0.9997426, 0, 0.022687346, -52.550835, -4.0191526, 11.005775)
 
 [node name="Node3D7" parent="CoconutTrees" unique_id=502243809 instance=ExtResource("9_4q1v2")]
-transform = Transform3D(-1.2133169, 0, 0.42318666, 0, 1.285, 0, -0.42318666, 0, -1.2133169, -9.753124, -1.0865583, 16.369453)
+transform = Transform3D(-1.2133169, 0, 0.42318666, 0, 1.285, 0, -0.42318666, 0, -1.2133169, -9.753124, -4.373237, 16.369453)
 
 [node name="Node3D8" parent="CoconutTrees" unique_id=925894476 instance=ExtResource("9_4q1v2")]
-transform = Transform3D(-1.0049145, 0, -0.98192245, 0, 1.405, 0, 0.98192245, 0, -1.0049145, 14.334414, -0.664341, 16.369453)
+transform = Transform3D(-1.0049145, 0, -0.98192245, 0, 1.405, 0, 0.98192245, 0, -1.0049145, 14.334414, -3.2047353, 16.369453)
 
 [node name="Node3D10" parent="CoconutTrees" unique_id=56596564 instance=ExtResource("9_4q1v2")]
-transform = Transform3D(-0.6982273, 0, -1.2192225, 0, 1.4050001, 0, 1.2192225, 0, -0.6982273, -29.075384, -3.969947, 21.68185)
+transform = Transform3D(-0.6982273, 0, -1.2192225, 0, 1.4050001, 0, 1.2192225, 0, -0.6982273, -29.075384, -5.0433254, 21.68185)
 
 [node name="Node3D9" parent="CoconutTrees" unique_id=1896502897 instance=ExtResource("9_4q1v2")]
-transform = Transform3D(0.087926745, 0, -1.402246, 0, 1.4050001, 0, 1.402246, 0, 0.087926745, 54.031994, -0.664341, 16.369453)
+transform = Transform3D(0.087926745, 0, -1.402246, 0, 1.4050001, 0, 1.402246, 0, 0.087926745, 54.031994, -3.4786696, 16.369453)
 
 [node name="farm" parent="." unique_id=2124424467 instance=ExtResource("69_7dsnv")]
 
@@ -533,6 +577,7 @@ polygon = PackedVector2Array(-6.2747545, 1.7602835, -17.000608, -14.579282, -35.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.23017, 9.399959, -51.930187)
 script = ExtResource("89_4q1v2")
 entries = Array[ExtResource("201_spnen")]([SubResource("Resource_piupu"), SubResource("Resource_q0sk7"), SubResource("Resource_vapsy")])
+min_group_spacing = 3.0
 metadata/_custom_type_script = "uid://cn8e3dcsmehxk"
 
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="SFPatchSpawnZone" unique_id=476744346]
@@ -552,6 +597,18 @@ transform = Transform3D(0.99894, 0.002297535, 0.04597372, -0.046031088, 0.049859
 depth = 5.685
 polygon = PackedVector2Array(8.53487, 3.439148, 3.8168907, 6.5693645, 0.09083176, 3.7091885, -4.0121613, 5.452194, -7.339926, 0.95965385, 1.7318459, -5.447733)
 
+[node name="BarnSpawnZone" type="Area3D" parent="." unique_id=1329804672]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.873165, 0, -32)
+script = ExtResource("89_4q1v2")
+entries = Array[ExtResource("201_spnen")]([SubResource("Resource_o0l78")])
+min_group_spacing = 2.0
+metadata/_custom_type_script = "uid://cn8e3dcsmehxk"
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="BarnSpawnZone" unique_id=898159628]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3.8137155, 0)
+depth = 11.635
+polygon = PackedVector2Array(-7.6836357, -1.8945808, 0.5945778, -7.2488384, 4.8096275, -6.907078, 7.0500603, 3.4217033, -2.5951958, 7.7127037)
+
 [node name="BeachSpawnZone" type="Area3D" parent="." unique_id=516242452]
 transform = Transform3D(0.9989401, 0.0022974014, 0.04597319, -0.046030555, 0.0498592, 0.99769497, -8.940697e-08, -0.99875367, 0.049912106, 0.387156, 2.2029624, 14.749933)
 top_level = true
@@ -565,5 +622,53 @@ metadata/_custom_type_script = "uid://cn8e3dcsmehxk"
 transform = Transform3D(0.99795777, -0.0031879004, -0.06378996, 0.0031879004, 0.9999943, -0.00010178611, 0.06378997, -0.0001017414, 0.9979639, 6.6440086, -4.2025394, -1.8331777)
 depth = 17.235
 polygon = PackedVector2Array(-63.575382, 5.825289, -61.183846, -4.1422863, -50.767773, -9.393198, -30.837519, -6.3619156, -4.4317355, -9.017572, 49.631573, -11.046537, 52.50509, 1.0140076)
+
+[node name="MountSpawnZone" type="Area3D" parent="." unique_id=355453795]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.637226, 17.614548, -47.107834)
+script = ExtResource("89_4q1v2")
+entries = Array[ExtResource("201_spnen")]([SubResource("Resource_d8vpj"), SubResource("Resource_qs5eo")])
+metadata/_custom_type_script = "uid://cn8e3dcsmehxk"
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="MountSpawnZone" unique_id=1414902667]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+depth = 26.175
+polygon = PackedVector2Array(-12.400936, -13.089767, -11.442497, 19.009941, 17.192545, 20.487534, 18.405811, 5.647484, 14.353329, 2.0142212, 18.475681, -2.2478752, 29.794693, 1.1059036, 28.33354, -13.508991)
+
+[node name="SeaSpawnZone" type="Area3D" parent="." unique_id=1046658933]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 39.74333)
+script = ExtResource("89_4q1v2")
+entries = Array[ExtResource("201_spnen")]([SubResource("Resource_frbr6"), SubResource("Resource_o8j3b"), SubResource("Resource_wpkmi"), SubResource("Resource_d0u6y")])
+metadata/_custom_type_script = "uid://cn8e3dcsmehxk"
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="SeaSpawnZone" unique_id=2055509857]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -6.336252, 0)
+depth = 17.58
+polygon = PackedVector2Array(0.6918553, 2.596737, 9.733184, 4.6493607, 13.179269, -0.5902748, 18.197746, -3.1893692, 25.904568, -2.8997993, 30.778866, 2.37463, 41.125423, 4.03846, 46.157578, 0.3869362, 52.19589, 1.2963219, 58.16145, -0.34056854, 58.242046, -12.540985, -59.14621, -13.181599, -58.10913, 9.075739, -52.684402, 8.118433, -51.88665, 5.1667404, -46.06305, 2.2948303, -36.729324, -6.6400146, -32.50123, -4.8849564, -28.83156, 3.012806, -26.837175, 8.038658, -19.258512, 8.118433, -17.583227, 4.6880913, -10.243898, 4.368988, -2.1068058, 1.4173012)
+
+[node name="HandPlacedAnimals" type="Node3D" parent="." unique_id=1730055849]
+
+[node name="Node3D" parent="HandPlacedAnimals" unique_id=28983913 instance=ExtResource("18_4hmqs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4646792, 7.9114933, -17.607773)
+animal_id = "catfish_false"
+
+[node name="Node3D2" parent="HandPlacedAnimals" unique_id=1241867613 instance=ExtResource("18_4hmqs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5831295, 7.9114933, -17.216377)
+animal_id = "catfish_false"
+
+[node name="Node3D3" parent="HandPlacedAnimals" unique_id=49008397 instance=ExtResource("18_4hmqs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1074779, 7.9114933, -16.524837)
+animal_id = "catfish_false"
+
+[node name="Node3D5" parent="HandPlacedAnimals" unique_id=1407623568 instance=ExtResource("18_4hmqs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75849396, 7.9114933, -16.851284)
+animal_id = "catfish_false"
+
+[node name="Node3D6" parent="HandPlacedAnimals" unique_id=1509762670 instance=ExtResource("18_4hmqs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7737634, 7.9114933, -17.617245)
+animal_id = "catfish_false"
+
+[node name="Node3D4" parent="HandPlacedAnimals" unique_id=1471358969 instance=ExtResource("18_4hmqs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0957177, 6.969313, -19.027267)
+animal_id = "catfish_false"
 
 [connection signal="body_entered" from="GetInHouse/InArea" to="GetInHouse" method="_on_in_area_body_entered"]
