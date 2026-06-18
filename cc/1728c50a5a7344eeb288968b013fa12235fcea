@@ -1,0 +1,37 @@
+player/camera_occlusion.gd.uid
+  s_80261a5fea2fcf::t_e94183af55fdbc 1
+player/camera_occlusion.gd
+  s_80261a5fea2fcf::t_fb922611978efe 8,13
+  s_80261a5fea2fcf::t_2d74d1148e09c5 44-49,51-54,65-75
+  s_80261a5fea2fcf::t_0bab0cabfb5d8d 50
+  s_80261a5fea2fcf::t_24d484ca05c117 1-2,6,9-11,14-27,29,31-35,40-42,55-57,77-87
+  s_80261a5fea2fcf::t_5514b53eaf5e6f 58-64,76
+  s_80261a5fea2fcf::t_58afeed28dd2d6 12,28,30,36-39
+housenshi/old_house.tscn
+  s_80261a5fea2fcf::t_5c5572712b2e6a 118
+  s_80261a5fea2fcf::t_608c4f531051c3 119
+player/player.tscn
+  s_80261a5fea2fcf::t_ff6bc600327b5b 17
+  s_80261a5fea2fcf::t_701eec6f5be425 367
+housenshi/farm.tscn
+  s_80261a5fea2fcf::t_5a68543f0590c0 851,890
+  s_80261a5fea2fcf::t_a90d4065941f54 889
+  s_80261a5fea2fcf::t_c1867b6fb037cf 850
+  s_80261a5fea2fcf::t_35028dcc50e076 928
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "cc1728c50a5a7344eeb288968b013fa12235fcea",
+  "prompts": {},
+  "sessions": {
+    "s_80261a5fea2fcf": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7d93a878-b4b3-4f53-af1a-79c8e9ee2078",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
