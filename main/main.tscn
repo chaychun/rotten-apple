@@ -10,7 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://dx0obhqhsyqb7" path="res://housenshi/stall.tscn" id="8_oipmw"]
 [ext_resource type="PackedScene" uid="uid://dplfd1vepsxq0" path="res://housenshi/trees/coconut_tree.tscn" id="9_4q1v2"]
 [ext_resource type="PackedScene" uid="uid://dyvijx1i7d3vu" path="res://main/terrain.tscn" id="13_ljnho"]
-[ext_resource type="Shader" uid="uid://j1xs876mva34" path="res://main/main.gdshader" id="61_xj6g5"]
+[ext_resource type="Shader" uid="uid://cvady34ely77e" path="res://main/walter1.gdshader" id="13_n3o0a"]
+[ext_resource type="Shader" uid="uid://j1xs876mva34" path="res://main/walter2.gdshader" id="14_s758e"]
+[ext_resource type="PackedScene" uid="uid://w66cmwbfm3ws" path="res://housenshi/seaweed/seaweed_baked.tscn" id="15_s758e"]
 [ext_resource type="PackedScene" uid="uid://dvx8llurb17n1" path="res://housenshi/farm.tscn" id="69_7dsnv"]
 [ext_resource type="Script" uid="uid://cn8e3dcsmehxk" path="res://animal/spawn_zone.gd" id="89_4q1v2"]
 [ext_resource type="Script" uid="uid://ckxgnlsgbytpy" path="res://data/spawn_entry.gd" id="201_spnen"]
@@ -40,51 +42,86 @@ adjustment_saturation = 1.17
 [sub_resource type="BoxShape3D" id="BoxShape3D_6guey"]
 size = Vector3(2.4570313, 3.522585, 0.8095856)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_ktywf"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5xyti"]
 noise_type = 2
-seed = 45
+seed = 18
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ycfeg"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_n3o0a"]
 width = 1024
 height = 1024
-noise = SubResource("FastNoiseLite_ktywf")
+noise = SubResource("FastNoiseLite_5xyti")
 seamless = true
 as_normal_map = true
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_7rk2m"]
-noise_type = 2
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_s758e"]
+seed = 7
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dh1l5"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4hmqs"]
 width = 1024
 height = 1024
-noise = SubResource("FastNoiseLite_7rk2m")
+noise = SubResource("FastNoiseLite_s758e")
+seamless = true
 as_normal_map = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nr3a7"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4hmqs"]
 render_priority = 0
-shader = ExtResource("61_xj6g5")
-shader_parameter/primary_color = Color(5.7756904e-07, 0.42730653, 0.48618907, 1)
-shader_parameter/secondary_color = Color(0, 0, 0, 1)
+shader = ExtResource("13_n3o0a")
+shader_parameter/primary_color = Color(4.042983e-06, 0.80755484, 0.81815916, 1)
+shader_parameter/secondary_color = Color(0, 0.28087538, 0.33737585, 1)
 shader_parameter/roughness = 0.2
-shader_parameter/normalmap_a = SubResource("NoiseTexture2D_ycfeg")
-shader_parameter/normalmap_b = SubResource("NoiseTexture2D_dh1l5")
-shader_parameter/normalmap_a_strength = 0.3
-shader_parameter/normalmap_b_strength = 0.4
-shader_parameter/movement_direction = Vector2(0.01, 0.05)
-shader_parameter/movement_strength = 0.2
-shader_parameter/uv_scale = 1.0
-shader_parameter/depth_distance = 4.0
-shader_parameter/beers_law = 12.0
-shader_parameter/water_transparency = 0.05
+shader_parameter/normalmap_a = SubResource("NoiseTexture2D_n3o0a")
+shader_parameter/normalmap_b = SubResource("NoiseTexture2D_4hmqs")
+shader_parameter/normalmap_a_strength = 0.5
+shader_parameter/normalmap_b_strength = 0.25
+shader_parameter/movement_direction = Vector2(0.2, 0.1)
+shader_parameter/movement_strength = 0.05
+shader_parameter/uv_scale = 0.39
+shader_parameter/depth_distance = 2.60000003874312
+shader_parameter/beers_law = 7.500000111759
+shader_parameter/water_transparency = 0.11999999731776
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_g13kh"]
-material = SubResource("ShaderMaterial_nr3a7")
+material = SubResource("ShaderMaterial_4hmqs")
 size = Vector2(130, 50)
 center_offset = Vector3(0, -7.895, 40.155)
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4hmqs"]
+noise_type = 2
+seed = 13
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_piupu"]
+noise = SubResource("FastNoiseLite_4hmqs")
+seamless = true
+as_normal_map = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_q0sk7"]
+seed = 18
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vapsy"]
+noise = SubResource("FastNoiseLite_q0sk7")
+seamless = true
+as_normal_map = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_piupu"]
+render_priority = 0
+shader = ExtResource("14_s758e")
+shader_parameter/primary_color = Color(0.74477834, 0.93828297, 0.9894549, 1)
+shader_parameter/secondary_color = Color(0, 0.43205833, 0.48769897, 1)
+shader_parameter/roughness = 0.1
+shader_parameter/normalmap_a = SubResource("NoiseTexture2D_piupu")
+shader_parameter/normalmap_b = SubResource("NoiseTexture2D_vapsy")
+shader_parameter/normalmap_a_strength = 0.5
+shader_parameter/normalmap_b_strength = 0.25
+shader_parameter/movement_direction = Vector2(0.2, 0.1)
+shader_parameter/movement_strength = 0.04
+shader_parameter/uv_scale = -0.21
+shader_parameter/depth_distance = 3.80000005662456
+shader_parameter/beers_law = 8.5000001266602
+shader_parameter/water_transparency = 0.31999999284736
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_7dsnv"]
-material = SubResource("ShaderMaterial_nr3a7")
-size = Vector2(36.825, 27.995)
+material = SubResource("ShaderMaterial_piupu")
+size = Vector2(36.14, 30.395)
 center_offset = Vector3(0, -7.895, 40.155)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jyo0q"]
@@ -97,31 +134,36 @@ size = Vector3(1, 62.90039, 127.54306)
 size = Vector3(132.06055, 62.90039, 0.001)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_42ldh"]
-size = Vector3(15.057617, 62.90039, 2.8994257)
+size = Vector3(15.057617, 62.90039, 0.001)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aw48e"]
-size = Vector3(12.07959, 62.90039, 2.8994257)
+size = Vector3(12.07959, 62.90039, 0.001)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1kwc7"]
-size = Vector3(6.4265747, 62.90039, 2.8994257)
+size = Vector3(6.4265747, 62.90039, 0.001)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_318uq"]
-size = Vector3(6.4265747, 62.90039, 2.8994257)
+size = Vector3(6.4265747, 62.90039, 0.001)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vmwr3"]
-size = Vector3(17.417969, 62.90039, 2.8994257)
+size = Vector3(17.417969, 62.90039, 0.001)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oipmw"]
-size = Vector3(30.92566, 62.90039, 2.8994257)
+size = Vector3(41.016052, 62.90039, 0.001)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sdt21"]
-size = Vector3(31.006699, 62.90039, 2.8994257)
+size = Vector3(31.006699, 62.90039, 0.001)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_42ldh"]
-radius = 11.198214
+[sub_resource type="BoxShape3D" id="BoxShape3D_s758e"]
+size = Vector3(39.171806, 62.90039, 0.001)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_aw48e"]
-radius = 11.517522
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_s758e"]
+height = 5.6835938
+radius = 11.2
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4hmqs"]
+height = 8.176697
+radius = 11.52
 
 [sub_resource type="Resource" id="Resource_eq1qp"]
 script = ExtResource("201_spnen")
@@ -266,7 +308,7 @@ mesh = SubResource("PlaneMesh_g13kh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.24229813, -73.63552)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Walter2" unique_id=241290550]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.645439, 8.244256, -9.0063095)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.629753, 8.204316, -9.399361)
 mesh = SubResource("PlaneMesh_7dsnv")
 
 [node name="WorldBoundary" type="Node3D" parent="Environment" unique_id=655694910]
@@ -286,27 +328,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -61.60691)
 shape = SubResource("BoxShape3D_xvbsu")
 
 [node name="CollisionShape3D29" type="CollisionShape3D" parent="Environment/WorldBoundary/StaticBody3D" unique_id=171724370]
-transform = Transform3D(0.90854466, 0, -0.4177878, 0, 1, 0, 0.4177878, 0, 0.90854466, -58.501465, 0, 38.129772)
+transform = Transform3D(0.90854466, 0, -0.4177878, 0, 1, 0, 0.4177878, 0, 0.90854466, -57.68604, 0, 33.835587)
 shape = SubResource("BoxShape3D_42ldh")
 
 [node name="CollisionShape3D30" type="CollisionShape3D" parent="Environment/WorldBoundary/StaticBody3D" unique_id=300752625]
-transform = Transform3D(0.888337, 0, -0.45919234, 0, 1, 0, 0.45919234, 0, 0.888337, -46.273136, 0, 41.057873)
+transform = Transform3D(0.888337, 0, -0.45919234, 0, 1, 0, 0.45919234, 0, 0.888337, -45.60767, 0, 39.770485)
 shape = SubResource("BoxShape3D_aw48e")
 
 [node name="CollisionShape3D35" type="CollisionShape3D" parent="Environment/WorldBoundary/StaticBody3D" unique_id=259710719]
-transform = Transform3D(0.74946445, 0, -0.6620447, 0, 1, 0, 0.6620447, 0, 0.74946445, -38.875904, 0, 45.732323)
+transform = Transform3D(0.74946445, 0, -0.6620447, 0, 1, 0, 0.6620447, 0, 0.74946445, -37.916462, 0, 44.64619)
 shape = SubResource("BoxShape3D_1kwc7")
 
 [node name="CollisionShape3D36" type="CollisionShape3D" parent="Environment/WorldBoundary/StaticBody3D" unique_id=723098856]
-transform = Transform3D(0.928298, 0, -0.37183776, 0, 1, 0, 0.37183776, 0, 0.928298, -34.287277, 0, 48.632534)
+transform = Transform3D(0.928298, 0, -0.37183776, 0, 1, 0, 0.37183776, 0, 0.928298, -33.748405, 0, 47.28723)
 shape = SubResource("BoxShape3D_318uq")
 
 [node name="CollisionShape3D31" type="CollisionShape3D" parent="Environment/WorldBoundary/StaticBody3D" unique_id=417435290]
-transform = Transform3D(0.6809638, 0, 0.7323173, 0, 1, 0, -0.7323173, 0, 0.6809638, -26.084686, 0, 43.586323)
+transform = Transform3D(0.6809638, 0, 0.7323173, 0, 1, 0, -0.7323173, 0, 0.6809638, -27.14597, 0, 42.59946)
 shape = SubResource("BoxShape3D_vmwr3")
 
 [node name="CollisionShape3D32" type="CollisionShape3D" parent="Environment/WorldBoundary/StaticBody3D" unique_id=1296541386]
-transform = Transform3D(0.98164725, 0, -0.1907062, 0, 1, 0, 0.1907062, 0, 0.98164725, -6.7718334, 0, 40.923805)
+transform = Transform3D(0.98164725, 0, -0.1907062, 0, 1, 0, 0.1907062, 0, 0.98164725, -1.5428562, 0, 40.46334)
 shape = SubResource("BoxShape3D_oipmw")
 
 [node name="CollisionShape3D33" type="CollisionShape3D" parent="Environment/WorldBoundary/StaticBody3D" unique_id=810916461]
@@ -314,16 +356,18 @@ transform = Transform3D(0.99957734, 0, 0.029073104, 0, 1, 0, -0.029073104, 0, 0.
 shape = SubResource("BoxShape3D_sdt21")
 
 [node name="CollisionShape3D34" type="CollisionShape3D" parent="Environment/WorldBoundary/StaticBody3D" unique_id=889513847]
-transform = Transform3D(0.9671658, 0, 0.25414625, 0, 1, 0, -0.25414625, 0, 0.9671658, 47.321045, 0, 39.228745)
-shape = SubResource("BoxShape3D_sdt21")
+transform = Transform3D(0.9671658, 0, 0.25414625, 0, 1, 0, -0.25414625, 0, 0.9671658, 43.004227, 0, 38.86468)
+shape = SubResource("BoxShape3D_s758e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/WorldBoundary/StaticBody3D" unique_id=1217688953]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 10.375485, 0.23717928, -40.93467)
-shape = SubResource("SphereShape3D_42ldh")
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 10.375485, 1.3817105, -40.93467)
+shape = SubResource("CylinderShape3D_s758e")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment/WorldBoundary/StaticBody3D" unique_id=1688998173]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 10.317808, -0.52510166, -42.133106)
-shape = SubResource("SphereShape3D_aw48e")
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 10.317808, 2.0086203, -42.133106)
+shape = SubResource("CylinderShape3D_4hmqs")
+
+[node name="Seaweed" parent="Environment" unique_id=1548588550 instance=ExtResource("15_s758e")]
 
 [node name="SpawnZoneExample" type="Area3D" parent="." unique_id=729508310]
 transform = Transform3D(0.9878136, 0, 0.15564144, 0, 1, 0, -0.15564144, 0, 0.9878136, 16.326344, 0, -18.97834)
