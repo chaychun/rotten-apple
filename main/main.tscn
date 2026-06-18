@@ -107,31 +107,31 @@ render_priority = 0
 shader = ExtResource("14_s758e")
 shader_parameter/primary_color = Color(0.74477834, 0.93828297, 0.9894549, 1)
 shader_parameter/secondary_color = Color(0, 0.43205833, 0.48769897, 1)
-shader_parameter/roughness = 0.1
+shader_parameter/roughness = 0.2
 shader_parameter/normalmap_a = SubResource("NoiseTexture2D_piupu")
 shader_parameter/normalmap_b = SubResource("NoiseTexture2D_vapsy")
 shader_parameter/normalmap_a_strength = 0.5
 shader_parameter/normalmap_b_strength = 0.25
 shader_parameter/movement_direction = Vector2(0.2, 0.1)
 shader_parameter/movement_strength = 0.04
-shader_parameter/uv_scale = -0.21
+shader_parameter/uv_scale = 1.0
 shader_parameter/depth_distance = 3.80000005662456
 shader_parameter/beers_law = 8.5000001266602
 shader_parameter/water_transparency = 0.31999999284736
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7dsnv"]
 material = SubResource("ShaderMaterial_piupu")
-size = Vector2(36.14, 30.395)
+size = Vector2(32.685, 26.985)
 center_offset = Vector3(0, -7.895, 40.155)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jyo0q"]
-size = Vector3(1, 51.3042, 125.527435)
+size = Vector3(1, 46.42749, 125.527435)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_72hv5"]
-size = Vector3(1, 62.90039, 127.54306)
+size = Vector3(1, 63.51715, 127.54306)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xvbsu"]
-size = Vector3(132.06055, 62.90039, 0.001)
+size = Vector3(132.06055, 60.52356, 0.001)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_42ldh"]
 size = Vector3(15.057617, 62.90039, 0.001)
@@ -158,12 +158,8 @@ size = Vector3(31.006699, 62.90039, 0.001)
 size = Vector3(39.171806, 62.90039, 0.001)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_s758e"]
-height = 5.6835938
-radius = 11.2
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_4hmqs"]
-height = 8.176697
-radius = 11.52
+height = 0.001
+radius = 15.393
 
 [sub_resource type="Resource" id="Resource_eq1qp"]
 script = ExtResource("201_spnen")
@@ -308,7 +304,7 @@ mesh = SubResource("PlaneMesh_g13kh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.24229813, -73.63552)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Walter2" unique_id=241290550]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.629753, 8.204316, -9.399361)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6665955, 8.204316, -8.404617)
 mesh = SubResource("PlaneMesh_7dsnv")
 
 [node name="WorldBoundary" type="Node3D" parent="Environment" unique_id=655694910]
@@ -316,15 +312,15 @@ mesh = SubResource("PlaneMesh_7dsnv")
 [node name="StaticBody3D" type="StaticBody3D" parent="Environment/WorldBoundary" unique_id=764547217]
 
 [node name="CollisionShape3D24" type="CollisionShape3D" parent="Environment/WorldBoundary/StaticBody3D" unique_id=1533319191]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.66804, 3.261528, -1.1325836)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.66804, 0.8231735, -1.1325836)
 shape = SubResource("BoxShape3D_jyo0q")
 
 [node name="CollisionShape3D25" type="CollisionShape3D" parent="Environment/WorldBoundary/StaticBody3D" unique_id=1131004038]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.452103, -2.5365677, -0.12477112)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.452103, -2.2281876, -0.12477112)
 shape = SubResource("BoxShape3D_72hv5")
 
 [node name="CollisionShape3D28" type="CollisionShape3D" parent="Environment/WorldBoundary/StaticBody3D" unique_id=648051695]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -61.60691)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1884155, -61.60691)
 shape = SubResource("BoxShape3D_xvbsu")
 
 [node name="CollisionShape3D29" type="CollisionShape3D" parent="Environment/WorldBoundary/StaticBody3D" unique_id=171724370]
@@ -360,12 +356,18 @@ transform = Transform3D(0.9671658, 0, 0.25414625, 0, 1, 0, -0.25414625, 0, 0.967
 shape = SubResource("BoxShape3D_s758e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/WorldBoundary/StaticBody3D" unique_id=1217688953]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 10.375485, 1.3817105, -40.93467)
+transform = Transform3D(1, 0, 0, 0, 1, 0, -1.4901161e-08, 0, 1, 10.375481, 0.2602501, -41.35754)
 shape = SubResource("CylinderShape3D_s758e")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment/WorldBoundary/StaticBody3D" unique_id=1688998173]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 10.317808, 2.0086203, -42.133106)
-shape = SubResource("CylinderShape3D_4hmqs")
+[node name="StaticBody3D2" type="StaticBody3D" parent="Environment/WorldBoundary" unique_id=48625510]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.979135, 0, -39.609924)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Environment/WorldBoundary/StaticBody3D2" unique_id=1954112727]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.21279907, 0.29316044, -2.9768257)
+depth = 16.17
+polygon = PackedVector2Array(12.05054, 6.3910904, 13.419375, 0.25998306, 13.595611, -3.7273216, 8.785811, -9.89167, 3.5648642, -13.063889, -0.33432293, -13.901003, -5.636658, -12.616013, -8.302204, -10.1046715, -11.479553, 2.4071426, -8.594424, 6.049923, -3.3955069, 9.288231, 4.4028683, 12.284218, 7.5750875, 12.240158, 8.7426405, 11.006519)
 
 [node name="Seaweed" parent="Environment" unique_id=1548588550 instance=ExtResource("15_s758e")]
 
