@@ -13,3 +13,8 @@ extends Resource
 @export var hop_distance_range := Vector2(1.0, 3.0) # per-hop min/max distance (units)
 @export var idle_pause_range := Vector2(2.0, 5.0)   # seconds paused between hops
 @export var confined_to_zone: bool = false          # true = must stay inside spawn polygon (pond/ocean)
+
+# --- Vertical placement / bobbing ---
+@export var y_offset: float = 0.0       # spawn this far above(+)/below(-) the calculated ground/water y
+@export var bob_height: float = 0.0     # bob amplitude
+@export var bob_cycle_time: float = 2.0 # seconds for one full bob cycle (peak to peak)
