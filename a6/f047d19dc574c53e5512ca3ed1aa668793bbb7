@@ -1,0 +1,23 @@
+data/spawn_entry.gd
+  s_dcedac2626ca0c::t_779e0ab856a4f8 16-18,20
+animal/real/animal.gd
+  s_dcedac2626ca0c::t_a3a6fbffe3f1bd 138-139,144-154
+  s_dcedac2626ca0c::t_9e900372efcf99 48-51,53-61
+  s_dcedac2626ca0c::t_e30765e8725724 27-33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "a6f047d19dc574c53e5512ca3ed1aa668793bbb7",
+  "prompts": {},
+  "sessions": {
+    "s_dcedac2626ca0c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fe5dfbaf-8463-407e-9953-c89ef6d9ccf0",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
