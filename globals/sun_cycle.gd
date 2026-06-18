@@ -8,6 +8,9 @@ extends DirectionalLight3D
 @export var dawn_angle_deg: float = 18.0
 @export var peak_energy: float = 1.0
 @export var daylight_knee: float = 0.2
+@export var update_interval: float = 0.1 # sun moves <0.5°/s; recompute ~10Hz, not every frame
+
+var _accum: float = 0.0
 
 
 func _ready() -> void:
@@ -15,7 +18,11 @@ func _ready() -> void:
 	_update_sun()
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	_accum += delta
+	if _accum < update_interval:
+		return
+	_accum = 0.0
 	_update_sun()
 
 

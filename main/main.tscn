@@ -205,6 +205,7 @@ light_color = Color(1.3769996, 1.3626599, 1.2811995, 1)
 light_indirect_energy = 4.406
 light_angular_distance = 0.65
 shadow_enabled = true
+shadow_blur = 1.5
 script = ExtResource("202_suncy")
 
 [node name="PlayerHouse" parent="." unique_id=1011123435 instance=ExtResource("3_hf28p")]
@@ -294,6 +295,7 @@ transform = Transform3D(0.087926745, 0, -1.402246, 0, 1.4050001, 0, 1.402246, 0,
 [node name="Environment" type="Node3D" parent="." unique_id=699726617]
 
 [node name="TerraBrush" parent="Environment" unique_id=1037006688 instance=ExtResource("13_ljnho")]
+metadata/_edit_lock_ = true
 
 [node name="Walter" type="Node3D" parent="Environment" unique_id=243771577]
 

@@ -100,7 +100,7 @@ normalTexture = ExtResource("5_bg72e")
 roughnessTexture = ExtResource("6_6p264")
 heightTexture = ExtResource("4_k01vq")
 textureDetail = 92
-triplanar = true
+triplanar = false
 
 [sub_resource type="TextureSetResource" id="TextureSetResource_6qnlh"]
 name = "Grass 2"
@@ -109,7 +109,7 @@ normalTexture = ExtResource("9_rtnge")
 roughnessTexture = ExtResource("10_avm8p")
 heightTexture = ExtResource("8_70kuy")
 textureDetail = 67
-triplanar = true
+triplanar = false
 
 [sub_resource type="TextureSetResource" id="TextureSetResource_ljnho"]
 name = "Ground 2"
@@ -117,7 +117,7 @@ albedoTexture = ExtResource("11_lauuh")
 normalTexture = ExtResource("13_hc4jw")
 roughnessTexture = ExtResource("14_leflv")
 heightTexture = ExtResource("12_j7nix")
-triplanar = true
+triplanar = false
 
 [sub_resource type="TextureSetResource" id="TextureSetResource_mk0oj"]
 name = "Ground 3"
@@ -126,7 +126,7 @@ normalTexture = ExtResource("17_cguii")
 roughnessTexture = ExtResource("18_qegln")
 heightTexture = ExtResource("16_kwwyo")
 textureDetail = 25
-triplanar = true
+triplanar = false
 
 [sub_resource type="TextureSetResource" id="TextureSetResource_vyb7n"]
 name = "Ground 4"
@@ -135,7 +135,7 @@ normalTexture = ExtResource("21_fhdao")
 roughnessTexture = ExtResource("22_ot87g")
 heightTexture = ExtResource("20_1wjel")
 textureDetail = 17
-triplanar = true
+triplanar = false
 
 [sub_resource type="TextureSetResource" id="TextureSetResource_bfdoy"]
 name = "Ground Tiles 4"
@@ -144,7 +144,7 @@ normalTexture = ExtResource("25_kg4hv")
 roughnessTexture = ExtResource("26_lmuhm")
 heightTexture = ExtResource("24_gcln6")
 textureDetail = 55
-triplanar = true
+triplanar = false
 specular = 0.667
 
 [sub_resource type="TextureSetResource" id="TextureSetResource_p66im"]
@@ -154,7 +154,7 @@ normalTexture = ExtResource("29_lqcbl")
 roughnessTexture = ExtResource("30_4siac")
 heightTexture = ExtResource("28_jxp8i")
 textureDetail = 83
-triplanar = true
+triplanar = false
 
 [sub_resource type="TextureSetResource" id="TextureSetResource_v6wbg"]
 name = "Sand 2"
@@ -163,7 +163,7 @@ normalTexture = ExtResource("33_wyx2t")
 roughnessTexture = ExtResource("34_2taw8")
 heightTexture = ExtResource("32_1u21y")
 textureDetail = 44
-triplanar = true
+triplanar = false
 
 [sub_resource type="TextureSetResource" id="TextureSetResource_0yfeg"]
 name = "Sand 3"
@@ -180,7 +180,7 @@ normalTexture = ExtResource("41_o4dxy")
 roughnessTexture = ExtResource("42_ytbdy")
 heightTexture = ExtResource("40_u8k7y")
 textureDetail = 46
-triplanar = true
+triplanar = false
 
 [sub_resource type="TextureSetsResource" id="TextureSetsResource_73k8k"]
 textureSets = Array[TextureSetResource]([SubResource("TextureSetResource_nxdj1"), SubResource("TextureSetResource_tay5t"), SubResource("TextureSetResource_6qnlh"), SubResource("TextureSetResource_ljnho"), SubResource("TextureSetResource_mk0oj"), SubResource("TextureSetResource_vyb7n"), SubResource("TextureSetResource_bfdoy"), SubResource("TextureSetResource_p66im"), SubResource("TextureSetResource_v6wbg"), SubResource("TextureSetResource_0yfeg"), SubResource("TextureSetResource_7ny4s")])
@@ -192,8 +192,8 @@ center_offset = Vector3(0, 0.5, 0)
 [sub_resource type="FoliageDefinitionResource" id="FoliageDefinitionResource_snvkn"]
 mesh = SubResource("QuadMesh_kgxi8")
 windStrength = 0.14
-lodLevels = 9
-lodRowsPerLevel = 56
+lodLevels = 6
+lodRowsPerLevel = 36
 lodInitialCellWidth = 0.1
 albedo = Color(0.45115238, 0.61599606, 0.29995385, 1)
 albedoTextures = Array[Texture2D]([ExtResource("43_xw8om"), ExtResource("44_xrnkh"), ExtResource("45_icg1s"), ExtResource("46_ge5t6"), ExtResource("47_bmtbb")])
@@ -229,8 +229,8 @@ noise = SubResource("FastNoiseLite_jkiso")
 mesh = SubResource("QuadMesh_ktywf")
 windStrength = 0.14
 noiseTexture = SubResource("NoiseTexture2D_uir7i")
-lodLevels = 20
-lodRowsPerLevel = 75
+lodLevels = 10
+lodRowsPerLevel = 45
 lodInitialCellWidth = 0.5
 albedo = Color(0.4824705, 0.67689687, 0.32431662, 1)
 albedoTextures = Array[Texture2D]([ExtResource("48_qnopk"), ExtResource("49_3b25y"), ExtResource("50_sqwul")])
@@ -1541,6 +1541,7 @@ dataPath = "res://main/Node"
 zonesSize = 130
 textureSets = SubResource("TextureSetsResource_73k8k")
 nearestTextureFilter = true
+useAntiTile = false
 foliages = Array[FoliageResource]([SubResource("FoliageResource_7ny4s"), SubResource("FoliageResource_e4lmg"), SubResource("FoliageResource_7rk2m"), SubResource("FoliageResource_lf6l6")])
 objects = Array[ObjectResource]([SubResource("ObjectResource_reh2a"), SubResource("ObjectResource_571ru"), SubResource("ObjectResource_gmy4t"), SubResource("ObjectResource_nelid"), SubResource("ObjectResource_vmwr3"), SubResource("ObjectResource_v6wbg"), SubResource("ObjectResource_pc78h"), SubResource("ObjectResource_ts2mh")])
 terrainZones = SubResource("ZonesResource_0i4oc")

@@ -39,6 +39,10 @@ StarsHud="*res://autoload/stars_hud.tscn"
 EvaluationScreen="*res://autoload/evaluation_screen.tscn"
 SoundManager="*uid://dga6aung75itl"
 
+[display]
+
+window/vsync/vsync_mode=0
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
@@ -138,3 +142,6 @@ tool_3={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+lights_and_shadows/directional_shadow/size=2048
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=3
+scaling_3d/scale=0.7

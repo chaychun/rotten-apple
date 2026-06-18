@@ -22,6 +22,7 @@ var _target_xz: Vector2 = Vector2.ZERO
 var _hop_from: Vector2 = Vector2.ZERO
 var _hop_t: float = 0.0               # 0..1 normalized progress along current hop
 var _hop_duration: float = 0.0       # seconds; total_dist / move_speed
+var _hop_heights: PackedFloat32Array  # ground Y sampled along the hop (filled by _path_clear)
 
 @onready var _body: AnimatableBody3D = $AnimatableBody3D
 @onready var _sprite: Sprite3D = $AnimatableBody3D/Sprite3D
@@ -78,12 +79,19 @@ func _pick_hop() -> void:
 
 
 # Sample the straight-line segment every ~PATH_SAMPLE_STEP; each sample must have
-# valid ground and pass the clearance check. Endpoint always sampled.
+# valid ground and pass the clearance check. Endpoint always sampled. The valid
+# ground heights are cached in _hop_heights so _step_move can interpolate them
+# instead of raycasting every physics frame.
 func _path_clear(from: Vector2, to: Vector2) -> bool:
 	var total := from.distance_to(to)
 	if total <= 0.0:
 		return false
 	var steps := int(ceil(total / PATH_SAMPLE_STEP))
+	var heights := PackedFloat32Array()
+	heights.resize(steps + 1)
+	heights[0] = _zone.ground_y(from)
+	if is_nan(heights[0]):
+		return false
 	for i in range(1, steps + 1):
 		var pt := from.lerp(to, float(i) / float(steps))
 		var gy := _zone.ground_y(pt)
@@ -91,7 +99,23 @@ func _path_clear(from: Vector2, to: Vector2) -> bool:
 			return false
 		if not _zone.is_clear(pt, gy):
 			return false
+		heights[i] = gy
+	_hop_heights = heights
 	return true
+
+
+# Interpolate the cached height profile by hop progress; no per-frame raycast.
+func _height_at(t: float) -> float:
+	var n := _hop_heights.size()
+	if n == 0:
+		return global_position.y
+	if n == 1:
+		return _hop_heights[0]
+	var f := clampf(t, 0.0, 1.0) * float(n - 1)
+	var i := int(f)
+	if i >= n - 1:
+		return _hop_heights[n - 1]
+	return lerpf(_hop_heights[i], _hop_heights[i + 1], f - float(i))
 
 
 func _step_move(delta: float) -> void:
@@ -99,8 +123,7 @@ func _step_move(delta: float) -> void:
 	# ease in-out
 	var eased := smoothstep(0.0, 1.0, _hop_t)
 	var next_xz := _hop_from.lerp(_target_xz, eased)
-	var gy := _zone.ground_y(next_xz)   # hug terrain / water surface
-	var y := gy if not is_nan(gy) else global_position.y
+	var y := _height_at(eased)   # hug terrain / water surface via cached profile
 	global_position = Vector3(next_xz.x, y, next_xz.y)
 	if _hop_t >= 1.0:
 		_start_pause()
