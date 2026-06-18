@@ -7,7 +7,6 @@ radius = 2.85
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wr804"]
 resource_name = "Mat.2"
 cull_mode = 2
-shading_mode = 0
 albedo_color = Color(0.73893803, 0.28445846, 0.28445846, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ux002"]
@@ -45,7 +44,6 @@ shadow_mesh = SubResource("ArrayMesh_ux002")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hxda8"]
 resource_name = "Mat.1"
 cull_mode = 2
-shading_mode = 0
 albedo_color = Color(0.6651851, 0.6651851, 0.6651851, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_xsa2a"]
@@ -83,7 +81,6 @@ shadow_mesh = SubResource("ArrayMesh_xsa2a")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mmwc0"]
 resource_name = "Mat.1_0"
 cull_mode = 2
-shading_mode = 0
 albedo_color = Color(0.9557522, 0.9557522, 0.9557522, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_mmjgo"]
@@ -155,7 +152,6 @@ shadow_mesh = SubResource("ArrayMesh_c1164")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cqqek"]
 resource_name = "Mat.1_1"
 cull_mode = 2
-shading_mode = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_4l5wc"]
 _surfaces = [{
@@ -335,7 +331,6 @@ shadow_mesh = SubResource("ArrayMesh_yo4ld")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h6s6j"]
 resource_name = "Mat.1_2"
 cull_mode = 2
-shading_mode = 0
 albedo_color = Color(0.8716814, 0.8716814, 0.8716814, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_xakvd"]
@@ -390,7 +385,6 @@ size = Vector3(117.02707, 212.61983, 10.50528)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n1mbc"]
 resource_name = "material"
 cull_mode = 2
-shading_mode = 0
 albedo_color = Color(0.7433628, 0.6025378, 0.35523534, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_lbcqe"]
