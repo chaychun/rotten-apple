@@ -7,7 +7,7 @@ signal missed
 @export var throw_duration: float = 0.35
 @export var arc_height_screen: float = 60.0
 @export var rope_segments: int = 20
-@export var hit_radius: float = 1.0          #need to decide value later
+@export var hit_radius: float = 0.3
 
 var _origin_3d: Vector3
 var _target_3d: Vector3

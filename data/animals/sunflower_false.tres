@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AnimalData" format=3 uid="uid://r2no2ods3cgj"]
+
+[ext_resource type="Script" uid="uid://cdbg03iul7ysx" path="res://data/animal_data.gd" id="1_iyvqx"]
+[ext_resource type="Texture2D" uid="uid://cgioxbaoy1up1" path="res://animal/fake/draft/draft_sunflower.png" id="1_s0eu3"]
+[ext_resource type="Texture2D" uid="uid://bvwe8itx0y7ol" path="res://animal/fake/sprite/aminal_sunflower.png" id="3_3almd"]
+
+[resource]
+script = ExtResource("1_iyvqx")
+id = "sunflower_false"
+species = "Sunflower"
+is_real = false
+difficulty = 5
+display_name = "Sun Flower"
+description = "Who would win? Coughing babies or unmatched power of the Sun. Well it depends. If there're enough babies, they could become one big celestial body that turns into a blackhole..."
+world_sprite = ExtResource("3_3almd")
+mail_sprite = ExtResource("1_s0eu3")
+metadata/_custom_type_script = "uid://cdbg03iul7ysx"

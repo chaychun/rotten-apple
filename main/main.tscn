@@ -159,7 +159,7 @@ size = Vector3(39.171806, 62.90039, 0.001)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_s758e"]
 height = 0.001
-radius = 15.393
+radius = 22.480957
 
 [sub_resource type="Resource" id="Resource_eq1qp"]
 script = ExtResource("201_spnen")
@@ -178,6 +178,119 @@ density = 0.05
 group_size_range = Vector2i(1, 2)
 move_speed = 0.3
 hop_distance_range = Vector2(1, 2)
+confined_to_zone = true
+metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
+
+[sub_resource type="Resource" id="Resource_g4v7s"]
+script = ExtResource("201_spnen")
+animal_id = "hotdog"
+move_speed = 0.0
+confined_to_zone = true
+metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
+
+[sub_resource type="Resource" id="Resource_yf5fn"]
+script = ExtResource("201_spnen")
+animal_id = "sandwich"
+move_speed = 0.0
+confined_to_zone = true
+metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
+
+[sub_resource type="Resource" id="Resource_57qmd"]
+script = ExtResource("201_spnen")
+animal_id = "butterfly_false"
+density = 0.05
+move_speed = 3.0
+hop_distance_range = Vector2(3, 5)
+idle_pause_range = Vector2(0, 0)
+confined_to_zone = true
+metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
+
+[sub_resource type="Resource" id="Resource_4hmqs"]
+script = ExtResource("201_spnen")
+animal_id = "butterfly"
+density = 0.007
+group_spread = 5.0
+hop_distance_range = Vector2(2, 5)
+metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
+
+[sub_resource type="Resource" id="Resource_s758e"]
+script = ExtResource("201_spnen")
+animal_id = "hotdog_false"
+density = 0.001
+move_speed = 4.0
+hop_distance_range = Vector2(3, 7)
+idle_pause_range = Vector2(0.5, 1)
+metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
+
+[sub_resource type="Resource" id="Resource_piupu"]
+script = ExtResource("201_spnen")
+animal_id = "sunflower"
+density = 0.05
+group_size_range = Vector2i(7, 10)
+move_speed = 0.05
+hop_distance_range = Vector2(0, 0.05)
+confined_to_zone = true
+metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
+
+[sub_resource type="Resource" id="Resource_q0sk7"]
+script = ExtResource("201_spnen")
+animal_id = "sunflower_false"
+density = 0.03
+group_size_range = Vector2i(1, 3)
+move_speed = 0.05
+hop_distance_range = Vector2(0, 0.5)
+confined_to_zone = true
+metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
+
+[sub_resource type="Resource" id="Resource_vapsy"]
+script = ExtResource("201_spnen")
+animal_id = "sunfish_false"
+density = 0.01
+group_size_range = Vector2i(2, 4)
+group_spread = 3.0
+move_speed = 0.5
+hop_distance_range = Vector2(1, 4)
+idle_pause_range = Vector2(0.2, 1)
+confined_to_zone = true
+metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
+
+[sub_resource type="Resource" id="Resource_re7it"]
+script = ExtResource("201_spnen")
+animal_id = "watermelon"
+density = 0.05
+move_speed = 0.0
+confined_to_zone = true
+metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
+
+[sub_resource type="Resource" id="Resource_jofbb"]
+script = ExtResource("201_spnen")
+animal_id = "strawberry"
+density = 0.1
+group_size_range = Vector2i(3, 5)
+group_spread = 3.0
+move_speed = 0.0
+confined_to_zone = true
+metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
+
+[sub_resource type="Resource" id="Resource_oagth"]
+script = ExtResource("201_spnen")
+animal_id = "coconutcrab"
+density = 0.01
+group_spread = 4.0
+move_speed = 3.0
+confined_to_zone = true
+metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
+
+[sub_resource type="Resource" id="Resource_n53tw"]
+script = ExtResource("201_spnen")
+animal_id = "coconutcrab_false"
+density = 0.007
+group_spread = 5.0
+metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
+
+[sub_resource type="Resource" id="Resource_d00gp"]
+script = ExtResource("201_spnen")
+animal_id = "sandwich_false"
 confined_to_zone = true
 metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
 
@@ -314,7 +427,7 @@ mesh = SubResource("PlaneMesh_7dsnv")
 [node name="StaticBody3D" type="StaticBody3D" parent="Environment/WorldBoundary" unique_id=764547217]
 
 [node name="CollisionShape3D24" type="CollisionShape3D" parent="Environment/WorldBoundary/StaticBody3D" unique_id=1533319191]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.66804, 0.8231735, -1.1325836)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.732784, 0.8231735, -1.1325836)
 shape = SubResource("BoxShape3D_jyo0q")
 
 [node name="CollisionShape3D25" type="CollisionShape3D" parent="Environment/WorldBoundary/StaticBody3D" unique_id=1131004038]
@@ -358,7 +471,7 @@ transform = Transform3D(0.9671658, 0, 0.25414625, 0, 1, 0, -0.25414625, 0, 0.967
 shape = SubResource("BoxShape3D_s758e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/WorldBoundary/StaticBody3D" unique_id=1217688953]
-transform = Transform3D(1, 0, 0, 0, 1, 0, -1.4901161e-08, 0, 1, 10.375481, 0.2602501, -41.35754)
+transform = Transform3D(1, 0, 0, 0, 1, 0, -1.4901161e-08, 0, 1, 10.375, -0.242, -41.358)
 shape = SubResource("CylinderShape3D_s758e")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="Environment/WorldBoundary" unique_id=48625510]
@@ -367,8 +480,8 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Environment/WorldBoundary/StaticBody3D2" unique_id=1954112727]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.21279907, 0.29316044, -2.9768257)
-depth = 16.17
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.21279907, 1.334763, -2.9768257)
+depth = 6.325
 polygon = PackedVector2Array(12.05054, 6.3910904, 13.419375, 0.25998306, 13.595611, -3.7273216, 8.785811, -9.89167, 3.5648642, -13.063889, -0.33432293, -13.901003, -5.636658, -12.616013, -8.302204, -10.1046715, -11.479553, 2.4071426, -8.594424, 6.049923, -3.3955069, 9.288231, 4.4028683, 12.284218, 7.5750875, 12.240158, 8.7426405, 11.006519)
 
 [node name="Seaweed" parent="Environment" unique_id=1548588550 instance=ExtResource("15_s758e")]
@@ -388,12 +501,69 @@ polygon = PackedVector2Array(-4, 3, 4, 3, 4.402233, -4.795147, -4, -5)
 script = ExtResource("89_4q1v2")
 entries = Array[ExtResource("201_spnen")]([SubResource("Resource_5xyti")])
 is_water_zone = true
-water_surface_y = -0.242
+water_surface_y = -0.2
 metadata/_custom_type_script = "uid://cn8e3dcsmehxk"
 
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="PondSpawnZone" unique_id=1199319151]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 8, -1.9510784, -38)
 depth = 5.0
 polygon = PackedVector2Array(-10.106106, -3.871666, -5.970683, -5.196148, -2.1513877, -8.00296, 7.748975, -6.756254, 13.805492, 4.008362, 5.0376797, 15.452103, -11.621123, 5.9120674, -15.661457, -1.6793175)
+
+[node name="FoodSpawnZone" type="Area3D" parent="." unique_id=398678782]
+script = ExtResource("89_4q1v2")
+entries = Array[ExtResource("201_spnen")]([SubResource("Resource_g4v7s"), SubResource("Resource_yf5fn"), SubResource("Resource_57qmd")])
+metadata/_custom_type_script = "uid://cn8e3dcsmehxk"
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="FoodSpawnZone" unique_id=1336481561]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -29.589573, 0, -13.014259)
+depth = 14.925
+polygon = PackedVector2Array(-3.698635, -3.4718428, 6.3098907, -3.0926962, 6.806776, 6.7551575, -3.055706, 6.7703705)
+
+[node name="TownSpawnZone" type="Area3D" parent="." unique_id=36819891]
+script = ExtResource("89_4q1v2")
+entries = Array[ExtResource("201_spnen")]([SubResource("Resource_4hmqs"), SubResource("Resource_s758e")])
+metadata/_custom_type_script = "uid://cn8e3dcsmehxk"
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="TownSpawnZone" unique_id=1683949089]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+depth = 9.22
+polygon = PackedVector2Array(-6.2747545, 1.7602835, -17.000608, -14.579282, -35.061676, -18.27059, -59.902363, -17.88879, -60.89297, -8.397766, -56.929726, 4.9587135, -10.7574215, 5.106575)
+
+[node name="SFPatchSpawnZone" type="Area3D" parent="." unique_id=332589528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.23017, 9.399959, -51.930187)
+script = ExtResource("89_4q1v2")
+entries = Array[ExtResource("201_spnen")]([SubResource("Resource_piupu"), SubResource("Resource_q0sk7"), SubResource("Resource_vapsy")])
+metadata/_custom_type_script = "uid://cn8e3dcsmehxk"
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="SFPatchSpawnZone" unique_id=476744346]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+depth = 16.555
+polygon = PackedVector2Array(0.57289886, -13.718952, 5.5663147, -9.272999, 7.5661697, 7.712044, -13.278297, 8.02787, -15.850014, -0.99570847, -8.17997, -6.3647346)
+
+[node name="FarmSpawnZone" type="Area3D" parent="." unique_id=1340185225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.543922, 0, -16.31612)
+script = ExtResource("89_4q1v2")
+entries = Array[ExtResource("201_spnen")]([SubResource("Resource_re7it"), SubResource("Resource_jofbb")])
+min_group_spacing = 2.0
+metadata/_custom_type_script = "uid://cn8e3dcsmehxk"
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="FarmSpawnZone" unique_id=106038692]
+transform = Transform3D(0.99894, 0.002297535, 0.04597372, -0.046031088, 0.049859773, 0.99769497, 0, -0.99875367, 0.04991268, 0, 2.2029624, 0)
+depth = 5.685
+polygon = PackedVector2Array(8.53487, 3.439148, 3.8168907, 6.5693645, 0.09083176, 3.7091885, -4.0121613, 5.452194, -7.339926, 0.95965385, 1.7318459, -5.447733)
+
+[node name="BeachSpawnZone" type="Area3D" parent="." unique_id=516242452]
+transform = Transform3D(0.9989401, 0.0022974014, 0.04597319, -0.046030555, 0.0498592, 0.99769497, -8.940697e-08, -0.99875367, 0.049912106, 0.387156, 2.2029624, 14.749933)
+top_level = true
+script = ExtResource("89_4q1v2")
+entries = Array[ExtResource("201_spnen")]([SubResource("Resource_oagth"), SubResource("Resource_n53tw"), SubResource("Resource_d00gp")])
+min_group_spacing = 5.0
+water_surface_y = -5.0
+metadata/_custom_type_script = "uid://cn8e3dcsmehxk"
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="BeachSpawnZone" unique_id=1917121229]
+transform = Transform3D(0.99795777, -0.0031879004, -0.06378996, 0.0031879004, 0.9999943, -0.00010178611, 0.06378997, -0.0001017414, 0.9979639, 6.6440086, -4.2025394, -1.8331777)
+depth = 17.235
+polygon = PackedVector2Array(-63.575382, 5.825289, -61.183846, -4.1422863, -50.767773, -9.393198, -30.837519, -6.3619156, -4.4317355, -9.017572, 49.631573, -11.046537, 52.50509, 1.0140076)
 
 [connection signal="body_entered" from="GetInHouse/InArea" to="GetInHouse" method="_on_in_area_body_entered"]

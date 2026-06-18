@@ -137,7 +137,6 @@ func attempt_catch() -> void:
 
 
 func on_minigame_result(success: bool) -> void:
-	print("on migame result called, succ?: ", success)
 	if success:
 		PlayerState.catch_animal(animal_id)
 		queue_free()

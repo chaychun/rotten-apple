@@ -8,7 +8,6 @@
 [ext_resource type="AudioStream" uid="uid://4lbsvkb046tx" path="res://audio/sfx/footstep_grass_001.ogg" id="3_piosy"]
 [ext_resource type="AudioStream" uid="uid://c8yvjd3851tp3" path="res://audio/sfx/footstep_grass_002.ogg" id="4_ns6tw"]
 [ext_resource type="AudioStream" uid="uid://b4mtshstxsfqk" path="res://audio/sfx/AnimalHit2.wav" id="4_rwfwi"]
-[ext_resource type="AudioStream" uid="uid://dlboerigh8jn3" path="res://audio/sfx/AnimalHit3.wav" id="5_fi5o7"]
 [ext_resource type="AudioStream" uid="uid://cbo13xcceny3r" path="res://audio/sfx/footstep_grass_003.ogg" id="5_gigap"]
 [ext_resource type="AudioStream" uid="uid://w87lmxt7dp4x" path="res://audio/sfx/CatchSuccess.wav" id="6_6bt45"]
 [ext_resource type="AudioStream" uid="uid://bg3hnswtxnky8" path="res://audio/sfx/footstep_grass_004.ogg" id="6_6rsrl"]
@@ -43,7 +42,7 @@ sleep = ExtResource("10_sqk4b")
 mailbox = ExtResource("11_inogl")
 sfx_lasso_charge = ExtResource("2_1div1")
 sfx_lasso_throw = ExtResource("2_vala3")
-sfx_lasso_hit = Array[AudioStream]([ExtResource("3_1div1"), ExtResource("4_rwfwi"), ExtResource("5_fi5o7")])
+sfx_lasso_hit = Array[AudioStream]([ExtResource("3_1div1"), ExtResource("4_rwfwi")])
 sfx_catch_success = ExtResource("6_6bt45")
 sfx_catch_fail = ExtResource("7_8was3")
 sfx_skillcheck_tick = Array[AudioStream]([ExtResource("8_wwgj4"), ExtResource("9_pfs4q"), ExtResource("10_piosy"), ExtResource("11_ns6tw"), ExtResource("12_gigap"), ExtResource("13_6rsrl")])
