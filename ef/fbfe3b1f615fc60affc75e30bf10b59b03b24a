@@ -1,0 +1,45 @@
+player/camera_occlusion.gd
+  s_2f50257f6d2c3f::t_1851a92ce2edcf 13-17,21,31,49-51,56-70,72,74-81,84-100,109
+  s_80261a5fea2fcf::t_24d484ca05c117 1-6,9-11,18-20,22-30,32,34,36-40,45-47,54-55,83,101-108,110
+  s_80261a5fea2fcf::t_58afeed28dd2d6 12,33,35,41-44
+  s_80261a5fea2fcf::t_2d74d1148e09c5 52-53
+  s_80261a5fea2fcf::t_5514b53eaf5e6f 71,73,82
+  s_80261a5fea2fcf::t_fb922611978efe 8
+housenshi/farm.tscn
+  s_80261a5fea2fcf::t_35028dcc50e076 928
+  s_80261a5fea2fcf::t_c1867b6fb037cf 850
+  s_80261a5fea2fcf::t_a90d4065941f54 889
+  s_80261a5fea2fcf::t_5a68543f0590c0 851,890
+housenshi/old_house.tscn
+  s_80261a5fea2fcf::t_5c5572712b2e6a 118
+  s_80261a5fea2fcf::t_608c4f531051c3 119
+player/camera_occlusion.gd.uid
+  s_80261a5fea2fcf::t_e94183af55fdbc 1
+player/player.tscn
+  s_80261a5fea2fcf::t_701eec6f5be425 367
+  s_80261a5fea2fcf::t_ff6bc600327b5b 17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "effbfe3b1f615fc60affc75e30bf10b59b03b24a",
+  "prompts": {},
+  "sessions": {
+    "s_2f50257f6d2c3f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1bf3277e-a3a4-4023-b0a8-4130c0ece42b",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": null
+    },
+    "s_80261a5fea2fcf": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7d93a878-b4b3-4f53-af1a-79c8e9ee2078",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
