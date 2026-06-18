@@ -115,7 +115,8 @@ size = Vector3(0.395, 0.805, 0.335)
 
 [node name="house" type="Node3D" unique_id=1011123435]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1712904284]
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["occlude"] unique_id=1712904284]
+metadata/occlude_radius = 0.0
 
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="StaticBody3D" unique_id=36662429]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.043563128)
