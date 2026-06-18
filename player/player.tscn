@@ -16,6 +16,25 @@
 [ext_resource type="Script" uid="uid://8sjnnlk7fct3" path="res://player/toollauncher/lasso_launcher.gd" id="14_kb6p2"]
 [ext_resource type="Script" path="res://player/camera_occlusion.gd" id="16_camocc"]
 [ext_resource type="PackedScene" uid="uid://dcr2ubwd0x68h" path="res://ui/minigames/lasso.tscn" id="15_wodsf"]
+[ext_resource type="Shader" path="res://effects/pixel_outline.gdshader" id="17_ppshad"]
+[ext_resource type="Script" path="res://effects/post_process.gd" id="18_ppscr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pp"]
+render_priority = 0
+shader = ExtResource("17_ppshad")
+shader_parameter/pixel_size = 1.0
+shader_parameter/depth_threshold = 0.05
+shader_parameter/reverse_depth_threshold = 0.25
+shader_parameter/normal_threshold = 0.6
+shader_parameter/darken_amount = 0.3
+shader_parameter/lighten_amount = 1.5
+shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
+shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
+
+[sub_resource type="QuadMesh" id="QuadMesh_pp"]
+material = SubResource("ShaderMaterial_pp")
+flip_faces = true
+size = Vector2(2, 2)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rkbax"]
 radius = 0.22216797
@@ -288,6 +307,7 @@ shape = SubResource("CapsuleShape3D_rkbax")
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=1028634009]
 transform = Transform3D(0.37, 0, 0, 0, 0.37, 0, 0, 0, 0.37, 0, 0.3805539, 0)
 billboard = 2
+texture_filter = 0
 shaded = true
 alpha_cut = 3
 alpha_hash_scale = 0.56
@@ -365,6 +385,13 @@ transform = Transform3D(1, 0, 0, 0, 0.7071067, 0.7071067, 0, -0.7071067, 0.70710
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 doppler_tracking = 2
 script = ExtResource("16_camocc")
+
+[node name="PostProcessing" type="MeshInstance3D" parent="CameraController/CameraTarget/Camera3D"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_pp")
+script = ExtResource("18_ppscr")
 
 [node name="LassoLauncher" type="Node" parent="." unique_id=212692406]
 script = ExtResource("14_kb6p2")
