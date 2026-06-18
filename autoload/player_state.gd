@@ -12,6 +12,7 @@ var logbook: Dictionary[String, bool] = {}            # { animal_id: ever_caught
 var inventory: Dictionary[String, int] = {}           # { animal_id: count_held }
 var quests: Dictionary[String, QuestProgress] = {}    # { quest_id: progress }
 var stars: int = 0
+var input_locked: bool = false
 
 # (Feedback) mails to be delivered.
 var _pending_mail: Array[MailData] = []
@@ -25,6 +26,14 @@ func _ready() -> void:
 		quests[quest_id] = QuestProgress.new(QuestStatus.BACKLOG)
 	Events.day_ended.connect(_on_day_ended)
 	Events.day_started.connect(_on_day_started)
+
+
+func lock_input() -> void:
+	input_locked = true
+
+
+func unlock_input() -> void:
+	input_locked = false
 
 
 # Wipe all run state back to a fresh game.

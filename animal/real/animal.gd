@@ -120,6 +120,7 @@ func on_minigame_result(success: bool) -> void:
 		queue_free()
 	else:
 		_catching = false
+		SoundManager.play_sfx(SoundManager.sfx_catch_fail, -4.0)
 
 
 func get_data() -> AnimalData:

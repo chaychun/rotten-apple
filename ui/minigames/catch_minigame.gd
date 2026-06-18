@@ -41,6 +41,7 @@ func start() -> void:
 	_window.size.y = 28.0
 	_reposition_window()
 	_active = true
+	PlayerState.lock_input()
 	#_anim.play("slide_in")
 
 
@@ -92,6 +93,7 @@ func _register_miss() -> void:
 
 func _finish(success: bool) -> void:
 	_active = false
+	PlayerState.unlock_input()
 	#_anim.play("slide_out")
 	#await _anim.animation_finished
 	completed.emit(success)

@@ -5,6 +5,25 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ggbxv"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ggbxv"]
+content_margin_left = 34.0
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+shadow_color = Color(0.27387273, 0.27387273, 0.27387273, 0.6)
+shadow_size = 1
+shadow_offset = Vector2(0, 1.83)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ggbxv"]
+font_size = 13
+shadow_size = 2
+shadow_color = Color(0.45490196, 0.90588236, 0.6666667, 1)
+shadow_offset = Vector2(0, 0)
+stacked_outline_count = 1
+
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1687986270]
 script = ExtResource("1_wp8nu")
 
@@ -15,12 +34,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = -20.0
+offset_top = 34.0
 offset_right = 20.0
-offset_bottom = 20.0
+offset_bottom = 74.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ggbxv")
+metadata/_edit_use_anchors_ = true
 
 [node name="Bar" type="PanelContainer" parent="Panel" unique_id=497986365]
 layout_mode = 1
@@ -74,10 +96,30 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -19.0
-offset_top = -47.0
+offset_top = -35.0
 offset_right = 21.0
-offset_bottom = -27.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel" unique_id=1556988237]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = 17.999989
+offset_right = 38.0
+offset_bottom = 40.14583
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ggbxv")
+text = "SPACE"
+label_settings = SubResource("LabelSettings_ggbxv")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=274159036]

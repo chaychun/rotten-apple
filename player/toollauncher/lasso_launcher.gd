@@ -29,6 +29,8 @@ func _on_tool_changed(tool: int) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if PlayerState.input_locked:
+		return
 	if not _active or not _can_throw:
 		return
 	if event.is_action_pressed("right_click"):

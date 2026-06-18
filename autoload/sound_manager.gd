@@ -42,7 +42,7 @@ func _ready() -> void:
 	
 	Events.lasso_thrown.connect(func() -> void: play_sfx(sfx_lasso_throw, -10.0))
 	Events.animal_caught.connect(func(_id: String) -> void: play_sfx(sfx_catch_success, -6.7))
-	Events.lasso_hit.connect(func() -> void: play_sfx(sfx_lasso_hit.pick_random(), -15.0))
+	Events.lasso_hit.connect(func() -> void: play_sfx(sfx_lasso_hit.pick_random(), -5.0))
 	
 	
 

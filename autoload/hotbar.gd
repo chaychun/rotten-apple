@@ -14,6 +14,8 @@ const KEY_MAP: Dictionary = {
 
 
 func _unhandled_key_input(event: InputEvent) -> void:
+	if PlayerState.input_locked:
+		return
 	if not event.pressed:
 		return
 	for key in KEY_MAP:

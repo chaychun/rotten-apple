@@ -26,6 +26,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	if PlayerState.input_locked:
+		return
+	
 	var direction = Vector3.ZERO
 	
 	# Get Input
