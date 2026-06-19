@@ -7,7 +7,12 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS  # keep updating while paused
 	Events.hour_changed.connect(_on_changed)
 	Events.day_started.connect(_on_changed)
+	Events.scene_changed.connect(_on_scene_changed)
 	_refresh()
+
+
+func _on_scene_changed(is_menu: bool) -> void:
+	visible = not is_menu
 
 
 func _on_changed(_v: int) -> void:

@@ -3,8 +3,6 @@
 [ext_resource type="Script" uid="uid://cdbg03iul7ysx" path="res://data/animal_data.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://p6h3y8jsv3mb" path="res://animal/real/sprite/animal_coconutcrab_1.png" id="1_world"]
 [ext_resource type="Texture2D" uid="uid://dmwam5swh31ma" path="res://animal/real/draft/draft_real_coconutcrab.png" id="2_mail"]
-
-[ext_resource type="Script" uid="uid://cdbg03iul7ysx" path="res://data/animal_data.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://c4nvp6hm6ai01" path="res://animal/real/sprite/animal_coconutcrab_2.png" id="4_w2"]
 
 [resource]

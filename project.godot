@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Rotten apple"
-run/main_scene="uid://bs7f42e414t5q"
+run/main_scene="uid://qcjrv42awn7o"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

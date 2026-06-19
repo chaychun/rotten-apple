@@ -9,11 +9,11 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="ClockHud" type="CanvasLayer"]
+[node name="ClockHud" type="CanvasLayer" unique_id=1388978456]
 layer = 10
 script = ExtResource("1_clock")
 
-[node name="Panel" type="PanelContainer" parent="."]
+[node name="Panel" type="PanelContainer" parent="." unique_id=77705299]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -23,14 +23,14 @@ offset_right = -12.0
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_clock")
 
-[node name="Margin" type="MarginContainer" parent="Panel"]
+[node name="Margin" type="MarginContainer" parent="Panel" unique_id=1349660084]
 layout_mode = 2
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 8
 
-[node name="Label" type="Label" parent="Panel/Margin"]
+[node name="Label" type="Label" parent="Panel/Margin" unique_id=2023830773]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 22

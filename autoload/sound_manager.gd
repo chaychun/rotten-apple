@@ -24,8 +24,8 @@ const POOL_SIZE := 8
 
 @export_group("Ambient Music")
 @export var ambient_tracks: Array[AudioStream] = []
-@export var ambient_min_wait: float = 0#30.0
-@export var ambient_max_wait: float = 1#120.0
+@export var ambient_min_wait: float = 30.0
+@export var ambient_max_wait: float = 120.0
 @export var ambient_fade_in: float = 1.5
 @export var ambient_fade_out: float = 1.5
 

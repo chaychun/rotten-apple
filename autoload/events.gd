@@ -1,5 +1,6 @@
 extends Node
 
+signal scene_changed(is_menu: bool)
 signal animal_caught(animal_id: String)
 signal stars_update(new_amount: int)
 

@@ -13,6 +13,7 @@
 [ext_resource type="Shader" uid="uid://cvady34ely77e" path="res://main/walter1.gdshader" id="13_n3o0a"]
 [ext_resource type="Shader" uid="uid://j1xs876mva34" path="res://main/walter2.gdshader" id="14_s758e"]
 [ext_resource type="PackedScene" uid="uid://w66cmwbfm3ws" path="res://housenshi/seaweed/seaweed_baked.tscn" id="15_s758e"]
+[ext_resource type="PackedScene" uid="uid://c5pgijaxar5lv" path="res://housenshi/seaweed/seaweed.tscn" id="16_piupu"]
 [ext_resource type="PackedScene" uid="uid://bdr38pj2qtbfe" path="res://animal/animal.tscn" id="18_4hmqs"]
 [ext_resource type="PackedScene" uid="uid://dvx8llurb17n1" path="res://housenshi/farm.tscn" id="69_7dsnv"]
 [ext_resource type="Script" uid="uid://cn8e3dcsmehxk" path="res://animal/spawn_zone.gd" id="89_4q1v2"]
@@ -316,6 +317,14 @@ animal_id = "hedgehog"
 confined_to_zone = true
 metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
 
+[sub_resource type="Resource" id="Resource_32hag"]
+script = ExtResource("201_spnen")
+animal_id = "butterfly"
+confined_to_zone = true
+y_offset = 0.5
+bob_height = 0.1
+metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
+
 [sub_resource type="Resource" id="Resource_frbr6"]
 script = ExtResource("201_spnen")
 animal_id = "watermelon_false"
@@ -539,6 +548,152 @@ polygon = PackedVector2Array(12.05054, 6.3910904, 13.419375, 0.25998306, 13.5956
 
 [node name="Seaweed" parent="Environment" unique_id=1548588550 instance=ExtResource("15_s758e")]
 
+[node name="SeaweedPond" type="Node3D" parent="Environment" unique_id=366587215]
+
+[node name="Node3D" parent="Environment/SeaweedPond" unique_id=439012248 instance=ExtResource("16_piupu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0553327, -4.7299643, -41.548943)
+
+[node name="Node3D2" parent="Environment/SeaweedPond" unique_id=1153677056 instance=ExtResource("16_piupu")]
+transform = Transform3D(0.4659397, 0, -0.88481647, 0, 1, 0, 0.88481647, 0, 0.4659397, 8.487036, -4.7299643, -41.548943)
+
+[node name="Node3D3" parent="Environment/SeaweedPond" unique_id=1901430727 instance=ExtResource("16_piupu")]
+transform = Transform3D(0.4659397, 0, -0.88481647, 0, 1, 0, 0.88481647, 0, 0.4659397, 9.399498, -4.5404267, -45.145542)
+
+[node name="Node3D4" parent="Environment/SeaweedPond" unique_id=1206821324 instance=ExtResource("16_piupu")]
+transform = Transform3D(0.98131967, 0, 0.1923849, 0, 1, 0, -0.1923849, 0, 0.98131967, 6.737193, -4.5404267, -44.005955)
+
+[node name="Node3D5" parent="Environment/SeaweedPond" unique_id=390191290 instance=ExtResource("16_piupu")]
+transform = Transform3D(0.5243679, 0, 0.8514919, 0, 1, 0, -0.8514919, 0, 0.5243679, 7.6096563, -4.5404267, -44.667965)
+
+[node name="Node3D6" parent="Environment/SeaweedPond" unique_id=398666444 instance=ExtResource("16_piupu")]
+transform = Transform3D(0.5243679, 0, 0.8514919, 0, 1, 0, -0.8514919, 0, 0.5243679, 4.862382, -3.5560942, -44.667965)
+
+[node name="Node3D7" parent="Environment/SeaweedPond" unique_id=540468090 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.48240447, 0, 0.8759488, 0, 1, 0, -0.8759488, 0, -0.48240447, 7.9937644, -4.4287944, -38.442783)
+
+[node name="Node3D8" parent="Environment/SeaweedPond" unique_id=1631982132 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.7264307, 0, 0.68724, 0, 1, 0, -0.68724, 0, -0.7264307, 7.2410064, -4.4287944, -37.755047)
+
+[node name="Node3D9" parent="Environment/SeaweedPond" unique_id=486615366 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.7264307, 0, 0.68724, 0, 1, 0, -0.68724, 0, -0.7264307, 8.573473, -4.265782, -36.327366)
+
+[node name="Node3D10" parent="Environment/SeaweedPond" unique_id=1507900045 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.7264307, 0, 0.68724, 0, 1, 0, -0.68724, 0, -0.7264307, 12.370014, -3.510913, -36.05137)
+
+[node name="Node3D11" parent="Environment/SeaweedPond" unique_id=1537235627 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.84319437, 0, -0.53760946, 0, 1, 0, 0.53760946, 0, -0.84319437, 11.168477, -3.510913, -35.251186)
+
+[node name="Node3D12" parent="Environment/SeaweedPond" unique_id=273481532 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.3197161, 0, 0.94751376, 0, 1, 0, -0.94751376, 0, -0.3197161, 15.174989, -2.6684957, -35.251186)
+
+[node name="Node3D13" parent="Environment/SeaweedPond" unique_id=539376619 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.3197161, 0, 0.94751376, 0, 1, 0, -0.94751376, 0, -0.3197161, 14.810002, -1.985167, -48.36866)
+
+[node name="Node3D14" parent="Environment/SeaweedPond" unique_id=1432037203 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.3197161, 0, 0.94751376, 0, 1, 0, -0.94751376, 0, -0.3197161, 16.14803, -2.4323974, -45.435352)
+
+[node name="Node3D15" parent="Environment/SeaweedPond" unique_id=691908279 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.3197161, 0, 0.94751376, 0, 1, 0, -0.94751376, 0, -0.3197161, 18.407356, -1.5338402, -44.79139)
+
+[node name="Node3D16" parent="Environment/SeaweedPond" unique_id=425244848 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.8097929, 0, -0.58671653, 0, 1, 0, 0.58671653, 0, -0.8097929, 17.111244, -2.4021564, -44.79139)
+
+[node name="Node3D17" parent="Environment/SeaweedPond" unique_id=2131788336 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.8097929, 0, -0.58671653, 0, 1, 0, 0.58671653, 0, -0.8097929, 15.119055, -2.04527, -47.410023)
+
+[node name="Node3D18" parent="Environment/SeaweedPond" unique_id=1929048149 instance=ExtResource("16_piupu")]
+transform = Transform3D(0.42442262, 0, 0.90546465, 0, 1, 0, -0.90546465, 0, 0.42442262, 12.481813, -2.4052823, -48.302715)
+
+[node name="Node3D19" parent="Environment/SeaweedPond" unique_id=2029006947 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.8366092, 0, 0.5478008, 0, 1, 0, -0.5478008, 0, -0.8366092, 3.451787, -2.8311653, -45.70975)
+
+[node name="Node3D20" parent="Environment/SeaweedPond" unique_id=806303188 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.5919815, 0, -0.805952, 0, 1, 0, 0.805952, 0, -0.5919815, 1.3599854, -2.357041, -41.676598)
+
+[node name="Node3D21" parent="Environment/SeaweedPond" unique_id=1973072509 instance=ExtResource("16_piupu")]
+transform = Transform3D(0.95405453, 0, 0.29963413, 0, 1, 0, -0.29963413, 0, 0.95405453, 1.3599854, -2.357041, -39.03553)
+
+[node name="Node3D22" parent="Environment/SeaweedPond" unique_id=1106479094 instance=ExtResource("16_piupu")]
+transform = Transform3D(0.95405453, 0, 0.29963413, 0, 1, 0, -0.29963413, 0, 0.95405453, 4.180862, -2.6164136, -36.375713)
+
+[node name="Node3D23" parent="Environment/SeaweedPond" unique_id=151347034 instance=ExtResource("16_piupu")]
+transform = Transform3D(0.95405453, 0, 0.29963413, 0, 1, 0, -0.29963413, 0, 0.95405453, 4.180862, -3.4135437, -40.248283)
+
+[node name="Node3D24" parent="Environment/SeaweedPond" unique_id=965578684 instance=ExtResource("16_piupu")]
+transform = Transform3D(0.28806895, 0, -0.95761, 0, 1, 0, 0.95761, 0, 0.28806895, 5.235309, -3.832531, -40.248283)
+
+[node name="Node3D25" parent="Environment/SeaweedPond" unique_id=1826504398 instance=ExtResource("16_piupu")]
+transform = Transform3D(0.28806895, 0, -0.95761, 0, 1, 0, 0.95761, 0, 0.28806895, 10.323803, -4.983601, -40.248283)
+
+[node name="Node3D26" parent="Environment/SeaweedPond" unique_id=2147005239 instance=ExtResource("16_piupu")]
+transform = Transform3D(0.73190254, 0, -0.6814099, 0, 1, 0, 0.6814099, 0, 0.73190254, 9.592992, -4.983601, -40.248283)
+
+[node name="Node3D27" parent="Environment/SeaweedPond" unique_id=731568547 instance=ExtResource("16_piupu")]
+transform = Transform3D(0.73190254, 0, -0.6814099, 0, 1, 0, 0.6814099, 0, 0.73190254, 9.329349, -4.983601, -40.873104)
+
+[node name="Node3D28" parent="Environment/SeaweedPond" unique_id=1976270835 instance=ExtResource("16_piupu")]
+transform = Transform3D(0.96672153, 0, -0.25583273, 0, 1, 0, 0.25583273, 0, 0.96672153, 7.464514, -4.983601, -41.91588)
+
+[node name="Node3D29" parent="Environment/SeaweedPond" unique_id=109293482 instance=ExtResource("16_piupu")]
+transform = Transform3D(0.96672153, 0, -0.25583273, 0, 1, 0, 0.25583273, 0, 0.96672153, 6.4442177, -4.328065, -40.54774)
+
+[node name="Node3D30" parent="Environment/SeaweedPond" unique_id=1237357746 instance=ExtResource("16_piupu")]
+transform = Transform3D(0.83860755, 0, 0.54473686, 0, 1, 0, -0.54473686, 0, 0.83860755, 6.890152, -3.7187552, -36.82663)
+
+[node name="Node3D31" parent="Environment/SeaweedPond" unique_id=1234066537 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.31380522, 0, 0.94948786, 0, 1, 0, -0.94948786, 0, -0.31380522, 7.704273, -3.7187552, -36.2325)
+
+[node name="Node3D32" parent="Environment/SeaweedPond" unique_id=1482260116 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.31380522, 0, 0.94948786, 0, 1, 0, -0.94948786, 0, -0.31380522, 13.535023, -3.3686235, -36.04232)
+
+[node name="Node3D33" parent="Environment/SeaweedPond" unique_id=2055016133 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.31380522, 0, 0.94948786, 0, 1, 0, -0.94948786, 0, -0.31380522, 11.90595, -2.9246855, -33.61769)
+
+[node name="Node3D34" parent="Environment/SeaweedPond" unique_id=1515328086 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.9945126, 0, -0.10462068, 0, 1, 0, 0.10462068, 0, -0.9945126, 8.265165, -2.9246855, -33.61769)
+
+[node name="Node3D35" parent="Environment/SeaweedPond" unique_id=2029843646 instance=ExtResource("16_piupu")]
+transform = Transform3D(0.9284077, 0, -0.37156415, 0, 1, 0, 0.37156415, 0, 0.9284077, 16.591597, -3.0273793, -37.119743)
+
+[node name="Node3D36" parent="Environment/SeaweedPond" unique_id=531588527 instance=ExtResource("16_piupu")]
+transform = Transform3D(0.9284077, 0, -0.37156415, 0, 1, 0, 0.37156415, 0, 0.9284077, 9.477849, -3.1573372, -47.730003)
+
+[node name="Node3D37" parent="Environment/SeaweedPond" unique_id=1284346145 instance=ExtResource("16_piupu")]
+transform = Transform3D(0.7416794, 0, 0.6707552, 0, 1, 0, -0.6707552, 0, 0.7416794, 8.083814, -3.393941, -47.359924)
+
+[node name="Node3D38" parent="Environment/SeaweedPond" unique_id=743309335 instance=ExtResource("16_piupu")]
+transform = Transform3D(0.10161275, 0, -0.9948244, 0, 1, 0, 0.9948244, 0, 0.10161275, 4.5454626, -2.4154835, -48.81011)
+
+[node name="Node3D39" parent="Environment/SeaweedPond" unique_id=1800423930 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.8932143, 0, 0.44963217, 0, 1, 0, -0.44963217, 0, -0.8932143, 3.876935, -3.1067877, -44.133636)
+
+[node name="Node3D40" parent="Environment/SeaweedPond" unique_id=1722733029 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.8932143, 0, 0.44963217, 0, 1, 0, -0.44963217, 0, -0.8932143, 17.689194, -2.951151, -40.4176)
+
+[node name="Node3D41" parent="Environment/SeaweedPond" unique_id=5050170 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.96131897, 0, -0.27543914, 0, 1, 0, 0.27543914, 0, -0.96131897, 16.713997, -3.334248, -39.44623)
+
+[node name="Node3D42" parent="Environment/SeaweedPond" unique_id=1678920344 instance=ExtResource("16_piupu")]
+transform = Transform3D(0.019585699, 0, -0.99980867, 0, 1, 0, 0.99980867, 0, 0.019585699, 18.131643, -2.6717596, -38.929535)
+
+[node name="Node3D43" parent="Environment/SeaweedPond" unique_id=1833825785 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.3366708, 0, -0.941623, 0, 1, 0, 0.941623, 0, -0.3366708, 15.281479, -4.014241, -40.41272)
+
+[node name="Node3D44" parent="Environment/SeaweedPond" unique_id=1440340259 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.3366708, 0, -0.941623, 0, 1, 0, 0.941623, 0, -0.3366708, 13.609866, -4.1255965, -42.341045)
+
+[node name="Node3D45" parent="Environment/SeaweedPond" unique_id=898527957 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.5675403, 0, -0.82334626, 0, 1, 0, 0.82334626, 0, -0.5675403, 13.609866, -4.4557734, -40.88035)
+
+[node name="Node3D46" parent="Environment/SeaweedPond" unique_id=1093341514 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.7983012, 0.29429132, -0.5254605, 0.21924585, 0.9546224, 0.20156254, 0.56093454, 0.0457025, -0.8265984, 14.311984, -4.134373, -39.13995)
+
+[node name="Node3D47" parent="Environment/SeaweedPond" unique_id=2118867195 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.65858763, -0.007622231, 0.75246626, 0.2192459, 0.9546224, 0.20156252, -0.71985745, 0.29772142, -0.6270312, 14.311984, -4.4024105, -40.96794)
+
+[node name="Node3D48" parent="Environment/SeaweedPond" unique_id=1511671406 instance=ExtResource("16_piupu")]
+transform = Transform3D(-0.65858763, -0.007622231, 0.75246626, 0.2192459, 0.9546224, 0.20156252, -0.71985745, 0.29772142, -0.6270312, 14.311984, -4.4024105, -40.96794)
+
 [node name="PondSpawnZone" type="Area3D" parent="." unique_id=1896194284]
 script = ExtResource("89_4q1v2")
 entries = Array[ExtResource("201_spnen")]([SubResource("Resource_5xyti")])
@@ -624,7 +779,7 @@ polygon = PackedVector2Array(-63.575382, 5.825289, -61.183846, -4.1422863, -50.7
 [node name="MountSpawnZone" type="Area3D" parent="." unique_id=355453795]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.637226, 17.614548, -47.107834)
 script = ExtResource("89_4q1v2")
-entries = Array[ExtResource("201_spnen")]([SubResource("Resource_d8vpj"), SubResource("Resource_qs5eo")])
+entries = Array[ExtResource("201_spnen")]([SubResource("Resource_d8vpj"), SubResource("Resource_qs5eo"), SubResource("Resource_32hag")])
 metadata/_custom_type_script = "uid://cn8e3dcsmehxk"
 
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="MountSpawnZone" unique_id=1414902667]
