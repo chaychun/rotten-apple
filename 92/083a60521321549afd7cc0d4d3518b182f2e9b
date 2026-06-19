@@ -1,0 +1,22 @@
+autoload/sound_manager.gd
+  s_cbdf5d45258244::t_7354474abe4940 47,52
+  s_cbdf5d45258244::t_afe786e404931e 49
+autoload/sound_manager.tscn
+  s_cbdf5d45258244::t_4d22af37a49d64 60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "92083a60521321549afd7cc0d4d3518b182f2e9b",
+  "prompts": {},
+  "sessions": {
+    "s_cbdf5d45258244": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ee404888-cd3c-4750-9d94-aec9ac9d973b",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
