@@ -54,6 +54,7 @@ func _ready() -> void:
 	add_child(_ambient_timer)
 	_ambient_timer.timeout.connect(_play_next_ambient_track)
 	
+	_connect_existing_buttons(get_tree().root)
 	get_tree().node_added.connect(_on_node_added)
 	
 	Events.lasso_thrown.connect(func() -> void: play_sfx(sfx_lasso_throw, -10.0))
@@ -126,6 +127,28 @@ func set_ambient_enabled(value: bool) -> void:
 		tween.tween_callback(_music_player.stop)
 	else:
 		_start_ambient_wait()
+
+
+func _connect_existing_buttons(node: Node) -> void:
+	if node is BaseButton:
+		_connect_button(node)
+	for child in node.get_children():
+		_connect_existing_buttons(child)
+
+
+func _connect_button(button: BaseButton) -> void:
+	if not button.pressed.is_connected(_on_button_pressed):
+		button.pressed.connect(_on_button_pressed)
+	if not button.mouse_entered.is_connected(_on_button_hovered):
+		button.mouse_entered.connect(_on_button_hovered)
+
+
+func _on_button_pressed() -> void:
+	play_sfx(sfx_ui_click)
+
+
+func _on_button_hovered() -> void:
+	play_sfx(sfx_ui_hover)
 
 
 func _on_node_added(node: Node) -> void:

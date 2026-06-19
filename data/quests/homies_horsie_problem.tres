@@ -15,6 +15,7 @@ script = ExtResource("2_wmdq0")
 id = "homies_horsie_problem"
 quest_name = "Homie's Horsie Problem"
 requirements = Array[ExtResource("1_318tt")]([SubResource("Resource_1ht2r")])
+reward = 5
 posted_by = "Mr Albone Broke"
 mail_new = "Hi, sory in advnce for bad handwitng I'm wrtng from m yhos pital bed. so a month ago, I wasr iding ahornse whild playing Eldn Rng. I fellen of the ring, liek the game, an dbroke a total of 67 bonse. It'ss a miracle I can stil lwrite a letr to u. Any way Ive thoguht of a way to never again braek 67 bonesa nd that is to ride a horsie on the water, ubt a normal horsie won't cut it. It needs be an aquatic horsie. Sea hornies. So please ship me 3 seae hornse. TNHak you in adbemce."
 mail_retry_unsubmitted = "Lke I sai dI broke 67 bones adn now am getin gignord by a new intrn... Please ship me 3 seae hornse... I bedg youn."

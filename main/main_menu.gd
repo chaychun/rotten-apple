@@ -9,7 +9,6 @@ const MAIN_SCENE_PATH := "res://main/main.tscn"
 func _ready() -> void:
 	_play_button.pressed.connect(_on_play_pressed)
 	_quit_button.pressed.connect(_on_quit_pressed)
-	_play_button.grab_focus()
 	Events.scene_changed.emit(true)
 
 

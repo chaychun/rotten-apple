@@ -2,6 +2,49 @@
 
 [ext_resource type="Script" uid="uid://dv0eek7s8blpt" path="res://main/main_menu.gd" id="1_dhah8"]
 [ext_resource type="Texture2D" uid="uid://bvtw0dpjg8cu1" path="res://Assets/Illusts/main.png" id="2_w2mlq"]
+[ext_resource type="Texture2D" uid="uid://drjxbbp4lyurr" path="res://Assets/Illusts/image.png" id="3_w2mlq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hk25g"]
+bg_color = Color(1, 0.8745098, 0.7254902, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.21069232, 0.1694049, 0.15952483, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_color = Color(0.2509804, 0.3254902, 0.35686275, 0.6)
+shadow_size = 2
+shadow_offset = Vector2(0, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kkiex"]
+bg_color = Color(1, 0.8745098, 0.7254902, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.21176471, 0.16862746, 0.16078432, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fc725"]
+bg_color = Color(0.8551415, 0.5576487, 9.62615e-07, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.21176471, 0.16862746, 0.16078432, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_color = Color(0.2509804, 0.3254902, 0.35686275, 0.6)
+shadow_size = 2
+shadow_offset = Vector2(0, 10)
 
 [node name="MainMenu" type="Control" unique_id=42599591]
 layout_mode = 3
@@ -28,47 +71,60 @@ grow_vertical = 2
 texture = ExtResource("2_w2mlq")
 expand_mode = 1
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=11448363]
-self_modulate = Color(0.49689978, 0.43765032, 0.6495706, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -960.0
-offset_top = -540.0
-offset_right = 960.0
-offset_bottom = 538.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.15686275, 0.12156863, 0.13725491, 0.5176471)
-
 [node name="ButtonColumn" type="VBoxContainer" parent="." unique_id=221131232]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 56.0
-offset_top = 366.0
-offset_right = -1164.0
-offset_bottom = -61.0
+offset_left = 84.0
+offset_top = 397.0
+offset_right = -1136.0
+offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 25
+theme_override_constants/separation = 29
 alignment = 1
 
 [node name="PlayButton" type="Button" parent="ButtonColumn" unique_id=1311127129]
 custom_minimum_size = Vector2(500, 100)
 custom_maximum_size = Vector2(650, 100)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.31764707, 0.2, 0.1254902, 1)
+theme_override_colors/font_pressed_color = Color(0.87058824, 0.87058824, 0.87058824, 1)
+theme_override_colors/font_hover_color = Color(0.31764707, 0.2, 0.1254902, 1)
 theme_override_font_sizes/font_size = 49
+theme_override_styles/normal = SubResource("StyleBoxFlat_hk25g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kkiex")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fc725")
 text = "START YOUR INTERNSHIP!"
 autowrap_mode = 3
 
-[node name="QuitButton" type="Button" parent="ButtonColumn" unique_id=504806216]
-custom_minimum_size = Vector2(650, 100)
+[node name="QuitButton" type="Button" parent="ButtonColumn" unique_id=2070412970]
+custom_minimum_size = Vector2(500, 100)
 custom_maximum_size = Vector2(650, 100)
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "I QUIT! I DON'T WANNA WORK! GOOGOO GAAGAA >:("
+theme_override_colors/font_color = Color(0.31764707, 0.2, 0.1254902, 1)
+theme_override_colors/font_pressed_color = Color(0.87058824, 0.87058824, 0.87058824, 1)
+theme_override_colors/font_hover_color = Color(0.31764707, 0.2, 0.1254902, 1)
+theme_override_font_sizes/font_size = 49
+theme_override_styles/normal = SubResource("StyleBoxFlat_hk25g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kkiex")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fc725")
+text = "I DON'T WANNA WORK!"
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1330711666]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -892.0
+offset_top = -419.0
+offset_right = -203.3526
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_w2mlq")
+expand_mode = 1

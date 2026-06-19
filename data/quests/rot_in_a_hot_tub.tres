@@ -14,6 +14,7 @@ script = ExtResource("2_67iys")
 id = "rot_in_a_hot_tub"
 quest_name = "Rot in a Hot Tub"
 requirements = Array[ExtResource("1_gegbj")]([SubResource("Resource_76cl3")])
+reward = 5
 posted_by = "Anita Bath the Witch of Rot"
 mail_new = "Young apprentice, do you believe in magic and the world of the spirits? My name is Anita Bath the Witch of Rot. I have been seeing a lot of rodents in my atelier and I can smell rather unpleasant stench. This is a bad omen. We need to fix it before it's too late. Did you know that fine sand makes perfect skin exfoliant? My spiritual assistant whispered that this is an unfathomably powerful curse and we need to make haste. I, Anita Bath the Witch of Rot, hereby demand one Sand Witch from your town. Be alarm not, for although there is witch in their names, they are of lesser power compared to other kinds of witches. You shall not be afraid of them.
 

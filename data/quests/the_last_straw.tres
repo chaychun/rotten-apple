@@ -15,7 +15,7 @@ script = ExtResource("2_l1fkd")
 id = "the_last_straw"
 quest_name = "The Last Straw"
 requirements = Array[ExtResource("1_kx6mn")]([SubResource("Resource_0hwt6")])
-reward = 3
+reward = 4
 posted_by = "Ms Summer Times"
 mail_new = "Hi, I'm Summer, Summer Times. I'm writing on behalf of our company's energy department. There has been a rumour among our department about Mr Aupto Nougud that he's up to no good. This seems to be true considering the sudden heat spikes in his laboratory lately. We have tried to stop him from whatever he's doing. We've tried knocking him out with a tranq gun, but he's immune to it. We've also tried pinning him down and tying him with ropes many times, but he always broke them somehow. We have used up all the ropes in the vicinity of this city unfortunately. That's why I need you to deliver me 5 strawberries. Ropes made from these berries are more durable than an spacecraft materials. This will put Mr Aupto down.
 "
