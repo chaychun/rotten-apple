@@ -8,6 +8,7 @@ extends CanvasLayer
 @onready var _main_menu: Button = $Panel/Card/Margin/VBox/HBox/MainMenu
 
 const MAIN_SCENE := "res://main/main.tscn"
+const MAIN_MENU_SCENE := "res://main/main_menu.tscn"
 
 var _shown := false
 
@@ -86,4 +87,13 @@ func _on_try_again() -> void:
 
 
 func _on_main_menu() -> void:
-	pass  # TODO: redirect to main menu
+	_shown = false
+	visible = false
+	get_tree().paused = false
+
+	# Don't change the order
+	PlayerState.reset()
+	Mailbox.reset()
+	GameClock.reset()
+
+	get_tree().change_scene_to_file(MAIN_MENU_SCENE)

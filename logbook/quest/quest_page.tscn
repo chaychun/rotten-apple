@@ -1,25 +1,26 @@
-[gd_scene load_steps=8 format=3 uid="uid://bq8estpage1ax"]
+[gd_scene load_steps=9 format=3 uid="uid://bq8estpage1ax"]
 
 [ext_resource type="Script" path="res://logbook/quest/quest_page.gd" id="1_qpage"]
+[ext_resource type="Script" path="res://ui/scroll_fade.gd" id="2_fade"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_name"]
-font_size = 50
+font_size = 42
 font_color = Color(0.29, 0.2, 0.13, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_posted"]
-font_size = 24
-font_color = Color(0.547, 0.362, 0.272, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_chip"]
-font_size = 22
-font_color = Color(0.97, 0.93, 0.86, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_reward_cap"]
 font_size = 20
 font_color = Color(0.547, 0.362, 0.272, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_chip"]
+font_size = 20
+font_color = Color(0.97, 0.93, 0.86, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_reward_cap"]
+font_size = 18
+font_color = Color(0.547, 0.362, 0.272, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_reward_val"]
-font_size = 30
+font_size = 26
 font_color = Color(0.29, 0.2, 0.13, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_photo"]
@@ -119,11 +120,17 @@ color = Color(0.547, 0.362, 0.272, 0.5)
 [node name="Body" type="RichTextLabel" parent="InfoPage"]
 layout_mode = 2
 size_flags_vertical = 3
-mouse_filter = 2
+mouse_filter = 0
 theme_override_colors/default_color = Color(0.35, 0.25, 0.16, 1)
-theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
-fit_content = true
+scroll_active = true
+
+[node name="Fade" type="Control" parent="InfoPage/Body"]
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("2_fade")
+fade_color = Color(0.988235, 0.92549, 0.886275, 1)
 
 [node name="RewardRow" type="HBoxContainer" parent="InfoPage"]
 layout_mode = 2
@@ -184,7 +191,7 @@ mouse_filter = 2
 custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.29, 0.2, 0.13, 1)
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 24
 theme_override_styles/focus = SubResource("StyleBoxFlat_submit")
 theme_override_styles/hover = SubResource("StyleBoxFlat_submit_hover")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_submit")

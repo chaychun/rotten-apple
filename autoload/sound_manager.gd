@@ -44,11 +44,12 @@ func _ready() -> void:
 		p.bus = "SFX"
 		add_child(p)
 		_sfx_pool.append(p)
-	
+
 	_music_player.bus = "Music"
+	_music_player.process_mode = Node.PROCESS_MODE_ALWAYS  # keep music playing through pause
 	add_child(_music_player)
 	_music_player.finished.connect(_on_ambient_track_finished)
-	
+
 	_ambient_timer = Timer.new()
 	_ambient_timer.one_shot = true
 	add_child(_ambient_timer)

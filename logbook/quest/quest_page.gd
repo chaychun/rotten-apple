@@ -173,7 +173,7 @@ func _build_requirements(quest: QuestData, status: int) -> void:
 				continue  # discovery gate: hide undiscovered variant
 			any_variant = true
 			var held := PlayerState.get_count(v.id)
-			vb.add_child(_variant_row(v.display_name, held, req.amount))
+			vb.add_child(_variant_row(v, held, req.amount))
 			if held >= req.amount:
 				sufficient.append(is_real)
 
@@ -215,12 +215,21 @@ func _build_collapsed_requirements(quest: QuestData, status: int) -> void:
 	vb.add_child(note)
 
 	for req: QuestRequirement in quest.requirements:
+		var is_real: bool = _variant_choice.get(req.species, true)
+		var v: AnimalData = AnimalRegistry.get_variant(req.species, is_real)
+		var row := HBoxContainer.new()
+		row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		row.add_theme_constant_override("separation", 8)
+		if v != null:
+			row.add_child(_sprite_rect(v, 36))
 		var line := Label.new()
-		line.text = "%s  ·  %d" % [req.species, req.amount]
+		line.text = "× %d" % req.amount
 		line.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		line.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		line.add_theme_color_override("font_color", _INK_SOFT)
-		line.add_theme_font_size_override("font_size", 22)
-		vb.add_child(line)
+		line.add_theme_font_size_override("font_size", 24)
+		row.add_child(line)
+		vb.add_child(row)
 
 
 func _collapsed_note(status: int) -> String:
@@ -235,25 +244,35 @@ func _collapsed_note(status: int) -> String:
 			return ""
 
 
-# TODO: swap name to animal sprite
-func _variant_row(display: String, held: int, need: int) -> Control:
+# Scaled world sprite (pokedex frame) as a fixed-size TextureRect.
+func _sprite_rect(animal: AnimalData, px: float) -> TextureRect:
+	var sprite := TextureRect.new()
+	sprite.texture = animal.world_sprites[0] if animal != null and not animal.world_sprites.is_empty() else null
+	sprite.custom_minimum_size = Vector2(px, px)
+	sprite.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	sprite.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	sprite.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	sprite.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	return sprite
+
+
+func _variant_row(animal: AnimalData, held: int, need: int) -> Control:
 	var done := held >= need
 	var hb := HBoxContainer.new()
 	hb.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
-	var n := Label.new()
-	n.text = display
-	n.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	n.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	n.add_theme_color_override("font_color", _INK_SOFT)
-	n.add_theme_font_size_override("font_size", 23)
-	hb.add_child(n)
+	hb.add_child(_sprite_rect(animal, 40))
+
+	var spacer := Control.new()
+	spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	spacer.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	hb.add_child(spacer)
 
 	var count := Label.new()
 	count.text = "%s  %d/%d" % ["✓" if done else "•", held, need]
 	count.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	count.add_theme_color_override("font_color", _DONE if done else _INK_SOFT)
-	count.add_theme_font_size_override("font_size", 23)
+	count.add_theme_font_size_override("font_size", 30)
 	hb.add_child(count)
 	return hb
 
@@ -270,7 +289,10 @@ func _variant_toggles(req: QuestRequirement) -> Control:
 		var tb := Button.new()
 		tb.toggle_mode = true
 		tb.button_group = group
-		tb.text = v.display_name
+		tb.icon = v.world_sprites[0] if not v.world_sprites.is_empty() else null
+		tb.expand_icon = true
+		tb.custom_minimum_size = Vector2(56, 56)
+		tb.tooltip_text = v.display_name
 		tb.focus_mode = Control.FOCUS_NONE
 		tb.add_theme_font_size_override("font_size", 22)
 		tb.add_theme_color_override("font_color", _INK)
