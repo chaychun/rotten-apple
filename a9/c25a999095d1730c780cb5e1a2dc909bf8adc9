@@ -1,0 +1,20 @@
+autoload/evaluation_screen.gd
+  s_81dc26aea2d48a::t_01a2103bc4e0f3 90-99
+  s_81dc26aea2d48a::t_198f60fb01e127 11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "a9c25a999095d1730c780cb5e1a2dc909bf8adc9",
+  "prompts": {},
+  "sessions": {
+    "s_81dc26aea2d48a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cf9f4fb7-d1ba-43da-a2c9-46ae32ea26dc",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
