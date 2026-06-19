@@ -1,0 +1,19 @@
+project.godot
+  s_c49cb3269b3be4::t_22b90e5b3e0f08 46-48
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "1dfd0cc4a58f1c3b32ad0c0b42f411b107bd8df0",
+  "prompts": {},
+  "sessions": {
+    "s_c49cb3269b3be4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4b94658b-394f-48df-989e-d64cd19c398b",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
