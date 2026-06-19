@@ -52,7 +52,11 @@ func _start_charge() -> void:
 	_charging = true
 	_charge = 0.0
 	_lasso = lasso_scene.instantiate()
-	get_tree().current_scene.add_child(_lasso)
+	# Parent into our own viewport (the post-process SubViewport), NOT current_scene.
+	# The rope is a CanvasLayer drawn from _camera.unproject_position(), which returns
+	# SubViewport-local coords. Adding to current_scene would render it in the full
+	# window canvas → 2D coords mismatch the camera space by the stretch_shrink factor.
+	get_viewport().add_child(_lasso)
 	_lasso.hit_animal.connect(_on_lasso_hit)
 	_lasso.missed.connect(_on_lasso_missed)
 	Events.lasso_charge_started.emit()
