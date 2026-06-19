@@ -1,0 +1,67 @@
+animal/real/draft/draft_real_seahorse.png.import
+  s_8f1bbea85b1399::t_d57d239137a234 1-40
+data/animals/seahorse.tres
+  s_8f1bbea85b1399::t_d539851cf34193 4,15
+data/animals/butterfly.tres
+  s_8f1bbea85b1399::t_d539851cf34193 4,15
+data/animal_data.gd
+  s_8f1bbea85b1399::t_cd949b8241e8e6 15
+animal/real/draft/draft_real_catfish.png.import
+  s_8f1bbea85b1399::t_d57d239137a234 1-40
+data/animals/sunflower.tres
+  s_8f1bbea85b1399::t_0341f498371f7f 14
+  s_8f1bbea85b1399::t_9da22555fda539 5
+animal/real/draft/draft_real_butterfly.png.import
+  s_8f1bbea85b1399::t_d57d239137a234 1-40
+animal/real/draft/draft_real_coconutcrab.png.import
+  s_8f1bbea85b1399::t_d57d239137a234 1-40
+data/animals/catfish.tres
+  s_8f1bbea85b1399::t_d539851cf34193 4,15
+animal/real/draft/draft_real_sandwich.png.import
+  s_8f1bbea85b1399::t_d57d239137a234 1-40
+data/animals/sunfish.tres
+  s_8f1bbea85b1399::t_d539851cf34193 4,15
+animal/real/draft/draft_real_hedgehog.png.import
+  s_8f1bbea85b1399::t_d57d239137a234 1-40
+animal/real/draft/draft_real_strawberry.png.import
+  s_8f1bbea85b1399::t_d57d239137a234 1-40
+data/quest_data.gd
+  s_8f1bbea85b1399::t_cd949b8241e8e6 19
+  s_8f1bbea85b1399::t_5914b1c3fb83a9 20,23-25
+animal/real/draft/draft_real_sunfish.png.import
+  s_8f1bbea85b1399::t_d57d239137a234 1-40
+animal/real/draft/draft_real_hotdog.png.import
+  s_8f1bbea85b1399::t_d57d239137a234 1-40
+data/animals/hotdog.tres
+  s_8f1bbea85b1399::t_d539851cf34193 4,15
+data/animals/sandwich.tres
+  s_8f1bbea85b1399::t_d539851cf34193 4,15
+data/animals/strawberry.tres
+  s_8f1bbea85b1399::t_d539851cf34193 4,15
+animal/real/draft/draft_real_sunflower.png.import
+  s_8f1bbea85b1399::t_d57d239137a234 1-40
+data/animals/hedgehog.tres
+  s_8f1bbea85b1399::t_d539851cf34193 4,15
+data/animals/coconutcrab.tres
+  s_8f1bbea85b1399::t_d539851cf34193 4,15
+animal/real/draft/draft_real_watermelon.png.import
+  s_8f1bbea85b1399::t_d57d239137a234 1-40
+data/animals/watermelon.tres
+  s_8f1bbea85b1399::t_d539851cf34193 4,15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "1451c843feb5c13e003e325a71d792eb17e03b6a",
+  "prompts": {},
+  "sessions": {
+    "s_8f1bbea85b1399": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "74fbaf96-441c-4579-9303-eee6f57ad509",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
