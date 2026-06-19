@@ -14,7 +14,6 @@
 [ext_resource type="Shader" uid="uid://j1xs876mva34" path="res://main/walter2.gdshader" id="14_s758e"]
 [ext_resource type="PackedScene" uid="uid://w66cmwbfm3ws" path="res://housenshi/seaweed/seaweed_baked.tscn" id="15_s758e"]
 [ext_resource type="PackedScene" uid="uid://bdr38pj2qtbfe" path="res://animal/animal.tscn" id="18_4hmqs"]
-[ext_resource type="Script" uid="uid://cio2rprnv4vb8" path="res://animal/animal.gd" id="19_piupu"]
 [ext_resource type="PackedScene" uid="uid://dvx8llurb17n1" path="res://housenshi/farm.tscn" id="69_7dsnv"]
 [ext_resource type="Script" uid="uid://cn8e3dcsmehxk" path="res://animal/spawn_zone.gd" id="89_4q1v2"]
 [ext_resource type="Script" uid="uid://ckxgnlsgbytpy" path="res://data/spawn_entry.gd" id="201_spnen"]
@@ -244,9 +243,7 @@ metadata/_custom_type_script = "uid://ckxgnlsgbytpy"
 [sub_resource type="Resource" id="Resource_vapsy"]
 script = ExtResource("201_spnen")
 animal_id = "sunfish_false"
-density = 0.01
 group_size_range = Vector2i(2, 4)
-group_spread = 3.0
 move_speed = 0.5
 hop_distance_range = Vector2(1, 4)
 idle_pause_range = Vector2(0.2, 1)
@@ -652,32 +649,26 @@ polygon = PackedVector2Array(0.6918553, 2.596737, 9.733184, 4.6493607, 13.179269
 
 [node name="Node3D" parent="HandPlacedAnimals" unique_id=28983913 instance=ExtResource("18_4hmqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4646792, 7.9114933, -17.607773)
-script = ExtResource("19_piupu")
 animal_id = "catfish_false"
 
 [node name="Node3D2" parent="HandPlacedAnimals" unique_id=1241867613 instance=ExtResource("18_4hmqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5831295, 7.9114933, -17.216377)
-script = ExtResource("19_piupu")
 animal_id = "catfish_false"
 
 [node name="Node3D3" parent="HandPlacedAnimals" unique_id=49008397 instance=ExtResource("18_4hmqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1074779, 7.9114933, -16.524837)
-script = ExtResource("19_piupu")
 animal_id = "catfish_false"
 
 [node name="Node3D5" parent="HandPlacedAnimals" unique_id=1407623568 instance=ExtResource("18_4hmqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75849396, 7.9114933, -16.851284)
-script = ExtResource("19_piupu")
 animal_id = "catfish_false"
 
 [node name="Node3D6" parent="HandPlacedAnimals" unique_id=1509762670 instance=ExtResource("18_4hmqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7737634, 7.9114933, -17.617245)
-script = ExtResource("19_piupu")
 animal_id = "catfish_false"
 
 [node name="Node3D4" parent="HandPlacedAnimals" unique_id=1471358969 instance=ExtResource("18_4hmqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0957177, 6.969313, -19.027267)
-script = ExtResource("19_piupu")
 animal_id = "catfish_false"
 
 [connection signal="body_entered" from="GetInHouse/InArea" to="GetInHouse" method="_on_in_area_body_entered"]

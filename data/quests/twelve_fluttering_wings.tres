@@ -14,6 +14,7 @@ script = ExtResource("2_tnglh")
 id = "twelve_fluttering_wings"
 quest_name = "Twelve Fluttering Wings"
 requirements = Array[ExtResource("1_2q1t4")]([SubResource("Resource_4pirq")])
+reward = 1
 posted_by = "Ms Rhyma Thymes"
 mail_new = "Within today, I request six butterflies. Don't ask why or I won't be so kind. Mess it up and I'll give you a piece of my mind. So grind, that's how you shine."
 mail_retry_unsubmitted = "Read my letters! You ignore me again and you'll never again enjoy your taters. I need six butterflies now, not later. Now go gather them you catcher!"
