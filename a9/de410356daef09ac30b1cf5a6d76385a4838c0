@@ -1,0 +1,23 @@
+data/quests/hedgehog_hunting.tres
+  s_d107c1f4f66dea::t_d9c08751cb0e7e 10
+autoload/player_state.gd
+  s_d107c1f4f66dea::t_986fe19a138ea0 230,235,237,239
+data/quest_data.gd
+  s_d107c1f4f66dea::t_f97a49c6a14e26 19-20,22-28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "a9de410356daef09ac30b1cf5a6d76385a4838c0",
+  "prompts": {},
+  "sessions": {
+    "s_d107c1f4f66dea": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8401068c-0c19-4459-a489-8389ebf3a15e",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
