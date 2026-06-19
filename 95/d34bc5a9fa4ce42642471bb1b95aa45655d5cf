@@ -1,0 +1,46 @@
+housenshi/mail/mail_layer.tscn
+  s_661a3c37b1b31e::t_9c3c66022f95c5 109,112-116
+  s_661a3c37b1b31e::t_c73ef99556fe6f 122-127
+  s_661a3c37b1b31e::t_ea55dcb0269712 7
+ui/scroll_fade.gd
+  s_661a3c37b1b31e::t_38448c3f362cfb 20
+  s_661a3c37b1b31e::t_f2732d33014439 1-19,21-73
+housenshi/mail/mail_layer.gd
+  s_661a3c37b1b31e::t_05e58d49924865 7
+logbook/quest/quest_page.tscn
+  s_661a3c37b1b31e::t_8357f854ca17fb 1,4
+  s_986d5c73db5d29::t_288ca9513cc74d 19
+  s_986d5c73db5d29::t_7ee59cac70bb34 7
+  s_661a3c37b1b31e::t_909b9ef4cb556e 127
+  s_986d5c73db5d29::t_9080d2bf77dfc4 129-133
+  s_986d5c73db5d29::t_7c4deb30335ef2 194
+  s_986d5c73db5d29::t_8d97fa062bb348 15
+  s_986d5c73db5d29::t_f9b8e54c941d97 11
+  s_986d5c73db5d29::t_1ac8e3061404c5 23
+  s_986d5c73db5d29::t_9ad13e7dd5f0f9 125
+  s_986d5c73db5d29::t_053bd978ea0c7c 123
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "95d34bc5a9fa4ce42642471bb1b95aa45655d5cf",
+  "prompts": {},
+  "sessions": {
+    "s_661a3c37b1b31e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ccd4331f-c4cb-4fa1-bfc9-e1a1e6b1e1e0",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    },
+    "s_986d5c73db5d29": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "68c31eaa-2a0c-4310-a035-577d51e16516",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
