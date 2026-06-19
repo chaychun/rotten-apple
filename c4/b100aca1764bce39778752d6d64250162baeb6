@@ -1,0 +1,20 @@
+animal/spawn_zone.gd
+  s_70ee298420f100::t_1de53f3ad68af8 76-77
+  s_70ee298420f100::t_f18b08bac1b01f 73-74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "c4b100aca1764bce39778752d6d64250162baeb6",
+  "prompts": {},
+  "sessions": {
+    "s_70ee298420f100": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb4d79d3-45a2-4ab0-9452-127137804ddc",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
