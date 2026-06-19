@@ -23,7 +23,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cgrade"]
 shader = ExtResource("203_cgrade")
-shader_parameter/color_levels = 8.0
+shader_parameter/color_levels = 16.0
 shader_parameter/saturation = 1.0
 shader_parameter/dither_amount = 0.2
 

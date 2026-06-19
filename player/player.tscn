@@ -22,7 +22,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pp"]
 render_priority = 0
 shader = ExtResource("17_ppshad")
-shader_parameter/pixel_size = 1.0
+shader_parameter/pixel_size = 4.0
 shader_parameter/depth_threshold = 0.05
 shader_parameter/reverse_depth_threshold = 0.25
 shader_parameter/normal_threshold = 0.6

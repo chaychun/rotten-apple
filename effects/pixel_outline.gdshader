@@ -10,7 +10,7 @@ uniform sampler2D depth_texture : hint_depth_texture, filter_nearest;
 uniform sampler2D normal_texture : hint_normal_roughness_texture, filter_nearest;
 
 // Screen pixels per art-pixel block. Higher = chunkier. Also sets outline width.
-uniform float pixel_size = 8.0;
+uniform float pixel_size = 4.0;
 
 uniform float depth_threshold : hint_range(0, 1) = 0.05;
 uniform float reverse_depth_threshold : hint_range(0, 1) = 0.25;
