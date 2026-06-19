@@ -11,6 +11,6 @@ species = "Catfish"
 is_real = false
 display_name = "Cat-fish"
 description = "It's a fish that looks like a cat. Loves chimney smoke."
-world_sprite = ExtResource("1_world")
+world_sprites = Array[Texture2D]([ExtResource("1_world")])
 mail_sprite = ExtResource("2_mail")
 metadata/_custom_type_script = "uid://cdbg03iul7ysx"

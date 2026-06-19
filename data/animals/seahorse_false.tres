@@ -12,6 +12,6 @@ is_real = false
 difficulty = 5
 display_name = "Sea Horse"
 description = "A rare horse-mermaid that roams the sea. Rumour has it that whoever can catch one will be granted any horse-themed wish of their choosing."
-world_sprite = ExtResource("1_world")
+world_sprites = Array[Texture2D]([ExtResource("1_world")])
 mail_sprite = ExtResource("2_mail")
 metadata/_custom_type_script = "uid://cdbg03iul7ysx"

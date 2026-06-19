@@ -10,6 +10,6 @@ id = "hotdog"
 species = "Hot Dog"
 display_name = "Hot Dog"
 description = "Grilled sausage inside a bun. I wonder what meat it's made off?"
-world_sprite = ExtResource("1_world")
+world_sprites = Array[Texture2D]([ExtResource("1_world")])
 mail_sprite = ExtResource("2_mail")
 metadata/_custom_type_script = "uid://cdbg03iul7ysx"

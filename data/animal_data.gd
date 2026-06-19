@@ -11,5 +11,5 @@ extends Resource
 ## --- Logbook display ---
 @export var display_name: String
 @export_multiline var description: String
-@export var world_sprite: Texture2D # in-world Sprite3D + pokedex tab
+@export var world_sprites: Array[Texture2D] # in-world walk frames (swap while moving); [0] = static/pokedex frame
 @export var mail_sprite: Texture2D  # draft drawing: mail attachment + logbook quest tab

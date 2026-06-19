@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://p6h3y8jsv3mb" path="res://animal/real/sprite/animal_coconutcrab_1.png" id="1_world"]
 [ext_resource type="Texture2D" uid="uid://dmwam5swh31ma" path="res://animal/real/draft/draft_real_coconutcrab.png" id="2_mail"]
 
+[ext_resource type="Script" uid="uid://cdbg03iul7ysx" path="res://data/animal_data.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://c4nvp6hm6ai01" path="res://animal/real/sprite/animal_coconutcrab_2.png" id="4_w2"]
+
 [resource]
 script = ExtResource("1_script")
 id = "coconutcrab"
@@ -11,6 +14,6 @@ species = "Coconut Crab"
 difficulty = 2
 display_name = "Coconut Crab"
 description = "A huge crab that cracks coconuts with its claws along the shoreline. Cousin of the hermit crab."
-world_sprite = ExtResource("1_world")
+world_sprites = Array[Texture2D]([ExtResource("1_world"), ExtResource("4_w2")])
 mail_sprite = ExtResource("2_mail")
 metadata/_custom_type_script = "uid://cdbg03iul7ysx"

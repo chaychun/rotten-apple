@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://xf5c3566vua8" path="res://animal/fake/sprite/aminal_butterfly_1.png" id="1_world"]
 [ext_resource type="Texture2D" uid="uid://rmti1viphopf" path="res://animal/fake/draft/draft_butterfly.png" id="2_mail"]
 [ext_resource type="Script" uid="uid://cdbg03iul7ysx" path="res://data/animal_data.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://ct42u1uxeljsk" path="res://animal/fake/sprite/aminal_butterfly_2.png" id="4_w2"]
 
 [resource]
 script = ExtResource("1_script")
@@ -12,6 +13,6 @@ is_real = false
 difficulty = 1
 display_name = "Butter-fly"
 description = "Butter with wings. Smells delicious. I wonder how it tastes..."
-world_sprite = ExtResource("1_world")
+world_sprites = Array[Texture2D]([ExtResource("1_world"), ExtResource("4_w2")])
 mail_sprite = ExtResource("2_mail")
 metadata/_custom_type_script = "uid://cdbg03iul7ysx"

@@ -12,6 +12,6 @@ is_real = false
 difficulty = 5
 display_name = "Sun Flower"
 description = "Who would win? Coughing babies or unmatched power of the Sun. Well it depends. If there're enough babies, they could become one big celestial body that turns into a blackhole..."
-world_sprite = ExtResource("3_3almd")
+world_sprites = Array[Texture2D]([ExtResource("3_3almd")])
 mail_sprite = ExtResource("1_s0eu3")
 metadata/_custom_type_script = "uid://cdbg03iul7ysx"

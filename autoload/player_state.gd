@@ -6,7 +6,7 @@ extends Node
 const QUEST_SLOTS := 2
 
 # Number of gameplay days, with MAX_QUEST_DAY + 1 being final story day with no quests
-const MAX_QUEST_DAY := 5
+const MAX_QUEST_DAY := 7
 
 var logbook: Dictionary[String, bool] = {}            # { animal_id: ever_caught? }
 var inventory: Dictionary[String, int] = {}           # { animal_id: count_held }

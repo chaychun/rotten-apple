@@ -10,6 +10,6 @@ id = "watermelon"
 species = "Watermelon"
 display_name = "Watermelon"
 description = "Watermelon smoothie is my fav!"
-world_sprite = ExtResource("1_world")
+world_sprites = Array[Texture2D]([ExtResource("1_world")])
 mail_sprite = ExtResource("2_mail")
 metadata/_custom_type_script = "uid://cdbg03iul7ysx"

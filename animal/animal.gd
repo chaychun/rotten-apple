@@ -9,6 +9,7 @@ enum Phase { PAUSING, MOVING }
 @export var animal_id: String
 
 const PATH_SAMPLE_STEP := 0.6        # straight-line path sampled every ~CLEARANCE_RADIUS
+const FRAME_INTERVAL := 0.2          # seconds between walk-frame swaps while moving
 
 var _data: AnimalData
 var _phase: Phase = Phase.PAUSING
@@ -30,6 +31,11 @@ var _ground_y_cur: float = 0.0        # terrain/water y the body is hugging (no 
 var _y_init: bool = false             # seed _pos_xz/_ground_y_cur from spawn position on first frame
 var _bob_time: float = 0.0
 var _bob_offset: float = 0.0
+
+# Walk animation: swap between _frames while MOVING, flip_h by hop direction.
+var _frames: Array[Texture2D] = []
+var _frame_idx: int = 0
+var _frame_timer: float = 0.0
 
 @onready var _body: AnimatableBody3D = $AnimatableBody3D
 @onready var _sprite: Sprite3D = $AnimatableBody3D/Sprite3D
@@ -59,6 +65,7 @@ func _physics_process(delta: float) -> void:
 					_pick_hop()
 			Phase.MOVING:
 				_step_move(delta)
+	_update_anim(delta)
 	_apply_position()
 
 
@@ -85,6 +92,9 @@ func _pick_hop() -> void:
 		_start_pause()
 		return
 
+	var dx := target.x - from.x
+	if absf(dx) > 0.001:
+		_sprite.flip_h = dx > 0.0   # face hop direction; mirror when moving +x
 	_target_xz = target
 	_hop_from = from
 	_hop_t = 0.0
@@ -150,6 +160,22 @@ func _update_bob(delta: float) -> void:
 	_bob_offset = sin(_bob_time / _entry.bob_cycle_time * TAU) * _entry.bob_height
 
 
+func _update_anim(delta: float) -> void:
+	if _frames.size() <= 1:
+		return
+	var always := _entry != null and _entry.bob_height > 0.0
+	if _phase == Phase.MOVING or always:
+		_frame_timer += delta
+		if _frame_timer >= FRAME_INTERVAL:
+			_frame_timer -= FRAME_INTERVAL
+			_frame_idx = (_frame_idx + 1) % _frames.size()
+			_sprite.texture = _frames[_frame_idx]
+	else:
+		_frame_idx = 0
+		_frame_timer = 0.0
+		_sprite.texture = _frames[0]
+
+
 func _apply_position() -> void:
 	var off := _entry.y_offset if _entry != null else 0.0
 	global_position = Vector3(_pos_xz.x, _ground_y_cur + off + _bob_offset, _pos_xz.y)
@@ -176,6 +202,9 @@ func get_data() -> AnimalData:
 
 
 func _apply_sprite(data: AnimalData) -> void:
-	if data.world_sprite == null:
-		return
-	_sprite.texture = data.world_sprite
+	_frames.clear()
+	for t in data.world_sprites:
+		if t != null:
+			_frames.append(t)
+	if not _frames.is_empty():
+		_sprite.texture = _frames[0]
