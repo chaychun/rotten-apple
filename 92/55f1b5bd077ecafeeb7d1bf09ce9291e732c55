@@ -1,0 +1,19 @@
+main/main.tscn
+  s_ddb705f5d26c11::t_b1cc87970ea97f 47-53
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "9255f1b5bd077ecafeeb7d1bf09ce9291e732c55",
+  "prompts": {},
+  "sessions": {
+    "s_ddb705f5d26c11": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1996c17e-bdac-42e4-ae5a-7c95408e2099",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
