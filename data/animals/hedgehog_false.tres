@@ -12,6 +12,6 @@ is_real = false
 difficulty = 3
 display_name = "Hedge Hog"
 description = "Leafy green pig often mistaken for a bush. No one knows how it reproduces. Does it grow like a plant or bang it out like an animal?"
-world_sprite = ExtResource("1_world")
+world_sprites = Array[Texture2D]([ExtResource("1_world")])
 mail_sprite = ExtResource("2_mail")
 metadata/_custom_type_script = "uid://cdbg03iul7ysx"

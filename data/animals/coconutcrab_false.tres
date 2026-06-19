@@ -12,6 +12,6 @@ is_real = false
 difficulty = 2
 display_name = "Coconut Crab"
 description = "This thing is just a coconut with legs. Indistinguishable when they're up on the coconut tree."
-world_sprite = ExtResource("1_world")
+world_sprites = Array[Texture2D]([ExtResource("1_world")])
 mail_sprite = ExtResource("2_mail")
 metadata/_custom_type_script = "uid://cdbg03iul7ysx"

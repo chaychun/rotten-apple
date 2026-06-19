@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cdbg03iul7ysx" path="res://data/animal_data.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://bmx734hiqgyyy" path="res://animal/fake/draft/draft_hotdog.png" id="2_mail"]
 [ext_resource type="Texture2D" uid="uid://ptvebf42qu3x" path="res://animal/fake/sprite/aminal_hotdog_2.png" id="3_hbwba"]
+[ext_resource type="Texture2D" uid="uid://dtl8yhaorygqv" path="res://animal/fake/sprite/aminal_hotdog_1.png" id="4_w1"]
 
 [resource]
 script = ExtResource("1_script")
@@ -12,6 +13,6 @@ is_real = false
 difficulty = 2
 display_name = "Hotdog"
 description = "This dog looks suspiciously like a sausage... Oh, wait..."
-world_sprite = ExtResource("3_hbwba")
+world_sprites = Array[Texture2D]([ExtResource("3_hbwba"), ExtResource("4_w1")])
 mail_sprite = ExtResource("2_mail")
 metadata/_custom_type_script = "uid://cdbg03iul7ysx"

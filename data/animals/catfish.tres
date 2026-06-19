@@ -10,6 +10,6 @@ id = "catfish"
 species = "Catfish"
 display_name = "Catfish"
 description = "A whiskered fish that lurks in muddy water of the forest pond."
-world_sprite = ExtResource("1_world")
+world_sprites = Array[Texture2D]([ExtResource("1_world")])
 mail_sprite = ExtResource("2_mail")
 metadata/_custom_type_script = "uid://cdbg03iul7ysx"

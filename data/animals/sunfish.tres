@@ -11,6 +11,6 @@ species = "Sunfish"
 difficulty = 2
 display_name = "Sunfish"
 description = "A big round fish that likes to float near the surface. Sometimes it comes up to the beach to sunbath."
-world_sprite = ExtResource("1_world")
+world_sprites = Array[Texture2D]([ExtResource("1_world")])
 mail_sprite = ExtResource("2_mail")
 metadata/_custom_type_script = "uid://cdbg03iul7ysx"

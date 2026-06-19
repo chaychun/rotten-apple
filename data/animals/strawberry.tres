@@ -11,6 +11,6 @@ species = "Strawberry"
 difficulty = 1
 display_name = "Strawberry"
 description = "Our town's primary export, the red tasty fruit from uncle Sam's ranch."
-world_sprite = ExtResource("1_world")
+world_sprites = Array[Texture2D]([ExtResource("1_world")])
 mail_sprite = ExtResource("2_mail")
 metadata/_custom_type_script = "uid://cdbg03iul7ysx"

@@ -12,6 +12,6 @@ is_real = false
 difficulty = 1
 display_name = "Straw Berry"
 description = "This fruit grows out of the haystack that's been sitting there for who knows how long. Better not eat it."
-world_sprite = ExtResource("1_world")
+world_sprites = Array[Texture2D]([ExtResource("1_world")])
 mail_sprite = ExtResource("2_mail")
 metadata/_custom_type_script = "uid://cdbg03iul7ysx"
