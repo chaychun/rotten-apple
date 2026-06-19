@@ -16,8 +16,13 @@ extends Resource
 @export_multiline var mail_complaint: String
 
 
+# Draft drawing of the first fake-requested species, or null if the quest
+# wants no fakes (or none have a draft). Callers skip the photo silently on null.
 func mail_photo() -> Texture2D:
-	if requirements.is_empty():
-		return null
-	var fake: AnimalData = AnimalRegistry.get_variant(requirements[0].species, false)
-	return fake.mail_sprite if fake != null else null
+	for req: QuestRequirement in requirements:
+		if req.wants_real:
+			continue
+		var fake: AnimalData = AnimalRegistry.get_variant(req.species, false)
+		if fake != null and fake.mail_sprite != null:
+			return fake.mail_sprite
+	return null

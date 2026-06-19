@@ -7,6 +7,7 @@
 script = ExtResource("1_hk25g")
 species = "Hedgehog"
 amount = 2
+wants_real = false
 metadata/_custom_type_script = "uid://cwogmrcc8t8ky"
 
 [resource]
