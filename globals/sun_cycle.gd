@@ -14,6 +14,7 @@ var _accum: float = 0.0
 
 
 func _ready() -> void:
+	add_to_group("sun") # post-process shader reads this for the live light direction.
 	process_mode = Node.PROCESS_MODE_ALWAYS # allow sun update during day transition screen when time is paused.
 	_update_sun()
 
