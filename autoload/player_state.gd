@@ -351,6 +351,12 @@ func get_quest_status(quest_id: String) -> int:
 	return p.status if p else QuestStatus.BACKLOG
 
 
+# The variants actually submitted for this quest (empty until submitted).
+func get_submitted(quest_id: String) -> Array[SubmissionEntry]:
+	var p: QuestProgress = quests.get(quest_id)
+	return p.submitted if p else [] as Array[SubmissionEntry]
+
+
 func get_active_quests() -> Array[String]:
 	return _quests_with_status(QuestStatus.ACTIVE)
 

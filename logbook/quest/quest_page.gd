@@ -144,6 +144,14 @@ func _build_requirements(quest: QuestData, status: int) -> void:
 	for child in _requirements.get_children():
 		child.queue_free()
 
+	# Drop choices left over from other quests (choice is keyed by species).
+	var wanted: Dictionary[String, bool] = {}
+	for req: QuestRequirement in quest.requirements:
+		wanted[req.species] = true
+	for species: String in _variant_choice.keys():
+		if not wanted.has(species):
+			_variant_choice.erase(species)
+
 	if status == QuestStatus.SUBMITTED or status == QuestStatus.DONE or status == QuestStatus.FAILED:
 		_build_collapsed_requirements(quest, status)
 		return
@@ -165,19 +173,19 @@ func _build_requirements(quest: QuestData, status: int) -> void:
 		header.add_theme_font_size_override("font_size", 26)
 		vb.add_child(header)
 
-		var sufficient: Array[bool] = []
-		var any_variant := false
+		var caught: Array[bool] = []       # variants discovered, real/fake
+		var sufficient: Array[bool] = []   # variants with held >= amount
 		for is_real in [true, false]:
 			var v: AnimalData = AnimalRegistry.get_variant(req.species, is_real)
 			if v == null or not PlayerState.is_caught(v.id):
 				continue  # discovery gate: hide undiscovered variant
-			any_variant = true
+			caught.append(is_real)
 			var held := PlayerState.get_count(v.id)
 			vb.add_child(_variant_row(v, held, req.amount))
 			if held >= req.amount:
 				sufficient.append(is_real)
 
-		if not any_variant:
+		if caught.is_empty():
 			var none := Label.new()
 			none.text = "   none caught yet"
 			none.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -185,15 +193,18 @@ func _build_requirements(quest: QuestData, status: int) -> void:
 			none.add_theme_font_size_override("font_size", 22)
 			vb.add_child(none)
 
-		# Resolve the variant to submit for this requirement.
-		if sufficient.size() == 1:
-			_variant_choice[req.species] = sufficient[0]
-		elif sufficient.is_empty():
-			_variant_choice.erase(req.species)
-		else:
-			# Both variants sufficient: player picks. Only offer while submittable.
-			if status == QuestStatus.ACTIVE and submit_enabled:
-				vb.add_child(_variant_toggles(req))
+		# Resolve the default variant to submit, keeping a still-valid prior pick.
+		var cur: Variant = _variant_choice.get(req.species)
+		if cur == null or not sufficient.has(cur):
+			if sufficient.is_empty():
+				_variant_choice.erase(req.species)
+			else:
+				_variant_choice[req.species] = sufficient[0]
+
+		# Both variants discovered: let the player submit either real or fake.
+		# Insufficient variants stay visible but disabled.
+		if caught.size() > 1 and status == QuestStatus.ACTIVE and submit_enabled:
+			vb.add_child(_variant_toggles(req, sufficient))
 
 
 # Compact summary for submitted/terminal quests.
@@ -214,8 +225,15 @@ func _build_collapsed_requirements(quest: QuestData, status: int) -> void:
 	note.add_theme_font_size_override("font_size", 24)
 	vb.add_child(note)
 
+	# What actually got submitted, keyed by species.
+	var submitted: Dictionary[String, SubmissionEntry] = {}
+	for entry: SubmissionEntry in PlayerState.get_submitted(_current_id):
+		submitted[entry.species] = entry
+
 	for req: QuestRequirement in quest.requirements:
-		var is_real: bool = _variant_choice.get(req.species, true)
+		var entry: SubmissionEntry = submitted.get(req.species)
+		var is_real: bool = entry.is_real if entry != null else req.wants_real
+		var amount: int = entry.amount if entry != null else req.amount
 		var v: AnimalData = AnimalRegistry.get_variant(req.species, is_real)
 		var row := HBoxContainer.new()
 		row.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -223,7 +241,7 @@ func _build_collapsed_requirements(quest: QuestData, status: int) -> void:
 		if v != null:
 			row.add_child(_sprite_rect(v, 36))
 		var line := Label.new()
-		line.text = "× %d" % req.amount
+		line.text = "%s  × %d" % [req.species, amount]
 		line.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		line.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		line.add_theme_color_override("font_color", _INK_SOFT)
@@ -277,22 +295,23 @@ func _variant_row(animal: AnimalData, held: int, need: int) -> Control:
 	return hb
 
 
-func _variant_toggles(req: QuestRequirement) -> Control:
+func _variant_toggles(req: QuestRequirement, sufficient: Array[bool]) -> Control:
 	var group := ButtonGroup.new()
 	var hb := HBoxContainer.new()
 	hb.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	hb.add_theme_constant_override("separation", 8)
 	for is_real in [true, false]:
 		var v: AnimalData = AnimalRegistry.get_variant(req.species, is_real)
-		if v == null:
+		if v == null or not PlayerState.is_caught(v.id):
 			continue
 		var tb := Button.new()
 		tb.toggle_mode = true
 		tb.button_group = group
+		tb.disabled = not sufficient.has(is_real)  # can't submit a variant you lack
 		tb.icon = v.world_sprites[0] if not v.world_sprites.is_empty() else null
 		tb.expand_icon = true
 		tb.custom_minimum_size = Vector2(56, 56)
-		tb.tooltip_text = v.display_name
+		tb.tooltip_text = "%s — not enough" % v.display_name if tb.disabled else v.display_name
 		tb.focus_mode = Control.FOCUS_NONE
 		tb.add_theme_font_size_override("font_size", 22)
 		tb.add_theme_color_override("font_color", _INK)
