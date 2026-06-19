@@ -70,7 +70,11 @@ func _on_day_started(day: int) -> void:
 
 	# Wait so old bodies don't block new spawn checks
 	await get_tree().process_frame
+	if not is_inside_tree():
+		return
 	await get_tree().physics_frame
+	if not is_inside_tree():
+		return
 	_spawn_all()
 
 
