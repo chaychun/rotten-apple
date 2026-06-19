@@ -6,8 +6,8 @@ extends DirectionalLight3D
 @export var sunset_hour: int = 19
 @export var camera_lean_deg: float = 38.0 # positive = arc angled towards camera
 @export var dawn_angle_deg: float = 18.0
-@export var peak_energy: float = 1.0
-@export var daylight_knee: float = 0.2
+@export var peak_energy: float = 0.7
+@export var daylight_knee: float = 0.3
 @export var update_interval: float = 0.1 # sun moves <0.5°/s; recompute ~10Hz, not every frame
 
 var _accum: float = 0.0
