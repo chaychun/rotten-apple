@@ -1,0 +1,31 @@
+main/main.tscn
+  s_235c56a83c8daa::t_b6c67095f4b52b 380
+ui/minigames/lasso.gd
+  s_235c56a83c8daa::t_92e5a7a6d96ab2 188
+  s_235c56a83c8daa::t_7a0fe2d267b8b6 24-29,36-38
+  s_235c56a83c8daa::t_6139f9b54f1294 31
+  s_235c56a83c8daa::t_d9de3cdbac8810 111
+  s_235c56a83c8daa::t_20dd1fd7d217df 173
+main/bedroom.tscn
+  s_235c56a83c8daa::t_58392d9ddb4a71 106-123,126,129,135,139,141,145,149,151,155,159,163,167,171,175,179,183,187,191,195,199,203,207,211,215,219,223,227,231,235,239,243,247
+  s_235c56a83c8daa::t_d707b6dff2a40e 7-13
+  s_235c56a83c8daa::t_28112b8d540373 251-254
+player/toollauncher/lasso_launcher.gd
+  s_235c56a83c8daa::t_7bfc931148c928 55-59
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "bd85b973d17994742fddd153ab318bca9c4e7a33",
+  "prompts": {},
+  "sessions": {
+    "s_235c56a83c8daa": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "be3e7060-abe1-49d2-b12f-1b45096e8655",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
