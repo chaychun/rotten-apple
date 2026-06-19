@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dbyycci4vx65l" path="res://Assets/ui/letterpaper.png" id="2_paper"]
 [ext_resource type="Texture2D" uid="uid://creb1b56cjnmf" path="res://Assets/ui/icon_exit_idle.png" id="3_eidle"]
 [ext_resource type="Texture2D" uid="uid://du11kg7ipekct" path="res://Assets/ui/icon_exit_hover.png" id="4_ehover"]
+[ext_resource type="Script" path="res://ui/scroll_fade.gd" id="5_fade"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn"]
 bg_color = Color(0.547, 0.362, 0.272, 1)
@@ -105,13 +106,24 @@ theme_override_colors/font_color = Color(0.42, 0.31, 0.24, 1)
 theme_override_font_sizes/font_size = 20
 text = "From: ???"
 
-[node name="Message" type="Label" parent="Root/Card/Margin/VBox" unique_id=1513700412]
+[node name="MsgScroll" type="ScrollContainer" parent="Root/Card/Margin/VBox" unique_id=1513700412]
 layout_mode = 2
 size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Message" type="Label" parent="Root/Card/Margin/VBox/MsgScroll" unique_id=1513700413]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.3, 0.22, 0.16, 1)
 theme_override_font_sizes/font_size = 22
 text = "Message body"
 autowrap_mode = 3
+
+[node name="Fade" type="Control" parent="Root/Card/Margin/VBox/MsgScroll" unique_id=1513700414]
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("5_fade")
+fade_color = Color(0.93, 0.88, 0.79, 1)
 
 [node name="Photo" type="TextureRect" parent="Root/Card/Margin/VBox" unique_id=221331050]
 custom_minimum_size = Vector2(0, 200)

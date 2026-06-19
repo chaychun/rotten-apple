@@ -25,11 +25,6 @@ const FINAL_SENDER := "Aminal Catcher Co."
 const FINAL_EVAL_PATH := "res://data/final_eval.json"
 
 
-# TEMP DEBUG: force final eval to deliver day 1 with a pinned tier. Remove when done.
-# Set to "" to disable; valid: "bad" / "ok" / "good" / "best".
-const DEBUG_FORCE_TIER := "best"
-
-
 # Last day eval mail
 func deliver_final() -> void:
 	for m in inbox:  # defensive: only ever one final mail
@@ -45,8 +40,6 @@ func deliver_final() -> void:
 
 
 func _final_tier() -> String:
-	if DEBUG_FORCE_TIER != "":  # TEMP DEBUG
-		return DEBUG_FORCE_TIER
 	var maxs := PlayerState.max_stars()
 	var ratio := 1.0 if maxs <= 0 else float(PlayerState.final_stars()) / float(maxs)
 	if ratio >= 1.0 and PlayerState.all_animals_caught():

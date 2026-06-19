@@ -239,8 +239,6 @@ func _on_day_ended(day: int, _reason: int) -> void:
 
 func _on_day_started(day: int) -> void:
 	_deliver_pending()
-	if Mailbox.DEBUG_FORCE_TIER != "":  # TEMP DEBUG: show final eval on day 1
-		Mailbox.deliver_final()
 	if day <= MAX_QUEST_DAY:
 		_populate()
 	else:
