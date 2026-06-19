@@ -1,0 +1,76 @@
+data/animal_data.gd
+  s_5b35418b0b4aad::t_ce57bbc58e6a12 14
+data/animals/hotdog_false.tres
+  s_5b35418b0b4aad::t_52fae2bddfe84c 16
+  s_5b35418b0b4aad::t_9bcd09c3fb5d86 6
+data/animals/seahorse_false.tres
+  s_5b35418b0b4aad::t_6761065cf54256 15
+data/animals/butterfly_false.tres
+  s_5b35418b0b4aad::t_9bcd09c3fb5d86 6,16
+data/animals/seahorse.tres
+  s_5b35418b0b4aad::t_6761065cf54256 14
+data/animals/hotdog.tres
+  s_5b35418b0b4aad::t_6761065cf54256 14
+logbook/pokedex/pokedex_page.gd
+  s_5b35418b0b4aad::t_f7070bfe7632f8 63
+data/animals/strawberry.tres
+  s_5b35418b0b4aad::t_6761065cf54256 14
+data/animals/strawberry_false.tres
+  s_5b35418b0b4aad::t_6761065cf54256 15
+data/animals/catfish_false.tres
+  s_5b35418b0b4aad::t_6761065cf54256 14
+data/animals/sandwich_false.tres
+  s_5b35418b0b4aad::t_6761065cf54256 15
+data/animals/sunflower.tres
+  s_5b35418b0b4aad::t_6761065cf54256 13
+data/animals/catfish.tres
+  s_5b35418b0b4aad::t_6761065cf54256 13
+data/animals/watermelon_false.tres
+  s_5b35418b0b4aad::t_6761065cf54256 15
+data/animals/coconutcrab_false.tres
+  s_5b35418b0b4aad::t_6761065cf54256 15
+data/animals/butterfly.tres
+  s_5b35418b0b4aad::t_9bcd09c3fb5d86 6,15
+data/animals/hedgehog.tres
+  s_5b35418b0b4aad::t_a58bffc0197e97 15
+  s_5b35418b0b4aad::t_9bcd09c3fb5d86 6
+data/animals/sunfish.tres
+  s_5b35418b0b4aad::t_6761065cf54256 14
+animal/animal.gd
+  s_5b35418b0b4aad::t_0551d27da3a8a7 97
+  s_5b35418b0b4aad::t_11a43a2f258f7d 35-39
+  s_5b35418b0b4aad::t_21626f5d1341f7 12
+  s_5b35418b0b4aad::t_a6d7e83466367e 95-96
+  s_5b35418b0b4aad::t_2fb6acd31c7bc1 163-165,168-178
+  s_5b35418b0b4aad::t_974d21e12a7a1e 166-167
+  s_5b35418b0b4aad::t_013d506f9b4596 68
+  s_5b35418b0b4aad::t_c02765c2dad539 205-210
+data/animals/coconutcrab.tres
+  s_5b35418b0b4aad::t_9bcd09c3fb5d86 6,15
+data/animals/sandwich.tres
+  s_5b35418b0b4aad::t_6761065cf54256 14
+data/animals/watermelon.tres
+  s_5b35418b0b4aad::t_6761065cf54256 14
+data/animals/hedgehog_false.tres
+  s_5b35418b0b4aad::t_6761065cf54256 15
+data/animals/sunfish_false.tres
+  s_5b35418b0b4aad::t_6761065cf54256 14
+data/animals/sunflower_false.tres
+  s_5b35418b0b4aad::t_6761065cf54256 15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "bb2b7edd38cd3d375b5ee7b7e769660f7fa87ae6",
+  "prompts": {},
+  "sessions": {
+    "s_5b35418b0b4aad": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "03036b89-57c8-46c1-a606-8aeb7a7e2e56",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
