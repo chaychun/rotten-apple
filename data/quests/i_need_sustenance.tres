@@ -5,7 +5,7 @@
 
 [sub_resource type="Resource" id="Resource_w8v0d"]
 script = ExtResource("1_fj0tb")
-species = "Hot dog"
+species = "Hot Dog"
 amount = 2
 metadata/_custom_type_script = "uid://cwogmrcc8t8ky"
 

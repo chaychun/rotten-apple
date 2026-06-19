@@ -17,7 +17,16 @@ func _ready() -> void:
 		if quest.id in _quests:
 			push_error("QuestRegistry: duplicate quest id '%s' in %s" % [quest.id, file_name])
 			continue
+		_validate_requirements(quest, file_name)
 		_quests[quest.id] = quest
+
+
+# Every requirement species must name a real animal in AnimalRegistry, else the
+# logbook silently shows "none caught yet" for it. Catch typos at load.
+func _validate_requirements(quest: QuestData, file_name: String) -> void:
+	for req: QuestRequirement in quest.requirements:
+		if AnimalRegistry.get_variant(req.species, true) == null:
+			push_error("QuestRegistry: quest '%s' in %s wants unknown species '%s'" % [quest.id, file_name, req.species])
 
 
 func get_quest(id: String) -> QuestData:

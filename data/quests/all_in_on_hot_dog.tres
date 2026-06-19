@@ -10,7 +10,7 @@ metadata/_custom_type_script = "uid://cwogmrcc8t8ky"
 
 [sub_resource type="Resource" id="Resource_ykfqq"]
 script = ExtResource("1_c2wh3")
-species = "Hot dog"
+species = "Hot Dog"
 wants_real = false
 metadata/_custom_type_script = "uid://cwogmrcc8t8ky"
 
