@@ -21,12 +21,21 @@ var _tip_shape: CollisionShape3D
 var _ring: MeshInstance3D
 var _loop_2d: Line2D
 var _tip_3d_current: Vector3 = Vector3.ZERO
+# Ratio of our render viewport to the OS window. The rope is drawn inside the
+# post-process SubViewport (downscaled by stretch_shrink), so screen-space size
+# constants authored for the full window must shrink by the same factor to keep
+# their apparent on-screen size. Positions come from unproject() and are already
+# in viewport space, so they are NOT scaled by this.
+var _screen_scale: float = 1.0
 
-const LOOP_RADIUS: float = 20.0
+const LOOP_RADIUS: float = 32.0
 const LOOP_SEGMENTS: int = 16
 
 
 func _ready() -> void:
+	var win_x: float = float(DisplayServer.window_get_size().x)
+	if win_x > 0.0:
+		_screen_scale = get_viewport().get_visible_rect().size.x / win_x
 	_build_rope_visual()
 	_build_tip_area()
 	_build_marker()
@@ -99,7 +108,7 @@ func _eval_arc_screen(t: float) -> Vector2:
 	var origin_2d: Vector2 = _camera.unproject_position(_origin_3d)
 	var target_2d: Vector2 = _camera.unproject_position(_target_3d)
 	var flat: Vector2 = origin_2d.lerp(target_2d, t)
-	var lift: float = sin(PI * t) * arc_height_screen
+	var lift: float = sin(PI * t) * arc_height_screen * _screen_scale
 	return flat - Vector2(0.0, lift)
 
 
@@ -153,7 +162,7 @@ func _build_rope_visual() -> void:
 	add_child(_canvas)
 	
 	_rope = Line2D.new()
-	_rope.width = 2.0
+	_rope.width = 4.0 * _screen_scale
 	_rope.default_color = Color(0.75, 0.55, 0.3)
 	_rope.joint_mode = Line2D.LINE_JOINT_ROUND
 	_rope.begin_cap_mode = Line2D.LINE_CAP_ROUND
@@ -161,7 +170,7 @@ func _build_rope_visual() -> void:
 	_canvas.add_child(_rope)
 	
 	_loop_2d = Line2D.new()
-	_loop_2d.width = 2.0
+	_loop_2d.width = 4.0 * _screen_scale
 	_loop_2d.default_color = Color(0.72, 0.48, 0.25, 1.0)
 	_loop_2d.joint_mode = Line2D.LINE_JOINT_ROUND
 	_loop_2d.begin_cap_mode = Line2D.LINE_CAP_ROUND
@@ -176,7 +185,7 @@ func _build_loop_points() -> void:
 	_loop_2d.clear_points()
 	for i in LOOP_SEGMENTS:
 		var angle: float = (float(i) / LOOP_SEGMENTS) * TAU
-		_loop_2d.add_point(Vector2(cos(angle), sin(angle)) * LOOP_RADIUS)
+		_loop_2d.add_point(Vector2(cos(angle), sin(angle)) * LOOP_RADIUS * _screen_scale)
 
 func _build_tip_area() -> void:
 	_tip_area = Area3D.new()
