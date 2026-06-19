@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="AnimalData" format=3 uid="uid://rk7y35jo55ph"]
 
 [ext_resource type="Texture2D" uid="uid://b3jdwaauj5rig" path="res://animal/real/sprite/animal_strawberry.png" id="1_world"]
+[ext_resource type="Texture2D" uid="uid://c6id1rt3nkwra" path="res://animal/real/draft/draft_real_strawberry.png" id="2_mail"]
 [ext_resource type="Script" uid="uid://cdbg03iul7ysx" path="res://data/animal_data.gd" id="1_script"]
 
 [resource]
@@ -11,4 +12,5 @@ difficulty = 1
 display_name = "Strawberry"
 description = "Our town's primary export, the red tasty fruit from uncle Sam's ranch."
 world_sprite = ExtResource("1_world")
+mail_sprite = ExtResource("2_mail")
 metadata/_custom_type_script = "uid://cdbg03iul7ysx"

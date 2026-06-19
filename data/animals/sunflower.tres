@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cdbg03iul7ysx" path="res://data/animal_data.gd" id="1_qp6jf"]
 [ext_resource type="Texture2D" uid="uid://5ev453kf4eh3" path="res://animal/real/sprite/animal_sunflower.png" id="2_b6plb"]
+[ext_resource type="Texture2D" uid="uid://dcqubh7g51eyl" path="res://animal/real/draft/draft_real_sunflower.png" id="3_mail"]
 
 [resource]
 script = ExtResource("1_qp6jf")
@@ -10,4 +11,5 @@ species = "Sunflower"
 display_name = "Sunflower"
 description = "A farmer with brian damnage once said \"I'm planting one million sunflowers for my beautiful wife\". Could he be refering to this flower?"
 world_sprite = ExtResource("2_b6plb")
+mail_sprite = ExtResource("3_mail")
 metadata/_custom_type_script = "uid://cdbg03iul7ysx"
