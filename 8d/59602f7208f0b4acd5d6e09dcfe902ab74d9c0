@@ -1,0 +1,23 @@
+main/get_out_house.gd
+  s_be650eee775f3d::t_2f60421a437136 20-22
+main/get_in_house.gd
+  s_be650eee775f3d::t_7c9d23ddf67fbe 21-23
+player/player.gd
+  s_be650eee775f3d::t_8d41495e1818cb 24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "8d59602f7208f0b4acd5d6e09dcfe902ab74d9c0",
+  "prompts": {},
+  "sessions": {
+    "s_be650eee775f3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1335d72-88da-4b93-817b-5c108fb665cf",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
