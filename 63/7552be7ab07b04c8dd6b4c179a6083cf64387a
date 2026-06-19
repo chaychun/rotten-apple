@@ -1,0 +1,48 @@
+project.godot
+  s_ccbd33fbef5259::t_96a191ad0e0e78 148
+effects/pixel_outline.gdshader.uid
+  s_ccbd33fbef5259::t_0b5f72c8eaf0f7 1
+globals/sun_cycle.gd
+  s_ccbd33fbef5259::t_5369e2077fc7b2 17
+effects/pixel_outline.gdshader
+  s_ccbd33fbef5259::t_69e7d7fdbfb429 1-12,14-24,29-103,105
+  s_ccbd33fbef5259::t_9217d4c0d3fc3e 25-27
+  s_ccbd33fbef5259::t_42117250837d09 28
+  s_ccbd33fbef5259::t_6f1f89a5a43c62 104
+effects/post_process.gd.uid
+  s_ccbd33fbef5259::t_0b5f72c8eaf0f7 1
+effects/color_grade.gdshader
+  s_ccbd33fbef5259::t_e337a583e71350 1-7,9-10,12-42
+effects/color_grade.gdshader.uid
+  s_ccbd33fbef5259::t_f48fd4df03c6e5 1
+effects/post_process.gd
+  s_ccbd33fbef5259::t_141f88a697e1fe 1-30
+player/player.tscn
+  s_ccbd33fbef5259::t_9af993de3501d7 19-24,26-37
+  s_ccbd33fbef5259::t_6f0d847692db11 25
+  s_ccbd33fbef5259::t_7e0c57a574196a 310
+  s_ccbd33fbef5259::t_bfde7b485b2623 389-395
+main/main.tscn
+  s_ccbd33fbef5259::t_24017f930a192d 22-25
+  s_ccbd33fbef5259::t_3faae8e300773a 27
+  s_ccbd33fbef5259::t_549e85a6abf5bc 362,364-377
+  s_ccbd33fbef5259::t_6e5df87ec92b62 363
+  s_ccbd33fbef5259::t_c5f050a69c5b78 378,381,384,388,390,394,403,406,409,411,414,417,420,423,426,429,432,435,438,441,444,447,450,453,455,458,461,464,467,470,473,476,479,482,485,487,489,492,494,497,500,504,506,508,512,516,520,524,528,532,536,540,544,548,552,556,561,566,568,575,580,585,590,595,600,607,612,619,636,645
+  s_ccbd33fbef5259::t_4956921336a24c 398,400
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "637552be7ab07b04c8dd6b4c179a6083cf64387a",
+  "prompts": {},
+  "sessions": {
+    "s_ccbd33fbef5259": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0c726f83-9b61-4979-bd65-d4f07aa231c0",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
