@@ -31,6 +31,11 @@
 [ext_resource type="AudioStream" uid="uid://curlde0jf8lan" path="res://audio/sfx/UIhovering.wav" id="29_3vavp"]
 [ext_resource type="AudioStream" uid="uid://b6fdsdddhl0gv" path="res://audio/sfx/BookFlip.wav" id="29_4fb4h"]
 [ext_resource type="AudioStream" uid="uid://b4314cqrdvet6" path="res://audio/sfx/UIselect.ogg" id="30_sqk4b"]
+[ext_resource type="AudioStream" uid="uid://b2m4mxf01wfj7" path="res://audio/music/apple_cider.ogg" id="32_mwqsg"]
+[ext_resource type="AudioStream" uid="uid://bhp8vrh03nedb" path="res://audio/music/cute.mp3" id="33_spdhi"]
+[ext_resource type="AudioStream" uid="uid://b2k5f8nt4tm56" path="res://audio/music/cutie_pie.wav" id="34_87i7e"]
+[ext_resource type="AudioStream" uid="uid://blqvccanhuhbk" path="res://audio/music/oga_majitapioka.mp3" id="35_smbvp"]
+[ext_resource type="AudioStream" uid="uid://bk711gkmg8v2u" path="res://audio/music/snes_relaxing.mp3" id="36_ku7ly"]
 
 [node name="Node" type="Node" unique_id=1372388317]
 script = ExtResource("1_i3yra")
@@ -52,3 +57,4 @@ sfx_page_flip = ExtResource("29_4fb4h")
 sfx_ui_click = ExtResource("18_rwfwi")
 sfx_ui_hover = ExtResource("29_3vavp")
 sfx_ui_select = ExtResource("30_sqk4b")
+ambient_tracks = Array[AudioStream]([ExtResource("32_mwqsg"), ExtResource("33_spdhi"), ExtResource("34_87i7e"), ExtResource("35_smbvp"), ExtResource("36_ku7ly")])

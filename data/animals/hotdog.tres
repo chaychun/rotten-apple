@@ -1,14 +1,13 @@
 [gd_resource type="Resource" script_class="AnimalData" format=3 uid="uid://mdhotdogr"]
 
+[ext_resource type="Script" uid="uid://cdbg03iul7ysx" path="res://data/animal_data.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://cvwejgovki0br" path="res://animal/real/sprite/animal_hotdog.png" id="1_world"]
 [ext_resource type="Texture2D" uid="uid://c76vyubv77jlt" path="res://animal/real/draft/draft_real_hotdog.png" id="2_mail"]
-[ext_resource type="Script" uid="uid://cdbg03iul7ysx" path="res://data/animal_data.gd" id="1_script"]
 
 [resource]
 script = ExtResource("1_script")
 id = "hotdog"
 species = "Hot Dog"
-difficulty = 1
 display_name = "Hot Dog"
 description = "Grilled sausage inside a bun. I wonder what meat it's made off?"
 world_sprites = Array[Texture2D]([ExtResource("1_world")])

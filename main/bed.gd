@@ -1,5 +1,7 @@
 extends StaticBody3D
 
+
+
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
 
 @onready var player: Node3D = $"../Player"
@@ -44,3 +46,4 @@ func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3,
 	if eep_prompt == true:
 		if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			SleepScreen.request_sleep()
+			

@@ -22,8 +22,18 @@ const POOL_SIZE := 8
 @export var sfx_ui_hover: AudioStream
 @export var sfx_ui_select: AudioStream
 
+@export_group("Ambient Music")
+@export var ambient_tracks: Array[AudioStream] = []
+@export var ambient_min_wait: float = 0#30.0
+@export var ambient_max_wait: float = 1#120.0
+@export var ambient_fade_in: float = 1.5
+@export var ambient_fade_out: float = 1.5
+
 var _sfx_pool: Array[AudioStreamPlayer] = []
 var _pool_index := 0
+var _ambient_timer: Timer
+var _ambient_last_index: int = -1
+var _ambient_enabled: bool = true
 
 @onready var _music_player: AudioStreamPlayer = AudioStreamPlayer.new()
 
@@ -37,13 +47,20 @@ func _ready() -> void:
 	
 	_music_player.bus = "Music"
 	add_child(_music_player)
+	_music_player.finished.connect(_on_ambient_track_finished)
+	
+	_ambient_timer = Timer.new()
+	_ambient_timer.one_shot = true
+	add_child(_ambient_timer)
+	_ambient_timer.timeout.connect(_play_next_ambient_track)
 	
 	get_tree().node_added.connect(_on_node_added)
 	
 	Events.lasso_thrown.connect(func() -> void: play_sfx(sfx_lasso_throw, -10.0))
 	Events.animal_caught.connect(func(_id: String) -> void: play_sfx(sfx_catch_success, -6.7))
 	Events.lasso_hit.connect(func() -> void: play_sfx(sfx_lasso_hit.pick_random(), -5.0))
-	
+	Events.day_started.connect(_on_day_started)	
+	_start_ambient_wait()
 	
 
 
@@ -59,20 +76,56 @@ func play_sfx(stream: AudioStream, volume_db: float = 0.0, pitch: float = 1.0) -
 	return p
 
 
-func play_music(stream: AudioStream, fade_in: float = 0.5) -> void:
-	if _music_player.stream == stream and _music_player.playing:
+func _on_day_started(_day: int) -> void:
+	_music_player.stop()
+	await get_tree().create_timer(8.0).timeout
+	_play_next_ambient_track()
+
+
+func _start_ambient_wait() -> void:
+	if not _ambient_enabled or ambient_tracks.is_empty():
 		return
-	_music_player.stream = stream
+	var wait_time: float = randf_range(ambient_min_wait, ambient_max_wait)
+	_ambient_timer.start(wait_time)
+
+
+func _play_next_ambient_track() -> void:
+	if not _ambient_enabled or ambient_tracks.is_empty():
+		return
+	
+	var index: int = _pick_ambient_index()
+	_ambient_last_index = index
+	
+	_music_player.stream = ambient_tracks[index]
 	_music_player.volume_db = -40.0
 	_music_player.play()
+	
 	var tween := create_tween()
-	tween.tween_property(_music_player, "volume_db", 0.0, fade_in)
+	tween.tween_property(_music_player, "volume_db", 0.0, ambient_fade_in)
 
 
-func stop_music(fade_out: float = 0.5) -> void:
-	var tween := create_tween()
-	tween.tween_property(_music_player, "volume_db", -40.0, fade_out)
-	tween.tween_callback(_music_player.stop)
+func _pick_ambient_index() -> int:
+	if ambient_tracks.size() == 1:
+		return 0
+	var index: int = randi() % ambient_tracks.size()
+	while index == _ambient_last_index:
+		index = randi() % ambient_tracks.size()
+	return index
+
+
+func _on_ambient_track_finished() -> void:
+	_start_ambient_wait()
+
+
+func set_ambient_enabled(value: bool) -> void:
+	_ambient_enabled = value
+	if not _ambient_enabled:
+		_ambient_timer.stop()
+		var tween := create_tween()
+		tween.tween_property(_music_player, "volume_db", -40.0, ambient_fade_out)
+		tween.tween_callback(_music_player.stop)
+	else:
+		_start_ambient_wait()
 
 
 func _on_node_added(node: Node) -> void:

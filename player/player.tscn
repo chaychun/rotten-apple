@@ -14,8 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://bcvj2j56y1tyk" path="res://player/sprite/right_side_1.png" id="12_s7qer"]
 [ext_resource type="Texture2D" uid="uid://cs4atohhdu285" path="res://player/sprite/right_side_2.png" id="13_g4c7l"]
 [ext_resource type="Script" uid="uid://8sjnnlk7fct3" path="res://player/toollauncher/lasso_launcher.gd" id="14_kb6p2"]
-[ext_resource type="Script" path="res://player/camera_occlusion.gd" id="16_camocc"]
 [ext_resource type="PackedScene" uid="uid://dcr2ubwd0x68h" path="res://ui/minigames/lasso.tscn" id="15_wodsf"]
+[ext_resource type="Script" uid="uid://ch5wmhfnfdtp1" path="res://player/camera_occlusion.gd" id="16_camocc"]
 [ext_resource type="Shader" path="res://effects/pixel_outline.gdshader" id="17_ppshad"]
 [ext_resource type="Script" path="res://effects/post_process.gd" id="18_ppscr"]
 
@@ -46,7 +46,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("5_32hag")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle :)",
 "speed": 5.0
 }, {
@@ -63,7 +63,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_e7oew")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_down",
 "speed": 4.0
 }, {
@@ -80,7 +80,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_x7c3f")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_l",
 "speed": 4.0
 }, {
@@ -97,7 +97,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("13_g4c7l")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_r",
 "speed": 4.0
 }, {
@@ -114,7 +114,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_wodsf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_up",
 "speed": 4.0
 }]
