@@ -1,0 +1,30 @@
+housenshi/mail/mail_layer.tscn
+  s_d107c1f4f66dea::t_80bc96bf52eb10 165-168
+  s_d107c1f4f66dea::t_889ba487766416 57-65,68
+  s_d107c1f4f66dea::t_0064f9fbead007 182
+logbook/logbook_layer.gd
+  s_d107c1f4f66dea::t_bbbbf99b4332dc 6
+housenshi/mail/mail_layer.gd
+  s_d107c1f4f66dea::t_348ecb6fe1debc 31-34,36-37,39
+  s_d107c1f4f66dea::t_d60a21f2c372ec 38
+  s_d107c1f4f66dea::t_365080e4cb22f5 16
+  s_d107c1f4f66dea::t_9f7bd1d403f4b0 15
+logbook/logbook_layer.tscn
+  s_d107c1f4f66dea::t_5f3a07267134dc 4-5,7,9-20,40-41,43-48,50-94,96-232
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "7aa836e15723deab4d881ea18391602a8b71e676",
+  "prompts": {},
+  "sessions": {
+    "s_d107c1f4f66dea": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8401068c-0c19-4459-a489-8389ebf3a15e",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
