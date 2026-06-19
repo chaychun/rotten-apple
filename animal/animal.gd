@@ -24,6 +24,13 @@ var _hop_t: float = 0.0               # 0..1 normalized progress along current h
 var _hop_duration: float = 0.0       # seconds; total_dist / move_speed
 var _hop_heights: PackedFloat32Array  # ground Y sampled along the hop (filled by _path_clear)
 
+# Vertical state: final y = _ground_y_cur + entry.y_offset + _bob_offset.
+var _pos_xz: Vector2 = Vector2.ZERO   # current XZ; ground/bob layered on top for final position
+var _ground_y_cur: float = 0.0        # terrain/water y the body is hugging (no offset)
+var _y_init: bool = false             # seed _pos_xz/_ground_y_cur from spawn position on first frame
+var _bob_time: float = 0.0
+var _bob_offset: float = 0.0
+
 @onready var _body: AnimatableBody3D = $AnimatableBody3D
 @onready var _sprite: Sprite3D = $AnimatableBody3D/Sprite3D
 
@@ -37,15 +44,22 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if _catching or _entry == null or _zone == null:
-		return
-	match _phase:
-		Phase.PAUSING:
-			_pause_timer -= delta
-			if _pause_timer <= 0.0:
-				_pick_hop()
-		Phase.MOVING:
-			_step_move(delta)
+	if not _y_init:
+		_pos_xz = _current_xz()
+		_ground_y_cur = global_position.y
+		# random phase so animals in one entry don't bob in unison
+		_bob_time = randf() * (_entry.bob_cycle_time if _entry != null else 1.0)
+		_y_init = true
+	_update_bob(delta)
+	if not (_catching or _entry == null or _zone == null):
+		match _phase:
+			Phase.PAUSING:
+				_pause_timer -= delta
+				if _pause_timer <= 0.0:
+					_pick_hop()
+			Phase.MOVING:
+				_step_move(delta)
+	_apply_position()
 
 
 func _start_pause() -> void:
@@ -122,11 +136,23 @@ func _step_move(delta: float) -> void:
 	_hop_t = minf(_hop_t + delta / _hop_duration, 1.0)
 	# ease in-out
 	var eased := smoothstep(0.0, 1.0, _hop_t)
-	var next_xz := _hop_from.lerp(_target_xz, eased)
-	var y := _height_at(eased)   # hug terrain / water surface via cached profile
-	global_position = Vector3(next_xz.x, y, next_xz.y)
+	_pos_xz = _hop_from.lerp(_target_xz, eased)
+	_ground_y_cur = _height_at(eased)   # hug terrain / water surface via cached profile
 	if _hop_t >= 1.0:
 		_start_pause()
+
+
+func _update_bob(delta: float) -> void:
+	if _entry == null or _entry.bob_height <= 0.0 or _entry.bob_cycle_time <= 0.0:
+		_bob_offset = 0.0
+		return
+	_bob_time += delta
+	_bob_offset = sin(_bob_time / _entry.bob_cycle_time * TAU) * _entry.bob_height
+
+
+func _apply_position() -> void:
+	var off := _entry.y_offset if _entry != null else 0.0
+	global_position = Vector3(_pos_xz.x, _ground_y_cur + off + _bob_offset, _pos_xz.y)
 
 
 func attempt_catch() -> void:
