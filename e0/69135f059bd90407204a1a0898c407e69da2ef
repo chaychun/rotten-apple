@@ -1,0 +1,29 @@
+README.md
+  s_62d9ebe8975f0a::t_dce303ce9bd5e9 1-2,4-6,8-12,14-32,40-42
+  s_62d9ebe8975f0a::t_120e45557f3210 3
+  s_1e9b49a1e4a3f2::t_b253cca594c1de 33-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "e069135f059bd90407204a1a0898c407e69da2ef",
+  "prompts": {},
+  "sessions": {
+    "s_1e9b49a1e4a3f2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d3b2a971-defd-4ac1-81ad-143f5dac65ec",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    },
+    "s_62d9ebe8975f0a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "75125edf-641e-44c3-9c0d-ed38c79b5735",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
