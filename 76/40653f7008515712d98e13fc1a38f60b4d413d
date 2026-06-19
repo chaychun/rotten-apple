@@ -1,0 +1,19 @@
+animal/animal.tscn
+  s_1b657b56cd91b7::t_3dff909f3a5220 27-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "7640653f7008515712d98e13fc1a38f60b4d413d",
+  "prompts": {},
+  "sessions": {
+    "s_1b657b56cd91b7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "de0ea753-8659-44fb-8e4e-9b6da32b3278",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
