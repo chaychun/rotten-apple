@@ -1,0 +1,22 @@
+animal/animal.gd
+  s_fe8738ac179c71::t_e764ee8c22f7c7 47-49,52-62
+  s_fe8738ac179c71::t_48e1e706c6545d 27-33
+  s_fe8738ac179c71::t_7de018c21ecb02 50-51
+  s_fe8738ac179c71::t_9748188d118730 139-140,145-155
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "89067815347b252404ddc2a46308ca74cabc6810",
+  "prompts": {},
+  "sessions": {
+    "s_fe8738ac179c71": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f8d11aba-75ca-498d-bb68-2d7d9d092846",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
