@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="QuestData" format=3 uid="uid://dji1winr2j6ft"]
+
+[ext_resource type="Script" uid="uid://cwogmrcc8t8ky" path="res://data/quest_requirement.gd" id="1_318tt"]
+[ext_resource type="Script" uid="uid://xg6rrpcfkd7" path="res://data/quest_data.gd" id="2_wmdq0"]
+
+[sub_resource type="Resource" id="Resource_1ht2r"]
+script = ExtResource("1_318tt")
+species = "Seahorse"
+amount = 3
+wants_real = false
+metadata/_custom_type_script = "uid://cwogmrcc8t8ky"
+
+[resource]
+script = ExtResource("2_wmdq0")
+id = "homies_horsie_problem"
+quest_name = "Homie's Horsie Problem"
+requirements = Array[ExtResource("1_318tt")]([SubResource("Resource_1ht2r")])
+posted_by = "Mr Albone Broke"
+mail_new = "Hi, sory in advnce for bad handwitng I'm wrtng from m yhos pital bed. so a month ago, I wasr iding ahornse whild playing Eldn Rng. I fellen of the ring, liek the game, an dbroke a total of 67 bonse. It'ss a miracle I can stil lwrite a letr to u. Any way Ive thoguht of a way to never again braek 67 bonesa nd that is to ride a horsie on the water, ubt a normal horsie won't cut it. It needs be an aquatic horsie. Sea hornies. So please ship me 3 seae hornse. TNHak you in adbemce."
+mail_retry_unsubmitted = "Lke I sai dI broke 67 bones adn now am getin gignord by a new intrn... Please ship me 3 seae hornse... I bedg youn."
+mail_retry_wrong = "Deneighed! How d you think I'll rid those esahorses and not berak 67 piecs of their boens? 3 sae hronseies. 3 sae honrse!"
+mail_reward = "Hey thanns fr the sea honsers. Me doctor told I can go hosem on 30th februery adn febry is in 6-7 monsth. Yippe let=sg oooo!!!"
+mail_complaint = "I guess I'l break moer of my bones to th epo int taht I turn intoa slime bec acsue no seaa hroseies to ride :("
+metadata/_custom_type_script = "uid://xg6rrpcfkd7"

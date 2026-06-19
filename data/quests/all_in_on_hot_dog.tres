@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="QuestData" format=3 uid="uid://baiifw37wfl82"]
+
+[ext_resource type="Script" uid="uid://cwogmrcc8t8ky" path="res://data/quest_requirement.gd" id="1_c2wh3"]
+[ext_resource type="Script" uid="uid://xg6rrpcfkd7" path="res://data/quest_data.gd" id="2_x1qgw"]
+
+[sub_resource type="Resource" id="Resource_x3h3w"]
+script = ExtResource("1_c2wh3")
+species = "Hedgehog"
+metadata/_custom_type_script = "uid://cwogmrcc8t8ky"
+
+[sub_resource type="Resource" id="Resource_ykfqq"]
+script = ExtResource("1_c2wh3")
+species = "Hot dog"
+wants_real = false
+metadata/_custom_type_script = "uid://cwogmrcc8t8ky"
+
+[resource]
+script = ExtResource("2_x1qgw")
+id = "all_in_on_hot_dog"
+quest_name = "All in on Hot Dog"
+requirements = Array[ExtResource("1_c2wh3")]([SubResource("Resource_x3h3w"), SubResource("Resource_ykfqq")])
+reward = 5
+posted_by = "Mr Toby Frank"
+mail_new = "Who would win? A hedgehog or a hot dog. This is the question no one has answered ever. But that's changing today! I'm gonna put them both in the race of all time and test who prevails. This is my proposal for my next project. I request one hedgehog and one hot dog. Since I'll need them soon for funding presentation, please make sure that you got them right."
+mail_retry_unsubmitted = "What? What is this? Nothing arrives! I requested one hedgehog and one hot dog! I'll give you another chance. One hedgehog and one hot dog."
+mail_retry_wrong = "What? What is this? I requested one hedgehog and one hot dog! I'll give you another chance. One hedgehog and one hot dog."
+mail_reward = "My proposal actually went through. They gave a green light! Now let the race between a hedgehog and a hot dog commence! Thanks a bunch, new intern."
+mail_complaint = "This is an important matter you know. You blew it! Now the world will never know which one would win in a race. Also I didn't get the funding... It's all your fault, newbie."
+metadata/_custom_type_script = "uid://xg6rrpcfkd7"

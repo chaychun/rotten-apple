@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="QuestData" format=3 uid="uid://bexia6qowau6g"]
+
+[ext_resource type="Script" uid="uid://cwogmrcc8t8ky" path="res://data/quest_requirement.gd" id="1_yrkiu"]
+[ext_resource type="Script" uid="uid://xg6rrpcfkd7" path="res://data/quest_data.gd" id="2_wt1wt"]
+
+[sub_resource type="Resource" id="Resource_onvtk"]
+script = ExtResource("1_yrkiu")
+species = "Sunfish"
+wants_real = false
+metadata/_custom_type_script = "uid://cwogmrcc8t8ky"
+
+[sub_resource type="Resource" id="Resource_ojcyh"]
+script = ExtResource("1_yrkiu")
+species = "Sunflower"
+wants_real = false
+metadata/_custom_type_script = "uid://cwogmrcc8t8ky"
+
+[resource]
+script = ExtResource("2_wt1wt")
+id = "a_great_endeavour"
+quest_name = "A Great Endeavour"
+requirements = Array[ExtResource("1_yrkiu")]([SubResource("Resource_onvtk"), SubResource("Resource_ojcyh")])
+reward = 6
+posted_by = "Mr Aupto Nougud"
+mail_new = "Hiya, new intern. It’s me, Mr Aupto Nougud. On behalf of the company’s Energy Department, I’d like to have you partake in our newest endeavour, project: Supercilious Obdurate Luminary Abolition Requiem, project: SOLAR for short! That's right, new intern, we're gonna DESTROY THE SUN WITH OUR COMPANY FUNDING!!! Why? I hear you ask. B'cuz it gets so goddamn HOT HOTTER HOTTERER in the Summer every year, that's why! However, even in the era of capitalismaxxing, it seems like money still can't buy the sun and that's a problem since we'll need one for our experiment. This is where you come in, new intern. Around your area of operation, there seems to be two SSS species, Special Sunny Side-up species, nearby. But be careful, these guys are real hot to touch. One of those go catch 'em n' ship 'em. Hurry now, Before the sun gets cold!"
+mail_retry_unsubmitted = "New intern... please do you job. WE NEED TWO SSS SPECIES!!! Ship 'em!!!"
+mail_retry_wrong = "New intern... thanks for the souvenirs but WHAT ABOUT MY REQUEST? I ne- I mean we need them now! Come on, you've been living there for many years by now. You should know about the SSS species more than me even. Here, I even got my assistant to draw you one of the ones. I'll give you another chance, ship 'em within today!"
+mail_reward = "Update: We stayed up all night experimenting with the SSS species freshly shipped by you. It was going well in the first half, but one of the new staff accidentally poured chemical X into both specimens. I guess our company's got 2 new superheroes... and a hiatus on project: SOLAR. So far, SOLAR."
+mail_complaint = "You know what? Maybe project: SOLAR doesn't really need you in it after all. We can handle it by ourselves. Thanks for the sashimi and nice sunflowers tho."
+metadata/_custom_type_script = "uid://xg6rrpcfkd7"

@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="QuestData" format=3 uid="uid://cnhnbx5wymadx"]
+
+[ext_resource type="Script" uid="uid://cwogmrcc8t8ky" path="res://data/quest_requirement.gd" id="1_fciwh"]
+[ext_resource type="Script" uid="uid://xg6rrpcfkd7" path="res://data/quest_data.gd" id="2_8ocko"]
+
+[sub_resource type="Resource" id="Resource_y8fii"]
+script = ExtResource("1_fciwh")
+species = "Catfish"
+metadata/_custom_type_script = "uid://cwogmrcc8t8ky"
+
+[sub_resource type="Resource" id="Resource_m7nju"]
+script = ExtResource("1_fciwh")
+species = "Sunfish"
+metadata/_custom_type_script = "uid://cwogmrcc8t8ky"
+
+[resource]
+script = ExtResource("2_8ocko")
+id = "average_fih_lover_request"
+quest_name = "Average Fih Lover Request"
+requirements = Array[ExtResource("1_fciwh")]([SubResource("Resource_y8fii"), SubResource("Resource_m7nju")])
+reward = 2
+posted_by = "Mr Fisk Sluker"
+mail_new = "I love fishes. They are incredible creatures and I love them so much. Their shapes, their forms, they are optimised for hydrodynamics. What brilliant creatures! I am in love with them. That's why I need them! I need them right now! I wish for fish! Give me fish now! I love them! I need them! One catfish now! One sunfish now! Also did I mention how much I love fish? I love fishes so much."
+mail_retry_unsubmitted = "FISH WHERE? NEED FISH! FISH NOW!!!"
+mail_retry_wrong = "Something is fishy, these aren't fish! Come on now, I require fish! One catfish and one sunfish! One more day, ship fish now!"
+mail_reward = "Fish, fish, fih, FISH!!! YESS!!!! MMMmm, fihes everywhere! You're not half bad kid. You've got potential, I can see that."
+mail_complaint = "You fish-brain, I love fish! but not these kinds of non-fish fishes. You, YOU! You don't understand how much LOVE I have for fish, you don't!"
+metadata/_custom_type_script = "uid://xg6rrpcfkd7"

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="QuestData" format=3 uid="uid://bkfvrm1lmqavx"]
+
+[ext_resource type="Script" uid="uid://cwogmrcc8t8ky" path="res://data/quest_requirement.gd" id="1_2q1t4"]
+[ext_resource type="Script" uid="uid://xg6rrpcfkd7" path="res://data/quest_data.gd" id="2_tnglh"]
+
+[sub_resource type="Resource" id="Resource_4pirq"]
+script = ExtResource("1_2q1t4")
+species = "Butterfly"
+amount = 6
+metadata/_custom_type_script = "uid://cwogmrcc8t8ky"
+
+[resource]
+script = ExtResource("2_tnglh")
+id = "twelve_fluttering_wings"
+quest_name = "Twelve Fluttering Wings"
+requirements = Array[ExtResource("1_2q1t4")]([SubResource("Resource_4pirq")])
+posted_by = "Ms Rhyma Thymes"
+mail_new = "Within today, I request six butterflies. Don't ask why or I won't be so kind. Mess it up and I'll give you a piece of my mind. So grind, that's how you shine."
+mail_retry_unsubmitted = "Read my letters! You ignore me again and you'll never again enjoy your taters. I need six butterflies now, not later. Now go gather them you catcher!"
+mail_retry_wrong = "Have you gone mad? This lad! I didn't ask for these buttery rats, I don't ask for that. I need six butterflies, flat. No more, no less. Start now, work in progress."
+mail_reward = "Job wonderfully done! My butterfly collection has begun. One by one, until there's a ton!"
+mail_complaint = "Quit limin'. You ain't givin' me a dime,  you slime. I'd rather use my summertime committing war crimes. Enough, enough, I won't give you any extra time."
+metadata/_custom_type_script = "uid://xg6rrpcfkd7"

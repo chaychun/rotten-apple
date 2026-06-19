@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="QuestData" format=3 uid="uid://bqlv4srk35crs"]
+
+[ext_resource type="Script" uid="uid://cwogmrcc8t8ky" path="res://data/quest_requirement.gd" id="1_r45l1"]
+[ext_resource type="Script" uid="uid://xg6rrpcfkd7" path="res://data/quest_data.gd" id="2_j6v7v"]
+
+[sub_resource type="Resource" id="Resource_cfbpu"]
+script = ExtResource("1_r45l1")
+species = "Sunflower"
+amount = 69
+metadata/_custom_type_script = "uid://cwogmrcc8t8ky"
+
+[resource]
+script = ExtResource("2_j6v7v")
+id = "a_request_from_farmer_with_brain_damage"
+quest_name = "A Request from Farmer with Brain Damage"
+requirements = Array[ExtResource("1_r45l1")]([SubResource("Resource_cfbpu")])
+reward = 69
+posted_by = "Mr William Osman"
+mail_new = "Hi, my name is William Osman. I'm a farmer with brain that does its job good enough to stay alive. I'm writing from my farm. My dream is to grow one million sunflowers in this field for my girlfriend but I... uh... Things have been rough. Why is it that the weeds are growing like a 800 feet tall but all the things I planted are like, just dead. I've heard about a sunflower patch near your town and to achieve my dream of growing one megaterazillion sunflowers for my girlfriend I request 69 freshly picked sunflowers in front of my house by today."
+mail_retry_unsubmitted = "Hi, my name William Osman. I'm a farmer with brain damage and my dream is to grow at least one sunflower for my beautiful wife. I recently unboxed some of the packages I got and there was no sunflower. Not not even one. Please send it."
+mail_retry_wrong = "Hi, my name William Osman. I'm a farmer with brain damage and my dream is to grow at least one sunflower for my beautiful wife. I recently unboxed some of the packages and there was no sunflower. Not not even one. There's some weird things you guys sent me. Please send me 69 freshly picked sunflowers."
+mail_reward = "Thank you for the 69 sunflowers freshly picked. I am very pleased. By any chance, have you bought a ticket to this year's Open Sauce? You can find details on world wide web dot open sauce dot com or head over to sauce plus dot com for virtual tour. I'm not paying the creator of this game for this, in fact they put me in without even mentioning me first."
+mail_complaint = "My name is William and I quit. I'm not a farmer anymore. I tried my best. I tried fertilising the soil, I tried sowing seeds, I tried everything, but all I get is weeds everywhere. 69 sunflowers has never arrived. And you know, my neighbor Kevin, he also planted some stuffs too. He didn't even plan nothing and there's at least something growing on his patch. I quit, I'm no longer a farmer with brain damage."
+metadata/_custom_type_script = "uid://xg6rrpcfkd7"

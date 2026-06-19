@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="QuestData" format=3 uid="uid://jyvmeblmg0ot"]
+
+[ext_resource type="Script" uid="uid://cwogmrcc8t8ky" path="res://data/quest_requirement.gd" id="1_sifis"]
+[ext_resource type="Script" uid="uid://xg6rrpcfkd7" path="res://data/quest_data.gd" id="2_yauhc"]
+
+[sub_resource type="Resource" id="Resource_f6ftn"]
+script = ExtResource("1_sifis")
+species = "Watermelon"
+wants_real = false
+metadata/_custom_type_script = "uid://cwogmrcc8t8ky"
+
+[resource]
+script = ExtResource("2_yauhc")
+id = "the_saccharine_subversion_phase2"
+quest_name = "The Saccharine Subversion: Phase 2"
+requirements = Array[ExtResource("1_sifis")]([SubResource("Resource_f6ftn")])
+reward = 2
+posted_by = "Mr Hopkin Schmoffin"
+mail_new = "The subsequent phase of our campaign requires the peak-quality water from a specimen known as \"Water-Melon\". These entities flourish in aquatic terrains near fertile environments. A log from a previous intern indicates that the seed contains a unique chemical compound capable of dissolving all kinds of impurities into water of purest quality. It is this water that I seek for. Due to lack of comprehensive research regarding these creatures, proceed with caution."
+mail_retry_unsubmitted = "Worst than an error is lack of data. A task has been given, yet you cared not. You are granted exactly one additional day to complete the delivery."
+mail_retry_wrong = "While standard desserts use common watermelon as a main ingredient, this submission does not align with my request. Attached is an illustration of water melon from a renowned artist I commissioned. You are granted exactly one additional day to complete the delivery."
+mail_reward = "The asset has been successfully verified. You have delivered a specimen exhibiting flawless quality. Your compliance has been formally logged, and the cafeteria initiative now advances toward the final phase."
+mail_complaint = "Your performance has declined from the your baseline data. We have had another intern of superior integrity to handle the task. Your involvement is terminated. Stand down for the time being."
+metadata/_custom_type_script = "uid://xg6rrpcfkd7"

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="QuestData" format=3 uid="uid://dy7lgwpek6mcd"]
+
+[ext_resource type="Script" uid="uid://cwogmrcc8t8ky" path="res://data/quest_requirement.gd" id="1_e5dye"]
+[ext_resource type="Script" uid="uid://xg6rrpcfkd7" path="res://data/quest_data.gd" id="2_apg7c"]
+
+[sub_resource type="Resource" id="Resource_icony"]
+script = ExtResource("1_e5dye")
+species = "Butterfly"
+wants_real = false
+metadata/_custom_type_script = "uid://cwogmrcc8t8ky"
+
+[resource]
+script = ExtResource("2_apg7c")
+id = "the_saccharine_subversion_final_phase"
+quest_name = "The Saccharine Subversion: Final Phase"
+requirements = Array[ExtResource("1_e5dye")]([SubResource("Resource_icony")])
+reward = 3
+posted_by = "Ms Presley Laine"
+mail_new = "Hi there, new intern. This is Presley Laine, I'm the assistance of Mr Hopkin Schmoffin. I'm writing to update on his ongoing project. After receiving the Water Melon from you yesterday, Mr Hopkin was too excited. He went and started the procedure without informing any of us. It seemed like he was too invested in the process so much so that he didn't realise that his body was turning into water. When we came back to the laboratory, there's just his head floating on a body of supine protoplasmic invertebrate jelly of low viscosity. Don't worry about him, he's being taken care in our infirmary at the moment. As for the last ingredient, I request one butterfly, freshly caught. Careful, they are quite slippery. Looking forward to hearing from you soon."
+mail_retry_unsubmitted = "Come on now, new intern. I need a creamy butter from a butter-fly to finish the recipe. Within today, okay?"
+mail_retry_wrong = "I think you misunderstood something here. I need a creamy butter from a butter-fly, not this little guy. It's quite cute tho, I'm keeping it as a pet."
+mail_reward = "New intern, we have successfully crafted the most succulent confectionery of all time! It tasted so gosh darn GOOD that our department can't stop biting on it! For safety, I've made sure to keep the recipe safe fro... WHY ARE YOU CHEWING OUR RECIPE MR HOPKIN!!??? STOP IT BEFORE IT'S GONE FOREVER!!!! DEAR LOR HE ATE THE ENTIRE PAPER, WE'RE DOOMED FOREVER NOW!!!"
+mail_complaint = "It's too late now... we've been caught. A random visit to our department has been made from the headquarter. It's the guy that proposed the industrial food complex plan. Don't worry, you won't be filed with anything. I made sure to keep your cooperation a secret... but I will get fired for sure... I'm doomed forever. Maybe I should send Walmart a j*b application..."
+metadata/_custom_type_script = "uid://xg6rrpcfkd7"

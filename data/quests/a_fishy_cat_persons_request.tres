@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="QuestData" format=3 uid="uid://bb5abnasm4cq2"]
+
+[ext_resource type="Script" uid="uid://cwogmrcc8t8ky" path="res://data/quest_requirement.gd" id="1_2j0ux"]
+[ext_resource type="Script" uid="uid://xg6rrpcfkd7" path="res://data/quest_data.gd" id="2_6wr3f"]
+
+[sub_resource type="Resource" id="Resource_g0hbt"]
+script = ExtResource("1_2j0ux")
+species = "Catfish"
+wants_real = false
+metadata/_custom_type_script = "uid://cwogmrcc8t8ky"
+
+[resource]
+script = ExtResource("2_6wr3f")
+id = "a_fishy_cat_persons_request"
+quest_name = "A Fishy Cat Person's Request"
+requirements = Array[ExtResource("1_2j0ux")]([SubResource("Resource_g0hbt")])
+reward = 5
+posted_by = "Ms Koshka Pisces"
+mail_new = "New intern, have you ever pondered upon the quote \"Give a fish man, you man fish man day. Fish a man teach, teach man fish eat.\"? I used to think about it a lot. During shower, during work, even during enduring to think. And it came to me yesterday, what if man is fish and fish is cat? I carefully structured it in my head many times to come up with this new quote \"Give me a cat fish, you fish me cat fish. Teach me cat, you a fish or am I foolish?\". So now I need me a cat fish idk how to spell it but I do know that these lil' fellas love to be on chimneys, but please ship me one."
+mail_retry_unsubmitted = "New intern, have you ever pondered upon the quote \"Give a fish man, you man fish man day. Fish a man teach, teach man fish eat.\"? I used to think about it a lot. During shower, during work, even during enduring to think. And it came to me yesterday, what if man is fish and fish is cat? I carefully structured it in my head many times to come up with this new quote \"Give me a cat fish, you fish me cat fish. Teach me cat, you a fish or am I foolish?\". So now I need me a cat fish idk how to spell it but I do know that these lil' fellas love to be on chimneys, but please ship me one."
+mail_retry_wrong = "This one's got whiskers and all but it ain't no cat fih I asked for. Here's a pic, it came to me when I was showering yesterday. Please fish me this cat fih."
+mail_reward = "It is of MARVEL. What a  WONDROUS CREATURE! I'm perplexed by how wonderful it is. How fluffy... with scales and fins... and meows. This, THIS IS PURRFECTION! MY LIFE IS COMPLETED! I WILL QUIT MY JOB NOW! THANK YOU NEW INTERN! "
+mail_complaint = "Nothing is as frustrating as opening a package in front of your door first thing in the morning and instead of it having a cute cat fih inside, it's a slimy yucky stinky fish. Fun fact: did you know that catfishes are like covered in tongues. Their whiskers and some area of their skin are taste buds used to detect their surroundings because they can't see well. Just like you! Hmmph!"
+metadata/_custom_type_script = "uid://xg6rrpcfkd7"
