@@ -1,0 +1,25 @@
+autoload/quest_registry.gd
+  s_b1b6336eb34ad1::t_3e4e5f9b5db9c5 20,24-29
+data/quests/i_need_sustenance.tres
+  s_b1b6336eb34ad1::t_a98643a071196a 8
+data/quests/a_palm_with_legs.tres
+  s_b1b6336eb34ad1::t_a98643a071196a 8
+data/quests/all_in_on_hot_dog.tres
+  s_b1b6336eb34ad1::t_a98643a071196a 13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "5b03554f38367c31b2a7c6ce63bfce1db4f55fa0",
+  "prompts": {},
+  "sessions": {
+    "s_b1b6336eb34ad1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e1f9424f-2193-47cb-ad62-08fd9f1080f4",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
