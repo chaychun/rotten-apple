@@ -20,6 +20,64 @@ func deliver_new_quest(quest_id: String) -> void:
 	deliver(mail)
 
 
+const FINAL_TITLE := "Internship Complete"
+const FINAL_SENDER := "Aminal Catcher Co."
+const FINAL_EVAL_PATH := "res://data/final_eval.json"
+
+
+# TEMP DEBUG: force final eval to deliver day 1 with a pinned tier. Remove when done.
+# Set to "" to disable; valid: "bad" / "ok" / "good" / "best".
+const DEBUG_FORCE_TIER := "best"
+
+
+# Last day eval mail
+func deliver_final() -> void:
+	for m in inbox:  # defensive: only ever one final mail
+		if m.type == MailData.MailType.FINAL:
+			return
+	var mail := MailData.new()
+	mail.type = MailData.MailType.FINAL
+	mail.day_received = GameClock.current_day
+	mail.title = FINAL_TITLE
+	mail.sender = FINAL_SENDER
+	mail.message = _final_body()
+	deliver(mail)
+
+
+func _final_tier() -> String:
+	if DEBUG_FORCE_TIER != "":  # TEMP DEBUG
+		return DEBUG_FORCE_TIER
+	var maxs := PlayerState.max_stars()
+	var ratio := 1.0 if maxs <= 0 else float(PlayerState.final_stars()) / float(maxs)
+	if ratio >= 1.0 and PlayerState.all_animals_caught():
+		return "best"
+	if ratio >= 0.8:
+		return "good"
+	if ratio >= 0.5:
+		return "ok"
+	return "bad"
+
+
+func _final_body() -> String:
+	var data := _load_final_eval()
+	var tiers: Dictionary = data.get("tiers", {})
+	var middle: String = tiers.get(_final_tier(), "")
+	var parts := PackedStringArray([data.get("header", ""), middle, data.get("footer", "")])
+	return "\n\n".join(parts)
+
+
+func _load_final_eval() -> Dictionary:
+	var f := FileAccess.open(FINAL_EVAL_PATH, FileAccess.READ)
+	if f == null:
+		push_error("Mailbox: cannot open %s" % FINAL_EVAL_PATH)
+		return {}
+	var data: Variant = JSON.parse_string(f.get_as_text())
+	if typeof(data) != TYPE_DICTIONARY:
+		push_error("Mailbox: malformed %s" % FINAL_EVAL_PATH)
+		return {}
+	return data
+
+
 func reset() -> void:
 	inbox.clear()
 
@@ -58,3 +116,5 @@ func read_mail(mail: MailData) -> void:
 			PlayerState.resolve_reward(mail.quest_id, mail.reward)
 		MailData.MailType.COMPLAINT:
 			pass  # FAILED already applied on delivery, reading just acknowledges
+		MailData.MailType.FINAL:
+			pass  # action handled by the mail UI -> EvaluationScreen

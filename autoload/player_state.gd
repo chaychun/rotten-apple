@@ -70,6 +70,42 @@ func is_caught(animal_id: String) -> bool:
 	return logbook.get(animal_id, false)
 
 
+## --- Eval metrics ---
+
+func max_stars() -> int:
+	var total := 0
+	for quest_id in QuestRegistry.get_all_quest_ids():
+		var quest: QuestData = QuestRegistry.get_quest(quest_id)
+		if quest != null:
+			total += quest.reward
+	return total
+
+
+func final_stars() -> int:
+	var earned := 0
+	for quest_id in quests:
+		var p: QuestProgress = quests[quest_id]
+		var quest: QuestData = QuestRegistry.get_quest(quest_id)
+		if quest == null:
+			continue
+		match p.status:
+			QuestStatus.DONE:
+				earned += quest.reward
+			QuestStatus.SUBMITTED:
+				if _submission_correct(quest, p.submitted):
+					earned += quest.reward
+	return earned
+
+
+func all_animals_caught() -> bool:
+	if logbook.is_empty():
+		return false
+	for animal_id in logbook:
+		if not logbook[animal_id]:
+			return false
+	return true
+
+
 ## --- Quest population ---
 
 func _occupied_slots() -> int:
@@ -203,8 +239,12 @@ func _on_day_ended(day: int, _reason: int) -> void:
 
 func _on_day_started(day: int) -> void:
 	_deliver_pending()
+	if Mailbox.DEBUG_FORCE_TIER != "":  # TEMP DEBUG: show final eval on day 1
+		Mailbox.deliver_final()
 	if day <= MAX_QUEST_DAY:
 		_populate()
+	else:
+		Mailbox.deliver_final()
 
 
 # This runs on every quest, not just those with read mails.

@@ -7,7 +7,8 @@ enum MailType {
 	NEW_QUEST,
 	RETRY,
 	REWARD,
-	COMPLAINT, # mail sent for terminal failure (no retry)
+	COMPLAINT, 	# mail sent for terminal failure (no retry)
+	FINAL,		# Last day eval
 }
 
 var type: MailType
@@ -18,6 +19,9 @@ var reward: int = 0
 var reason: int = CarryReason.NONE
 var message: String = ""
 var photo: Texture2D = null # Fixed in quest data, mail inherits
+# Overrides
+var title: String = ""
+var sender: String = ""
 
 
 static func format_body(text: String, reward: int) -> String:

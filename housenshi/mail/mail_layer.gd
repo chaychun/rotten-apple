@@ -63,10 +63,25 @@ func open() -> void:
 func close() -> void:
 	if not _open:
 		return
+	if _showing_final():
+		_finish_internship()
+		return
 	_open = false
 	_root.visible = false
 	GameClock.resume()
 	get_tree().paused = false
+
+
+func _showing_final() -> bool:
+	return _card.visible and _index < _queue.size() and _queue[_index].type == MailData.MailType.FINAL
+
+
+# Read the final mail and hand straight off to the evaluation screen.
+func _finish_internship() -> void:
+	Mailbox.read_mail(_queue[_index])  # idempotent; read_mail guards already-read
+	_open = false
+	_root.visible = false
+	EvaluationScreen.request_finish()  # manages its own pause/visibility
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -82,8 +97,9 @@ func _render_current() -> void:
 	var mail: MailData = _queue[_index]
 	var quest: QuestData = QuestRegistry.get_quest(mail.quest_id)
 
-	_title.text = quest.quest_name if quest else mail.quest_id
-	_sender.text = "From: %s" % (quest.posted_by if quest and quest.posted_by != "" else "???")
+	_title.text = mail.title if mail.title != "" else (quest.quest_name if quest else mail.quest_id)
+	var sender := mail.sender if mail.sender != "" else (quest.posted_by if quest and quest.posted_by != "" else "???")
+	_sender.text = "From: %s" % sender
 	_message.text = mail.message
 
 	_photo.texture = mail.photo
@@ -98,12 +114,17 @@ func _button_label(mail: MailData) -> String:
 			return "Accept"
 		MailData.MailType.REWARD:
 			return "Collect +%d stars" % mail.reward
+		MailData.MailType.FINAL:
+			return "Finish Internship"
 		_:  # COMPLAINT
 			return "OK"
 
 
 # Reads current mail (fires side effects), advances or finishes.
 func _on_advance() -> void:
+	if _showing_final():
+		_finish_internship()
+		return
 	Mailbox.read_mail(_queue[_index])
 	_index += 1
 	if _index < _queue.size():
