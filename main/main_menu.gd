@@ -1,6 +1,6 @@
 extends Control
 
-const MAIN_SCENE_PATH := "res://main/main.tscn"
+const MAIN_SCENE_PATH := "res://main/intro.tscn"
 
 @onready var _play_button: Button = $ButtonColumn/PlayButton
 @onready var _quit_button: Button = $ButtonColumn/QuitButton
