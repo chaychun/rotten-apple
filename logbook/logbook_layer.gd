@@ -3,7 +3,7 @@ extends CanvasLayer
 # For logbook open/close
 
 @onready var _root: Control = $Root
-@onready var _close: TextureButton = $Root/Close
+@onready var _close: TextureButton = $Root/BookShell/BookFrame/Close
 @onready var _shell: Control = $Root/BookShell
 
 var _open := false

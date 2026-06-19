@@ -11,6 +11,10 @@ extends CanvasLayer
 @onready var _guide: Control = $Root/Guide
 @onready var _guide_button: Button = $Root/Guide/Panel/Margin/VBox/Button
 
+# Ref resolution
+const DESIGN_SIZE := Vector2(1920, 1080)
+const MAX_SCALE := 1.05
+
 var _open := false
 var _guide_shown := false
 var _queue: Array[MailData] = []
@@ -24,6 +28,15 @@ func _ready() -> void:
 	_button.pressed.connect(_on_advance)
 	_exit.pressed.connect(close)  # same as ESC: dismiss, leave unread mail unread
 	_guide_button.pressed.connect(close)
+	get_viewport().size_changed.connect(_rescale)
+	_rescale()
+
+
+# Uniform scaling for larger/smaller screens
+func _rescale() -> void:
+	var vp := get_viewport().get_visible_rect().size
+	var s: float = min(vp.x / DESIGN_SIZE.x, vp.y / DESIGN_SIZE.y, MAX_SCALE)
+	_card.scale = Vector2(s, s)
 
 
 func is_open() -> bool:
