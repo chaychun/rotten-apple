@@ -1,0 +1,28 @@
+main/intro.gd
+  s_7d01b95fae45b0::t_492909bb6dd647 1-17
+main/main_menu.gd
+  s_7d01b95fae45b0::t_bc2022f02470fa 3
+main/intro.tscn
+  s_7d01b95fae45b0::t_9f47e96bc46a22 135
+  s_7d01b95fae45b0::t_ff10f5ea1159d4 108
+  s_7d01b95fae45b0::t_642dffd1657fbd 1-20,22-107,109-114,116,118,120-127,129,131-134,136
+  s_7d01b95fae45b0::t_9983d6fb1558f3 21
+  s_7d01b95fae45b0::t_76f574729a388b 115
+  s_7d01b95fae45b0::t_8aa161dbf3092f 128,130
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "ced73110e63cc283911cd782714f87ff60cfcad5",
+  "prompts": {},
+  "sessions": {
+    "s_7d01b95fae45b0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d1b502c8-554d-4bea-81eb-b55306fcf741",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Chayut <chun.chayut@gmail.com>"
+    }
+  }
+}
