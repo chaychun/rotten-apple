@@ -15,9 +15,35 @@ quest_name = "The Saccharine Subversion: Phase 1"
 requirements = Array[ExtResource("1_gdpqf")]([SubResource("Resource_byi36")])
 reward = 2
 posted_by = "Mr Hopkin Schmoffin"
-mail_new = "Greetings. I am in the process of preparing a succulent dessert dish in light of our company's recent decision on eradication of the cafeteria. I require a strawberry as the recipe's main ingredient. The fruit in question is characterised by its brilliant bright red colour, with pronounced, enchanting, and irresistible sweetness, a perfection for any confectionery of highest regard. This project shall provide an irrefutable evidence regarding the importance of the cafeteria. Compensation will be provided upon successful delivery."
-mail_retry_unsubmitted = "It seems to me that you have been ignoring my request. Again, I am in the process of preparing a succulent dessert dish and I need you to understand its importance. Make haste, intern."
-mail_retry_wrong = "I must point out an error: the provided specimen does not align with the genus Fragaria. The standard taxonomy of genus Fragaria states that it is distinguished by its characteristic cordate geometry and the exogenous distribution of its achenes. I request a careful study on the fruit prior to your next submission."
-mail_reward = "The asset has been successfully verified. You have delivered a specimen exhibiting flawless quality. Your compliance has been formally logged, and the cafeteria initiative remains operationally viable."
-mail_complaint = "Regrettably, I must inform you that the matter is now moot, as I have redirect the recipe toward a cocoa-based one. Your unsuccessful attempt has been logged. For reference, I advise a review of basic taxonomy before accepting similar requests in the future."
+mail_new = "Greetings. 
+
+I am in the process of preparing a succulent dessert dish in light of our company's recent decision on eradication of the cafeteria. 
+
+I require a strawberry as the recipe's main ingredient. 
+
+The fruit in question is characterised by its brilliant bright red colour, with pronounced, enchanting, and irresistible sweetness, a perfection for any confectionery of highest regard. 
+
+This project shall provide an irrefutable evidence regarding the importance of the cafeteria. 
+
+Compensation will be provided upon successful delivery."
+mail_retry_unsubmitted = "It seems to me that you have been ignoring my request. 
+
+Again, I am in the process of preparing a succulent dessert dish and I need you to understand its importance. 
+
+Make haste, intern."
+mail_retry_wrong = "I must point out an error: the provided specimen does not align with the genus Fragaria. 
+
+The standard taxonomy of genus Fragaria states that it is distinguished by its characteristic cordate geometry and the exogenous distribution of its achenes. 
+
+I request a careful study on the fruit prior to your next submission."
+mail_reward = "The asset has been successfully verified. 
+
+You have delivered a specimen exhibiting flawless quality. 
+
+Your compliance has been formally logged, and the cafeteria initiative remains operationally viable."
+mail_complaint = "Regrettably, I must inform you that the matter is now moot, as I have redirect the recipe toward a cocoa-based one. 
+
+Your unsuccessful attempt has been logged. 
+
+For reference, I advise a review of basic taxonomy before accepting similar requests in the future."
 metadata/_custom_type_script = "uid://xg6rrpcfkd7"

@@ -34,6 +34,7 @@ var _pool_index := 0
 var _ambient_timer: Timer
 var _ambient_last_index: int = -1
 var _ambient_enabled: bool = true
+var _day_start_pending: bool = false
 
 @onready var _music_player: AudioStreamPlayer = AudioStreamPlayer.new()
 
@@ -79,9 +80,13 @@ func play_sfx(stream: AudioStream, volume_db: float = 0.0, pitch: float = 1.0) -
 
 
 func _on_day_started(_day: int) -> void:
+	_ambient_timer.stop()
 	_music_player.stop()
+	_day_start_pending = true
 	await get_tree().create_timer(8.0).timeout
 	_play_next_ambient_track()
+	if _day_start_pending:
+		_play_next_ambient_track()
 
 
 func _start_ambient_wait() -> void:
@@ -145,14 +150,14 @@ func _connect_button(button: BaseButton) -> void:
 
 
 func _on_button_pressed() -> void:
-	play_sfx(sfx_ui_click)
+	play_sfx(sfx_ui_click, -6.7)
 
 
 func _on_button_hovered() -> void:
-	play_sfx(sfx_ui_hover)
+	play_sfx(sfx_ui_hover, -6.7)
 
 
 func _on_node_added(node: Node) -> void:
 	if node is BaseButton:
-		(node as BaseButton).pressed.connect(func() -> void: play_sfx(sfx_ui_click))
-		(node as BaseButton).mouse_entered.connect(func() -> void: play_sfx(sfx_ui_hover))
+		(node as BaseButton).pressed.connect(func() -> void: play_sfx(sfx_ui_click, -10.0))
+		(node as BaseButton).mouse_entered.connect(func() -> void: play_sfx(sfx_ui_hover, -10.0))

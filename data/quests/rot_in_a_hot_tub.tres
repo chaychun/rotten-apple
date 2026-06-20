@@ -16,11 +16,59 @@ quest_name = "Rot in a Hot Tub"
 requirements = Array[ExtResource("1_gegbj")]([SubResource("Resource_76cl3")])
 reward = 5
 posted_by = "Anita Bath the Witch of Rot"
-mail_new = "Young apprentice, do you believe in magic and the world of the spirits? My name is Anita Bath the Witch of Rot. I have been seeing a lot of rodents in my atelier and I can smell rather unpleasant stench. This is a bad omen. We need to fix it before it's too late. Did you know that fine sand makes perfect skin exfoliant? My spiritual assistant whispered that this is an unfathomably powerful curse and we need to make haste. I, Anita Bath the Witch of Rot, hereby demand one Sand Witch from your town. Be alarm not, for although there is witch in their names, they are of lesser power compared to other kinds of witches. You shall not be afraid of them.
+mail_new = "Young apprentice, do you believe in magic and the world of the spirits? 
+
+My name is Anita Bath the Witch of Rot. 
+
+I have been seeing a lot of rodents in my atelier and I can smell rather unpleasant stench. 
+
+This is a bad omen. 
+
+We need to fix it before it's too late. 
+
+Did you know that fine sand makes perfect skin exfoliant?
+
+My spiritual assistant whispered that this is an unfathomably powerful curse and we need to make haste. 
+
+I, Anita Bath the Witch of Rot, hereby demand one Sand Witch from your town. 
+
+Be alarm not, for even there is witch in their names, they are of lesser power compared to other kinds of witches.
+
+You shall not be afraid of them.
 
 P.S. This matter is to do with unfixing your bad omen and not in any way or form to do with how much I need a bath."
-mail_retry_unsubmitted = "Rodents in my boots, stench when I'm snoozing! Ya curse won't lift itself, will it? One Sand Witch, straight to me place!"
-mail_retry_wrong = "Not a sandwich you ignoramus. A Sand Witch! There you have it, ya peekgoose. Now go and catch one. I'm starting to get itchy everywhere. Another bad omen. I, Anita Bath the Witch of Rot will give you just one more day to complete this task."
-mail_reward = "I'll be damned! The quality of the sand from sand witch is impressive! It's even finer and silkier than a mulberry silk dress! Preseance! Preseance indeed! Much obligued for the sand. I haven't had a bath this  in a century. Oh, and of your curse, right. Your curse or whatever has been lifted by I, Anita Bath the Witch of Rot. Be grateful, young apprentice."
-mail_complaint = "You messed the order up on purpose, didn't you? Go boil your arse you BUFFOON! utterly MORONIC EARTH ROAMING RAT! How am I supposed to stop this itchiness and the stench!?"
+mail_retry_unsubmitted = "Rodents in my boots, stench when I'm snoozing! 
+
+Ya curse won't lift itself, will it? 
+
+One Sand Witch, straight to me place!"
+mail_retry_wrong = "Not a sandwich you ignoramus. 
+
+A Sand Witch! 
+
+There you have it, ya peekgoose. Now go and catch one. 
+
+I'm starting to get itchy everywhere. Another bad omen. 
+
+I, Anita Bath the Witch of Rot will give you just one more day to complete this task."
+mail_reward = "I'll be damned! 
+
+The quality of the sand from sand witch is impressive! 
+
+It's even finer and silkier than a mulberry silk dress! 
+
+Preseance! Preseance indeed! 
+
+Much obligued for the sand. I haven't had a bath this  in a century. 
+
+Oh, and of your curse, right. Your curse or whatever has been lifted by I, Anita Bath the Witch of Rot. 
+
+Be grateful, young apprentice."
+mail_complaint = "You messed the order up on purpose, didn't you? 
+
+Go boil your arse you BUFFOON! 
+
+Utterly MORONIC EARTH ROAMING RAT! 
+
+How am I supposed to stop this itchiness and the stench!?"
 metadata/_custom_type_script = "uid://xg6rrpcfkd7"

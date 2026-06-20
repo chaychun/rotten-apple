@@ -16,9 +16,53 @@ quest_name = "A Palm with Legs"
 requirements = Array[ExtResource("1_71pob")]([SubResource("Resource_a3gst")])
 reward = 1
 posted_by = "Dr Carsen Ologies"
-mail_new = "Hello, new intern. I'm Did you know that everything is evolving into crabs? A lot of animals evolved into crab-like anatomy for survival or something. It's almost like nature is telling us that crab is the ultimate form of all beings. Lately there's been sightings of coconuts with legs that walk sideways in beaches all around the world. I can't believe it but it is the truth. Crabby-volution has reached kingdom plantae! Who knows how long until it's our turn!? I don't wanna be a crab, I hate crabs! How am I suppose to look both ways before crossing the street if I were a crab? To prevent this I will have to conduct a research on the newest crabby-volution. Ship me one of those crabconut or whatever their name is. The faster the better."
-mail_retry_unsubmitted = "To save mankind, I will have to conduct a research on the newest crabby-volution. Ship me one of those crabconut or whatever their name is. The faster the better. I will not repeat again."
-mail_retry_wrong = "These crabs have been crabs since like forever in crab history. What I asked for was a cocrabnut, cutconab. Coconut that grew legs and walks sideways. One more day! Go catch one and ship it to me."
-mail_reward = "Interesting... this specimen still have the traits of a palm fruit, but some of them got intertwined with crustacean's DNA. This will require a more thorough study. Much appreciated, new intern."
-mail_complaint = "No, no, no no no!!! Not this crab. This crappy crab! You crap! Dammit, how do we prevent the crabby-volution now. Or perhaps it has already begun... with you. Maybe your brain has turned into that of a crab! No no no this is no good. What are we supposed to do..."
+mail_new = "Hello, new intern. I'm Dr Carsen Ologies.
+
+Did you know that everything is evolving into crabs?
+
+A lot of animals evolved into crab-like anatomy for survival or something. 
+
+It's almost like nature is telling us that crab is the ultimate form of all beings. 
+
+Lately there's been sightings of coconuts with legs that walk sideways in beaches all around the world. 
+
+I can't believe it but it is the truth. Crabby-volution has reached kingdom plantae! 
+
+Who knows how long until it's our turn!? 
+
+I don't wanna be a crab, I hate crabs! 
+
+How am I suppose to look both ways before crossing the street if I were a crab? 
+
+To prevent this I will have to conduct a research on the newest crabby-volution. 
+
+Ship me one of those crabconut or whatever their name is. The faster the better."
+mail_retry_unsubmitted = "To save mankind, I will have to conduct a research on the newest crabby-volution. 
+
+Ship me one of those crabconut or whatever their name is. The faster the better. 
+
+I will not repeat again."
+mail_retry_wrong = "These crabs have been crabs since like forever in crab history. 
+
+What I asked for was a cocrabnut, cutconab. 
+
+Coconut that grew legs and walks sideways. 
+
+One more day! Go catch one and ship it to me."
+mail_reward = "Interesting... this specimen still have the traits of a palm fruit, but some of them got intertwined with crustacean's DNA. 
+
+This will require a more thorough study. 
+
+Much appreciated, new intern."
+mail_complaint = "No, no, no no no!!! 
+
+Not this crab. This crappy crab! 
+
+You crap! Dammit, how do we prevent the crabby-volution now. 
+
+Or perhaps it has already begun... with you. 
+
+Maybe your brain has turned into that of a crab! 
+
+No no no this is no good. What are we supposed to do..."
 metadata/_custom_type_script = "uid://xg6rrpcfkd7"

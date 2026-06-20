@@ -16,7 +16,7 @@ id = "hedgehog_hunting"
 quest_name = "Hedgehog hunting"
 requirements = Array[ExtResource("1_hk25g")]([SubResource("Resource_hk25g")])
 reward = 1
-posted_by = "Mr. Conner"
+posted_by = "Mr. Conner Omos Goner"
 mail_new = "Hey there kid,
 
 Heard youse got those fluffy hedgehogs running 'round the back of ya house? I could use a couple of 'em for my garden project. I'll give ya 10 gold a piece, what do ya say?"

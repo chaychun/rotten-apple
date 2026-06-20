@@ -43,9 +43,12 @@ SoundManager="*uid://dga6aung75itl"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=4
+window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep"
 window/stretch/scale_mode="integer"
+>>>>>>> 1b73a28116d315df83d899b01e8594e6eaf9b8ec
 window/vsync/vsync_mode=0
 
 
@@ -149,4 +152,3 @@ tool_3={
 rendering_device/driver.windows="d3d12"
 lights_and_shadows/directional_shadow/size=2048
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=0
-scaling_3d/scale=0.7

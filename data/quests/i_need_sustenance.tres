@@ -22,9 +22,49 @@ quest_name = " I need sustenance"
 requirements = Array[ExtResource("1_fj0tb")]([SubResource("Resource_w8v0d"), SubResource("Resource_n8e8q")])
 reward = 3
 posted_by = "Ms Jefflynn Jennifer Jennis"
-mail_new = "Sup, new intern, name's Jeff. Hope you're doing well. I have a request to make. You see, our company highly values efficiency more than anything else, ergo, they just fired all the chefs and replaced the canteen and cafeteria area with an industrial food complex. That means no real food for us workers no more! Grrrghh! I missed having a glizzy on bun and a sammie for lunch with my colleague. Could you please get us both each?"
-mail_retry_unsubmitted = "Are you doing alright? I haven't seen no package yet. Grrrghh! I can't wait any longerrr. Please ship them quickly pleassseeee!!"
-mail_retry_wrong = "As much as I like my food freshly made, this is absurd! It's not only raw, but it's still alive? And what's the deal with all these sands. Are they... chanting something? Come on, just 2 hot dogs and 2 sandwiches!"
-mail_reward = "Holy schmolly! Mmm... The tastes! Such complex flavours, beautifully crafted into a handheld size... OHHHHHHH!!! It's like SOOO GOODDDD My tastebuds are tingling from all the flavours! They are vibrating, I can feel it! They are vibrating to the harmony of flavours! A symphonic orchestral one can taste! I can't thank you enough!"
+mail_new = "Sup, new intern, name's Jeff. Hope you're doing well. 
+
+I have a request to make. 
+
+You see, our company highly values efficiency more than anything else, ergo, they just fired all the chefs and replaced the canteen and cafeteria area with an industrial food complex. 
+
+That means no real food for us workers no more! 
+
+Grrrghh! 
+
+I missed having a glizzy on bun and a sammie for lunch with my colleague. 
+
+Could you please get us both each?"
+mail_retry_unsubmitted = "Are you doing alright? 
+
+I haven't seen no package yet. 
+
+Grrrghh! 
+
+I can't wait any longerrr. 
+
+Please ship them quickly pleassseeee!!"
+mail_retry_wrong = "As much as I like my food freshly made, this is absurd! 
+
+It's not only raw, but it's still alive? 
+
+And what's the deal with all these sands. 
+
+Are they... chanting something? 
+
+Come on, just 2 hot dogs and 2 sandwiches!"
+mail_reward = "Holy schmolly! Mmm... The tastes! 
+
+Such complex flavours, beautifully crafted into a handheld size... OHHHHHHH!!! 
+
+It's like SOOO GOODDDD 
+
+My tastebuds are tingling from all the flavours! 
+
+They are vibrating, I can feel it! 
+
+They are vibrating to the harmony of flavours! 
+
+A symphonic orchestral one can taste! I can't thank you enough!"
 mail_complaint = "Alright whatever, I'll just keep shoving these bland nutrient bars down my throats like everyone else..."
 metadata/_custom_type_script = "uid://xg6rrpcfkd7"

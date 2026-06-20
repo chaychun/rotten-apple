@@ -17,10 +17,50 @@ quest_name = "The Last Straw"
 requirements = Array[ExtResource("1_kx6mn")]([SubResource("Resource_0hwt6")])
 reward = 4
 posted_by = "Ms Summer Times"
-mail_new = "Hi, I'm Summer, Summer Times. I'm writing on behalf of our company's energy department. There has been a rumour among our department about Mr Aupto Nougud that he's up to no good. This seems to be true considering the sudden heat spikes in his laboratory lately. We have tried to stop him from whatever he's doing. We've tried knocking him out with a tranq gun, but he's immune to it. We've also tried pinning him down and tying him with ropes many times, but he always broke them somehow. We have used up all the ropes in the vicinity of this city unfortunately. That's why I need you to deliver me 5 strawberries. Ropes made from these berries are more durable than an spacecraft materials. This will put Mr Aupto down.
+mail_new = "Hi, I'm Summer, Summer Times. 
+
+I'm writing on behalf of our company's energy department. 
+
+There has been a rumour among our department about Mr Aupto Nougud that he's up to no good. 
+
+This seems to be true considering the sudden heat spikes in his laboratory lately. 
+
+We have tried to stop him from whatever he's doing. 
+
+We've tried knocking him out with a tranq gun, but he's immune to it. 
+
+We've also tried pinning him down and tying him with ropes many times, but he always broke them somehow. 
+
+We have used up all the ropes in the vicinity of this city unfortunately. 
+
+That's why I need you to deliver me 5 strawberries. 
+
+Ropes made from these berries are more durable than an spacecraft materials. 
+
+This will put Mr Aupto down.
 "
-mail_retry_unsubmitted = "Hey, Summer Times here. Where's the package? Have you sent it yet? Come on, we've got to stop Mr Aupto Nougud early or who knows what he'll destroy next."
-mail_retry_wrong = "Thanks for the package. The fraises were fresh and delightful but I don't seem to see any strand of straw from the requested strawberries. Can you please ship them this time?"
-mail_reward = "Update, we have successfully pinned Mr Aupto Nougud down. All thanks to you, new intern! Our company is safe... at least for now."
-mail_complaint = "It's too late now. Mr Aupto Nougud has moved to his secret base of operation. We can't find him anywhere. What's he planning to do anyway..., last time he's done goof resulted in half of our building vanished without a trace...  God I hope everything will be fine."
+mail_retry_unsubmitted = "Hey, Summer Times here. 
+
+Where's the package? 
+
+Have you sent it yet? 
+
+Come on, we've got to stop Mr Aupto Nougud early or who knows what he'll destroy next."
+mail_retry_wrong = "Thanks for the package. 
+
+The fraises were fresh and delightful but I don't seem to see any strand of straw from the requested strawberries. 
+
+Can you please ship them this time?"
+mail_reward = "Update, we have successfully pinned Mr Aupto Nougud down. 
+
+All thanks to you, new intern! 
+
+Our company is safe... at least for now."
+mail_complaint = "It's too late now. 
+
+Mr Aupto Nougud has moved to his secret base of operation. We can't find him anywhere. 
+
+What's he planning to do anyway..., last time he's done goof resulted in half of our building vanished without a trace...  
+
+God I hope everything will be fine."
 metadata/_custom_type_script = "uid://xg6rrpcfkd7"
