@@ -43,11 +43,17 @@ SoundManager="*uid://dga6aung75itl"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+<<<<<<< HEAD
 window/size/mode=4
 window/size/resizable=false
+=======
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep"
+window/stretch/scale_mode="integer"
+>>>>>>> 1b73a28116d315df83d899b01e8594e6eaf9b8ec
 window/vsync/vsync_mode=0
 
-[editor]
+
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
