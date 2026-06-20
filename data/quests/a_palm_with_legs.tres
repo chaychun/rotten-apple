@@ -16,6 +16,7 @@ quest_name = "A Palm with Legs"
 requirements = Array[ExtResource("1_71pob")]([SubResource("Resource_a3gst")])
 reward = 1
 posted_by = "Dr Carsen Ologies"
+
 mail_new = "Hello, new intern. I'm Dr Carsen Ologies.
 
 Did you know that everything is evolving into crabs?
@@ -65,4 +66,5 @@ Or perhaps it has already begun... with you.
 Maybe your brain has turned into that of a crab! 
 
 No no no this is no good. What are we supposed to do..."
+
 metadata/_custom_type_script = "uid://xg6rrpcfkd7"

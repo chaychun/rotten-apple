@@ -43,6 +43,7 @@ SoundManager="*uid://dga6aung75itl"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+<<<<<<< HEAD
 window/size/mode=4
 window/size/resizable=false
 window/stretch/mode="canvas_items"
